@@ -1,4 +1,4 @@
-﻿using MyApp.Core.Servicios;
+﻿using MyApp.Core;
 
 var servicio = new ServicioSaludo();
 Console.WriteLine("¿Cual es tu nombre?");
