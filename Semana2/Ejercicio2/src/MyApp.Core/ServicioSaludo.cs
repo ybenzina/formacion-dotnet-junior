@@ -1,4 +1,4 @@
-namespace MyApp.Core.Servicios
+﻿namespace MyApp.Core
 {
     public class ServicioSaludo
     {
@@ -8,3 +8,4 @@ namespace MyApp.Core.Servicios
         }
     }
 }
+
