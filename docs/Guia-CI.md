@@ -96,11 +96,9 @@ jobs:
         run: dotnet test --no-build --configuration Release --verbosity normal
 ```
 
----
-
 ## Plantilla PR (copiar en la descripción del PR)
 
-```
+```text
 ## Objetivo del PR
 Añadir workflow CI: build y tests automáticos.
 
