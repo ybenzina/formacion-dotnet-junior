@@ -1,6 +1,6 @@
 ﻿namespace GestorTareas;
 
-public class Tareas
+public class Tarea
 {
     public int Id { get; }
     public string Titulo { get; }
@@ -8,11 +8,11 @@ public class Tareas
     public DateTime FechaCreacion { get; }
     public bool Completada { get; private set; }
 
-    public Tareas(int Id, string Titulo, string Descripcion)
+    public Tarea(int id, string titulo, string descripcion)
     {
-        this.Id = Id;
-        this.Titulo = Titulo;
-        this.Descripcion = Descripcion;
+        Id = id;
+        Titulo = titulo;
+        Descripcion = descripcion;
         FechaCreacion = DateTime.Now;
         Completada = false;
     }
