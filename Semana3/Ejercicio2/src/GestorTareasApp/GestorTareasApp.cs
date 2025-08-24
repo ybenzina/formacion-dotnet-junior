@@ -7,7 +7,7 @@ class GestorTareasApp
 {
     static void Main()
     {
-        var gestor = new GestorTarea();
+        var gestor = new GestorTareas.GestorTareas();
         bool salir = false;
 
         while (!salir)
@@ -30,19 +30,19 @@ class GestorTareasApp
                     string titulo = Console.ReadLine() ?? "";
                     Console.Write("Descripción: ");
                     string descripcion = Console.ReadLine() ?? "";
-                    var tarea = gestor.Agregar(titulo, descripcion);
+					Tarea tarea = gestor.Agregar(titulo, descripcion);
                     Console.WriteLine($"Tarea agregada con Id {tarea.Id}");
                     break;
 
                 case "2":
                     Console.WriteLine("\n--- Todas las tareas ---");
-                    foreach (var t in gestor.ListarTodas())
+                    foreach (Tarea t in gestor.ListarTodas())
                         Console.WriteLine($"[{t.Id}] {t.Titulo} - {(t.Completada ? "✅" : "⏳")}");
                     break;
 
                 case "3":
                     Console.WriteLine("\n--- Tareas pendientes ---");
-                    foreach (var t in gestor.ListarPendientes())
+                    foreach (Tarea t in gestor.ListarPendientes())
                         Console.WriteLine($"[{t.Id}] {t.Titulo}");
                     break;
 
