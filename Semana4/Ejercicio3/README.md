@@ -17,3 +17,7 @@ Aprender a testear cancelación y excepciones relacionadas con tareas asíncrona
 
 - Código bajo `Semana4/Ejercicio3/` y tests.
 - PR: `<tuusuario>/semana4-ej3` -> `drissbego/integration`
+
+## Resultado
+
+Actividad hehca con ayuda de StackOverflow, al principio intentaba hacerlo solo con documentacion que iba encontrando por internet pero me acabé haciendo un lio y busqué en StackOverflow para ayudarme
