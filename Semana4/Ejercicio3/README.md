@@ -1,6 +1,6 @@
 # Semana4 – Ejercicio 3: Tests async y Cancelación (OBLIGATORIO)
 
-**Branch sugerida:** <githubuser>/semana4-ej3
+**Branch sugerida:** `<git-user>`/semana4-ej3
 
 ## Objetivo
 
@@ -15,5 +15,5 @@ Aprender a testear cancelación y excepciones relacionadas con tareas asíncrona
 
 ## Entregable
 
-- Código bajo `Semana4/Ejercicio3/` y tests.
-- PR: `<tuusuario>/semana4-ej3` -> `drissbego/integration`
+- Código bajo `Semana4/Ejercicio3/` /src y /tests según aplique.
+- PR: `<git-user>/semana4-ej3` -> `<git-user>/integration`

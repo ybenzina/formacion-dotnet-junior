@@ -1,6 +1,6 @@
 # Semana4 – Ejercicio 2: Concurrencia y sincronización (OBLIGATORIO)
 
-**Branch sugerida:** <githubuser>/semana4-ej2
+**Branch sugerida:** `<git-user>`/semana4-ej2
 
 ## Objetivo
 
@@ -24,5 +24,5 @@ Entender race conditions y aplicar sincronización con `lock`, `SemaphoreSlim` e
 
 ## Entregable
 
-- Código bajo `Semana4/Ejercicio2/` y tests en `tests/`.
-- PR: `<tuusuario>/semana4-ej2` -> `drissbego/integration`
+- Código bajo `/src` y tests en `/tests`.
+- PR: `<git-user>/semana4-ej2` -> `<git-user>/integration`
