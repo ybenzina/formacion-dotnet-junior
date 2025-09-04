@@ -1,6 +1,6 @@
 # Semana4 – Ejercicio 2: Concurrencia y sincronización (OBLIGATORIO)
 
-**Branch sugerida:** `<git-user>`/semana4-ej2
+**Branch sugerida:** <githubuser>/semana4-ej2
 
 ## Objetivo
 
@@ -24,5 +24,9 @@ Entender race conditions y aplicar sincronización con `lock`, `SemaphoreSlim` e
 
 ## Entregable
 
-- Código bajo `/src` y tests en `/tests`.
-- PR: `<git-user>/semana4-ej2` -> `<git-user>/integration`
+- Código bajo `Semana4/Ejercicio2/` y tests en `tests/`.
+- PR: `<tuusuario>/semana4-ej2` -> `drissbego/integration`
+
+## Resultado
+
+Actividad hecha con ayuda de la IA ya que no entendia bien bien cual era la finalidad/utilidad de usar esos metodos, una vez visto el resultado y el proceso de estos ya entiendo mejor el uso de los metodos lock, interlocked y semaphore
