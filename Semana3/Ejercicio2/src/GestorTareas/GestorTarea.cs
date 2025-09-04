@@ -3,39 +3,44 @@ using System.Linq;
 
 namespace GestorTareas;
 
-public class GestorTarea
+public class GestorTareas
 {
-    private readonly List<Tareas> tareas = new();
-    private int ultimoId = 0;
+    private readonly List<Tarea> _tareas = [];
+    private int _ultimoId = 0;
 
-    public Tareas Agregar(string titulo, string descripcion)
-    {
-        var tarea = new Tareas(++ultimoId, titulo, descripcion);
-        tareas.Add(tarea);
-        return tarea;
-    }
+    public Tarea Agregar(string titulo, string descripcion)
+	{
+		if (string.IsNullOrWhiteSpace(titulo))
+			throw new ArgumentException("El título no puede estar vacío.", nameof(titulo));
+
+		var tarea = new Tarea(++_ultimoId, titulo, descripcion);
+		_tareas.Add(tarea);
+		return tarea;
+	}
 
     public bool Eliminar(int id)
     {
-        var tarea = tareas.FirstOrDefault(t => t.Id == id);
+		Tarea? tarea = _tareas.FirstOrDefault(t => t.Id == id);
         if (tarea == null) return false;
-        tareas.Remove(tarea);
+        _tareas.Remove(tarea);
         return true;
     }
 
-    public List<Tareas> ListarTodas()
+    public IReadOnlyList<Tarea> ListarTodas()
     {
-        return tareas.ToList();
+		// Exponer colección inmutable
+        return _tareas.AsReadOnly();
     }
 
-    public List<Tareas> ListarPendientes()
+	public IReadOnlyList<Tarea> ListarPendientes()
     {
-        return tareas.Where(t => !t.Completada).ToList();
+        // Exponer colección inmutable
+        return _tareas.Where(t => !t.Completada).ToList().AsReadOnly();
     }
 
     public bool MarcarCompletada(int id)
     {
-        var tarea = tareas.FirstOrDefault(t => t.Id == id);
+		Tarea? tarea = _tareas.FirstOrDefault(t => t.Id == id);
         if (tarea == null) return false;
         tarea.MarcarComoCompletada();
         return true;
