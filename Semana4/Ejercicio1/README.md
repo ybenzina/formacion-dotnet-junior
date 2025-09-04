@@ -1,6 +1,6 @@
 # Semana4 – Ejercicio 1: Métodos async y Task (OBLIGATORIO)
 
-**Branch sugerida:** <githubuser>/semana4-ej1 (por ejemplo: drissbego/semana4-ej1)
+**Branch sugerida:** `<git-user>`/semana4-ej1 (por ejemplo: drissbego/semana4-ej1)
 
 ## Objetivo
 
@@ -20,5 +20,5 @@ Practicar `async`/`await` y `Task` implementando un `WebSimulator` que simula de
 
 ## Entregable
 
-- Código bajo `Semana4/Ejercicio1/` (o `src/` y `tests/` según prefieran).
-- PR: `<tuusuario>/semana4-ej1` -> `drissbego/integration`
+- Código bajo `Semana4/Ejercicio1/` (o `src/` y `tests/` según aplique).
+- PR: `<git-user>/semana4-ej1` -> `<git-user>/integration`

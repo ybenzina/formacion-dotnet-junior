@@ -14,6 +14,3 @@ Dominar el flujo Git con rebase interactivo y Pull Requests.
 
 ## Entregables
 - Pull Request abierto con descripción clara.
-
-Fecha: 02/08/2025
-Hola Mundo .NET
