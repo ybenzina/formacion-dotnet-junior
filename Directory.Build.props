@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- Disable analyzers for test projects -->
+  <PropertyGroup Condition="$(MSBuildProjectName.Contains('Tests')) or $(MSBuildProjectName.Contains('Test')) or $(MSBuildProjectDirectory.Contains('tests')) or $(MSBuildProjectDirectory.Contains('test'))">
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Enable analyzers for non-test projects -->
+  <PropertyGroup Condition="!($(MSBuildProjectName.Contains('Tests')) or $(MSBuildProjectName.Contains('Test')) or $(MSBuildProjectDirectory.Contains('tests')) or $(MSBuildProjectDirectory.Contains('test')))">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+</Project>
