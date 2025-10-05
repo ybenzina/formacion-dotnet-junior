@@ -1,4 +1,4 @@
-📢 **Semana 4 – Asincronía y Multihilo (async/await, Task, locks, semáforos)**
+# 📢 **Semana 4 – Asincronía y Multihilo (async/await, Task, locks, semáforos)**
 
 🎯 **Objetivo de la semana**
 Consolidar el uso de `async/await` y `Task`, entender sincronización básica (`lock`, `SemaphoreSlim`, `Interlocked`) y aprender a testear métodos asíncronos con xUnit.

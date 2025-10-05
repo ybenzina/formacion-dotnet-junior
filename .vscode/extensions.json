@@ -1,0 +1,21 @@
+{
+    "recommendations": [
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "kreativ-software.csharpextensions",
+        "github.vscode-pull-request-github",
+        "github.remotehub",
+        "patcx.vscode-nuget-gallery",
+        "ms-vscode.remote-repositories",
+        "humao.rest-client",
+        "ms-mssql.sql-database-projects-vscode",
+        "adpyke.vscode-sql-formatter",
+        "ms-mssql.mssql",
+        "ms-vscode.powershell",
+        "github.copilot",
+        "editorconfig.editorconfig",
+        "github.copilot-chat",
+        "ms-vscode.azure-repos"
+    ]
+}

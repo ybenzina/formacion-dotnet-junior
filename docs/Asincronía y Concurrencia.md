@@ -1,4 +1,4 @@
-# Semana 4 - Referencia: Asincronía y Concurrencia en C#
+# Asincronía y Concurrencia en C#
 
 ## async/await y Task
 - `async Task` y `async Task<T>`: métodos asíncronos que devuelven una tarea.

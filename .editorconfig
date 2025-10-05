@@ -219,7 +219,7 @@ csharp_space_between_parentheses = false
 csharp_space_between_square_brackets = false
 
 # License header
-file_header_template = Copyright (c) T-Systems Iberia ITC, SAU.  All rights reserved.
+file_header_template = Copyright (c) DrissBeGo 2025.  All rights reserved.
 csharp_style_namespace_declarations = block_scoped:silent
 csharp_style_prefer_method_group_conversion = true:silent
 csharp_style_prefer_top_level_statements = true:silent
