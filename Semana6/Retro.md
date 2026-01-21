@@ -11,7 +11,7 @@
    - Indica por ejemplo: por qué elegiste `BlockingCollection`/`Channel`, mediciones, trade-offs y limitaciones detectadas.
 
 2. **PROBLEMS / Warnings (alta)**
-   - Resuelve las advertencias que aparecen en el panel PROBLEMS (naming, sugerencias de `.editorconfig`). Aunque no rompen la build, mejorar la adherencia a reglas de estilo es importante para calidad profesional.
+   - Resuelve las advertencias que aparecen en el panel PROBLEMS (naming, sugerencias de `.editorconfig`) o SONARQUBE si instalas la extensión "SonarQube for IDE". Aunque no rompen la build, mejorar la adherencia a reglas de estilo es importante para calidad profesional.
 
 3. **Ejercicio 3: diseño y pruebas (alta)**
    - Si el Download Manager aún no está completo, asegúrate de incluir: cancelación, bounded channels/BlockingCollection, reintentos limitados y reporting.
@@ -25,5 +25,3 @@
 ## Checklist antes de cerrar la semana
 - [ ] Añadir sección `Observaciones y Conclusiones` a cada README.
 - [ ] Resolver PROBLEMS y aplicar `dotnet format`.
-- [ ] Completar Ejercicio 3 y añadir tests de reintentos y cancelación.
-- [ ] Añadir ejercicio 3 a `.sln` global o instrucciones claras para ejecutar desde la raíz.
