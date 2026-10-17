@@ -1,8 +1,6 @@
-using System;
-
 namespace Downloader;
 
-public class CacheManager
+internal class CacheManager
 {
     private static CacheManager? s_cacheManager;
 
@@ -15,10 +13,7 @@ public class CacheManager
 	{
 		get
 		{
-			if (s_cacheManager == null)
-			{
-				s_cacheManager = new CacheManager();
-			}
+			s_cacheManager ??= new CacheManager();
 			return s_cacheManager;
 		}
 	}
