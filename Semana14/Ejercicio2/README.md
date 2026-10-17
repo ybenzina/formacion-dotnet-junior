@@ -4,12 +4,12 @@
 Describe el objetivo y pasos detallados para realizar el ejercicio.
 
 ## Criterios de aceptación
-- Código subido en PR a `drissbego/integration`.
+- Código subido en PR a `<git-user>/integration`.
 - Tests unitarios o integración incluidos.
 - SonarCloud: sin issues críticos.
 
 ## Pasos sugeridos
-1. Crear rama `drissbego/semana14-ejercicio2`.
+1. Crear rama `<git-user>/semana14-ejercicio2`.
 2. Implementar la funcionalidad.
 3. Añadir tests.
 4. Ejecutar pipeline.

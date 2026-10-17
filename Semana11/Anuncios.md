@@ -1,7 +1,7 @@
 ## 📢 Anuncios - Semana 11 — Masterclass Arquitectura y refactor (Redis cache)
 
 - **Duración:** 1 semana
-- **Entregable:** PR hacia `drissbego/integration` en rama `drissbego/semana11-ejercicio` o `feature/...` según convención.
+- **Entregable:** PR hacia `<git-user>/integration` en rama `<git-user>/semana11-ejercicio` o `feature/...` según convención.
 
 **Tareas principales:**
 - Ejercicio1 — Refactor CreateEvent usando MediatR (Vertical Slice)

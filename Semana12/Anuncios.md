@@ -1,7 +1,7 @@
 ## 📢 Anuncios - Semana 12 — .NET MAUI (opcional)
 
 - **Duración:** 1 semana
-- **Entregable:** PR hacia `drissbego/integration` en rama `drissbego/semana12-ejercicio` o `feature/...` según convención.
+- **Entregable:** PR hacia `<git-user>/integration` en rama `<git-user>/semana12-ejercicio` o `feature/...` según convención.
 
 **Tareas principales:**
 - Ejercicio1 — Proyecto MAUI: listar eventos

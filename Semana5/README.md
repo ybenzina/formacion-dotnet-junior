@@ -15,7 +15,7 @@
 
 **Convenciones**
 - Ramas: `<git-user>/semana5-ejX` (ej.: `drissbego/semana5-ej1`)
-- PRs contra: `drissbego/integration`
+- PRs contra: `<git-user>/integration`
 - Incluir salida de `dotnet test` en la descripción del PR
 
 **Recursos de apoyo**: ver `/docs` (LINQ quickref, Channel vs BlockingCollection, Delegados y Expressions, Testing async)

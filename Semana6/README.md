@@ -12,4 +12,4 @@
 
 **Convenciones**  
 - Ramas: `<git-user>/semana6-ejX`  
-- PRs: `drissbego/integration`  
+- PRs: `<git-user>/integration`  
