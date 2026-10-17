@@ -19,3 +19,6 @@ Integrar asincronía, paralelismo y colecciones concurrentes en un gestor de des
 ## Entregable
 - Código en `src/` y tests en `tests/`.  
 - README con diagramas ASCII breves y ejemplos de ejecución (modo simulado).
+
+## Resultado
+Ejercicio realizado con ayuda de IA, me ha proporcionado la estructura ya que era grande la actividad e iba a ser sino una clase o dos de 400 lineas con todo apelotonado
