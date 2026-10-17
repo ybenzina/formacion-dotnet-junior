@@ -3,7 +3,7 @@
 **🎯 Objetivo de la semana**  
 Consolidar el uso de `Task`/`async`, conocer `Thread`/`ThreadPool`/`background threads`, practicar paralelismo CPU‑bound con `Parallel.For/ForEach` y PLINQ, y aprender primitivas de sincronización (`lock`, `Monitor`, `Mutex`, `Interlocked`).
 
-**🛠️ Tareas prácticas** (ramas: `<githubuser>/semana5-ejX`)
+**🛠️ Tareas prácticas** (ramas: `<git-user>/semana5-ejX`)
 1. **Ejercicio 1 – Thread vs Task (OBLIGATORIO)**  
    - Implementar `DoWork(int i)` (CPU-bound).  
    - Crear four runners: Threads manuales, Background threads, ThreadPool (`QueueUserWorkItem`) y `Task.Run` + `Task.WhenAll`.  
@@ -27,7 +27,7 @@ Consolidar el uso de `Task`/`async`, conocer `Thread`/`ThreadPool`/`background t
 - Documentación `/docs` incluida en el repo (LINQ QuickRef, Delegados, Channel vs BlockingCollection, Testing async).
 
 **📌 Checklist para PRs**  
-- [ ] Rama creada como: `<tuusuario>/semana5-ejX` (ej: `drissbego/semana5-ej1`)  
+- [ ] Rama creada como: `<git-user>/semana5-ejX` (ej: `drissbego/semana5-ej1`)  
 - [ ] `dotnet build` OK  
 - [ ] `dotnet test` OK (pegar salida en la descripción del PR)  
 - [ ] Tests relevantes incluidos (concurrencia: incrementar carga para evitar flakiness)  

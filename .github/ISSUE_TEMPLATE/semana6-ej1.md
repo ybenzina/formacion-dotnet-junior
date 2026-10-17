@@ -9,7 +9,7 @@ labels: ['Semana','exercise']
 Colecciones concurrentes
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana6-ej1
+- [ ] Rama: `<git-user>/semana6-ej1`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests relevantes incluidos

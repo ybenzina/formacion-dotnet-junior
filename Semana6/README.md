@@ -11,5 +11,5 @@
 - Ej3: Download Manager (refactor/implementación usando pipeline)
 
 **Convenciones**  
-- Ramas: `<githubuser>/semana6-ejX`  
+- Ramas: `<git-user>/semana6-ejX`  
 - PRs: `drissbego/integration`  

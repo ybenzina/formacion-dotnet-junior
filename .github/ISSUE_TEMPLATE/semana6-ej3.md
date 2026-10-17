@@ -9,7 +9,7 @@ labels: ['Semana','exercise']
 Download Manager refactor
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana6-ej3
+- [ ] Rama: `<git-user>/semana6-ej3`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests relevantes incluidos

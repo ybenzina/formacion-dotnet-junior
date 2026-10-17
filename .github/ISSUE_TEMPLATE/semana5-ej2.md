@@ -9,7 +9,7 @@ labels: ['Semana','exercise']
 Parallel.For/PLINQ
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana5-ej2
+- [ ] Rama: `<git-user>/semana5-ej2`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests relevantes incluidos

@@ -3,7 +3,7 @@
 **🎯 Objetivo de la semana**  
 Consolidar el uso de colecciones concurrentes (productor/consumidor), dominar LINQ para consultas y aplicar todo en un ejercicio integrador: **Download Manager** diseñado como pipeline (opciones: `BlockingCollection` o `Channel<T>`).
 
-**🛠️ Tareas prácticas** (ramas: `<githubuser>/semana6-ejX`)
+**🛠️ Tareas prácticas** (ramas: `<git-user>/semana6-ejX`)
 1. **Ejercicio 1 – Colecciones concurrentes (OBLIGATORIO)**  
    - Implementar productor/consumidor con `BlockingCollection<T>`.  
    - Implementar versión alternativa con `ConcurrentQueue<T>` + `SemaphoreSlim`.  
@@ -24,7 +24,7 @@ Consolidar el uso de colecciones concurrentes (productor/consumidor), dominar LI
 - Consulta `/docs` para: LINQ QuickRef, Delegados/Lambdas, Channel vs BlockingCollection y Testing async/concurrency.
 
 **📌 Checklist para PRs**  
-- [ ] Rama creada como `<tuusuario>/semana6-ejX`  
+- [ ] Rama creada como `<git-user>/semana6-ejX`  
 - [ ] `dotnet build` OK  
 - [ ] `dotnet test` OK (pegar salida)  
 - [ ] Tests incluidos y robustos (carga suficiente)  

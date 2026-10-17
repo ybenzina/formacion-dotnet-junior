@@ -9,6 +9,6 @@ labels: ['Semana4','async','testing']
 Implementar métodos cancelables y tests que validen cancelación.
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana4-ej3
+- [ ] Rama: `<git-user>/semana4-ej3`
 - [ ] dotnet test OK
 - [ ] Test que verifica TaskCanceledException o comportamiento esperado

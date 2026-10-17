@@ -14,7 +14,7 @@
 - `Ej4` — Colecciones básicas (`List`, `Dictionary`, `Stack`, `Queue`)
 
 **Convenciones**
-- Ramas: `<githubuser>/semana5-ejX` (ej.: `drissbego/semana5-ej1`)
+- Ramas: `<git-user>/semana5-ejX` (ej.: `drissbego/semana5-ej1`)
 - PRs contra: `drissbego/integration`
 - Incluir salida de `dotnet test` en la descripción del PR
 
