@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Downloader;
 
 public class Program
 {
@@ -13,8 +14,10 @@ public class Program
     new DownloadRequest(new Uri("https://example.com/file2"), "file2.bin", 4)
 };
 
+		CacheManager.Instance.AddToCache("file1.bin", "Cached data for file1");
+		CacheManager.Instance.AddToCache("file2.bin", "Cached data for file2");
 
-        var downloader = new SimulatedDownloader(failureProbability: 0.1); // Probabilidad de fallo (10%)
+		var downloader = new SimulatedDownloader(failureProbability: 0.1); // Probabilidad de fallo (10%)
         var options = new DownloadManagerOptions
         {
             MaxConcurrentDownloads = 2, // Maximo 2 descargas simultaneas
