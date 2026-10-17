@@ -1,18 +1,22 @@
-# Ejercicio2 - Implementar UI MVC: listado, detalle, crear evento
+# Ejercicio 2 — Docker y Docker Compose *(esbozo)*
 
-## Enunciado
-Describe el objetivo y pasos detallados para realizar el ejercicio.
+**Martes 27 de octubre · unas 4 h**
 
-## Criterios de aceptación
-- Código subido en PR a `<git-user>/integration`.
-- Tests unitarios o integración incluidos.
-- SonarCloud: sin issues críticos.
+## Objetivo
 
-## Pasos sugeridos
-1. Crear rama `<git-user>/semana8-ejercicio2`.
-2. Implementar la funcionalidad.
-3. Añadir tests.
-4. Ejecutar pipeline.
+Empaquetar la API y la web en imágenes y levantar la aplicación completa con un solo comando.
 
-## Examples
-Los ejemplos relacionados se ubican en `examples/` si aplica.
+## Entregable
+
+- `Dockerfile` *multi-stage* para la API y para la web.
+- `docker-compose.yml` con SQL Server, API y web: red, variables de entorno, volumen y dependencias de arranque.
+- Las migraciones se aplican de una forma que sepas explicar.
+- La CI construye las imágenes en cada PR.
+- Los security hotspots que marque SonarQube Cloud en los Dockerfile (por ejemplo, ejecutar como `root`) revisados o corregidos.
+
+## Preguntas que tendrás que saber responder
+
+- ¿Qué hace cada etapa del Dockerfile y por qué la imagen final no lleva el SDK?
+- ¿Cómo encuentra la API a SQL Server dentro de Compose?
+
+*Pasos, criterios de aceptación y recursos: pendientes de detallar.*

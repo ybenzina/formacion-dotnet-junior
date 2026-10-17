@@ -1,28 +1,27 @@
-# CourtConnect — dominio de las prácticas de la fase 2
+# CourtConnect — material del reto (fase 2)
 
-**CourtConnect** es una aplicación para **organizar quedadas y torneos de baloncesto**: creación de eventos, inscripciones (RSVP), gestión de ubicaciones y participantes.
+**CourtConnect** es una aplicación para gestionar **campus y torneos de baloncesto**: actividades con plazas limitadas, jugadores, inscripciones y pagos simulados.
 
-No es un proyecto de entrega: es el **dominio común** sobre el que se construyen los ejercicios de las semanas 7 a 14. En lugar de inventar un caso de uso distinto cada semana, se trabaja siempre sobre el mismo modelo, lo que permite practicar cosas que los ejercicios sueltos no dan: refactorizar en la semana 11 el repositorio escrito en la semana 7, hacer migraciones sobre el propio modelo, o consumir la misma API desde MVC, Blazor y MAUI y comparar.
+No es un producto real: es el dominio sobre el que Driss practica en el reto de las semanas 7 y 8. El código se desarrolla en el repositorio **`DeemSoft/court-connect`**. Aquí está solo el material de partida.
 
 ## Qué hay aquí
 
-- `architecture/` — capas, patrones a aplicar y el refactor de `GetEvent` con Redis.
-- `data-model/` — modelo de datos y `init.sql` con el DDL de partida.
-- `snippets/` — fragmentos de apoyo.
-- `scaffold/` — script para generar la solución base. Ver su [README](scaffold/README.md).
+| Ruta | Para qué |
+|---|---|
+| [`enunciado-dominio.md`](enunciado-dominio.md) | Requisitos del dominio. Punto de partida para redactar `docs/domain.md` en el repo del reto |
+| [`architecture/`](architecture/README.md) | Arquitectura propuesta para el reto |
+| [`data-model/`](data-model/README.md) | Modelo de datos de la versión anterior (quedadas y RSVP) e `init.sql`. Solo como referencia |
+| [`snippets/`](snippets/snippets.md) | Fragmentos de apoyo de la versión anterior |
+| [`scaffold/`](scaffold/README.md) | Script que genera una solución de referencia. Driss crea la suya a mano y lo usa para comparar |
+| [`plantilla-repo/`](plantilla-repo/README.md) | Ficheros para copiar al repo nuevo y checklist de creación |
+| [`calidad.md`](calidad.md) | Quality gate de SonarQube Cloud: umbrales y cómo cumplirlos |
+| [`evaluacion.md`](evaluacion.md) | Criterios de evaluación del reto |
+| [`sdd-piloto.md`](sdd-piloto.md) | Plantilla de métricas del piloto de Spec-Driven Development |
+| [`issues-reto.md`](issues-reto.md) | Issues del reto, listas para crear en `court-connect` |
 
-## Cómo empezar
+## Reglas del reto
 
-1. Genera la solución con el script de `scaffold/` en una carpeta vacía.
-2. `dotnet build CourtConnect.slnx` y `dotnet test`.
-3. Ve resolviendo los ejercicios de `Semana7/` en adelante sobre esa solución.
-
-Los proyectos que genera el scaffold son esqueletos: tienen la estructura, las referencias entre capas y los paquetes de partida, pero el código lo escribes tú en cada ejercicio.
-
-## Ramas de trabajo
-
-Se sigue el mismo flujo de ramas que en la fase 1:
-
-- Una rama por ejercicio: `<git-user>/semana7-ej1`, o por área: `feature/dataaccess`, `feature/webui`, `feature/blazorui`.
-- Los ejercicios se integran por PR en `<git-user>/integration`.
-- `main` mantiene solo los enunciados y el material, nunca las soluciones.
+- **Primero lo intentas tú, después comparas con la IA.** Cada enunciado termina con una sección «Comparación con IA», y cada PR tiene una sección con ese nombre.
+- **La excepción es la funcionalidad SDD** (semana 8): ahí la IA genera el código y tu trabajo es especificar y revisar.
+- **Datos siempre ficticios.** Ningún dato real ni de clientes.
+- **Lo que construyas no tiene que ser bonito:** tiene que funcionar y tienes que saber explicar cada pieza.

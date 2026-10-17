@@ -1,16 +1,13 @@
-## Pull Request
+## Qué cambia
+-
 
-**Description**
-- Summary of changes:
+## Por qué
+- Issue o tarea relacionada (`Closes #N` si la cierra):
 
-**Checklist**
-- [ ] I have added/updated tests
-- [ ] I have run `dotnet test` locally
-- [ ] SonarCloud analysis is clean (or issues documented)
-- [ ] README updated if required
-- [ ] This PR is linked to an issue or task
+## Cómo se ha comprobado
+- [ ] `dotnet build` y `dotnet test` en local (si hay código)
+- [ ] Revisado por mí antes de pedir revisión
 
-**How to test**
-- Steps to reproduce locally:
-  1. ...
-  2. ...
+## Uso de IA
+- Qué se generó o se consultó con IA:
+- Qué se revisó y cómo:

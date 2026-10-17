@@ -9,7 +9,7 @@ labels: ['Semana2','CI','Infra']
 
 ## Pasos propuestos
 1. Crear rama a partir de `main`: `ci/dotnet-test`
-2. Añadir fichero `.github/workflows/dotnet.yml` con el workflow (ver `docs/CI-Guide.md`)
+2. Añadir fichero `.github/workflows/dotnet.yml` con el workflow (ver `docs/Guia-CI.md`)
 3. Commit & push de la rama
 4. Abrir PR: `ci/dotnet-test` → `main`
 5. Esperar checks verdes y, si pasan, mergear la PR
@@ -21,5 +21,5 @@ labels: ['Semana2','CI','Infra']
 - [ ] Logs de workflow revisados (checks verificados)
 
 ## Notas
-- Si los proyectos apuntan a `net9.0`, adaptar la versión del SDK en el workflow (`actions/setup-dotnet`).
+- Usa en `actions/setup-dotnet` la misma versión del SDK que el `TargetFramework` de los proyectos. Si el repo tiene un `global.json`, mejor que el workflow lo lea (`global-json-file: global.json`) en lugar de repetir la versión.
 - Si el workflow falla por binarios comiteados, elimina `bin/` y `obj/` con `git rm --cached` y vuelve a commitear.

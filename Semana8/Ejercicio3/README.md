@@ -1,18 +1,17 @@
-# Ejercicio3 - AJAX para filtrado en listado
+# Ejercicio 3 — SDD (1/2): especificación *(esbozo)*
 
-## Enunciado
-Describe el objetivo y pasos detallados para realizar el ejercicio.
+**Miércoles 28 de octubre · unas 4 h**
 
-## Criterios de aceptación
-- Código subido en PR a `<git-user>/integration`.
-- Tests unitarios o integración incluidos.
-- SonarCloud: sin issues críticos.
+## Objetivo
 
-## Pasos sugeridos
-1. Crear rama `<git-user>/semana8-ejercicio3`.
-2. Implementar la funcionalidad.
-3. Añadir tests.
-4. Ejecutar pipeline.
+Aprender el proceso de Spec-Driven Development con GitHub Spec Kit y especificar la funcionalidad **pago simulado con caducidad de la reserva** (ver `docs/court-connect/enunciado-dominio.md`).
 
-## Examples
-Los ejemplos relacionados se ubican en `examples/` si aplica.
+## Entregable
+
+- Módulo de Microsoft Learn completado: [Implementación del desarrollo Spec-Driven mediante GitHub Spec Kit](https://learn.microsoft.com/es-es/training/modules/spec-driven-development-github-spec-kit-enterprise-developers/).
+- Spec Kit inicializado en `court-connect`.
+- Constitución del proyecto, coherente con `AGENTS.md` y con el quality gate (`docs/court-connect/calidad.md`): la IA tiene que generar tests suficientes.
+- Especificación de la funcionalidad, con las aclaraciones resueltas, en `specs/`. **Yamel la revisa antes de pasar al plan.**
+- Métricas de esta fase en `docs/sdd/sdd-piloto.md` (plantilla en `docs/court-connect/sdd-piloto.md`).
+
+*Herramienta de IA del piloto (Claude Code o Copilot) y pasos detallados: pendientes de decidir.*

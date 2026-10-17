@@ -1,4 +1,6 @@
-# Modelo de datos - CourtConnect
+# Modelo de datos — CourtConnect (versión anterior)
+
+> Modelo de la primera versión de CourtConnect (quedadas y RSVP). El reto usa un dominio nuevo (ver `../enunciado-dominio.md`) y crea el esquema con migraciones de EF Core. Este modelo e `init.sql` quedan como referencia para comparar.
 
 ## Entidades principales (resumen)
 - **User**

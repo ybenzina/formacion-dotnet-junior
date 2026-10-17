@@ -1,49 +1,34 @@
 # Formación .NET Junior
 
-Bienvenido al repositorio de formación. Aquí encontrarás el plan de estudio de 12 semanas para convertirte en desarrollador backend .NET Junior.
+Repositorio de formación en C# y .NET. Contiene el plan, los enunciados, los anuncios y el material de apoyo. **No contiene soluciones en `main`.**
 
-- docs/: documentación de referencia
-- Semana1/ a Semana12/: ejercicios semanales
-- .github/ISSUE_TEMPLATE/: plantillas de Issues para GitHub
+- `Semana1/` a `Semana8/`: plan y enunciados de cada semana.
+- `docs/`: guías y material de referencia.
+- `docs/court-connect/`: dominio y material del reto CourtConnect (fase 2).
+- `.github/ISSUE_TEMPLATE/`: plantillas de issues de la fase 1.
 
-# Formación en C# (Fase 1)
-Formación intermedia en C# y .NET para desarrolladores con experiencia previa en otros lenguajes (Java, JavaScript, Python, etc).
+## Fase 1 — C# y .NET (semanas 1 a 6)
 
-Se preeven 6 semanas de formación (de la 1 a la 6) con ejercicios prácticos.
+Formación intermedia en C# y .NET para desarrolladores con experiencia previa en otros lenguajes (Java, JavaScript, Python…).
 
 Objetivos:
-- Fundamentos de C# y .NET
-- Git avanzado y Solución .NET multi-proyecto
-- Programación orientada a objetos y Pruebas unitarias con xUnit
-- Asincronía y multihilo
-- Tasks, Threads y Sincronización
-- Colecciones concurrentes, LINQ y pipelines (Channel, BlockingQueue)
+- Fundamentos de C# y .NET.
+- Git avanzado y solución .NET multiproyecto.
+- Programación orientada a objetos y pruebas unitarias con xUnit.
+- Asincronía y multihilo: tasks, threads y sincronización.
+- Colecciones concurrentes, LINQ y pipelines (`Channel`, `BlockingCollection`).
 
-# Formación en tecnologías .NET (Fase 2)
-Formación en tecnologías .NET para desarrolladores con experiencia previa en C# y .NET (fase 1).
-Se preveen 8 semanas de formación (de la 7 a la 14) con ejercicios prácticos y un proyecto dónde se iran a aplicando los ejercicios realizados.
+Las soluciones de la fase 1 están en la rama `drissbego/integration`.
 
-Se extenderán algunos conceptos de la fase 1 y se introducirán los siguientes conceptos durante las prácticas:
-- Manejo de errores y excepciones
-- Cachéo en memoria con MemoryCache
-- Logging con ILogger y NLog
-- Configuración con IOptions
-- Inyección de dependencias con el contenedor nativo de .NET
-- Introducción a arquitecturas limpias (clean architecture), DDD, Vertical Slice y SOLID
-- Introducción a patrones de diseño (repositorio, inyección de dependencias)
+## Fase 2 — Reto CourtConnect (semanas 7 y 8)
 
-Las tecnologías que se tratan en esta segunda fase son:
-- Acceso a datos con ADO.NET y Entity Framework Core
-- Introducción a tecnologías de desarrollo web (ASP.NET WebForms, ASP.NET Core MVC, Blazor)
-- Blazor Server y WebAssembly
-- ASP.NET Core Web API y Minimal APIs
-- Otras tecnologías de servidor (Remoting, WCF / SOAP, REST, gRPC)
-- Caching distribuido con IDistributedCache (Redis)
-- Cloud computing con Microsoft Azure (App Services, SQL Database, Storage, Redis Cache)
-- Introducción a Docker y contenedores
+Reto de dos semanas (19 al 30 de octubre de 2026), con unas 4 horas al día, para tocar a mano las piezas básicas de una aplicación .NET actual y saber **supervisar** el código que genere la IA.
 
-- Adicionalmente durante esta segunda fase se introducirá el desarrollo de un proyecto a elección del alumno para consolidar las tecnologías aprendidas durante la segunda fase del aprendizaje.
-Se plantea un proyecto de ejemplo (CourtConnect) para organizar quedadas y torneos de baloncesto, pero el alumno puede elegir otro proyecto si lo desea.
-Puedes encontrar la documentación sobre el proyecto de ejemplo en `docs/court-connect/README.md`.
+- **Semana 7 — Del dominio a la API con CI:** modelo de dominio y xUnit, EF Core con SQL Server en Docker, API con ASP.NET Core, tests de integración, GitHub Actions y SonarCloud.
+- **Semana 8 — Web, contenedores y SDD:** Blazor, Docker y una funcionalidad hecha con Spec-Driven Development (GitHub Spec Kit).
+
+El código se desarrolla en un repositorio propio, **`DeemSoft/court-connect`**, que se crea el primer día del reto. Empieza por [`Semana7/README.md`](Semana7/README.md).
+
+Los temas de la fase 2 original que quedan para más adelante están en [`docs/fase2-pendiente.md`](docs/fase2-pendiente.md).
 
 ¡Empecemos!

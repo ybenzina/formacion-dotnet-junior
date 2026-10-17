@@ -1,18 +1,22 @@
-# Ejercicio1 - Demo WebForms mínima (examples)
+# Ejercicio 1 — Web con Blazor *(esbozo)*
 
-## Enunciado
-Describe el objetivo y pasos detallados para realizar el ejercicio.
+**Lunes 26 de octubre · unas 4 h**
 
-## Criterios de aceptación
-- Código subido en PR a `<git-user>/integration`.
-- Tests unitarios o integración incluidos.
-- SonarCloud: sin issues críticos.
+## Objetivo
 
-## Pasos sugeridos
-1. Crear rama `<git-user>/semana8-ejercicio1`.
-2. Implementar la funcionalidad.
-3. Añadir tests.
-4. Ejecutar pipeline.
+Interfaz web que consume la API: aprender el modelo de componentes de Blazor, la sintaxis Razor y qué significa el *render mode*.
 
-## Examples
-Los ejemplos relacionados se ubican en `examples/` si aplica.
+## Entregable
+
+- `src/DeemSoft.CourtConnect.Ui.Components` (Razor Class Library) con los componentes: lista de campus, ficha de campus y formulario de inscripción.
+- `src/DeemSoft.CourtConnect.Ui.Web` (Blazor Web App, render interactivo **Server**) que aloja esos componentes.
+- Un cliente HTTP tipado detrás de una interfaz para llamar a la API. La web no accede a la base de datos.
+- Mensajes de error comprensibles cuando la API devuelve ProblemDetails.
+- Tests de componentes con **bUnit** y tests del cliente HTTP con un `HttpMessageHandler` falso, para llegar al 80 % de cobertura del código nuevo que exige el quality gate.
+
+## Preguntas que tendrás que saber responder
+
+- ¿Dónde se ejecuta el código de un componente en modo Server? ¿Y en WebAssembly?
+- ¿Por qué los componentes están en una biblioteca aparte?
+
+*Pasos, criterios de aceptación y recursos: pendientes de detallar.*
