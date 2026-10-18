@@ -29,9 +29,9 @@ Puedes incluir este PR en el de la parte C si te resulta más cómodo, pero en c
 Rama `feature/dominio`.
 
 1. Crea la solución **a mano** con la CLI:
-   - `DeemSoft.CourtConnect.slnx` en la raíz.
-   - `src/DeemSoft.CourtConnect.Domain` (biblioteca de clases).
-   - `tests/DeemSoft.CourtConnect.UnitTests` (xUnit), con referencia a Domain.
+   - `CourtConnect.slnx` en la raíz.
+   - `src/CourtConnect.Domain` (biblioteca de clases).
+   - `tests/CourtConnect.UnitTests` (xUnit), con referencia a Domain.
    - Con el SDK 10, `dotnet new sln` genera `.slnx`. Mira qué contiene.
    - Un **`global.json`** en la raíz que fije el SDK 10 (`dotnet new globaljson`). Elige una política de `rollForward` y explica en el PR qué significa. Así tú, Yamel y la CI usáis el mismo SDK.
 2. Implementa en Domain las entidades `Camp`, `Player` y `Registration` y los estados que necesites.

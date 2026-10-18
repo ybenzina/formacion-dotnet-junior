@@ -11,8 +11,8 @@
 La carpeta destino debe estar vacía: el script nunca escribe sobre el repositorio. Al terminar:
 
 ```powershell
-dotnet build DeemSoft.CourtConnect.slnx
-dotnet test DeemSoft.CourtConnect.slnx
+dotnet build CourtConnect.slnx
+dotnet test CourtConnect.slnx
 ```
 
 ### Parámetros
@@ -34,22 +34,44 @@ El script se detiene en el primer error, comprobando `$LASTEXITCODE` después de
 Materializa la arquitectura de [`../architecture/README.md`](../architecture/README.md). Es deliberadamente simple: ocho proyectos, sin MAUI, sin MVC y sin WebAssembly.
 
 ```text
-DeemSoft.CourtConnect.slnx
+CourtConnect.slnx
+Directory.Build.props
 ├── src
 │   ├── 1. Ui
-│   │   ├── DeemSoft.CourtConnect.Ui.Components   (Razor Class Library)
-│   │   └── DeemSoft.CourtConnect.Ui.Web          (Blazor Web App, interactividad Server)
+│   │   ├── CourtConnect.Ui.Components   (Razor Class Library)
+│   │   └── CourtConnect.Ui.Web          (Blazor Web App, interactividad Server)
 │   ├── 2. Domain
-│   │   ├── DeemSoft.CourtConnect.Domain          (entidades y reglas de negocio)
-│   │   └── DeemSoft.CourtConnect.Application     (casos de uso, DTOs, interfaces)
+│   │   ├── CourtConnect.Domain          (entidades y reglas de negocio)
+│   │   └── CourtConnect.Application     (casos de uso, DTOs, interfaces)
 │   ├── 3. Api
-│   │   └── DeemSoft.CourtConnect.Api             (API REST con OpenAPI)
+│   │   └── CourtConnect.Api             (API REST con OpenAPI)
 │   └── 4. Infrastructure
-│       └── DeemSoft.CourtConnect.Infrastructure  (EF Core, repositorios, adaptadores)
+│       └── CourtConnect.Infrastructure  (EF Core, repositorios, adaptadores)
 └── tests
-    ├── DeemSoft.CourtConnect.UnitTests
-    └── DeemSoft.CourtConnect.IntegrationTests
+    ├── CourtConnect.UnitTests
+    └── CourtConnect.IntegrationTests
 ```
+
+### Nombres cortos en disco, prefijados en el código
+
+Las carpetas y los `.csproj` no llevan el prefijo de organización; los namespaces y los ensamblados sí. El prefijo se declara una sola vez, en el `Directory.Build.props` que genera el script:
+
+```xml
+<RootNamespace>DeemSoft.$(MSBuildProjectName)</RootNamespace>
+<AssemblyName>DeemSoft.$(MSBuildProjectName)</AssemblyName>
+```
+
+Es el valor por defecto del SDK con `DeemSoft.` delante, así que `CourtConnect.Domain.csproj` compila a `DeemSoft.CourtConnect.Domain.dll`. Se ahorran 9 caracteres por segmento de ruta, dos veces (carpeta y fichero) más los intermedios de `obj\`, que en Windows no es poco.
+
+Para que esto funcione, el script **crea cada proyecto con el nombre completo y luego renombra el `.csproj`**. No es un rodeo caprichoso: las plantillas escriben el namespace dentro de los ficheros que generan, y la Razor Class Library además incrusta el nombre del ensamblado en la ruta de sus recursos estáticos:
+
+```csharp
+"import", "./_content/DeemSoft.CourtConnect.Ui.Components/exampleJsInterop.js"
+```
+
+Si se generara directamente con el nombre corto, esa importación apuntaría a un `_content/` que no existe: **no rompe la compilación, rompe en ejecución**.
+
+El perfil `Completo` no lleva prefijo ni `Directory.Build.props`. Si se retoma esa línea, habría que aplicarle la misma convención y volver a verificarla, que con MAUI de por medio no es inmediato.
 
 ### Referencias entre proyectos
 
@@ -80,7 +102,9 @@ No se añade MediatR: el reto usa servicios de aplicación simples. Tampoco hace
 
 ## Perfil `Completo`
 
-La propuesta original de 14 semanas, con prefijo `CourtConnect` y solución `CourtConnect.slnx`. Añade MVC, Blazor WebAssembly, MAUI y un proyecto `Shared`. Se conserva por si se retoma esa línea, pero el reto no lo usa.
+La propuesta original de 14 semanas: añade MVC, Blazor WebAssembly, MAUI y un proyecto `Shared`. Se conserva por si se retoma esa línea, pero el reto no lo usa.
+
+Usa los mismos nombres cortos en disco, pero **no genera `Directory.Build.props`**, así que sus namespaces y ensamblados se quedan en `CourtConnect.*`, sin el prefijo de organización. Es una inconsistencia conocida: aplicarle la convención obliga a volver a verificar un build con MAUI, que arrastra sus propias pegas de workloads y de longitud de ruta. Se haría si alguna vez se retoma el perfil.
 
 ```powershell
 .\New-CourtConnectSolution.ps1 -Path D:\git\CourtConnectCompleto -Profile Completo
@@ -123,4 +147,4 @@ La versión anterior de este scaffold eran tres ficheros en la raíz del reposit
 - Esperaban un `CourtConnect.sln` que `dotnet new sln` ya no genera, así que ningún proyecto llegaba a la solución.
 - `addfiles_to_sln.ps1` reescribía el `.sln` como texto generando GUIDs a mano, algo que `dotnet sln add` ya hace bien y que el formato `.slnx` ni siquiera necesita.
 
-Ambos perfiles se han verificado generando, compilando y ejecutando los tests de la solución completa.
+El perfil `Reto` se verifica generando, compilando y ejecutando los tests de la solución completa; es lo que se comprueba cuando se toca el script. El perfil `Completo` se verificó así en su momento, pero no después del cambio de nomenclatura.

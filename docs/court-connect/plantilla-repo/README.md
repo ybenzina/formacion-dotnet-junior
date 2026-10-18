@@ -46,19 +46,19 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 ```text
 court-connect/
 ├── AGENTS.md  CLAUDE.md  README.md  .editorconfig  .gitignore
-├── DeemSoft.CourtConnect.slnx  global.json
+├── CourtConnect.slnx  Directory.Build.props  global.json
 ├── docker-compose.yml
 ├── .github/  (workflows/, ISSUE_TEMPLATE/, copilot-instructions.md, pull_request_template.md)
 ├── docs/     (domain.md, learning/, sdd/)
 ├── specs/    (especificaciones de Spec Kit, semana 8)
 ├── src/
-│   ├── DeemSoft.CourtConnect.Domain
-│   ├── DeemSoft.CourtConnect.Application
-│   ├── DeemSoft.CourtConnect.Infrastructure
-│   ├── DeemSoft.CourtConnect.Api
-│   ├── DeemSoft.CourtConnect.Ui.Components
-│   └── DeemSoft.CourtConnect.Ui.Web
+│   ├── CourtConnect.Domain
+│   ├── CourtConnect.Application
+│   ├── CourtConnect.Infrastructure
+│   ├── CourtConnect.Api
+│   ├── CourtConnect.Ui.Components
+│   └── CourtConnect.Ui.Web
 └── tests/
-    ├── DeemSoft.CourtConnect.UnitTests
-    └── DeemSoft.CourtConnect.IntegrationTests
+    ├── CourtConnect.UnitTests
+    └── CourtConnect.IntegrationTests
 ```

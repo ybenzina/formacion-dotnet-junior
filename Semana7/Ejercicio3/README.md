@@ -12,7 +12,7 @@ Rama `feature/api`.
 
 ### 1. Capa de aplicación (≈ 1 h)
 
-- Proyecto `src/DeemSoft.CourtConnect.Application`: servicios de aplicación (por ejemplo, `RegistrationService`), DTOs de entrada y salida e interfaces de los repositorios.
+- Proyecto `src/CourtConnect.Application`: servicios de aplicación (por ejemplo, `RegistrationService`), DTOs de entrada y salida e interfaces de los repositorios.
 - Implementa los repositorios en Infrastructure.
 - La API **no** devuelve entidades del dominio: devuelve DTOs. ¿Por qué?
 
@@ -38,7 +38,7 @@ Usa **Minimal APIs** con grupos de endpoints (`MapGroup`). Si prefieres controla
 ### 3. OpenAPI y pruebas manuales (≈ 1 h)
 
 - Activa el documento OpenAPI (en .NET 10, `AddOpenApi` y `MapOpenApi`).
-- Crea `src/DeemSoft.CourtConnect.Api/CourtConnect.http` con una petición por endpoint, incluidos los casos de error. Ejecútalas con la extensión REST Client.
+- Crea `src/CourtConnect.Api/CourtConnect.http` con una petición por endpoint, incluidos los casos de error. Ejecútalas con la extensión REST Client.
 
 ## Criterios de aceptación
 

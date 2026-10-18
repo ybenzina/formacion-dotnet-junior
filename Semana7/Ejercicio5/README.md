@@ -23,6 +23,7 @@ Añadir análisis de calidad y cobertura a la CI, dejar el código limpio y pres
 - Revisa los issues del análisis. Corrige los de severidad alta y media. Los que decidas no corregir, justifícalos en el PR.
 - Revisa los security hotspots y márcalos con una explicación.
 - El **quality gate** tiene que quedar superado.
+- **Antes de darlo por cerrado, pasa también la revisión de dependencias** que aprendiste el martes: `dotnet list package --vulnerable --include-transitive` sobre la solución entera, no solo sobre un proyecto. El gate no cubre esto (ver «Lo que el gate no mira» en `calidad.md`), así que un gate en verde con un paquete vulnerable dentro sigue siendo un problema. Si aparece algo nuevo, arréglalo o justifícalo en el PR.
 
 ### 3. Preparar la demo y la retro (≈ 1 h 30 min)
 
@@ -37,6 +38,7 @@ Añadir análisis de calidad y cobertura a la CI, dejar el código limpio y pres
 - [ ] Los dos checks (job de la CI y `SonarCloud Code Analysis`) son obligatorios en el ruleset: un PR que no supera el gate no se puede fusionar (pruébalo con un PR de prueba y ciérralo).
 - [ ] **Recuerda:** la Action en verde no basta. El ejercicio está aceptado cuando **también** `SonarCloud Code Analysis` está en verde.
 - [ ] Sin la organización ni la clave del proyecto escritas a mano en el workflow.
+- [ ] Revisión de dependencias de la solución pasada, con el resultado anotado en el PR.
 - [ ] README que permite arrancar todo desde un clon limpio.
 - [ ] Retro escrita.
 
@@ -45,6 +47,7 @@ Añadir análisis de calidad y cobertura a la CI, dejar el código limpio y pres
 - ¿Qué mide el quality gate y qué significa la cobertura que muestra?
 - Si en un PR falla el job de la CI, ¿qué buscas? ¿Y si falla `SonarCloud Code Analysis`?
 - Elige un issue de Sonar que hayas corregido: ¿qué riesgo tenía?
+- Con el quality gate en verde, ¿puedes afirmar que la aplicación no tiene vulnerabilidades conocidas? ¿Por qué?
 
 ## Comparación con IA
 

@@ -8,8 +8,8 @@ Interfaz web que consume la API: aprender el modelo de componentes de Blazor, la
 
 ## Entregable
 
-- `src/DeemSoft.CourtConnect.Ui.Components` (Razor Class Library) con los componentes: lista de campus, ficha de campus y formulario de inscripción.
-- `src/DeemSoft.CourtConnect.Ui.Web` (Blazor Web App, render interactivo **Server**) que aloja esos componentes.
+- `src/CourtConnect.Ui.Components` (Razor Class Library) con los componentes: lista de campus, ficha de campus y formulario de inscripción.
+- `src/CourtConnect.Ui.Web` (Blazor Web App, render interactivo **Server**) que aloja esos componentes.
 - Un cliente HTTP tipado detrás de una interfaz para llamar a la API. La web no accede a la base de datos.
 - Mensajes de error comprensibles cuando la API devuelve ProblemDetails.
 - Tests de componentes con **bUnit** y tests del cliente HTTP con un `HttpMessageHandler` falso, para llegar al 80 % de cobertura del código nuevo que exige el quality gate.

@@ -10,7 +10,7 @@ Probar la API de extremo a extremo contra un SQL Server real en contenedor, y ej
 
 ### 1. Tests de integración (≈ 2 h) — rama `test/integracion-api`
 
-- Proyecto `tests/DeemSoft.CourtConnect.IntegrationTests` con `Microsoft.AspNetCore.Mvc.Testing` y `Testcontainers.MsSql`.
+- Proyecto `tests/CourtConnect.IntegrationTests` con `Microsoft.AspNetCore.Mvc.Testing` y `Testcontainers.MsSql`.
 - Una *fixture* que arranca un SQL Server en contenedor una vez por ejecución, aplica las migraciones y configura `WebApplicationFactory` para usarlo en lugar de tu base de datos local.
 - Casos mínimos (uno o varios por **cada endpoint** de la tabla del ejercicio 3):
   - `GET /camps` solo devuelve campus abiertos, con las plazas libres correctas.

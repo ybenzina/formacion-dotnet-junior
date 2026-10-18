@@ -18,7 +18,8 @@ Este archivo es la **única fuente** de instrucciones para cualquier asistente d
 
 ## Convenciones
 
-- Namespaces y proyectos: `DeemSoft.<Producto>.<Capa>` (por ejemplo, `DeemSoft.CourtConnect.Domain`).
+- Namespaces y ensamblados: `DeemSoft.<Producto>.<Capa>` (por ejemplo, `DeemSoft.CourtConnect.Domain`). Se declara una vez en el `Directory.Build.props` de la raíz, no en cada `.csproj`.
+- Carpetas, ficheros `.csproj` y solución **sin** el prefijo de organización (`src/CourtConnect.Domain`, `CourtConnect.slnx`), para no alargar las rutas.
 - Repositorios en minúsculas con guiones (`court-connect`).
 - Documentación en español.
 - Flujo de Git: ramas cortas (`docs/`, `chore/`, `feature/`, `fix/`) y Pull Request con la sección «Uso de IA».

@@ -31,8 +31,8 @@ En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 
 ## Convenciones
 
-- **.NET 10.** Solución `DeemSoft.CourtConnect.slnx`, código en `src/` y tests en `tests/`.
-- **Namespaces y proyectos:** `DeemSoft.CourtConnect.<Capa>` (`Domain`, `Application`, `Infrastructure`, `Api`, `Ui.Components`, `Ui.Web`).
+- **.NET 10.** Solución `CourtConnect.slnx`, código en `src/` y tests en `tests/`.
+- **Nomenclatura:** carpetas y `.csproj` como `CourtConnect.<Capa>` (`Domain`, `Application`, `Infrastructure`, `Api`, `Ui.Components`, `Ui.Web`), sin prefijo de organización, para no alargar las rutas. Los namespaces y los ensamblados sí son `DeemSoft.CourtConnect.<Capa>`: lo añade `Directory.Build.props` de la raíz, no hay que repetirlo en cada `.csproj`.
 - **Idioma:** código en inglés (glosario en `docs/domain.md`); documentación, issues y PR en español.
 - **Arquitectura:** `Domain` sin dependencias; la web solo habla con la API. Sin MediatR. El reloj se inyecta con `TimeProvider`.
 - **Tests:** xUnit. Toda regla de negocio tiene al menos un test. Casos que solo cambian en los datos, con `[Theory]` e `[InlineData]`.

@@ -16,11 +16,13 @@
 .PARAMETER ProfileName
     Qué solución generar. Se invoca como -Profile.
 
-    - Reto (por defecto): los 8 proyectos de docs/court-connect/architecture/README.md,
-      con prefijo DeemSoft.CourtConnect y solución DeemSoft.CourtConnect.slnx.
+    - Reto (por defecto): los 8 proyectos de docs/court-connect/architecture/README.md.
+      Carpetas y .csproj sin prefijo de organización (CourtConnect.*, solución
+      CourtConnect.slnx); los namespaces y ensamblados quedan como
+      DeemSoft.CourtConnect.* a través de Directory.Build.props.
       Blazor Web App en modo Server más una Razor Class Library. Sin MAUI ni MVC.
 
-    - Completo: la propuesta original de 14 semanas, con prefijo CourtConnect,
+    - Completo: la propuesta original de 14 semanas, sin prefijo de organización,
       que añadía MVC, Blazor WebAssembly y MAUI.
 
 .PARAMETER TargetFramework
@@ -70,35 +72,36 @@ function Invoke-Step {
 $profiles = @{
 
     Reto = @{
-        SolutionName = 'DeemSoft.CourtConnect'
-        Projects     = @(
-            @{ Template = 'classlib';      Dir = 'src/DeemSoft.CourtConnect.Domain';         Folder = 'src\2. Domain' }
-            @{ Template = 'classlib';      Dir = 'src/DeemSoft.CourtConnect.Application';    Folder = 'src\2. Domain' }
-            @{ Template = 'classlib';      Dir = 'src/DeemSoft.CourtConnect.Infrastructure'; Folder = 'src\4. Infrastructure' }
-            @{ Template = 'webapi';        Dir = 'src/DeemSoft.CourtConnect.Api';            Folder = 'src\3. Api' }
-            @{ Template = 'razorclasslib'; Dir = 'src/DeemSoft.CourtConnect.Ui.Components';  Folder = 'src\1. Ui' }
-            @{ Template = 'blazor';        Dir = 'src/DeemSoft.CourtConnect.Ui.Web';         Folder = 'src\1. Ui'; Args = @('-int', 'Server') }
-            @{ Template = 'xunit';         Dir = 'tests/DeemSoft.CourtConnect.UnitTests';        Folder = 'tests' }
-            @{ Template = 'xunit';         Dir = 'tests/DeemSoft.CourtConnect.IntegrationTests'; Folder = 'tests' }
+        SolutionName    = 'CourtConnect'
+        NamespacePrefix = 'DeemSoft'
+        Projects        = @(
+            @{ Template = 'classlib';      Dir = 'src/CourtConnect.Domain';         Folder = 'src\2. Domain' }
+            @{ Template = 'classlib';      Dir = 'src/CourtConnect.Application';    Folder = 'src\2. Domain' }
+            @{ Template = 'classlib';      Dir = 'src/CourtConnect.Infrastructure'; Folder = 'src\4. Infrastructure' }
+            @{ Template = 'webapi';        Dir = 'src/CourtConnect.Api';            Folder = 'src\3. Api' }
+            @{ Template = 'razorclasslib'; Dir = 'src/CourtConnect.Ui.Components';  Folder = 'src\1. Ui' }
+            @{ Template = 'blazor';        Dir = 'src/CourtConnect.Ui.Web';         Folder = 'src\1. Ui'; Args = @('-int', 'Server') }
+            @{ Template = 'xunit';         Dir = 'tests/CourtConnect.UnitTests';        Folder = 'tests' }
+            @{ Template = 'xunit';         Dir = 'tests/CourtConnect.IntegrationTests'; Folder = 'tests' }
         )
-        References   = @(
-            @{ From = 'src/DeemSoft.CourtConnect.Application';        To = 'src/DeemSoft.CourtConnect.Domain' }
-            @{ From = 'src/DeemSoft.CourtConnect.Infrastructure';     To = 'src/DeemSoft.CourtConnect.Domain' }
-            @{ From = 'src/DeemSoft.CourtConnect.Infrastructure';     To = 'src/DeemSoft.CourtConnect.Application' }
-            @{ From = 'src/DeemSoft.CourtConnect.Api';                To = 'src/DeemSoft.CourtConnect.Application' }
-            @{ From = 'src/DeemSoft.CourtConnect.Api';                To = 'src/DeemSoft.CourtConnect.Infrastructure' }
-            @{ From = 'src/DeemSoft.CourtConnect.Ui.Web';             To = 'src/DeemSoft.CourtConnect.Ui.Components' }
-            @{ From = 'tests/DeemSoft.CourtConnect.UnitTests';        To = 'src/DeemSoft.CourtConnect.Domain' }
-            @{ From = 'tests/DeemSoft.CourtConnect.UnitTests';        To = 'src/DeemSoft.CourtConnect.Application' }
-            @{ From = 'tests/DeemSoft.CourtConnect.IntegrationTests'; To = 'src/DeemSoft.CourtConnect.Api' }
+        References      = @(
+            @{ From = 'src/CourtConnect.Application';        To = 'src/CourtConnect.Domain' }
+            @{ From = 'src/CourtConnect.Infrastructure';     To = 'src/CourtConnect.Domain' }
+            @{ From = 'src/CourtConnect.Infrastructure';     To = 'src/CourtConnect.Application' }
+            @{ From = 'src/CourtConnect.Api';                To = 'src/CourtConnect.Application' }
+            @{ From = 'src/CourtConnect.Api';                To = 'src/CourtConnect.Infrastructure' }
+            @{ From = 'src/CourtConnect.Ui.Web';             To = 'src/CourtConnect.Ui.Components' }
+            @{ From = 'tests/CourtConnect.UnitTests';        To = 'src/CourtConnect.Domain' }
+            @{ From = 'tests/CourtConnect.UnitTests';        To = 'src/CourtConnect.Application' }
+            @{ From = 'tests/CourtConnect.IntegrationTests'; To = 'src/CourtConnect.Api' }
         )
-        Packages     = @(
-            @{ Project = 'src/DeemSoft.CourtConnect.Infrastructure';     Name = 'Microsoft.EntityFrameworkCore.SqlServer' }
-            @{ Project = 'src/DeemSoft.CourtConnect.Infrastructure';     Name = 'Microsoft.EntityFrameworkCore.Tools' }
-            @{ Project = 'tests/DeemSoft.CourtConnect.UnitTests';        Name = 'coverlet.collector' }
-            @{ Project = 'tests/DeemSoft.CourtConnect.IntegrationTests'; Name = 'Microsoft.AspNetCore.Mvc.Testing' }
-            @{ Project = 'tests/DeemSoft.CourtConnect.IntegrationTests'; Name = 'Testcontainers.MsSql' }
-            @{ Project = 'tests/DeemSoft.CourtConnect.IntegrationTests'; Name = 'coverlet.collector' }
+        Packages        = @(
+            @{ Project = 'src/CourtConnect.Infrastructure';     Name = 'Microsoft.EntityFrameworkCore.SqlServer' }
+            @{ Project = 'src/CourtConnect.Infrastructure';     Name = 'Microsoft.EntityFrameworkCore.Tools' }
+            @{ Project = 'tests/CourtConnect.UnitTests';        Name = 'coverlet.collector' }
+            @{ Project = 'tests/CourtConnect.IntegrationTests'; Name = 'Microsoft.AspNetCore.Mvc.Testing' }
+            @{ Project = 'tests/CourtConnect.IntegrationTests'; Name = 'Testcontainers.MsSql' }
+            @{ Project = 'tests/CourtConnect.IntegrationTests'; Name = 'coverlet.collector' }
         )
     }
 
@@ -169,13 +172,45 @@ try {
     if (-not $solution) { throw 'No se generó ningún fichero de solución.' }
     Write-Host "Solución generada: $solution" -ForegroundColor DarkGray
 
+    # --- Directory.Build.props ---------------------------------------------
+    # Las carpetas y los .csproj van sin el prefijo de organización para acortar
+    # las rutas. El prefijo se restituye aquí sobre el valor que el SDK usa por
+    # defecto, así que el namespace y el ensamblado siguen siendo DeemSoft.*.
+    $prefix = $selected.NamespacePrefix
+    if ($prefix) {
+        $props = @'
+<Project>
+
+  <PropertyGroup>
+    <RootNamespace>__PREFIX__.$(MSBuildProjectName)</RootNamespace>
+    <AssemblyName>__PREFIX__.$(MSBuildProjectName)</AssemblyName>
+  </PropertyGroup>
+
+</Project>
+'@ -replace '__PREFIX__', $prefix
+        Set-Content -Path 'Directory.Build.props' -Value $props -Encoding utf8
+        Write-Host "==> Directory.Build.props: namespaces y ensamblados como $prefix.*" -ForegroundColor Cyan
+    }
+
     # --- Proyectos ---------------------------------------------------------
+    # Se crean con el nombre completo para que las plantillas escriban ya los
+    # namespaces definitivos (y la ruta ./_content/<ensamblado>/ del RCL), y
+    # después se renombra el .csproj a la forma corta.
     foreach ($p in $selected.Projects) {
-        $name = Split-Path $p.Dir -Leaf
+        $shortName = Split-Path $p.Dir -Leaf
+        $fullName = if ($prefix) { "$prefix.$shortName" } else { $shortName }
         # $args es variable automática de PowerShell: no se asigna.
-        $newArgs = @('new', $p.Template, '-f', $TargetFramework, '-o', $p.Dir, '-n', $name)
+        $newArgs = @('new', $p.Template, '-f', $TargetFramework, '-o', $p.Dir, '-n', $fullName)
         if ($p.Args) { $newArgs += $p.Args }
         Invoke-Step "Crear $($p.Dir)" $newArgs
+
+        if ($prefix) {
+            foreach ($csproj in (Get-ChildItem $p.Dir -Recurse -Filter "$prefix.*.csproj")) {
+                $target = $csproj.Name.Substring($prefix.Length + 1)
+                Write-Host "==> Renombrar $($csproj.Name) -> $target" -ForegroundColor Cyan
+                Rename-Item -LiteralPath $csproj.FullName -NewName $target
+            }
+        }
     }
 
     # --- Carpetas de solución ----------------------------------------------

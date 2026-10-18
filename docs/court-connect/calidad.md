@@ -21,6 +21,24 @@ El gate es el **Sonar way** por defecto y **solo mide el código nuevo**: lo que
 
 El objetivo es formativo, no punitivo. Si el gate falla, el análisis te dice exactamente qué línea y por qué: léelo como una revisión más.
 
+## Lo que el gate no mira: tus dependencias
+
+El gate mide **el código que escribes tú**. No mira los paquetes NuGet de los que depende tu aplicación, y ahí es donde aparece buena parte de los problemas de seguridad reales: casi nunca en el paquete que añadiste, sino en otro que ese arrastra sin que te enteres.
+
+Por eso es una comprobación aparte, y manual:
+
+```powershell
+dotnet list package --vulnerable --include-transitive
+dotnet nuget why <proyecto> <paquete>
+```
+
+Dos consecuencias prácticas:
+
+- **Un gate en verde no significa que no tengas vulnerabilidades.** Significa que el código nuevo cumple los umbrales de abajo. Son dos preguntas distintas.
+- **El aviso aparece en todos los proyectos que dependen del que trae el paquete,** pero se arregla en uno solo: aquel en el que entra. El resto se limpian solos.
+
+El procedimiento detallado está en [`Semana7/Ejercicio2`](../../Semana7/Ejercicio2/README.md), en el paso «Revisar lo que te has traído con los paquetes».
+
 ## Umbrales
 
 | Condición | Umbral |

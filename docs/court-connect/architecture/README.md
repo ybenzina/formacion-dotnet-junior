@@ -6,16 +6,29 @@ Propuesta para el reto. Es deliberadamente simple: el objetivo es entender cada 
 
 | Proyecto | Responsabilidad | Referencia a |
 |---|---|---|
-| `DeemSoft.CourtConnect.Domain` | Entidades y reglas de negocio. Sin dependencias externas | — |
-| `DeemSoft.CourtConnect.Application` | Casos de uso (servicios), DTOs e interfaces (repositorios, reloj, pasarela de pago) | Domain |
-| `DeemSoft.CourtConnect.Infrastructure` | EF Core, `DbContext`, migraciones, repositorios, adaptadores | Domain, Application |
-| `DeemSoft.CourtConnect.Api` | API REST con ASP.NET Core y OpenAPI | Application, Infrastructure |
-| `DeemSoft.CourtConnect.Ui.Components` | Componentes Razor reutilizables (Razor Class Library) | — |
-| `DeemSoft.CourtConnect.Ui.Web` | Blazor Web App (render interactivo en servidor) que aloja los componentes y llama a la API por HTTP | Ui.Components |
-| `DeemSoft.CourtConnect.UnitTests` | Tests unitarios con xUnit | Domain, Application |
-| `DeemSoft.CourtConnect.IntegrationTests` | Tests de la API con `WebApplicationFactory` y SQL Server en contenedor | Api |
+| `CourtConnect.Domain` | Entidades y reglas de negocio. Sin dependencias externas | — |
+| `CourtConnect.Application` | Casos de uso (servicios), DTOs e interfaces (repositorios, reloj, pasarela de pago) | Domain |
+| `CourtConnect.Infrastructure` | EF Core, `DbContext`, migraciones, repositorios, adaptadores | Domain, Application |
+| `CourtConnect.Api` | API REST con ASP.NET Core y OpenAPI | Application, Infrastructure |
+| `CourtConnect.Ui.Components` | Componentes Razor reutilizables (Razor Class Library) | — |
+| `CourtConnect.Ui.Web` | Blazor Web App (render interactivo en servidor) que aloja los componentes y llama a la API por HTTP | Ui.Components |
+| `CourtConnect.UnitTests` | Tests unitarios con xUnit | Domain, Application |
+| `CourtConnect.IntegrationTests` | Tests de la API con `WebApplicationFactory` y SQL Server en contenedor | Api |
 
 `Domain` no referencia a nadie, y la web **no** accede a la base de datos: solo habla con la API.
+
+## Nomenclatura
+
+Las **carpetas y los `.csproj`** van sin el prefijo de organización, y la solución es `CourtConnect.slnx`. Las rutas se acortan bastante, que en Windows importa: el límite de 260 caracteres se alcanza antes de lo que parece cuando se suman los intermedios de `obj\`.
+
+Los **namespaces y los ensamblados** sí lo llevan: `DeemSoft.CourtConnect.<Capa>`. No se repite en cada `.csproj`, se declara una vez en `Directory.Build.props` de la raíz, sobre el valor que el SDK usa por defecto:
+
+```xml
+<RootNamespace>DeemSoft.$(MSBuildProjectName)</RootNamespace>
+<AssemblyName>DeemSoft.$(MSBuildProjectName)</AssemblyName>
+```
+
+Conviene saber que el ensamblado **no** es solo el nombre del `.dll`: una Razor Class Library sirve sus ficheros estáticos bajo `_content/<ensamblado>/`, así que cambiarlo rompería esas rutas en ejecución sin fallar la compilación.
 
 ## Decisiones del reto
 
