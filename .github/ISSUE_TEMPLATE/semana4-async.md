@@ -9,7 +9,7 @@ labels: ['Semana4','async']
 Implementar `WebSimulator` con métodos async y tests.
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana4-ej1
+- [ ] Rama: `<git-user>/semana4-ej1`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests async con async Task

@@ -17,4 +17,4 @@ Estructura del paquete:
 Branch naming (importante):
 
 - Cada alumno debe crear ramas con el prefijo de su usuario de GitHub:
-  <githubusername>/semana4-ejX, por ejemplo: drissbego/semana4-ej1
+  `<git-user>/semana4-ejX`, por ejemplo: drissbego/semana4-ej1

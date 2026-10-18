@@ -9,6 +9,6 @@ labels: ['Semana4','optional','advanced']
 Implementar gestor de descargas paralelo con chunks y reintentos.
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana4-ej4
+- [ ] Rama: `<git-user>/semana4-ej4`
 - [ ] dotnet test OK (si aplica)
 - [ ] Documentar cómo simular fallos y reintentos
