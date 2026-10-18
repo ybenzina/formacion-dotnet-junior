@@ -9,7 +9,7 @@ labels: ['Semana','exercise']
 LINQ y delegados
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana6-ej2
+- [ ] Rama: `<git-user>/semana6-ej2`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests relevantes incluidos

@@ -9,7 +9,7 @@ labels: ['Semana','exercise']
 Thread vs Task
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana5-ej1
+- [ ] Rama: `<git-user>/semana5-ej1`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests relevantes incluidos

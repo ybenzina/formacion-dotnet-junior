@@ -9,7 +9,7 @@ labels: ['Semana','exercise']
 Colecciones básicas
 
 ## Checklist
-- [ ] Rama: <githubuser>/semana5-ej4
+- [ ] Rama: `<git-user>/semana5-ej4`
 - [ ] dotnet build OK
 - [ ] dotnet test OK (pegar salida)
 - [ ] Tests relevantes incluidos
