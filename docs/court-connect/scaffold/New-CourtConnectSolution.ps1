@@ -179,11 +179,28 @@ try {
     $prefix = $selected.NamespacePrefix
     if ($prefix) {
         $props = @'
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
 
+  <!-- El prefijo de organización va aquí y no en cada .csproj. -->
   <PropertyGroup>
     <RootNamespace>__PREFIX__.$(MSBuildProjectName)</RootNamespace>
     <AssemblyName>__PREFIX__.$(MSBuildProjectName)</AssemblyName>
+  </PropertyGroup>
+
+  <!-- Analizadores en el código de producción: avisan en local de buena parte
+       de lo que luego marcaría el quality gate. -->
+  <PropertyGroup Condition="!($(MSBuildProjectName.Contains('Tests')) or $(MSBuildProjectName.Contains('Test')) or $(MSBuildProjectDirectory.Contains('tests')) or $(MSBuildProjectDirectory.Contains('test')))">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>All</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+
+  <!-- Desactivados en los tests: su estilo es distinto y no aporta. -->
+  <PropertyGroup Condition="$(MSBuildProjectName.Contains('Tests')) or $(MSBuildProjectName.Contains('Test')) or $(MSBuildProjectDirectory.Contains('tests')) or $(MSBuildProjectDirectory.Contains('test'))">
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
 </Project>

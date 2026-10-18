@@ -63,6 +63,8 @@ Las carpetas y los `.csproj` no llevan el prefijo de organización; los namespac
 
 Es el valor por defecto del SDK con `DeemSoft.` delante, así que `CourtConnect.Domain.csproj` compila a `DeemSoft.CourtConnect.Domain.dll`. Se ahorran 9 caracteres por segmento de ruta, dos veces (carpeta y fichero) más los intermedios de `obj\`, que en Windows no es poco.
 
+Ese mismo fichero **activa los analizadores de .NET** (`AnalysisMode=All`) en el código de producción, y los desactiva en los proyectos de test. Es la misma configuración que usa este repositorio de formación, y está ahí por una razón práctica: avisan mientras compilas de buena parte de lo que luego marcaría el quality gate, en vez de descubrirlo con el PR ya abierto. Si en algún momento resultan demasiado ruidosos, el ajuste es bajar `AnalysisMode` a `Recommended`, no quitarlos.
+
 Para que esto funcione, el script **crea cada proyecto con el nombre completo y luego renombra el `.csproj`**. No es un rodeo caprichoso: las plantillas escriben el namespace dentro de los ficheros que generan, y la Razor Class Library además incrusta el nombre del ensamblado en la ruta de sus recursos estáticos:
 
 ```csharp
