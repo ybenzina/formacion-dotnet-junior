@@ -81,4 +81,4 @@ Cuando el PR esté abierto, pide a la IA que diseñe las mismas entidades y regl
 - [Tutorial de pruebas unitarias con xUnit](https://learn.microsoft.com/es-es/dotnet/core/testing/unit-testing-csharp-with-xunit)
 - [`dotnet sln`](https://learn.microsoft.com/es-es/dotnet/core/tools/dotnet-sln)
 - [Diagramas Mermaid en GitHub](https://docs.github.com/es/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)
-- `docs/Guia-xUnit-Intermedio.md` de este repo.
+- [`docs/Guia-xUnit-Intermedio.md`](../../docs/Guia-xUnit-Intermedio.md) de este repo.
