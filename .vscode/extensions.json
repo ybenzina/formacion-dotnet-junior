@@ -16,7 +16,7 @@
         "sonarsource.sonarlint-vscode",
         "editorconfig.editorconfig",
         "github.copilot-chat",
-        "ms-vscode.azure-repos",
-        "anthropic.claude-code"
+        "anthropic.claude-code",
+        "ms-vscode.vscode-node-azure-pack"
     ]
 }
