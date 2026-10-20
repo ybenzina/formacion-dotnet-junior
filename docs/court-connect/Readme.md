@@ -14,6 +14,7 @@ No es un producto real: es el dominio sobre el que Driss practica en el reto de 
 | [`snippets/`](snippets/snippets.md) | Fragmentos de apoyo de la versión anterior |
 | [`scaffold/`](scaffold/README.md) | Script que genera una solución de referencia. Driss crea la suya a mano y lo usa para comparar |
 | [`plantilla-repo/`](plantilla-repo/README.md) | Ficheros para copiar al repo nuevo y checklist de creación |
+| [`glosario.md`](glosario.md) | Glosario técnico base. Driss lo copia a su repo y lo amplía con sus palabras |
 | [`calidad.md`](calidad.md) | Quality gate de SonarQube Cloud: umbrales y cómo cumplirlos |
 | [`evaluacion.md`](evaluacion.md) | Criterios de evaluación del reto |
 | [`sdd-piloto.md`](sdd-piloto.md) | Plantilla de métricas del piloto de Spec-Driven Development |

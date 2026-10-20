@@ -6,6 +6,12 @@
 
 Exponer los casos de uso del dominio en una API REST, con validación, errores bien formados y documentación OpenAPI.
 
+## Antes de empezar (≈ 45 min)
+
+Conceptos nuevos de hoy (en el [glosario](../../docs/court-connect/glosario.md)): **API REST**, **endpoint**, **Minimal API**, **códigos de estado HTTP**, **ProblemDetails**, **OpenAPI**, **DTO**, **servicio de aplicación**, **repositorio**, **inyección de dependencias** y **constructor principal**.
+
+Lectura: [Tutorial: Creación de una API mínima con ASP.NET Core](https://learn.microsoft.com/es-es/aspnet/core/tutorials/min-web-api), versión .NET 10. Fíjate en `MapGroup`, `TypedResults` y en por qué usa DTOs. No hace falta que lo programes entero.
+
 ## Pasos
 
 Rama `feature/api`.
@@ -15,6 +21,8 @@ Rama `feature/api`.
 - Proyecto `src/CourtConnect.Application`: servicios de aplicación (por ejemplo, `RegistrationService`), DTOs de entrada y salida e interfaces de los repositorios.
 - Implementa los repositorios en Infrastructure.
 - La API **no** devuelve entidades del dominio: devuelve DTOs. ¿Por qué?
+- Escribe los **DTOs como records**: solo llevan datos, se comparan por valor y no cambian. Es el caso de uso típico de un record (compáralo con las entidades del ejercicio 1, que son clases).
+- Los servicios reciben sus dependencias por inyección. Aquí puedes usar **constructores principales** (`public class RegistrationService(ICampRepository camps)`): para inyectar dependencias son más cortos que el constructor tradicional. Ojo: sus parámetros se pueden reasignar; no lo hagas.
 
 ### 2. Endpoints (≈ 2 h)
 
@@ -32,7 +40,7 @@ Usa **Minimal APIs** con grupos de endpoints (`MapGroup`). Si prefieres controla
 | `POST /registrations/{id}/cancel` | Cancelar una inscripción | 204, 404, 409 |
 
 - Las reglas incumplidas (sin plazas, duplicada, fuera de edad, campus cerrado) devuelven **409** o **400** con **ProblemDetails**. Decide cuál en cada caso y anótalo.
-- Validación de la entrada (campos obligatorios, longitudes, fechas coherentes).
+- Validación de la entrada (campos obligatorios, longitudes, fechas coherentes) con **atributos** en los DTOs (`[Required]`, `[MaxLength]`, `[Range]`). En .NET 10 las Minimal APIs pueden validarlos automáticamente: averigua cómo se activa. La validación de la API (formato de la entrada) no sustituye a las reglas del dominio (R1 a R6).
 - Registra con `ILogger` las inscripciones creadas y rechazadas.
 
 ### 3. OpenAPI y pruebas manuales (≈ 1 h)
@@ -60,9 +68,11 @@ Usa **Minimal APIs** con grupos de endpoints (`MapGroup`). Si prefieres controla
 
 ## Preguntas para la demo
 
-- ¿Qué diferencia hay entre 400, 404 y 409 en tu API?
-- ¿Qué pasa por dentro desde que llega `POST /camps/{id}/registrations` hasta que se guarda en la base de datos?
-- ¿Por qué DTOs y no entidades?
+- Pon un ejemplo de tu API para cada código: 400, 404 y 409. ¿Por qué «campus lleno» es un 409 y no un 400?
+- Sigue el camino de `POST /camps/{id}/registrations`: ¿qué clase recibe la petición, cuál aplica las reglas, cuál guarda en la base de datos y cómo llega cada dependencia a su sitio?
+- Si la API devolviera la entidad `Player` tal cual, ¿qué datos podrían salir que no deberían? ¿Qué más se rompería si mañana cambias la entidad?
+- Los DTOs son records y las entidades, clases. Explica por qué en cada caso.
+- ¿Dónde se valida que el nombre no venga vacío y dónde que el campus no esté lleno? ¿Por qué en sitios distintos?
 
 ## Comparación con IA
 

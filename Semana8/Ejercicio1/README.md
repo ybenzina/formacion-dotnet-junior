@@ -6,6 +6,10 @@
 
 Interfaz web que consume la API: aprender el modelo de componentes de Blazor, la sintaxis Razor y qué significa el *render mode*.
 
+## Antes de empezar
+
+De la ruta de Microsoft Learn [Compilación de aplicaciones web con Blazor](https://learn.microsoft.com/es-es/training/paths/build-web-apps-with-blazor/), los módulos «Introducción al desarrollo web con Blazor», «Compilación de su primera aplicación web con Blazor» y «Creación de componentes reutilizables con Blazor». Conceptos nuevos (añádelos al glosario): **componente Razor**, **render mode**, **Razor Class Library** y **cliente HTTP tipado**.
+
 ## Entregable
 
 - `src/CourtConnect.Ui.Components` (Razor Class Library) con los componentes: lista de campus, ficha de campus y formulario de inscripción.

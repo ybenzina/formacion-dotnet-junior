@@ -6,13 +6,21 @@
 
 Crear el repositorio `court-connect` como en un proyecto real, documentar el dominio y programar sus reglas de negocio con tests, sin base de datos ni API todavía.
 
-## Parte A — Crear el repositorio (≈ 45 min)
+## Antes de empezar (≈ 20 min)
+
+Conceptos nuevos de hoy. Búscalos en el [glosario](../../docs/court-connect/glosario.md) y, cuando los uses, añádelos a tu glosario con tus palabras:
+
+- **Dominio**, **entidad**, **objeto de valor** y **regla de negocio**: lo que vas a programar hoy.
+- **Capa** y **dependencia entre proyectos**: por qué el proyecto `Domain` no referencia a ningún otro proyecto ni paquete de base de datos o web.
+- **Clase** frente a **record**: lee [Tipos de registro de C#](https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/types/records), sobre todo «Cuándo usar registros». Fíjate en lo que dice de Entity Framework Core.
+
+## Parte A — Crear el repositorio (≈ 40 min)
 
 Sigue la checklist de [`docs/court-connect/plantilla-repo/README.md`](../../docs/court-connect/plantilla-repo/README.md): repo público en DeemSoft, ajustes de PR, ruleset de `main`, etiquetas, milestones y primer PR (`chore/estructura-inicial`) con `AGENTS.md`, `CLAUDE.md`, plantillas y `.editorconfig`.
 
 Cuando Yamel fusione ese PR, se crearán las issues del resto del reto.
 
-## Parte B — Documentar el dominio (≈ 1 h)
+## Parte B — Documentar el dominio (≈ 50 min)
 
 Rama `docs/dominio`. Lee [`docs/court-connect/enunciado-dominio.md`](../../docs/court-connect/enunciado-dominio.md) y escribe `docs/domain.md` en `court-connect` con:
 
@@ -24,17 +32,21 @@ Rama `docs/dominio`. Lee [`docs/court-connect/enunciado-dominio.md`](../../docs/
 
 Puedes incluir este PR en el de la parte C si te resulta más cómodo, pero en commits separados.
 
-## Parte C — Solución y reglas de dominio (≈ 2 h 15 min)
+## Parte C — Solución y reglas de dominio (≈ 2 h 10 min)
 
 Rama `feature/dominio`.
 
 1. Crea la solución **a mano** con la CLI:
-   - `CourtConnect.slnx` en la raíz.
-   - `src/CourtConnect.Domain` (biblioteca de clases).
-   - `tests/CourtConnect.UnitTests` (xUnit), con referencia a Domain.
+   - `DeemSoft.CourtConnect.slnx` en la raíz.
+   - `src/DeemSoft.CourtConnect.Domain` (biblioteca de clases). El nombre sigue la convención `<Organización>.<Producto>.<Capa>`, y el *namespace* también.
+   - `tests/DeemSoft.CourtConnect.UnitTests` (xUnit), con una referencia al proyecto Domain.
    - Con el SDK 10, `dotnet new sln` genera `.slnx`. Mira qué contiene.
    - Un **`global.json`** en la raíz que fije el SDK 10 (`dotnet new globaljson`). Elige una política de `rollForward` y explica en el PR qué significa. Así tú, Yamel y la CI usáis el mismo SDK.
-2. Implementa en Domain las entidades `Camp`, `Player` y `Registration` y los estados que necesites.
+2. En el proyecto Domain, crea las entidades `Camp`, `Player` y `Registration`, y un `enum` para cada estado (`CampStatus`, `RegistrationStatus`):
+   - Escríbelas como **clases**, no como records: tienen identidad y cambian de estado. Si dudas, vuelve a «Antes de empezar».
+   - Usa **constructores tradicionales** que validen los datos obligatorios antes de asignarlos. Los constructores principales los verás en el ejercicio 3, en los servicios.
+   - **Sin atributos de validación** (`[Required]`, `[MaxLength]`…) en el dominio: aquí las reglas se comprueban en código, en constructores y métodos. Los atributos llegan en el ejercicio 3, en los DTOs.
+   - Pista: si una propiedad tiene `set` público, cualquiera puede saltarse tus reglas. ¿Cómo lo evitas?
 3. Implementa las reglas **R1 a R6** dentro del dominio. Pistas de diseño (decide tú):
    - ¿Quién crea una inscripción? ¿Un constructor público de `Registration` o un método del campus?
    - ¿Cómo comunicas que una regla no se cumple: excepción de dominio o un objeto resultado? Justifícalo en `domain.md`.
@@ -59,18 +71,21 @@ Rama `feature/dominio`.
 - [ ] R1 a R6 implementadas y todos los casos del paso 4 cubiertos.
 - [ ] Cobertura de Domain ≥ 80 % (compruébala en local con `dotnet test --collect:"XPlat Code Coverage"`).
 - [ ] **Calidad:** este PR tiene que poder superar el gate de SonarQube Cloud: fiabilidad, seguridad y mantenibilidad A en el código nuevo, cobertura del código nuevo ≥ 80 %, duplicación ≤ 3 % y todos los security hotspots revisados. Solo cuenta lo que añades o cambias. Detalles y trucos: [`docs/court-connect/calidad.md`](../../docs/court-connect/calidad.md).
+- [ ] `docs/learning/glosario.md` creado con el glosario base y los términos de hoy reescritos con tus palabras.
 - [ ] PR con «Uso de IA» y «Comparación con IA».
 
 ## Extra
 
+- `AgeRange` (edad mínima y máxima) como **record** y objeto de valor, usado por `Camp`. Compara cómo queda frente a dos propiedades sueltas.
 - `Tournament` y `Team` con su regla de número máximo de equipos.
 - Un informe de cobertura en HTML con ReportGenerator.
 
 ## Preguntas para la demo
 
-- ¿Por qué Domain no puede depender de EF Core?
-- ¿Dónde se comprueba R1 y qué pasaría si se comprobara en la API?
-- ¿Cómo has probado una regla que depende de la fecha actual?
+- El proyecto `Domain` no tiene paquetes NuGet de EF Core ni referencias a otros proyectos de la solución. ¿Qué problema habría si los tuviera? Piensa en qué pasaría si mañana cambiamos de base de datos, o si quieres probar las reglas sin base de datos.
+- La regla R1 (no superar las plazas) la compruebas en una entidad. ¿En cuál y por qué? Si la comprobaras solo en la API, ¿qué otro camino podría saltársela?
+- La regla R3 depende de la fecha de hoy. ¿Cómo haces que el test dé siempre el mismo resultado, lo ejecutes el día que lo ejecutes?
+- `Camp` es una clase. ¿Qué pasaría si fuera un record y tuvieras dos campus con los mismos datos? ¿En qué parte del reto sí usarías records?
 
 ## Comparación con IA
 
@@ -78,6 +93,8 @@ Cuando el PR esté abierto, pide a la IA que diseñe las mismas entidades y regl
 
 ## Recursos
 
+- [Glosario técnico del reto](../../docs/court-connect/glosario.md)
+- [Tipos de registro de C#](https://learn.microsoft.com/es-es/dotnet/csharp/fundamentals/types/records)
 - [Tutorial de pruebas unitarias con xUnit](https://learn.microsoft.com/es-es/dotnet/core/testing/unit-testing-csharp-with-xunit)
 - [`dotnet sln`](https://learn.microsoft.com/es-es/dotnet/core/tools/dotnet-sln)
 - [Diagramas Mermaid en GitHub](https://docs.github.com/es/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams)

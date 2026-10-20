@@ -6,6 +6,12 @@
 
 Añadir análisis de calidad y cobertura a la CI, dejar el código limpio y presentar lo hecho en la semana.
 
+## Antes de empezar (≈ 30 min)
+
+Conceptos nuevos de hoy (en el [glosario](../../docs/court-connect/glosario.md)): **quality gate**, **cobertura**, **duplicación**, **code smell** y **security hotspot**.
+
+Lectura: [`docs/court-connect/calidad.md`](../../docs/court-connect/calidad.md) entero, sobre todo «Son dos checks, no uno».
+
 ## Pasos
 
 ### 1. SonarCloud en la CI (≈ 1 h 30 min) — rama `chore/sonarcloud`
@@ -44,7 +50,7 @@ Añadir análisis de calidad y cobertura a la CI, dejar el código limpio y pres
 
 ## Preguntas para la demo
 
-- ¿Qué mide el quality gate y qué significa la cobertura que muestra?
+- El quality gate dice «cobertura del código nuevo ≥ 80 %». ¿Qué es «código nuevo» en un PR y qué significa exactamente ese 80 %? ¿Un 100 % de cobertura garantiza que no hay errores?
 - Si en un PR falla el job de la CI, ¿qué buscas? ¿Y si falla `SonarCloud Code Analysis`?
 - Elige un issue de Sonar que hayas corregido: ¿qué riesgo tenía?
 - Con el quality gate en verde, ¿puedes afirmar que la aplicación no tiene vulnerabilidades conocidas? ¿Por qué?

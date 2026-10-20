@@ -6,6 +6,10 @@
 
 Empaquetar la API y la web en imágenes y levantar la aplicación completa con un solo comando.
 
+## Antes de empezar
+
+Repaso de [Docker: primeros pasos](https://docs.docker.com/get-started/) (Dockerfile y Docker Compose). Conceptos nuevos (añádelos al glosario): **Dockerfile**, **build multi-stage**, **red de Compose** y **variable de entorno**.
+
 ## Entregable
 
 - `Dockerfile` *multi-stage* para la API y para la web.

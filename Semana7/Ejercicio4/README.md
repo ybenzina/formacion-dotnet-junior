@@ -6,6 +6,12 @@
 
 Probar la API de extremo a extremo contra un SQL Server real en contenedor, y ejecutar build y tests automáticamente en cada PR.
 
+## Antes de empezar (≈ 40 min)
+
+Conceptos nuevos de hoy (en el [glosario](../../docs/court-connect/glosario.md)): **test de integración**, **fixture**, **`WebApplicationFactory`**, **Testcontainers**, **integración continua**, **workflow**, **job**, **runner**, **status check** y **ruleset**.
+
+Lectura: módulo de Microsoft Learn [Introducción a GitHub Actions](https://learn.microsoft.com/es-es/training/modules/introduction-to-github-actions/). Basta con entender qué es un workflow, un job, un step y un runner.
+
 ## Pasos
 
 ### 1. Tests de integración (≈ 2 h) — rama `test/integracion-api`
@@ -52,9 +58,9 @@ Probar la API de extremo a extremo contra un SQL Server real en contenedor, y ej
 
 ## Preguntas para la demo
 
-- ¿Qué diferencia hay entre tus tests unitarios y los de integración? ¿Qué detecta cada uno que el otro no?
-- ¿Qué pasa, paso a paso, cuando abres un PR?
-- ¿Por qué el runner es Linux?
+- Elige un error que detectaría un test de integración y no uno unitario (por ejemplo, un índice mal configurado en la base de datos). ¿Y al revés?
+- Cuando abres un PR en `court-connect`, ¿qué se ejecuta, en qué máquina, en qué orden y qué tiene que pasar para que puedas fusionar?
+- Tu workflow usa `ubuntu-latest`. ¿Qué pasaría con los tests de Testcontainers en un runner Windows y por qué?
 
 ## Comparación con IA
 

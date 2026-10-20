@@ -39,6 +39,7 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 - [ ] Copiar los ficheros de esta plantilla y el `.editorconfig`.
 - [ ] Completar el `README.md`: qué es, cómo se ejecuta (de momento, «pendiente») y enlace a `docs/domain.md`.
 - [ ] Crear `docs/learning/` con un `retro.md` vacío (lo irás completando).
+- [ ] Copiar `docs/court-connect/glosario.md` de `formacion-dotnet-junior` a `docs/learning/glosario.md` (tu glosario personal).
 - [ ] PR hacia `main` con la plantilla. Yamel revisa y fusiona.
 
 ## Estructura objetivo del repo al final del reto

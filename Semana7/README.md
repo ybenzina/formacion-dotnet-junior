@@ -36,6 +36,7 @@ Tocar a mano las piezas básicas de una aplicación .NET actual para poder **ent
 2. **Flujo de trabajo:** el de `ambit-escola` (`docs/methodology/git.md`): rama por tarea desde `main`, PR con «Uso de IA», revisión de Yamel y *merge commit*.
 3. **Datos ficticios** siempre. Ningún dato real ni de clientes.
 4. **Apunta las horas reales** en cada issue. Al final compararemos con lo estimado.
+5. **Antes de empezar y glosario.** Cada ejercicio abre con los conceptos nuevos del día y una lectura corta. Mantén tu `docs/learning/glosario.md` (partiendo del [glosario base](../docs/court-connect/glosario.md)): cada término nuevo, con tus palabras y un ejemplo de tu código. Usa los términos profesionales al escribir PR y al explicar en la demo.
 
 ## Calidad
 

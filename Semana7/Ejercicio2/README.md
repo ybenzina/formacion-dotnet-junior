@@ -6,7 +6,16 @@
 
 Persistir el dominio en SQL Server con EF Core, usando una base de datos que se ejecuta en un contenedor Docker en tu máquina.
 
-## Antes de empezar
+## Antes de empezar (≈ 45 min)
+
+Conceptos nuevos de hoy (en el [glosario](../../docs/court-connect/glosario.md)): **ORM**, **`DbContext`** y **`DbSet`**, **API fluida**, **migración**, **cadena de conexión**, **secretos de usuario**, **imagen**, **contenedor**, **volumen** y **puerto publicado**.
+
+Para hacerte una idea antes de tocar tu código:
+
+- Módulo de Microsoft Learn [Uso de una base de datos con una API mínima, Entity Framework Core y ASP.NET Core](https://learn.microsoft.com/es-es/training/modules/build-web-api-minimal-database/). Céntrate en la parte de EF Core: cómo se define el `DbContext` y cómo se crea y aplica una migración. La API la harás mañana.
+- Primeros pasos de [Docker](https://docs.docker.com/get-started/): solo hasta entender imagen, contenedor y volumen.
+
+Instalación:
 
 - Docker Desktop instalado y funcionando (`docker version`).
 - Herramienta de EF Core: `dotnet tool install --global dotnet-ef`.
@@ -115,9 +124,10 @@ Agrupa los casos parecidos con `[Theory]`.
 
 ## Preguntas para la demo
 
-- ¿Qué es una migración y qué pasa si dos personas crean migraciones a la vez?
-- ¿Dónde está guardada la contraseña de la base de datos y por qué ahí?
-- ¿Qué cambiaría si mañana usáramos PostgreSQL?
+- Abre tu migración inicial. ¿Qué hace el método `Up` y qué hace `Down`? Si tú y otra persona creáis una migración cada uno en ramas distintas, ¿qué problema puede aparecer al fusionar?
+- La cadena de conexión tiene la contraseña de `sa`. ¿Dónde la has guardado y por qué no en `appsettings.json`, que está en el repo?
+- Si mañana cambiáramos SQL Server por PostgreSQL, ¿qué proyectos de la solución tendrías que tocar y cuáles no? ¿Por qué?
+- Para tu contenedor de SQL Server: ¿qué pierdes si lo borras sin volumen, y qué conservas con él?
 - Tu aplicación incluye paquetes que tú no has añadido. ¿Cómo averiguas cuáles son, quién los trae y si alguno tiene un problema conocido?
 
 ## Comparación con IA

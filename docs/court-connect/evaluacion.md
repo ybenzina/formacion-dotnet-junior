@@ -28,6 +28,7 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 | Blazor | — | | |
 | Docker y Compose | — | | |
 | SDD con Spec Kit | — | | |
+| Vocabulario profesional (usa los términos del glosario al explicar) | | | |
 
 ## 2. Comprobaciones objetivas
 

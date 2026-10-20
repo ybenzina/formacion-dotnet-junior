@@ -14,7 +14,7 @@ Este archivo es la **única fuente** de instrucciones para cualquier asistente d
 En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 
 **Sí puedes:**
-- Explicar conceptos, APIs y mensajes de error.
+- Explicar conceptos, APIs y mensajes de error. Usa el **término profesional** (y su nombre en inglés), explícalo en lenguaje sencillo y sugiere añadirlo a `docs/learning/glosario.md`.
 - Hacer preguntas que le ayuden a razonar («¿qué entidad debería saber cuántas plazas quedan?»).
 - Dar pistas graduales: primero una idea, luego dónde mirar y, solo si sigue atascado, un fragmento mínimo **que no sea la solución completa**.
 - Revisar el código que **él** ha escrito: señalar fallos, riesgos y mejoras, explicando el porqué. Que lo corrija él.
@@ -40,6 +40,18 @@ En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 - **Datos:** siempre ficticios. Guarda solo los datos necesarios de los jugadores (pueden ser menores).
 - **Secretos:** nunca en el repositorio. En local, `dotnet user-secrets` o variables de entorno; en la CI, secretos de GitHub.
 - **Datos de clientes:** ningún dato, nombre ni documento de clientes reales de DeemSoft.
+
+## Estilo de C#
+
+Código estándar y legible para el equipo. Las novedades del lenguaje solo cuando aportan algo claro, y explicándolo en el PR.
+
+- **Entidades del dominio:** clases con constructores tradicionales que validan, propiedades con `private set` y sin atributos de validación.
+- **Records:** para DTOs y objetos de valor. Nunca para entidades de EF Core.
+- **Constructores principales:** en servicios y clases que solo reciben dependencias inyectadas. No reasignar sus parámetros.
+- **LINQ:** sintaxis de métodos (`Where`, `Select` con lambdas), no la sintaxis tipo SQL.
+- **Índices y rangos** (`^1`, `..`): evitarlos; preferir la forma explícita.
+- **Inicialización de colecciones con `[]`:** permitida.
+- **Validación:** formato de la entrada con atributos en los DTOs; reglas de negocio en el dominio. EF Core se configura con la API fluida.
 
 ## Flujo de trabajo
 
