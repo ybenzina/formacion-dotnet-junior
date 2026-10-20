@@ -1,6 +1,6 @@
 # Plantilla y checklist del repositorio `court-connect`
 
-Ficheros para copiar al repo nuevo y pasos para crearlo. Es la primera tarea del reto (Semana 7, Ejercicio 1, parte A).
+Ficheros para copiar al repo nuevo y pasos para crearlo. Es la primera tarea del reto (Parte I, Ejercicio 1, parte A).
 
 ## Ficheros que se copian tal cual
 
@@ -25,12 +25,12 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 - [ ] *Settings → Rules → Rulesets*: crear un ruleset para `main` con:
   - [ ] **Require a pull request before merging**, con 1 aprobación.
   - [ ] **Block force pushes**.
-  - [ ] (El jueves, cuando la CI funcione) **Require status checks to pass** con el job de la CI.
-  - [ ] (El viernes, con SonarQube Cloud) añadir también el check **`SonarCloud Code Analysis`**, que es el que dicta el quality gate. Quedan dos checks obligatorios. Ver `docs/court-connect/calidad.md`.
+  - [ ] (En el ejercicio 4, cuando la CI funcione) **Require status checks to pass** con el job de la CI.
+  - [ ] (En el ejercicio 5, con SonarQube Cloud) añadir también el check **`SonarCloud Code Analysis`**, que es el que dicta el quality gate. Quedan dos checks obligatorios. Ver `docs/court-connect/calidad.md`.
   - Pregunta para tu README: ¿por qué en `ambit-escola` esto no se puede activar y aquí sí?
 - [ ] Añadir a Yamel como revisor (si no tiene acceso por la organización).
-- [ ] Crear las etiquetas `reto`, `semana-7`, `semana-8`, `sdd` y `extra`.
-- [ ] Crear los milestones **Reto · Semana 7** (vence el 23/10) y **Reto · Semana 8** (vence el 30/10).
+- [ ] Crear las etiquetas `reto`, `parte-1`, `parte-2`, `parte-3`, `sdd` y `extra`.
+- [ ] Crear los milestones **Reto · Parte I** (vence el 30/10), **Reto · Parte II** (vence el 11/11) y **Reto · Parte III** (vence el 20/11).
 
 ### En local
 
@@ -38,7 +38,7 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 - [ ] Rama `chore/estructura-inicial` desde `main`.
 - [ ] Copiar los ficheros de esta plantilla y el `.editorconfig`.
 - [ ] Completar el `README.md`: qué es, cómo se ejecuta (de momento, «pendiente») y enlace a `docs/domain.md`.
-- [ ] Crear `docs/learning/` con un `retro.md` vacío (lo irás completando).
+- [ ] Crear `docs/learning/` con un `retro.md` vacío (lo irás completando) y `docs/discovery.md` para las conclusiones de hablar con tu grupo.
 - [ ] Copiar `docs/court-connect/glosario.md` de `formacion-dotnet-junior` a `docs/learning/glosario.md` (tu glosario personal).
 - [ ] PR hacia `main` con la plantilla. Yamel revisa y fusiona.
 
@@ -50,8 +50,8 @@ court-connect/
 ├── CourtConnect.slnx  Directory.Build.props  global.json
 ├── docker-compose.yml
 ├── .github/  (workflows/, ISSUE_TEMPLATE/, copilot-instructions.md, pull_request_template.md)
-├── docs/     (domain.md, learning/, sdd/)
-├── specs/    (especificaciones de Spec Kit, semana 8)
+├── docs/     (domain.md, discovery.md, learning/, sdd/)
+├── specs/    (especificaciones de Spec Kit, Parte III)
 ├── src/
 │   ├── CourtConnect.Domain
 │   ├── CourtConnect.Application

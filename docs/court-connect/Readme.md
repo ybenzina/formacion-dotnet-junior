@@ -1,8 +1,8 @@
 # CourtConnect — material del reto (fase 2)
 
-**CourtConnect** es una aplicación para gestionar **campus y torneos de baloncesto**: actividades con plazas limitadas, jugadores, inscripciones y pagos simulados.
+**CourtConnect** es una aplicación para quedar a jugar a **baloncesto callejero**: canchas, partidos con plazas limitadas, jugadores que se apuntan, cuentas y roles, y torneos por equipos con pago simulado.
 
-No es un producto real: es el dominio sobre el que Driss practica en el reto de las semanas 7 y 8. El código se desarrolla en el repositorio **`DeemSoft/court-connect`**. Aquí está solo el material de partida.
+No es un producto real: es el dominio sobre el que Driss practica en el reto de formación, en tres partes (21 de octubre a 20 de noviembre de 2026). El código se desarrolla en el repositorio **`DeemSoft/court-connect`**. Aquí está solo el material de partida.
 
 ## Qué hay aquí
 
@@ -10,7 +10,7 @@ No es un producto real: es el dominio sobre el que Driss practica en el reto de 
 |---|---|
 | [`enunciado-dominio.md`](enunciado-dominio.md) | Requisitos del dominio. Punto de partida para redactar `docs/domain.md` en el repo del reto |
 | [`architecture/`](architecture/README.md) | Arquitectura propuesta para el reto |
-| [`data-model/`](data-model/README.md) | Modelo de datos de la versión anterior (quedadas y RSVP) e `init.sql`. Solo como referencia |
+| [`data-model/`](data-model/README.md) | Modelo de datos de la primera versión (quedadas y RSVP), muy parecida al dominio actual, e `init.sql`. Solo como referencia: el esquema se crea con migraciones |
 | [`snippets/`](snippets/snippets.md) | Fragmentos de apoyo de la versión anterior |
 | [`scaffold/`](scaffold/README.md) | Script que genera una solución de referencia. Driss crea la suya a mano y lo usa para comparar |
 | [`plantilla-repo/`](plantilla-repo/README.md) | Ficheros para copiar al repo nuevo y checklist de creación |
@@ -23,6 +23,6 @@ No es un producto real: es el dominio sobre el que Driss practica en el reto de 
 ## Reglas del reto
 
 - **Primero lo intentas tú, después comparas con la IA.** Cada enunciado termina con una sección «Comparación con IA», y cada PR tiene una sección con ese nombre.
-- **La excepción es la funcionalidad SDD** (semana 8): ahí la IA genera el código y tu trabajo es especificar y revisar.
+- **La excepción son las funcionalidades SDD** (Parte III): ahí la IA genera el código y tu trabajo es especificar y revisar.
 - **Datos siempre ficticios.** Ningún dato real ni de clientes.
 - **Lo que construyas no tiene que ser bonito:** tiene que funcionar y tienes que saber explicar cada pieza.

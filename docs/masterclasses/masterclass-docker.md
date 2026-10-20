@@ -1,8 +1,8 @@
 # Masterclass Docker / Contenedores
 
-Contenido:
-- Dockerfile básico, multi-stage build.
-- docker-compose para API + SQL + Redis.
-- Opciones de deploy: ACI / Azure Container Apps.
+Integrada en la [masterclass de contenedores, Aspire y Azure](masterclass-cloud.md) (domingo 8 de noviembre de 2026). Lo básico de Docker (Dockerfile *multi-stage* y Docker Compose) se practica en el ejercicio 4 de la Parte II.
 
-Tarea: contenerizar API y levantar con docker-compose.
+Contenido de referencia:
+- Dockerfile básico y *multi-stage*.
+- Docker Compose para API, web y SQL Server.
+- Opciones de despliegue: Azure Container Apps.

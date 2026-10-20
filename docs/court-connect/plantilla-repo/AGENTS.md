@@ -4,10 +4,10 @@ Este archivo es la **única fuente** de instrucciones para cualquier asistente d
 
 ## Qué es este repositorio
 
-- **CourtConnect** es una aplicación de práctica para gestionar campus y torneos de baloncesto: plazas, jugadores, inscripciones y pagos simulados.
-- Es el **reto de formación** de Driss (19 al 30 de octubre de 2026). El objetivo no es un producto acabado, sino que **Driss entienda cada pieza** y sepa supervisar el código que genere una IA.
+- **CourtConnect** es una aplicación de práctica para quedar a jugar a baloncesto callejero: canchas, partidos con plazas, jugadores que se apuntan y, más adelante, torneos por equipos con pago simulado.
+- Es el **reto de formación** de Driss (21 de octubre al 20 de noviembre de 2026, en tres partes). El objetivo no es un producto acabado, sino que **Driss entienda cada pieza** y sepa supervisar el código que genere una IA.
 - **Driss** es el desarrollador en formación. **Yamel** es su mentor y revisa y fusiona los Pull Requests.
-- Plan y enunciados: repositorio `formacion-dotnet-junior`, carpetas `Semana7/` y `Semana8/`, y las issues de este repo.
+- Plan y enunciados: repositorio `formacion-dotnet-junior`, carpetas `Parte1/`, `Parte2/` y `Parte3/`, y las issues de este repo.
 
 ## Modo tutor (regla principal)
 
@@ -27,17 +27,17 @@ En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 
 **Comparación con IA:** cuando Driss haya terminado su versión **y abierto el PR**, si te pide expresamente comparar, puedes mostrar cómo lo harías tú y comentar las diferencias. Él las anota en la sección «Comparación con IA» del PR.
 
-**Excepción, la funcionalidad SDD** (semana 8, pago simulado con caducidad): se desarrolla con GitHub Spec Kit en ramas `feature/sdd-*` y en `specs/`. Ahí sí generas código siguiendo la especificación aprobada. Su trabajo es especificar, revisar y corregir.
+**Excepción, las funcionalidades SDD** (Parte III: torneos con pago simulado y caducidad, y una segunda funcionalidad): se desarrolla con GitHub Spec Kit en ramas `feature/sdd-*` y en `specs/`. Ahí sí generas código siguiendo la especificación aprobada. Su trabajo es especificar, revisar y corregir.
 
 ## Convenciones
 
 - **.NET 10.** Solución `CourtConnect.slnx`, código en `src/` y tests en `tests/`.
 - **Nomenclatura:** carpetas y `.csproj` como `CourtConnect.<Capa>` (`Domain`, `Application`, `Infrastructure`, `Api`, `Ui.Components`, `Ui.Web`), sin prefijo de organización, para no alargar las rutas. Los namespaces y los ensamblados sí son `DeemSoft.CourtConnect.<Capa>`: lo añade `Directory.Build.props` de la raíz, no hay que repetirlo en cada `.csproj`.
 - **Idioma:** código en inglés (glosario en `docs/domain.md`); documentación, issues y PR en español.
-- **Arquitectura:** `Domain` sin dependencias; la web solo habla con la API. Sin MediatR. El reloj se inyecta con `TimeProvider`.
+- **Arquitectura:** `Domain` sin dependencias; la web solo habla con la API. Sin MediatR. El reloj se inyecta con `TimeProvider`. Desde la Parte III, el código nuevo se organiza en *slices* verticales (una carpeta por caso de uso).
 - **Tests:** xUnit. Toda regla de negocio tiene al menos un test. Casos que solo cambian en los datos, con `[Theory]` e `[InlineData]`.
 - **Quality gate bloqueante (SonarQube Cloud, Sonar way, solo código nuevo):** fiabilidad, seguridad y mantenibilidad A; cobertura ≥ 80 %; duplicación ≤ 3 %; security hotspots revisados al 100 %. Solo se excluye del análisis el código generado (`**/Migrations/**`). Son dos checks obligatorios: el job de la CI (compila y pasa tests) y `SonarCloud Code Analysis` (veredicto del gate); el primero en verde no implica que el gate se supere. Al revisar o al generar código (SDD), tenlo en cuenta y avisa si algo lo pondría en riesgo.
-- **Datos:** siempre ficticios. Guarda solo los datos necesarios de los jugadores (pueden ser menores).
+- **Datos:** siempre ficticios. Guarda solo los datos necesarios de los jugadores (la plataforma admite jugadores desde 16 años).
 - **Secretos:** nunca en el repositorio. En local, `dotnet user-secrets` o variables de entorno; en la CI, secretos de GitHub.
 - **Datos de clientes:** ningún dato, nombre ni documento de clientes reales de DeemSoft.
 
