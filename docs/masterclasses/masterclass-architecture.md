@@ -1,6 +1,6 @@
 # Masterclass Arquitectura
 
-**Domingo 25 de octubre de 2026**, antes del ejercicio 3 de la Parte I.
+**El domingo siguiente al Día 3 del reto**, antes del ejercicio 3 de la Parte I.
 
 ## Contenido
 

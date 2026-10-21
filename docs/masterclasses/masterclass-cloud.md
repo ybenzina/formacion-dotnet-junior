@@ -1,6 +1,6 @@
 # Masterclass Contenedores, Aspire y Azure
 
-**Domingo 8 de noviembre de 2026**, antes de la Parte III. Sustituye a las antiguas masterclasses de Docker y de Cloud.
+**El domingo siguiente al Día 13 del reto**, antes de la Parte III. Sustituye a las antiguas masterclasses de Docker y de Cloud.
 
 ## Contenido
 

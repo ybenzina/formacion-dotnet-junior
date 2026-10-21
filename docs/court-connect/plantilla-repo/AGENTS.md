@@ -5,9 +5,9 @@ Este archivo es la **única fuente** de instrucciones para cualquier asistente d
 ## Qué es este repositorio
 
 - **CourtConnect** es una aplicación de práctica para quedar a jugar a baloncesto callejero: canchas, partidos con plazas, jugadores que se apuntan y, más adelante, torneos por equipos con pago simulado.
-- Es el **reto de formación** de Driss (21 de octubre al 20 de noviembre de 2026, en tres partes). El objetivo no es un producto acabado, sino que **Driss entienda cada pieza** y sepa supervisar el código que genere una IA.
+- Es el **reto de formación** de Driss (23 días de trabajo en tres partes, de unas 4 h). El objetivo no es un producto acabado, sino que **Driss entienda cada pieza** y sepa supervisar el código que genere una IA.
 - **Driss** es el desarrollador en formación. **Yamel** es su mentor y revisa y fusiona los Pull Requests.
-- Plan y enunciados: repositorio `formacion-dotnet-junior`, carpetas `Parte1/`, `Parte2/` y `Parte3/`, y las issues de este repo.
+- Plan y enunciados: repositorio `formacion-dotnet-junior`, carpetas `reto/Parte1/`, `reto/Parte2/` y `reto/Parte3/`, y las issues de este repo.
 
 ## Modo tutor (regla principal)
 

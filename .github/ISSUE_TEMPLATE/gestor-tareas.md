@@ -8,7 +8,7 @@ labels: ['Semana3','ToDo']
 **Objetivo**: Implementar gestor de tareas y tests.
 
 Checklist:
-- [ ] Código en `src/` o `Semana3/Ejercicio2`
+- [ ] Código en `src/` o `curso/Semana3/Ejercicio2`
 - [ ] Tests en `tests/`
 - [ ] `dotnet test` pasa
 - [ ] Revisar PROBLEMS en Visual Studio (no errors)

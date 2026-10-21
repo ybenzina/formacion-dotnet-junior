@@ -12,4 +12,4 @@ labels: ['Semana1', 'Comparativa']
 - [ ] Condicional if/else
 - [ ] Definición de clase
 
-**Entregables**: Código .cs en `Semana1/Ejercicio1/`. 
+**Entregables**: Código .cs en `curso/Semana1/Ejercicio1/`. 

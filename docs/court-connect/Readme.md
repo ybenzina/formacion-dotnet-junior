@@ -1,8 +1,8 @@
-# CourtConnect — material del reto (fase 2)
+# CourtConnect — material del reto
 
 **CourtConnect** es una aplicación para quedar a jugar a **baloncesto callejero**: canchas, partidos con plazas limitadas, jugadores que se apuntan, cuentas y roles, y torneos por equipos con pago simulado.
 
-No es un producto real: es el dominio sobre el que Driss practica en el reto de formación, en tres partes (21 de octubre a 20 de noviembre de 2026). El código se desarrolla en el repositorio **`DeemSoft/court-connect`**. Aquí está solo el material de partida.
+No es un producto real: es el dominio sobre el que Driss practica en el reto de formación, en tres partes y 23 días de trabajo (ver el [calendario](calendario.md)). El código se desarrolla en el repositorio **`DeemSoft/court-connect`**. Aquí está solo el material de partida.
 
 ## Qué hay aquí
 

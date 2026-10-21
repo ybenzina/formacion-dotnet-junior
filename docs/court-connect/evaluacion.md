@@ -15,7 +15,7 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 
 **Objetivo del reto: nivel 3 o más en todas.**
 
-| Tecnología | Demo 1 (30/10) | Demo 2 (11/11) | Demo final (20/11) | Comentarios |
+| Tecnología | Demo 1 (Día 8) | Demo 2 (Día 16) | Demo final (Día 23) | Comentarios |
 |---|---|---|---|---|
 | Git, PR y revisión | | | | |
 | Modelo de dominio y xUnit | | | | |
@@ -50,7 +50,7 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 | MVP desplegado en Azure, sin costes inesperados | — | — | ☐ |
 | PR trampa: al menos 4 de 7 defectos encontrados y explicados | — | — | ☐ |
 
-## 3. PR trampa (viernes 20 de noviembre)
+## 3. PR trampa (Día 23)
 
 Yamel prepara, con ayuda de la IA, un PR sobre `court-connect` con unos **7 defectos sembrados**, de tipos como estos (alineados con los riesgos del proyecto real):
 
@@ -66,7 +66,7 @@ Driss lo revisa en GitHub como revisor, sin saber cuántos defectos hay. Cuenta 
 
 ## 4. Valoración final
 
-Se comenta en la retro final del viernes 20 de noviembre, con estas tres preguntas:
+Se comenta en la retro final del Día 23, con estas tres preguntas:
 
 1. ¿En qué tecnologías está listo para supervisar código en el proyecto real?
 2. ¿Cuáles necesitan refuerzo, y cómo se reforzarán dentro del proyecto?

@@ -2,7 +2,7 @@
 
 En el reto, y después en el proyecto real, el **quality gate** de SonarQube Cloud es **bloqueante**: la rama `main` tiene la regla *Require status checks to pass*, así que un PR que no supere el gate **no se puede fusionar**.
 
-En `court-connect` el análisis se conecta el viernes 30 de octubre (Parte I, Ejercicio 5). A partir de ese PR, todos pasan por el gate. Los PR de los ejercicios 1 a 4 todavía no se analizan, pero sus criterios de aceptación ya están pensados para cumplirlo: así en el Ejercicio 5 no hay sorpresas.
+En `court-connect` el análisis se conecta el Día 8 (Parte I, Ejercicio 5). A partir de ese PR, todos pasan por el gate. Los PR de los ejercicios 1 a 4 todavía no se analizan, pero sus criterios de aceptación ya están pensados para cumplirlo: así en el Ejercicio 5 no hay sorpresas.
 
 ## Son dos checks, no uno
 
@@ -37,7 +37,7 @@ Dos consecuencias prácticas:
 - **Un gate en verde no significa que no tengas vulnerabilidades.** Significa que el código nuevo cumple los umbrales de abajo. Son dos preguntas distintas.
 - **El aviso aparece en todos los proyectos que dependen del que trae el paquete,** pero se arregla en uno solo: aquel en el que entra. El resto se limpian solos.
 
-El procedimiento detallado está en [`Parte1/Ejercicio2`](../../Parte1/Ejercicio2/README.md), en el paso «Revisar lo que te has traído con los paquetes».
+El procedimiento detallado está en [`reto/Parte1/Ejercicio2`](../../reto/Parte1/Ejercicio2/README.md), en el paso «Revisar lo que te has traído con los paquetes».
 
 ## Umbrales
 

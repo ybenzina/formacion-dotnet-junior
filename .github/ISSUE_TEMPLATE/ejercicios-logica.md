@@ -12,4 +12,4 @@ labels: ['Semana1', 'Ejercicios']
 - [ ] Factorial recursivo
 - [ ] Número primo
 
-**Entregables**: Código .cs en `Semana1/Ejercicio2/`. 
+**Entregables**: Código .cs en `curso/Semana1/Ejercicio2/`. 

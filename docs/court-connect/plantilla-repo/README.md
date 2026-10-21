@@ -30,7 +30,7 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
   - Pregunta para tu README: ¿por qué en `ambit-escola` esto no se puede activar y aquí sí?
 - [ ] Añadir a Yamel como revisor (si no tiene acceso por la organización).
 - [ ] Crear las etiquetas `reto`, `parte-1`, `parte-2`, `parte-3`, `sdd` y `extra`.
-- [ ] Crear los milestones **Reto · Parte I** (vence el 30/10), **Reto · Parte II** (vence el 11/11) y **Reto · Parte III** (vence el 20/11).
+- [ ] Crear los milestones **Reto · Parte I**, **Reto · Parte II** y **Reto · Parte III**, con la fecha de vencimiento de los días 8, 16 y 23 según el calendario del reto (`docs/court-connect/calendario.md` en `formacion-dotnet-junior`).
 
 ### En local
 

@@ -1,16 +1,16 @@
-# Fase 2 — Dónde se aprende cada tema
+# Temas del plan original — dónde se aprende cada uno
 
-El plan original de la fase 2 tenía ocho semanas (7 a 14). Se ha sustituido por el **reto CourtConnect** en tres partes (`Parte1/` a `Parte3/`, del 21 de octubre al 20 de noviembre de 2026). La arquitectura prevista para Àmbit (20/10/2026) ha decidido qué temas entran en el reto, cuáles se aprenden directamente en el proyecto real y cuáles quedan fuera.
+El plan original, después del curso, tenía ocho semanas más (7 a 14). Se ha sustituido por el **reto CourtConnect** en tres partes (`reto/Parte1/` a `reto/Parte3/`, 23 días de trabajo, ver `docs/court-connect/calendario.md`). La arquitectura prevista para Àmbit (20/10/2026) ha decidido qué temas entran en el reto, cuáles se aprenden directamente en el proyecto real y cuáles quedan fuera.
 
 | Tema | Plan original | Dónde se aprende ahora |
 |---|---|---|
 | Inyección de dependencias y ciclos de vida; patrón Singleton | — | Parte I (ejercicio 3 y demo 1) y masterclass de arquitectura |
 | Repositorio y unidad de trabajo, y qué hace ya EF Core | — | Parte I (ejercicio 3) y masterclass de arquitectura |
-| Arquitectura: SOLID, Clean Architecture, *Vertical Slice* | Semana 11 | Masterclass de arquitectura (25/10) y Parte III (funcionalidades SDD en *slices*) |
+| Arquitectura: SOLID, Clean Architecture, *Vertical Slice* | Semana 11 | Masterclass de arquitectura (tras el Día 3) y Parte III (funcionalidades SDD en *slices*) |
 | Componentes Blazor y modos de render | Semana 9 | Parte II (ejercicios 1 y 3) |
 | Seguridad: Identity, tokens, roles y políticas | Semana 13 | Parte II (ejercicio 2). Entra ID solo en Àmbit, con la masterclass de seguridad |
 | `BackgroundService` | — | Parte III (caducidad de las inscripciones) |
-| Despliegue en Azure (Container Apps, Azure SQL) | Semana 14 | Parte III (ejercicio 4) y masterclass de contenedores, Aspire y Azure (8/11) |
+| Despliegue en Azure (Container Apps, Azure SQL) | Semana 14 | Parte III (ejercicio 4) y masterclass de contenedores, Aspire y Azure (tras el Día 13) |
 | Observabilidad: OpenTelemetry, Aspire, Application Insights | Semana 13 | Extra de la Parte III; se trabaja en la iteración 0 de Àmbit. Serilog, opcional |
 | `IOptions` y configuración por entorno | Semana 9 | Iteración 0 de Àmbit |
 | ADO.NET y Dapper | Semana 7 | En Àmbit, cuando llegue la migración de datos desde LOOP |
