@@ -6,7 +6,7 @@ Este archivo es la **única fuente** de instrucciones para cualquier asistente d
 
 - Repositorio de **material de formación** en .NET: plan, enunciados, anuncios, guías y scaffolds.
 - **Yamel** es el mentor y quien prepara el material. **Driss** es el alumno.
-- `main` contiene **solo enunciados y material, nunca soluciones**. Las soluciones de la fase 1 están en `drissbego/integration`. El código del reto de la fase 2 vive en otro repositorio: `DeemSoft/court-connect`.
+- `main` contiene **solo enunciados y material, nunca soluciones**. Las soluciones del curso (`curso/`) están en `drissbego/integration`. El código del reto (`reto/`) vive en otro repositorio: `DeemSoft/court-connect`.
 
 ## Reglas
 
