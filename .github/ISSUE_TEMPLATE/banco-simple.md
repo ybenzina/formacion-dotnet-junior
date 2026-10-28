@@ -8,7 +8,7 @@ labels: ['Semana3','Banco']
 **Objetivo**: Implementar cuentas y operaciones, añadir tests.
 
 Checklist:
-- [ ] Código en `src/` o `Semana3/Ejercicio3`
+- [ ] Código en `src/` o `curso/Semana3/Ejercicio3`
 - [ ] Tests en `tests/`
 - [ ] `dotnet test` pasa
 - [ ] Revisar PROBLEMS en Visual Studio (no errors)

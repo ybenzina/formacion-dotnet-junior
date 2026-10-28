@@ -1,12 +1,12 @@
 # Piloto SDD — métricas (plantilla)
 
-> Copia este fichero a `docs/sdd/sdd-piloto.md` en `court-connect` y complétalo durante los ejercicios 3 y 4 de la semana 8. Es la evidencia para la decisión PD-11 (metodología de desarrollo asistido por IA). No incluyas datos de ningún cliente.
+> Copia este fichero a `docs/sdd/sdd-piloto.md` en `court-connect` y complétalo durante los ejercicios 1 a 3 de la Parte III (las dos funcionalidades SDD, cada una con sus números). Es la evidencia para la decisión PD-11 (metodología de desarrollo asistido por IA). No incluyas datos de ningún cliente.
 
 ## Datos generales
 
 | Campo | Valor |
 |---|---|
-| Funcionalidad | Pago simulado con caducidad de la reserva |
+| Funcionalidad | 1: torneos con pago simulado y caducidad · 2: (lista de espera o equipos aleatorios) |
 | Herramienta de IA y modelo | |
 | Versión de Spec Kit | |
 | Fechas | |

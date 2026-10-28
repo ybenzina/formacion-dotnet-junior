@@ -8,7 +8,7 @@ labels: ['Semana3','Juego']
 **Objetivo**: Implementar juego y tests que prueben la lógica.
 
 Checklist:
-- [ ] Código en `src/` o `Semana3/Ejercicio4`
+- [ ] Código en `src/` o `curso/Semana3/Ejercicio4`
 - [ ] Tests en `tests/`
 - [ ] `dotnet test` pasa
 - [ ] Revisar PROBLEMS en Visual Studio (no errors)
