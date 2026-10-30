@@ -7,7 +7,7 @@ No es un producto real: es el dominio sobre el que Driss practica en el reto de 
 ## Qué hay aquí
 
 | Ruta | Para qué |
-|---|---|
+| --- | --- |
 | [`enunciado-dominio.md`](enunciado-dominio.md) | Requisitos del dominio. Punto de partida para redactar `docs/domain.md` en el repo del reto |
 | [`architecture/`](architecture/README.md) | Arquitectura propuesta para el reto |
 | [`data-model/`](data-model/README.md) | Modelo de datos de la primera versión (quedadas y RSVP), muy parecida al dominio actual, e `init.sql`. Solo como referencia: el esquema se crea con migraciones |
@@ -19,6 +19,7 @@ No es un producto real: es el dominio sobre el que Driss practica en el reto de 
 | [`evaluacion.md`](evaluacion.md) | Criterios de evaluación del reto |
 | [`sdd-piloto.md`](sdd-piloto.md) | Plantilla de métricas del piloto de Spec-Driven Development |
 | [`issues-reto.md`](issues-reto.md) | Issues del reto, listas para crear en `court-connect` |
+| [Agentes y prompts de referencia](../../ai/README.md) | Tutor, calidad, documentación configurable, plantillas y registro de copias instaladas |
 
 ## Reglas del reto
 

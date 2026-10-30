@@ -27,6 +27,17 @@ Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`,
 
    **Antes de .NET 11** esto se resolvía a mano: campos ocultos en cada paso, parámetros en la URL o un borrador guardado en el servidor. Anota en el PR qué te ahorra la novedad y qué riesgos sigue teniendo.
 
+Si el código generado no supera el quality gate, puedes usar [la referencia de calidad](../../../ai/artefactos/calidad-sonarqube/README.md). Respeta sus paradas de alcance, plan y revisión por módulo; la ayuda no sustituye tu revisión ni la comprobación del gate del PR.
+
+### Extra: agentes de UI y backend
+
+Crea un agente de UI y otro de backend y úsalos para las páginas de torneos y el asistente de inscripción del equipo. Diséñalos primero con [la plantilla de UI](../../../ai/plantillas/esqueleto-agente-ui.md) y [el contrato de coordinación](../../../ai/plantillas/contrato-coordinacion.md), con la especificación aprobada como límite.
+
+- Define qué pide la UI, qué responde la API y cuándo ambos deben parar para preguntarte. No inventes endpoints ni DTO para encajar una pantalla.
+- Mantén la separación: **UI → API mediante `HttpClient` tipado; nunca UI → base de datos**. La API sigue siendo la autoridad de autorización y reglas.
+- Justifica render modes, estado, formularios y pruebas con bUnit; prueba también una petición que el otro agente deba rechazar por estar fuera de su responsabilidad.
+- Conserva el diseño y los intercambios en el PR. Tú coordinas y revisas; no hace falta automatizar una conversación entre agentes. No uses el tutor instalable en esta rama SDD.
+
 ## Criterios de aceptación
 
 - [ ] Plan y tareas revisados antes de implementar.
