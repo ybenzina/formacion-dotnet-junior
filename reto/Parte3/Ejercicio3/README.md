@@ -8,7 +8,7 @@ Repetir el ciclo SDD completo (especificación, plan, implementación y revisió
 
 ## Pasos
 
-Rama `feature/sdd-<funcionalidad>`.
+Rama `feature/sdd-<funcionalidad>`, desde `develop`. El PR va hacia `develop`, con *squash merge*.
 
 1. Especificación en `specs/`, con las aclaraciones resueltas. Yamel la revisa por Discord (no hace falta esperar a una reunión).
 2. Plan, tareas e implementación con la IA.

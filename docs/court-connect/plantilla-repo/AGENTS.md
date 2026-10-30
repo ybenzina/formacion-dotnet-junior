@@ -55,10 +55,12 @@ Código estándar y legible para el equipo. Las novedades del lenguaje solo cuan
 
 ## Flujo de trabajo
 
-- `main` es la única rama permanente. Todo entra por **Pull Request**.
-- Ramas cortas desde `main` actualizado: `feature/…`, `fix/…`, `docs/…`, `chore/…`, `test/…`. Nombres en minúsculas con guiones.
+- Todo entra por **Pull Request**.
+- **Partes I y II:** `main` es la única rama permanente; las ramas cortas salen de `main` y vuelven a `main`.
+- **Desde la Parte III** (MVP en producción): `main` = producción, con versiones etiquetadas; `develop` = integración. `feature/*` → `develop` con *squash merge*; `develop` → `main` con *merge commit*; `hotfix/*` sale de `main`.
+- Ramas cortas desde la rama base actualizada: `feature/…`, `fix/…`, `docs/…`, `chore/…`, `test/…`. Nombres en minúsculas con guiones.
 - Commits: `tipo: descripción breve en minúsculas` (`feat:`, `fix:`, `docs:`, `test:`, `chore:`, `refactor:`).
-- PR con **Qué / Por qué / Cómo se ha comprobado / Uso de IA** y `Closes #N`. Revisa y fusiona Yamel, con *merge commit*.
+- PR con **Qué / Por qué / Cómo se ha comprobado / Uso de IA** y `Closes #N`. Revisa y fusiona Yamel: *merge commit* (o *squash* hacia `develop` desde la Parte III).
 
 ## Al terminar una sesión de trabajo
 

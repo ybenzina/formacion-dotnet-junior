@@ -88,6 +88,7 @@ Se especifica con Spec Kit. Idea de partida, que tendrás que concretar en la es
 
 - Un **torneo** tiene cancha, fecha, número máximo de equipos y una **cuota por equipo**.
 - Un **equipo** tiene nombre, un **capitán** (un jugador) y un número mínimo y máximo de jugadores. El capitán inscribe al equipo.
+- En la web, el capitán inscribe al equipo **en varios pasos**: datos del equipo, jugadores y pago.
 - La inscripción del equipo queda **pendiente de pago** y **retiene la plaza** durante un tiempo configurable.
 - El pago se hace contra una **pasarela simulada** que acepta o rechaza.
 - Si se acepta, la inscripción pasa a **confirmada**. Confirmar dos veces el mismo pago no debe tener efectos (idempotencia).
