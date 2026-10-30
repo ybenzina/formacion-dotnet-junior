@@ -115,3 +115,14 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 | **Quality gate** | Listón de calidad que tiene que superar el código nuevo (ver `calidad.md`) |
 | **Code smell** | Código que funciona pero es difícil de mantener |
 | **Security hotspot** | Punto sensible para la seguridad que una persona tiene que revisar |
+
+## Herramientas de IA
+
+| Término | Qué es |
+| --- | --- |
+| **Agente** (*agent*) | Un rol con instrucciones y herramientas para trabajar en una tarea. Un agente personalizado de chat no implica autonomía: puede ser solo un tutor seleccionado por la persona |
+| **Skill** | Instrucciones y recursos empaquetados en una carpeta para un flujo concreto. Lo invoca la persona o el modelo según la configuración; no añade autonomía por sí solo |
+| **Fichero de prompt** (*prompt file*) | Una tarea reutilizable en Markdown que la persona lanza como comando. En VS Code se usa en el motor Local; otros motores pueden necesitar un skill |
+| **Frontmatter** | Bloque YAML al principio del fichero, entre líneas `---`, con metadatos como nombre, descripción o herramientas. No es el cuerpo de las instrucciones |
+| **Versionado semántico** (*Semantic Versioning*, SemVer) | Versión `MAJOR.MINOR.PATCH`: cambio incompatible, capacidad compatible o corrección. Permite fijar qué referencia está instalada |
+| **Deriva** (*drift*) | Diferencia entre una copia instalada y la versión fuente que declara. Se comprueba comparando SHA-256 de copia, fuente y registro; una versión antigua intacta no tiene deriva |

@@ -36,7 +36,7 @@
 | 7 | `[Tarea] P2 · Ej2 · Cuentas, login y roles` | reto, parte-2 | Parte II | 7 h | `reto/Parte2/Ejercicio2` |
 | 8 | `[Tarea] P2 · Ej3 · Panel del organizador` | reto, parte-2 | Parte II | 6 h | `reto/Parte2/Ejercicio3` |
 | 9 | `[Tarea] P2 · Ej4 · Docker y Docker Compose` | reto, parte-2 | Parte II | 4 h | `reto/Parte2/Ejercicio4` |
-| 10 | `[Tarea] P2 · Ej5 · Demo 2 y preparación del SDD` | reto, parte-2 | Parte II | 4 h | `reto/Parte2/Ejercicio5` |
+| 10 | `[Tarea] P2 · Ej5 · Demo 2 y preparación del SDD` | reto, parte-2 | Parte II | 5 h | `reto/Parte2/Ejercicio5` |
 | 11 | `[Tarea] P3 · Ej1 · .NET 11 y SDD (1/2): especificación` | reto, parte-3, sdd | Parte III | 8 h | `reto/Parte3/Ejercicio1` |
 | 12 | `[Tarea] P3 · Ej2 · SDD (2/2): implementación y revisión` | reto, parte-3, sdd | Parte III | 7 h | `reto/Parte3/Ejercicio2` |
 | 13 | `[Tarea] P3 · Ej3 · Segunda funcionalidad SDD` | reto, parte-3, sdd | Parte III | 4 h | `reto/Parte3/Ejercicio3` |

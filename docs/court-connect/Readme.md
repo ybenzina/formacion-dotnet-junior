@@ -19,6 +19,7 @@ No es un producto real: es el dominio sobre el que Driss practica en el reto de 
 | [`evaluacion.md`](evaluacion.md) | Criterios de evaluación del reto |
 | [`sdd-piloto.md`](sdd-piloto.md) | Plantilla de métricas del piloto de Spec-Driven Development |
 | [`issues-reto.md`](issues-reto.md) | Issues del reto, listas para crear en `court-connect` |
+| [Agentes y prompts de referencia](../../ai/README.md) | Tutor, calidad, documentación configurable, plantillas y registro de copias instaladas |
 
 ## Reglas del reto
 

@@ -65,3 +65,6 @@ Código estándar y legible para el equipo. Las novedades del lenguaje solo cuan
 ## Al terminar una sesión de trabajo
 
 Resume en pocas líneas: qué se ha hecho, qué ha aprendido Driss, qué queda pendiente y qué dudas llevar a Yamel.
+
+Desde el ejercicio 5 de la Parte II está disponible [el tutor instalable de `ai/artefactos/tutor`](https://github.com/DeemSoft/formacion-dotnet-junior/tree/main/ai/artefactos/tutor), que concreta estas reglas sin sustituirlas.
+No se usa ese tutor en ramas `feature/sdd-*`, donde se sigue el flujo SDD con especificación aprobada.
