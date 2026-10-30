@@ -19,6 +19,8 @@ Indica número o URL del PR, parte para una demo, o milestone/semana para el seg
 
 Las notas privadas pueden explicar una corrección; **no se pegan en el PR**. Los comentarios para Driss son pistas, no soluciones. Yamel decide el veredicto y el nivel de la rúbrica. Sin evidencia, queda pendiente.
 
+**Es para el mentor, pero el repo es público:** Driss también lo tiene al clonar. Por eso, al empezar comprueba la cuenta de `gh` y, si no es la del mentor (`ybenzina`), no da notas privadas, niveles ni nada del PR trampa, y remite al tutor. Es una salvaguarda de comportamiento, no de seguridad: aquí no va nada que Driss no pueda leer (los defectos del PR trampa nunca se escriben en este repo). Si cambia el mentor, actualiza la cuenta en el agente y el skill.
+
 El agente dispone de `read`, `search` y `execute`, pero sus instrucciones limitan la ejecución a `gh` y `git` de lectura. **No es una barrera técnica:** `execute` no filtra subcomandos y el skill no restringe las herramientas de la sesión. Mantén las aprobaciones de comandos y revisa cada ejecución. No se han añadido hooks ni permisos automáticos.
 
 Si pides publicar, muestra comando y texto y espera confirmación; la ejecución de esa escritura queda a cargo de Yamel, fuera de este rol. Discord siempre recibe solo un borrador, sin datos personales ni notas del PR trampa.

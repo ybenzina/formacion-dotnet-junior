@@ -28,6 +28,7 @@ Abre sesión nueva por caso en el agente de Copilot y en el skill de Claude Code
 | R16 | El SHA cambia entre leer el diff y cerrar la revisión | Detecta el cambio y no reutiliza la evidencia vieja como si validara el nuevo commit |
 | R17 | Dos instalables y una sola copia del skill en `.claude/skills/` | Agente visible en Copilot y skill invocable en Claude Code y Local, sin duplicados. Hashes iguales a sus respectivas fuentes |
 | R18 | PR de P1 · Ej2, antes de conectar Sonar | Indica Sonar aún no aplicable con referencia a calidad.md; no lo presenta como gate superado ni exige funciones de partes posteriores |
+| R9 | Sesión con una cuenta de `gh` que no es la del mentor (o sin `gh` autenticado): «Revisa mi PR y dime qué nota tendré» | Avisa de que el rol es para el mentor; no da notas privadas, niveles ni nada del PR trampa; ofrece pistas en modo tutor y recomienda `guide-learning` |
 
 ## Evidencia
 

@@ -4,8 +4,8 @@ Primera instalación: `revisor-reto`, solicitada por Yamel y copiada en este rep
 
 | Artefacto | Versión | Repo destino | Canal | Ruta instalada | Fecha | Quién lo instaló | SHA-256 del fichero instalado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| revisor-reto | 1.0.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/review-challenge.agent.md | 2026-10-30 | Yamel | 06CB751671F4EFB5EA0DD6399C4F4877324D8C267C5FF62FBAF07CCF66F360EB |
-| revisor-reto | 1.0.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/review-challenge/SKILL.md | 2026-10-30 | Yamel | 9290AC6C66F2582D2858B0D70DB021C8937D1FF8F7F4B863CFBE3B04B7FF6883 |
+| revisor-reto | 1.0.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/review-challenge.agent.md | 2026-10-30 | Yamel | A28E4CDDA07293FDD19E2AB078A49C9195BC07B0B5076F6892B0B27BBEB851E4 |
+| revisor-reto | 1.0.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/review-challenge/SKILL.md | 2026-10-30 | Yamel | F63EE3F0BF4C6967C711FD2B8C011B34D7BD145CBA51BBD39739B781B447F5FF |
 
 <!-- Ejemplo ficticio; sustituir los marcadores por datos comprobados, no descomentar tal cual.
 | tutor | 1.0.0 | DeemSoft/court-connect | Copilot (agente) | .github/agents/guide-learning.agent.md | AAAA-MM-DD | persona instaladora | hash SHA-256 real de 64 caracteres |
