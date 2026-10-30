@@ -1,0 +1,24 @@
+{
+	"$schema": "../../esquema/metadata.schema.json",
+	"id": "calidad-sonarqube",
+	"title": "Corrección supervisada de calidad .NET",
+	"owner": "Equipo de formación",
+	"version": "1.0.0",
+	"status": "draft",
+	"installation_notes": "Una sola copia en .claude/skills/ sirve para Claude Code y VS Code Local y reduce la deriva. Solo si se usa el motor Copilot, copiar el mismo skill a .github/skills/ y registrar esa copia adicional; Local descubre ambas ubicaciones.",
+	"channels": [
+		{
+			"runtime": "copilot-local",
+			"format": "skill",
+			"name": "fix-quality",
+			"path": "claude/.claude/skills/fix-quality/SKILL.md"
+		},
+		{
+			"runtime": "claude",
+			"format": "skill",
+			"name": "fix-quality",
+			"path": "claude/.claude/skills/fix-quality/SKILL.md"
+		}
+	],
+	"validated_repos": []
+}

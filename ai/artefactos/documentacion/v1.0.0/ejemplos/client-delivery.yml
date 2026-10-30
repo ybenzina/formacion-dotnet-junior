@@ -1,0 +1,60 @@
+# Versión del contrato YAML; ejemplo ficticio, sin datos de un cliente real.
+version: 1
+# Tipos en catalán; si omites un bloque, ese tipo queda desactivado.
+types:
+  # Documentación funcional de los comportamientos comprobados.
+  functional:
+    # Activa o desactiva este tipo sin modificar los demás.
+    enabled: true
+    # Idioma de entrega del texto funcional.
+    language: ca
+    # Directorio relativo al repositorio para los Markdown funcionales.
+    output: docs/
+    # Público que determina vocabulario y detalle.
+    audience: "Equip funcional i persones usuàries"
+  # Documentación de arquitectura y contratos técnicos comprobados.
+  technical:
+    # Activa o desactiva los documentos técnicos.
+    enabled: true
+    # Idioma del texto técnico.
+    language: ca
+    # Directorio relativo de salida de los Markdown técnicos.
+    output: docs/technical-doc/
+    # Público previsto para las explicaciones técnicas.
+    audience: "Equip de desenvolupament i manteniment"
+  # Documentación XML de contratos C#, también en catalán.
+  xml:
+    # Activa o desactiva los comentarios XML.
+    enabled: true
+    # Idioma de los textos XML; etiquetas e identificadores no se traducen.
+    language: ca
+    # Literal reservado: la documentación se escribe en el C# original.
+    output: source
+    # Público que consulta los contratos de código.
+    audience: "Persones consumidores de l'API i equip de desenvolupament"
+    # Proyectos y miembros editables, excluyendo fuentes generadas y externas.
+    scope:
+      # Ruta ficticia de ejemplo; sustitúyela por un proyecto del destino.
+      include_projects: ["src/SampleApp/SampleApp.csproj"]
+      # Rutas de proyectos excluidos; [] no añade exclusiones.
+      exclude_projects: []
+      # XML debe cubrir public y protected y los contratos de interfaz expuestos.
+      visibility: [public, protected]
+  # Comentarios sobre decisiones no evidentes, no sobre operaciones obvias.
+  comments:
+    # Activa o desactiva la revisión de comentarios de código.
+    enabled: true
+    # Idioma de los comentarios que explican el porqué.
+    language: ca
+    # Literal reservado: comentarios junto al código fuente existente.
+    output: source
+    # Público encargado del mantenimiento posterior.
+    audience: "Equip de manteniment"
+    # Límite de proyectos y visibilidades.
+    scope:
+      # Ruta ficticia de ejemplo; sustitúyela por un proyecto del destino.
+      include_projects: ["src/SampleApp/SampleApp.csproj"]
+      # Rutas de proyectos excluidos; [] no añade exclusiones.
+      exclude_projects: []
+      # Visibilidades permitidas, sin obligación de comentar cada miembro.
+      visibility: [public, protected, internal, private]

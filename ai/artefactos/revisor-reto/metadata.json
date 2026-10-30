@@ -1,0 +1,30 @@
+{
+	"$schema": "../../esquema/metadata.schema.json",
+	"id": "revisor-reto",
+	"title": "Revisor del reto para el mentor",
+	"owner": "Yamel",
+	"version": "1.0.0",
+	"status": "draft",
+	"installation_notes": "Se instala en DeemSoft/formacion-dotnet-junior para uso de Yamel: agente en .github/agents/ y una sola copia del skill en .claude/skills/, compartida por Claude Code y VS Code Local. .github/skills/ solo haría falta para un skill con el motor Copilot; aquí se usa su agente. Compartir la copia reduce la deriva.",
+	"channels": [
+		{
+			"runtime": "copilot",
+			"format": "agent",
+			"name": "review-challenge",
+			"path": "copilot/.github/agents/review-challenge.agent.md"
+		},
+		{
+			"runtime": "copilot-local",
+			"format": "skill",
+			"name": "review-challenge",
+			"path": "claude/.claude/skills/review-challenge/SKILL.md"
+		},
+		{
+			"runtime": "claude",
+			"format": "skill",
+			"name": "review-challenge",
+			"path": "claude/.claude/skills/review-challenge/SKILL.md"
+		}
+	],
+	"validated_repos": []
+}

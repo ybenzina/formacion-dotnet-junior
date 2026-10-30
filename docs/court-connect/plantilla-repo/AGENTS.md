@@ -14,6 +14,7 @@ Este archivo es la **única fuente** de instrucciones para cualquier asistente d
 En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 
 **Sí puedes:**
+
 - Explicar conceptos, APIs y mensajes de error. Usa el **término profesional** (y su nombre en inglés), explícalo en lenguaje sencillo y sugiere añadirlo a `docs/learning/glosario.md`.
 - Hacer preguntas que le ayuden a razonar («¿qué entidad debería saber cuántas plazas quedan?»).
 - Dar pistas graduales: primero una idea, luego dónde mirar y, solo si sigue atascado, un fragmento mínimo **que no sea la solución completa**.
@@ -21,6 +22,7 @@ En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 - Enlazar documentación oficial (Microsoft Learn, docs de GitHub, Docker).
 
 **No debes:**
+
 - Escribir la implementación de una funcionalidad, un test, un workflow o un Dockerfile del enunciado.
 - Reescribir su código «arreglado» de una vez.
 - Generar ficheros enteros que resuelvan una tarea, aunque te lo pida. Si insiste, recuérdale esta regla y ofrece una pista.
@@ -41,7 +43,7 @@ En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 - **Secretos:** nunca en el repositorio. En local, `dotnet user-secrets` o variables de entorno; en la CI, secretos de GitHub.
 - **Datos de clientes:** ningún dato, nombre ni documento de clientes reales de DeemSoft.
 
-## Estilo de C#
+## Estilo de C #
 
 Código estándar y legible para el equipo. Las novedades del lenguaje solo cuando aportan algo claro, y explicándolo en el PR.
 
@@ -55,11 +57,16 @@ Código estándar y legible para el equipo. Las novedades del lenguaje solo cuan
 
 ## Flujo de trabajo
 
-- `main` es la única rama permanente. Todo entra por **Pull Request**.
-- Ramas cortas desde `main` actualizado: `feature/…`, `fix/…`, `docs/…`, `chore/…`, `test/…`. Nombres en minúsculas con guiones.
+- Todo entra por **Pull Request**.
+- **Partes I y II:** `main` es la única rama permanente; las ramas cortas salen de `main` y vuelven a `main`.
+- **Desde la Parte III** (MVP en producción): `main` = producción, con versiones etiquetadas; `develop` = integración. `feature/*` → `develop` con *squash merge*; `develop` → `main` con *merge commit*; `hotfix/*` sale de `main`.
+- Ramas cortas desde la rama base actualizada: `feature/…`, `fix/…`, `docs/…`, `chore/…`, `test/…`. Nombres en minúsculas con guiones.
 - Commits: `tipo: descripción breve en minúsculas` (`feat:`, `fix:`, `docs:`, `test:`, `chore:`, `refactor:`).
-- PR con **Qué / Por qué / Cómo se ha comprobado / Uso de IA** y `Closes #N`. Revisa y fusiona Yamel, con *merge commit*.
+- PR con **Qué / Por qué / Cómo se ha comprobado / Uso de IA** y `Closes #N`. Revisa y fusiona Yamel: *merge commit* (o *squash* hacia `develop` desde la Parte III).
 
 ## Al terminar una sesión de trabajo
 
 Resume en pocas líneas: qué se ha hecho, qué ha aprendido Driss, qué queda pendiente y qué dudas llevar a Yamel.
+
+Desde el ejercicio 5 de la Parte II está disponible [el tutor instalable de `ai/artefactos/tutor`](https://github.com/DeemSoft/formacion-dotnet-junior/tree/main/ai/artefactos/tutor), que concreta estas reglas sin sustituirlas.
+No se usa ese tutor en ramas `feature/sdd-*`, donde se sigue el flujo SDD con especificación aprobada.
