@@ -9,7 +9,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## Arquitectura y diseño
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **Dominio** (*domain*) | El problema de negocio que resuelve la aplicación y sus reglas: aquí, canchas, partidos, jugadores e inscripciones. También el proyecto de código donde viven esas reglas |
 | **Entidad** (*entity*) | Objeto del dominio con **identidad** propia (un `Id`) que cambia con el tiempo. Dos partidos con los mismos datos siguen siendo partidos distintos |
 | **Objeto de valor** (*value object*) | Objeto que se define solo por sus valores y no cambia. Dos rangos de edad 8–12 son el mismo rango. Ejemplo: `AgeRange` |
@@ -27,7 +27,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## C# y .NET
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **Clase** (*class*) | El tipo habitual. Se compara por **referencia**: dos objetos son iguales solo si son el mismo objeto |
 | **Record** (*record*) | Tipo pensado para guardar datos. Se compara por **valor**, es inmutable por defecto y se escribe en menos líneas. Bueno para DTOs y objetos de valor; **no** para entidades de EF Core |
 | **Igualdad por referencia / por valor** | Por referencia: ¿es el mismo objeto en memoria? Por valor: ¿tienen los mismos datos? |
@@ -54,7 +54,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## Datos
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **ORM** (*object-relational mapper*) | Herramienta que traduce entre objetos de C# y tablas SQL. EF Core es el ORM de .NET |
 | **`DbContext`** | Clase de EF Core que representa la sesión con la base de datos |
 | **`DbSet<T>`** | Propiedad del `DbContext` que representa una tabla: `DbSet<Game> Games` |
@@ -69,7 +69,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## API web
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **API REST** | API sobre HTTP donde cada URL representa un recurso (`/games/5`) y el verbo indica la acción (`GET`, `POST`…) |
 | **Endpoint** | Una URL con un verbo que la API atiende: `POST /games/{id}/registrations` |
 | **Minimal API** | Forma de definir endpoints en ASP.NET Core sin controladores: `app.MapGet(...)` |
@@ -84,7 +84,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## Tests
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **Test unitario** (*unit test*) | Prueba una pieza aislada, sin base de datos ni red |
 | **Test de integración** (*integration test*) | Prueba varias piezas juntas: API + base de datos real |
 | **`[Fact]` / `[Theory]` + `[InlineData]`** | En xUnit: un caso fijo / un mismo test con varios juegos de datos |
@@ -97,7 +97,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## Contenedores
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **Imagen** (*image*) | Plantilla de solo lectura con todo lo necesario para ejecutar algo: `mcr.microsoft.com/mssql/server` |
 | **Contenedor** (*container*) | Una imagen en ejecución. Se crea, se para y se borra |
 | **Volumen** (*volume*) | Almacenamiento que sobrevive al contenedor |
@@ -107,7 +107,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 ## CI y calidad
 
 | Término | Qué es |
-|---|---|
+| --- | --- |
 | **Integración continua** (*continuous integration*, CI) | Compilar y probar automáticamente cada cambio |
 | **Workflow / job / runner** | En GitHub Actions: el fichero YAML / cada bloque de trabajo / la máquina que lo ejecuta |
 | **Status check** | Resultado (verde o rojo) que un workflow o una app publica en un PR |

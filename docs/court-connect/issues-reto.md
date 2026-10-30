@@ -7,7 +7,7 @@
 ## Etiquetas
 
 | Nombre | Color | Descripción |
-|---|---|---|
+| --- | --- | --- |
 | `reto` | `#1f6feb` | Reto de formación CourtConnect |
 | `parte-1` | `#8250df` | Parte I · Fundamentos |
 | `parte-2` | `#bf3989` | Parte II · Web, identidad y contenedores |
@@ -18,7 +18,7 @@
 ## Milestones
 
 | Título | Vence | Descripción |
-|---|---|---|
+| --- | --- | --- |
 | Reto · Parte I | 2026-10-30 | Fundamentos: del dominio a la API con CI |
 | Reto · Parte II | 2026-11-11 | Web, identidad y contenedores |
 | Reto · Parte III | 2026-11-20 | MVP con SDD y despliegue en Azure |
@@ -26,7 +26,7 @@
 ## Issues
 
 | # | Título | Etiquetas | Milestone | Estimación | Enunciado |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | `[Tarea] P1 · Ej1 · Repositorio y dominio` | reto, parte-1 | Parte I | 4 h | `reto/Parte1/Ejercicio1` |
 | 2 | `[Tarea] P1 · Ej2 · EF Core y SQL Server en Docker` | reto, parte-1 | Parte I | 4 h | `reto/Parte1/Ejercicio2` |
 | 3 | `[Tarea] P1 · Ej3 · API con ASP.NET Core` | reto, parte-1 | Parte I | 4 h | `reto/Parte1/Ejercicio3` |

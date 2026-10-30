@@ -1,14 +1,29 @@
 {
-	"$schema": "../../esquema/metadata.schema.json",
-	"id": "documentacion",
-	"title": "Documentación configurable del repositorio",
-	"owner": "Equipo de formación",
-	"version": "1.0.0",
-	"status": "draft",
-	"channels": [
-		{ "runtime": "copilot-local", "format": "prompt", "name": "document-repo", "path": "copilot/.github/prompts/document-repo.prompt.md" },
-		{ "runtime": "copilot", "format": "skill", "name": "document-repo", "path": "copilot/.github/skills/document-repo/SKILL.md" },
-		{ "runtime": "claude", "format": "skill", "name": "document-repo", "path": "claude/.claude/skills/document-repo/SKILL.md" }
-	],
-	"validated_repos": []
+    "$schema": "../../esquema/metadata.schema.json",
+    "id": "documentacion",
+    "title": "Documentación configurable del repositorio",
+    "owner": "Equipo de formación",
+    "version": "1.0.0",
+    "status": "draft",
+    "channels": [
+        {
+            "runtime": "copilot-local",
+            "format": "prompt",
+            "name": "document-repo",
+            "path": "copilot/.github/prompts/document-repo.prompt.md"
+        },
+        {
+            "runtime": "copilot",
+            "format": "skill",
+            "name": "document-repo",
+            "path": "copilot/.github/skills/document-repo/SKILL.md"
+        },
+        {
+            "runtime": "claude",
+            "format": "skill",
+            "name": "document-repo",
+            "path": "claude/.claude/skills/document-repo/SKILL.md"
+        }
+    ],
+    "validated_repos": []
 }
