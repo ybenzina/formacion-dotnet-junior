@@ -1,111 +1,111 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Metadatos de un artefacto de IA",
-    "description": "Catálogo de referencias. Las instalaciones reales se anotan en REGISTRO.md.",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-        "id",
-        "title",
-        "owner",
-        "version",
-        "status",
-        "channels",
-        "validated_repos"
-    ],
-    "properties": {
-        "$schema": {
-            "type": "string"
-        },
-        "id": {
-            "type": "string",
-            "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
-        },
-        "title": {
-            "type": "string",
-            "minLength": 1
-        },
-        "owner": {
-            "type": "string",
-            "minLength": 1
-        },
-        "version": {
-            "type": "string",
-            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
-        },
-        "status": {
-            "enum": [
-                "draft",
-                "refined",
-                "certified"
-            ]
-        },
-        "installation_notes": {
-            "description": "Cómo compartir la copia y cuándo hace falta otra ubicación.",
-            "type": "string",
-            "minLength": 1
-        },
-        "channels": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                    "runtime",
-                    "format",
-                    "name",
-                    "path"
-                ],
-                "properties": {
-                    "runtime": {
-                        "enum": [
-                            "copilot",
-                            "copilot-local",
-                            "claude"
-                        ]
-                    },
-                    "format": {
-                        "enum": [
-                            "agent",
-                            "prompt",
-                            "skill"
-                        ]
-                    },
-                    "name": {
-                        "type": "string",
-                        "pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
-                        "maxLength": 64
-                    },
-                    "path": {
-                        "type": "string",
-                        "pattern": "^(copilot|claude)/\\.(github|claude)/[a-zA-Z0-9./-]+$"
-                    }
-                }
-            }
-        },
-        "validated_repos": {
-            "description": "Solo repositorios con pruebas realizadas y evidencia revisable; no destinos previstos.",
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                    "repo",
-                    "evidence"
-                ],
-                "properties": {
-                    "repo": {
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "evidence": {
-                        "type": "string",
-                        "minLength": 1
-                    }
-                }
-            }
-        }
-    }
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Metadatos de un artefacto de IA",
+	"description": "Catálogo de referencias. Las instalaciones reales se anotan en REGISTRO.md.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": [
+		"id",
+		"title",
+		"owner",
+		"version",
+		"status",
+		"channels",
+		"validated_repos"
+	],
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"id": {
+			"type": "string",
+			"pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+		},
+		"title": {
+			"type": "string",
+			"minLength": 1
+		},
+		"owner": {
+			"type": "string",
+			"minLength": 1
+		},
+		"version": {
+			"type": "string",
+			"pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+		},
+		"status": {
+			"enum": [
+				"draft",
+				"refined",
+				"certified"
+			]
+		},
+		"installation_notes": {
+			"description": "Cómo compartir la copia y cuándo hace falta otra ubicación.",
+			"type": "string",
+			"minLength": 1
+		},
+		"channels": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"runtime",
+					"format",
+					"name",
+					"path"
+				],
+				"properties": {
+					"runtime": {
+						"enum": [
+							"copilot",
+							"copilot-local",
+							"claude"
+						]
+					},
+					"format": {
+						"enum": [
+							"agent",
+							"prompt",
+							"skill"
+						]
+					},
+					"name": {
+						"type": "string",
+						"pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+						"maxLength": 64
+					},
+					"path": {
+						"type": "string",
+						"pattern": "^(copilot|claude)/\\.(github|claude)/[a-zA-Z0-9./-]+$"
+					}
+				}
+			}
+		},
+		"validated_repos": {
+			"description": "Solo repositorios con pruebas realizadas y evidencia revisable; no destinos previstos.",
+			"type": "array",
+			"uniqueItems": true,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"repo",
+					"evidence"
+				],
+				"properties": {
+					"repo": {
+						"type": "string",
+						"minLength": 1
+					},
+					"evidence": {
+						"type": "string",
+						"minLength": 1
+					}
+				}
+			}
+		}
+	}
 }
