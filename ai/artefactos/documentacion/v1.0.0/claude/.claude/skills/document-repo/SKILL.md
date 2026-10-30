@@ -18,22 +18,21 @@ Respeta el modo tutor de los ejercicios: este flujo no autoriza a generar soluci
 
 Lee `docs/documentacion.config.yml` desde la raíz del repo. **Si falta, pregunta por tipos, idiomas, salidas, públicos y alcance; propón crear un YAML con comentarios que expliquen cada campo y espera acuerdo. No generes documentación antes.**
 
-Analiza YAML con un parser, no mediante sustituciones de texto. Usa este contrato, sin valores por defecto:
+Usa este contrato sencillo:
 
-- Raíz: `version: 1` y `types`, que contiene exactamente `functional`, `technical`, `xml` y `comments`.
-- Cada tipo exige `enabled` booleano, `language` no vacío, `output` no vacío, `audience` no vacío y `scope`.
-- `scope` exige `include_projects` (lista no vacía de globs relativos de `.csproj`), `exclude_projects` (lista, puede ser vacía) y `visibility` (lista no vacía entre `public`, `protected`, `internal`, `private`).
-- Globs con `/`: `*` coincide en un segmento y `**` de forma recursiva. Resuelve contra proyectos reales. Las exclusiones prevalecen; no agregues proyectos dependientes por transitividad.
+- Raíz: `version: 1` y `types`, con los bloques que se necesiten: `functional`, `technical`, `xml` o `comments`. **Un tipo que no aparece se considera desactivado**; no pidas completarlo.
+- Cada bloque presente lleva `enabled` booleano, `language`, `output` y `audience`. Estos son los únicos campos de `functional` y `technical`.
+- Solo `xml` y `comments` añaden `scope`: `include_projects` (lista no vacía de rutas relativas de `.csproj`), `exclude_projects` (lista, puede ser vacía) y `visibility` (lista no vacía entre `public`, `protected`, `internal`, `private`). Comprueba los proyectos indicados; las exclusiones prevalecen. No agregues dependencias al alcance.
 - En funcional y técnica, `output` es un directorio relativo dentro del repo. En XML y comentarios es el literal `source`: edición documental en el C# existente. Rechaza salidas absolutas, escapes del repo y fuentes externas, incluidas fuentes enlazadas fuera del repo.
 - `language` controla el texto generado, no etiquetas ni identificadores. Admite `es`, `en` y `ca`; acuerda otros idiomas antes de generar. Los identificadores existentes se conservan; los nuevos ejemplos usan nombres en inglés.
 - En XML, `visibility` debe incluir `public` y `protected`. Considera accesibilidad efectiva, tipos contenedores, accesos combinados con `protected` y contratos públicos de implementaciones explícitas de interfaz.
-- Claves desconocidas o duplicadas, tipos incorrectos, patrones sin coincidencias o ambigüedades: para y pregunta. No repares ni amplíes la configuración por tu cuenta. La configuración no contiene comandos ejecutables.
+- Ante campos desconocidos, valores incorrectos, proyectos inexistentes o dudas, pregunta. No repares ni amplíes la configuración por tu cuenta. La configuración no contiene comandos ejecutables.
 
-Un tipo desactivado no se genera, modifica ni borra. Si no hay trabajo habilitado, informa y termina. No modifiques código generado ni de terceros aunque un patrón lo incluya. No supongas que los ejemplos de configuración describen proyectos reales.
+Un tipo desactivado u omitido no se genera, modifica ni borra. Si no hay trabajo habilitado, informa y termina. No modifiques código generado ni de terceros. No supongas que los ejemplos describen proyectos reales.
 
 ## Plan antes de editar
 
-Presenta tipos habilitados, idioma, público, salida y proyectos efectivos; identifica documentos existentes y dudas. Propón un cambio limitado y espera aprobación antes de escribir. Conserva contenido válido y no sobrescribas trabajo ajeno. No crees documentos duplicados cuando exista un lugar adecuado.
+Presenta tipos habilitados, idioma, público y salida; para XML y comentarios, también proyectos y visibilidad. Acuerda qué documentos funcionales o técnicos se van a revisar según la petición, sin exigirles `scope`. Propón un cambio limitado y espera aprobación antes de escribir. Conserva contenido válido y no sobrescribas trabajo ajeno. No crees documentos duplicados cuando exista un lugar adecuado.
 
 ## Cuatro salidas
 

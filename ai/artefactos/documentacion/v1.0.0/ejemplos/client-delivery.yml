@@ -1,6 +1,6 @@
 # Versión del contrato YAML; ejemplo ficticio, sin datos de un cliente real.
 version: 1
-# Cuatro tipos independientes para una entrega íntegramente en catalán.
+# Tipos en catalán; si omites un bloque, ese tipo queda desactivado.
 types:
   # Documentación funcional de los comportamientos comprobados.
   functional:
@@ -12,14 +12,6 @@ types:
     output: docs/
     # Público que determina vocabulario y detalle.
     audience: "Equip funcional i persones usuàries"
-    # Alcance de proyectos y símbolos que se pueden documentar.
-    scope:
-      # Patrones genéricos, no nombres de proyectos reales; validar coincidencias.
-      include_projects: ["src/**/*.csproj"]
-      # Exclusiones prioritarias sobre la inclusión; [] no excluiría nada más.
-      exclude_projects: ["tests/**/*.csproj"]
-      # Visibilidad de los símbolos que sustentan la documentación.
-      visibility: [public]
   # Documentación de arquitectura y contratos técnicos comprobados.
   technical:
     # Activa o desactiva los documentos técnicos.
@@ -30,14 +22,6 @@ types:
     output: docs/technical-doc/
     # Público previsto para las explicaciones técnicas.
     audience: "Equip de desenvolupament i manteniment"
-    # Alcance explícito, sin añadir proyectos dependientes automáticamente.
-    scope:
-      # Proyectos seleccionados con globs relativos a la raíz.
-      include_projects: ["src/**/*.csproj"]
-      # Proyectos que se excluyen aunque estén incluidos por otro patrón.
-      exclude_projects: ["tests/**/*.csproj"]
-      # Visibilidades relevantes para la explicación técnica.
-      visibility: [public, protected, internal]
   # Documentación XML de contratos C#, también en catalán.
   xml:
     # Activa o desactiva los comentarios XML.
@@ -50,10 +34,10 @@ types:
     audience: "Persones consumidores de l'API i equip de desenvolupament"
     # Proyectos y miembros editables, excluyendo fuentes generadas y externas.
     scope:
-      # Patrones de proyectos cuya documentación XML se revisará.
-      include_projects: ["src/**/*.csproj"]
-      # Proyectos fuera del alcance XML.
-      exclude_projects: ["tests/**/*.csproj"]
+      # Ruta ficticia de ejemplo; sustitúyela por un proyecto del destino.
+      include_projects: ["src/SampleApp/SampleApp.csproj"]
+      # Rutas de proyectos excluidos; [] no añade exclusiones.
+      exclude_projects: []
       # XML debe cubrir public y protected y los contratos de interfaz expuestos.
       visibility: [public, protected]
   # Comentarios sobre decisiones no evidentes, no sobre operaciones obvias.
@@ -68,9 +52,9 @@ types:
     audience: "Equip de manteniment"
     # Límite de proyectos y visibilidades.
     scope:
-      # Proyectos en los que se buscan decisiones que necesiten explicación.
-      include_projects: ["src/**/*.csproj"]
-      # Proyectos que no se modifican.
-      exclude_projects: ["tests/**/*.csproj"]
+      # Ruta ficticia de ejemplo; sustitúyela por un proyecto del destino.
+      include_projects: ["src/SampleApp/SampleApp.csproj"]
+      # Rutas de proyectos excluidos; [] no añade exclusiones.
+      exclude_projects: []
       # Visibilidades permitidas, sin obligación de comentar cada miembro.
       visibility: [public, protected, internal, private]

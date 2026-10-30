@@ -5,18 +5,13 @@
     "owner": "Equipo de formación",
     "version": "1.0.0",
     "status": "draft",
+    "installation_notes": "Una sola copia en .claude/skills/ sirve para Claude Code y VS Code Local y reduce la deriva. Solo si se usa el motor Copilot, copiar el mismo skill a .github/skills/ y registrar esa copia adicional; Local descubre ambas ubicaciones.",
     "channels": [
         {
             "runtime": "copilot-local",
-            "format": "prompt",
-            "name": "document-repo",
-            "path": "copilot/.github/prompts/document-repo.prompt.md"
-        },
-        {
-            "runtime": "copilot",
             "format": "skill",
             "name": "document-repo",
-            "path": "copilot/.github/skills/document-repo/SKILL.md"
+            "path": "claude/.claude/skills/document-repo/SKILL.md"
         },
         {
             "runtime": "claude",
