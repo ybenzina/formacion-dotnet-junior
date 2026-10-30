@@ -56,7 +56,7 @@ Cada skill se distribuye **una sola vez**, bajo `claude/.claude/skills/`. Copia 
 
 Solo si usas el motor **Copilot**, añade el mismo skill a `.github/skills/`. Local lee ambas ubicaciones: duplicarlas duplica el nombre. Una copia compartida reduce la deriva porque ambas herramientas leen los mismos bytes.
 
-Conserva la cabecera, revisa archivos existentes e instala por PR. Al actualizar una instalación antigua, retira sus variantes `.prompt.md` y `.github/skills/` equivalentes si vas a usar Local; no borres personalizaciones ajenas.
+Conserva la cabecera, revisa archivos existentes e instala por PR. No borres personalizaciones ajenas.
 
 Comprueba qué fichero carga la herramienta. En [REGISTRO.md](REGISTRO.md), una fila representa un fichero instalado; indica ambos motores si comparten la copia. No se instala nada automáticamente.
 
