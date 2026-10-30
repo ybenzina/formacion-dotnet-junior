@@ -1,0 +1,14 @@
+{
+	"$schema": "../../esquema/metadata.schema.json",
+	"id": "calidad-sonarqube",
+	"title": "Corrección supervisada de calidad .NET",
+	"owner": "Equipo de formación",
+	"version": "1.0.0",
+	"status": "draft",
+	"channels": [
+		{ "runtime": "copilot-local", "format": "prompt", "name": "fix-quality", "path": "copilot/.github/prompts/fix-quality.prompt.md" },
+		{ "runtime": "copilot", "format": "skill", "name": "fix-quality", "path": "copilot/.github/skills/fix-quality/SKILL.md" },
+		{ "runtime": "claude", "format": "skill", "name": "fix-quality", "path": "claude/.claude/skills/fix-quality/SKILL.md" }
+	],
+	"validated_repos": []
+}
