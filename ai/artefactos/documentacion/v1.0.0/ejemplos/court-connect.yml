@@ -1,0 +1,76 @@
+# Versión del contrato de configuración, no del artefacto.
+version: 1
+# Tipos de documentación; los cuatro bloques son independientes.
+types:
+  # Documentación funcional de los comportamientos comprobados.
+  functional:
+    # Activa o desactiva este tipo sin modificar los demás.
+    enabled: true
+    # Idioma del texto generado; no traduce identificadores.
+    language: es
+    # Directorio relativo al repositorio para los Markdown funcionales.
+    output: docs/
+    # Público que determina el vocabulario y el nivel de detalle.
+    audience: "Equipo funcional y personas usuarias"
+    # Límite de proyectos y símbolos que se pueden documentar.
+    scope:
+      # Globs de .csproj relativos a la raíz; comprobar coincidencias reales.
+      include_projects: ["src/**/*.csproj"]
+      # Exclusiones que prevalecen sobre la inclusión; [] no excluiría nada más.
+      exclude_projects: ["tests/**/*.csproj"]
+      # Visibilidad de los símbolos que sustentan la documentación.
+      visibility: [public]
+  # Documentación de arquitectura y contratos técnicos comprobados.
+  technical:
+    # Activa o desactiva la documentación técnica.
+    enabled: true
+    # Idioma de las explicaciones técnicas.
+    language: en
+    # Directorio relativo para los Markdown técnicos.
+    output: docs/technical-doc/
+    # Público previsto para esta documentación.
+    audience: "Developers and maintainers"
+    # Alcance explícito, sin incluir dependencias por transitividad.
+    scope:
+      # Proyectos que se documentan; validar estos patrones en el destino.
+      include_projects: ["src/**/*.csproj"]
+      # Proyectos que quedan fuera aunque coincidan con la inclusión.
+      exclude_projects: ["tests/**/*.csproj"]
+      # Superficies de código relevantes para el documento técnico.
+      visibility: [public, protected, internal]
+  # Comentarios XML que documentan contratos C#.
+  xml:
+    # Activa o desactiva la documentación XML.
+    enabled: true
+    # Idioma del texto dentro de las etiquetas XML.
+    language: en
+    # Literal reservado: editar documentación en el C# original, no una carpeta.
+    output: source
+    # Público que consume esos contratos mediante IntelliSense o documentación.
+    audience: "API consumers and developers"
+    # Alcance de proyectos y miembros, respetando fuentes generadas y externas.
+    scope:
+      # Proyectos cuyos contratos se van a documentar.
+      include_projects: ["src/**/*.csproj"]
+      # Proyectos excluidos de la edición de comentarios XML.
+      exclude_projects: ["tests/**/*.csproj"]
+      # XML exige public y protected, incluidos constructores y contratos de interfaz.
+      visibility: [public, protected]
+  # Comentarios que explican decisiones no evidentes, sin narrar cada línea.
+  comments:
+    # Activa o desactiva los comentarios de código.
+    enabled: true
+    # Idioma de las explicaciones del porqué.
+    language: en
+    # Literal reservado: comentarios junto al código fuente existente.
+    output: source
+    # Público responsable de mantener el código.
+    audience: "Maintainers"
+    # Límite explícito de proyectos y visibilidades.
+    scope:
+      # Proyectos donde revisar si hace falta explicar alguna decisión.
+      include_projects: ["src/**/*.csproj"]
+      # Proyectos que no se modifican en este flujo.
+      exclude_projects: ["tests/**/*.csproj"]
+      # Visibilidades permitidas; no obliga a añadir comentarios a todos los miembros.
+      visibility: [public, protected, internal, private]
