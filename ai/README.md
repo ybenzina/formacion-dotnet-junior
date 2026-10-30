@@ -1,6 +1,6 @@
 # Referencias de IA del reto
 
-Esta carpeta es la fuente de verdad de las referencias de IA de `DeemSoft/formacion-dotnet-junior`. Se instalan a mano por PR en `DeemSoft/court-connect`. Aún no hay instalaciones registradas.
+Esta carpeta es la fuente de verdad de las referencias de IA de `DeemSoft/formacion-dotnet-junior`. Se instalan por PR en `DeemSoft/court-connect`, salvo el revisor del mentor, instalado en este repo. Su primera instalación queda efectiva al fusionar el PR, según [el registro](REGISTRO.md).
 
 ## Qué es cada cosa
 
@@ -10,7 +10,7 @@ Esta carpeta es la fuente de verdad de las referencias de IA de `DeemSoft/formac
 | Skill | Carpeta con instrucciones y recursos | No añade autonomía por sí solo | La persona o el modelo, según la configuración |
 | Fichero de prompt (*prompt file*) | Una tarea reutilizable en Markdown | La del agente que lo ejecuta | La persona, con `/nombre` |
 
-El fichero no es el modelo: la herramienta lo carga como instrucciones. Aquí usamos un agente tutor y skills manuales, sin variantes `.prompt.md`.
+El fichero no es el modelo: la herramienta lo carga como instrucciones. Aquí usamos agentes de tutoría y revisión y skills manuales, sin variantes `.prompt.md`.
 
 ## Referencias disponibles
 
@@ -19,6 +19,7 @@ El fichero no es el modelo: la herramienta lo carga como instrucciones. Aquí us
 | [Tutor](artefactos/tutor/README.md) | 1.0.0 | `refined` | Ayuda gradual en las partes I y II; se instala en P2 · Ej5 |
 | [Calidad](artefactos/calidad-sonarqube/README.md) | 1.0.0 | `draft` | Corregir issues de SonarQube Cloud desde la Parte III |
 | [Documentación](artefactos/documentacion/README.md) | 1.0.0 | `draft` | Documentar según la configuración del repositorio |
+| [Revisor del reto](artefactos/revisor-reto/README.md) | 1.0.0 | `draft` | Para Yamel: PR, demos, seguimiento y borradores de Discord |
 
 No fijan modelo ni SDK. El reto usa .NET 10 en las partes I y II y .NET 11 desde la III.
 
@@ -51,7 +52,7 @@ El tutor es un rol de lectura, no un trabajador autónomo. Ninguna referencia es
 
 ## Instalación manual
 
-Cada skill se distribuye **una sola vez**, bajo `claude/.claude/skills/`. Copia su carpeta a `.claude/skills/` en el destino: la leen **Claude Code y VS Code Local**. El tutor de Copilot sigue en `.github/agents/`.
+Cada skill se distribuye **una sola vez**, bajo `claude/.claude/skills/`. Copia su carpeta a `.claude/skills/` en el destino: la leen **Claude Code y VS Code Local**. Los agentes de Copilot van en `.github/agents/`.
 
 Solo si usas el motor **Copilot**, añade el mismo skill a `.github/skills/`. Local lee ambas ubicaciones: duplicarlas duplica el nombre. Una copia compartida reduce la deriva porque ambas herramientas leen los mismos bytes.
 
@@ -91,6 +92,6 @@ Documentación oficial revisada el 30 de octubre de 2026:
 
 | Fuente | Decisión |
 | --- | --- |
-| [Agentes de VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-agents) y [frontmatter](https://code.visualstudio.com/docs/agents/reference/custom-agent-file-reference) | Tutor en `.github/agents/*.agent.md`, seleccionado por la persona |
+| [Agentes de VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-agents) y [frontmatter](https://code.visualstudio.com/docs/agents/reference/custom-agent-file-reference) | Tutor y revisor en `.github/agents/*.agent.md`, seleccionados por la persona |
 | [Skills de VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills) y [Claude Code](https://code.claude.com/docs/en/skills) | `.claude/skills/` compartida con Local; `.github/skills/` adicional solo para el motor Copilot |
 | [Prompts](https://code.visualstudio.com/docs/copilot/customization/prompt-files), [subagentes](https://code.claude.com/docs/en/sub-agents) y [estilos](https://code.claude.com/docs/en/output-styles) | No se distribuyen estas variantes; el tutor mantiene la conversación principal |
