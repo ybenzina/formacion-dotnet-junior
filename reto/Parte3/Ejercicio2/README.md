@@ -8,7 +8,7 @@ Dejar que la IA planifique e implemente la funcionalidad a partir de la especifi
 
 ## Pasos
 
-Rama `feature/sdd-torneos` (la misma del ejercicio 1).
+Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`, con *squash merge*.
 
 1. **Plan técnico y tareas** generados con Spec Kit. Revísalos antes de implementar: ¿respetan la constitución (slices, sin mediador, reglas en el dominio)?
 2. **Implementación** generada por la IA, tarea a tarea.

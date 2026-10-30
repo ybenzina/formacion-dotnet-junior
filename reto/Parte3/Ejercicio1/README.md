@@ -1,6 +1,6 @@
 # Ejercicio 1 — SDD (1/2): especificar torneos y pago
 
-**Días 17 y 18 · estimación: 6 h** · Issue: «P3 · Ej1 · SDD (1/2): especificación»
+**Días 17 y 18 · estimación: 6 h 30 min** · Issue: «P3 · Ej1 · SDD (1/2): especificación»
 
 ## Objetivo
 
@@ -12,7 +12,16 @@ Conceptos nuevos (añádelos al glosario): **constitución**, **especificación*
 
 ## Pasos
 
-Rama `feature/sdd-torneos`.
+### 0. Rama de integración (≈ 30 min)
+
+Desde hoy se trabaja con el flujo de la Parte III (ver el [README de la parte](../README.md#flujo-de-ramas-desde-la-parte-iii)):
+
+- Etiqueta el estado actual de `main` como **`v0.1.0`** (el MVP de las partes I y II) y crea **`develop`** a partir de esa etiqueta.
+- Ruleset para `develop`: PR obligatorio con 1 aprobación, los dos checks obligatorios (CI y `SonarCloud Code Analysis`) y sin *force push*. En `main` se mantiene el que ya tienes; a `main` solo llegan PR desde `develop` o `hotfix/*` (por convención: GitHub no lo restringe).
+- Permite también *squash merge* en los ajustes del repo.
+- La CI se ejecuta también en los PR y push a `develop`.
+
+Rama `feature/sdd-torneos`, **creada desde `develop`**.
 
 ### 1. Inicializar Spec Kit (≈ 30 min)
 
@@ -45,6 +54,7 @@ La constitución son las reglas que la IA tiene que seguir siempre. Tiene que se
 
 ## Criterios de aceptación
 
+- [ ] `v0.1.0` etiquetada; `develop` creada, protegida y con la CI activa.
 - [ ] Spec Kit inicializado y coherente con `AGENTS.md`.
 - [ ] Constitución con slices, tests, seguridad y datos mínimos.
 - [ ] Especificación aprobada por Yamel, sin aclaraciones pendientes.
@@ -52,6 +62,7 @@ La constitución son las reglas que la IA tiene que seguir siempre. Tiene que se
 
 ## Preguntas para la demo
 
+- ¿Qué hay ahora en `main` y qué en `develop`? ¿Por qué una rama de funcionalidad ya no va directa a `main`?
 - ¿Qué diferencia hay entre la constitución y la especificación?
 - ¿Qué pregunta de la especificación te hizo cambiar de idea al responderla?
 - ¿Por qué la caducidad necesita un proceso en segundo plano? ¿Había otra forma?

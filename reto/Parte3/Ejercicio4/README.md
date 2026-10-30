@@ -14,7 +14,9 @@ Repasa la masterclass de contenedores, Aspire y Azure (el domingo siguiente al D
 
 ## Pasos
 
-Rama `chore/despliegue-azure`.
+Rama `chore/despliegue-azure`, desde `develop`.
+
+**Release antes de desplegar:** cuando el despliegue esté integrado en `develop`, abre un PR de `develop` a `main` (*merge commit*) y etiqueta **`v0.2.0`**. Se despliega lo que hay en `main`: lo que está en Azure tiene que corresponder siempre a una versión.
 
 1. **Base de datos:** Azure SQL con la oferta gratuita, con la opción de **pausarse al llegar al límite** (no la de seguir cobrando).
 2. **Imágenes:** las de la Parte II, publicadas en un registro (Azure Container Registry o GitHub Container Registry).
@@ -28,6 +30,7 @@ Hazlo primero a mano (portal o `az`) para entender cada pieza. Automatizarlo des
 ## Criterios de aceptación
 
 - [ ] La web funciona en una URL pública, con login y datos ficticios.
+- [ ] Lo desplegado corresponde a una versión etiquetada de `main`.
 - [ ] Ningún secreto en las imágenes ni en el repositorio.
 - [ ] La base de datos no puede generar costes inesperados.
 - [ ] README con los pasos de despliegue y la lista de recursos.

@@ -20,7 +20,7 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 
 - [ ] Crear el repo **`court-connect`** en la organización **DeemSoft**, **público**, con README y `.gitignore` de **VisualStudio**.
 - [ ] *Settings → General → Pull Requests*:
-  - [ ] Permitir solo **merge commits** (desmarcar squash y rebase).
+  - [ ] Permitir solo **merge commits** (desmarcar squash y rebase). En la Parte III se activará también *squash*, para los PR hacia `develop`.
   - [ ] Activar **Automatically delete head branches**.
 - [ ] *Settings → Rules → Rulesets*: crear un ruleset para `main` con:
   - [ ] **Require a pull request before merging**, con 1 aprobación.
