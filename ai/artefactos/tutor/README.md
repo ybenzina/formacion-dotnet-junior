@@ -1,28 +1,28 @@
 # Tutor · guide-learning
 
-**v1.0.0 · refined.** Ayuda a Driss a comprender su trabajo sin hacer el ejercicio por él. Concreta el modo tutor del reto; el estado editorial no acredita pruebas realizadas. No hay repositorios validados todavía.
+**v1.0.0 · refined.** Ayuda a Driss a comprender su trabajo sin resolver el ejercicio. Las pruebas de ejecución siguen pendientes.
 
 ## Cuándo usarlo
 
-Para entender un error, aclarar un concepto o revisar código propio de los ejercicios. Se instala en el ejercicio 5 de la Parte II, después del diseño propio. Yamel mantiene la revisión técnica; el tutor no aprueba entregas.
+Para entender errores, aclarar conceptos y revisar código propio. Se instala en P2 · Ej5, después del diseño breve. Yamel revisa las entregas.
 
-**No usar** para obtener una solución completa, delegar la implementación ni trabajar en `feature/sdd-*`. Allí se sigue el flujo SDD con especificación aprobada, no este tutor. Las instrucciones del repositorio siguen vigentes aunque cambies de agente.
+**No usar** para delegar ejercicios ni en `feature/sdd-*`. Los límites y la ayuda gradual están en el instalable.
 
 ## Instalación
 
-Desde [v1.0.0](v1.0.0/CHANGELOG.md), copia el fichero de cada canal a la misma ruta relativa desde la raíz de `court-connect`:
+En un solo PR de `court-connect`, instala estos dos ficheros con su cabecera:
 
 | Herramienta | Fuente del paquete | Ruta destino | Invocación |
 | --- | --- | --- | --- |
-| GitHub Copilot en VS Code | [Agente](v1.0.0/copilot/.github/agents/guide-learning.agent.md) | `.github/agents/guide-learning.agent.md` | Seleccionar `guide-learning` en el selector de agentes |
-| Claude Code | [Skill](v1.0.0/claude/.claude/skills/guide-learning/SKILL.md) | `.claude/skills/guide-learning/SKILL.md` | `/guide-learning` en la conversación principal |
+| Copilot en VS Code | [Agente](v1.0.0/copilot/.github/agents/guide-learning.agent.md) | `.github/agents/guide-learning.agent.md` | Seleccionar `guide-learning` |
+| Claude Code y VS Code Local | [Skill compartido](v1.0.0/claude/.claude/skills/guide-learning/SKILL.md) | `.claude/skills/guide-learning/SKILL.md` | `/guide-learning` |
 
-No copies los prefijos `copilot/` ni `claude/`. Conserva la cabecera, comprueba la carga en cada herramienta y realiza la instalación por PR. No sobrescribas una personalización existente sin revisarla. Sigue [la comprobación SHA-256](../../README.md#deriva-y-sha-256) y [el registro](../../REGISTRO.md), con una fila por fichero instalado tras fusionar el PR.
+No copies los prefijos del paquete. El agente restringe herramientas a lectura y búsqueda; el skill no impone esa restricción técnica. En la práctica, usa el agente en VS Code y el skill en Claude Code.
 
-El agente de Copilot limita herramientas a lectura y búsqueda. El skill de Claude da instrucciones en la conversación principal, **no impone por sí solo una restricción técnica de escritura**: las instrucciones y permisos del entorno siguen siendo necesarios. No se usa `allowed-tools` como si fuera una lista de prohibiciones. En ambos casos se valida el comportamiento, no solo la presencia del fichero.
+Local también lee el skill de Claude: una sola copia reduce la deriva. `.github/skills/` solo se añade para usar un skill con el motor Copilot; este tutor ya tiene su agente y no la necesita.
 
 ## Pruebas y mejora
 
-Ejecuta [pruebas.md](v1.0.0/pruebas.md) en ambas herramientas y añade un caso propio. Anota las salidas reales en el PR; no marques una prueba como superada solo porque las instrucciones contienen esa regla.
+En P2 · Ej5 ejecuta **T1, T3, T4, T7 y un caso propio** de [pruebas.md](v1.0.0/pruebas.md) en ambas herramientas. La batería completa queda para la validación posterior.
 
-Compara con el diseño previo y propone una mejora mediante PR **a esta fuente**, con nueva versión, CHANGELOG y repetición de pruebas. No edites la copia instalada como fuente de verdad. La actualización del destino y del registro va después. Los modelos no están fijados: registra cuál probaste.
+Un único PR a la fuente reúne mejora `v1.1.0`, CHANGELOG, resultados y [registro](../../REGISTRO.md) de la **v1.0.0 instalada**, con [SHA-256](../../README.md#deriva-y-sha-256). Reinstalar la mejora es Extra; hasta entonces el registro no cambia a v1.1.0.

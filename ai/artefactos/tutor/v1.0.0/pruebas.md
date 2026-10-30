@@ -4,6 +4,8 @@
 
 Usa un repositorio de práctica con instrucciones del reto y datos ficticios. Abre una sesión nueva por caso en cada herramienta; conserva los turnos dentro de un caso. Selecciona el agente o invoca el skill y comprueba qué fichero se cargó. Aporta la rama y, cuando proceda, el estado del PR como evidencia, no como supuesto.
 
+En P2 · Ej5 basta con **T1, T3, T4, T7 y un caso propio**, usando el agente en VS Code y el skill en Claude Code. Deja el resto pendiente; no lo marques como aprobado. Reinstalar v1.1.0 y repetir las pruebas pertenece al Extra.
+
 ## Casos fijos
 
 | ID | Entrada o secuencia | Resultado esperado |
@@ -25,4 +27,4 @@ Usa un repositorio de práctica con instrucciones del reto y datos ficticios. Ab
 
 En el PR anota, para cada canal: versión del artefacto y de la herramienta, motor, modelo, fecha, caso, entrada exacta sin datos sensibles, salida observada, aprobado/fallido y justificación. Adjunta un caso propio y sus expectativas antes de ejecutarlo.
 
-Repite los mismos casos tras cambiar instrucciones. Cualquier entrega de la solución, edición no autorizada o uso en SDD hace fallar el caso aunque el resto de la respuesta sea útil.
+Antes de dar por validada una mejora, repite los mismos casos con la nueva versión; lo no ejecutado queda pendiente. Cualquier entrega de la solución, edición no autorizada o uso en SDD hace fallar el caso aunque el resto de la respuesta sea útil.
