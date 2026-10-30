@@ -1,31 +1,29 @@
 # Calidad .NET · fix-quality
 
-**v1.0.0 · draft.** Referencia para inventariar y corregir issues de SonarQube Cloud en un repositorio .NET alojado en GitHub. No contiene claves de organización ni proyecto. No hay pruebas de ejecución acreditadas todavía.
+**v1.0.0 · draft.** Para inventariar y corregir issues de SonarQube Cloud en un repo .NET de GitHub. Pruebas de ejecución pendientes.
 
 ## Cuándo usarla
 
-**Solo desde la Parte III del reto.** En las partes I y II, Driss debe interpretar y superar el quality gate por sí mismo, con la ayuda conceptual del tutor cuando corresponda. No usar para generar soluciones de ejercicios, analizar otros lenguajes, ignorar hallazgos o rebajar el gate.
+**Solo desde la Parte III.** En las partes I y II, Driss supera el quality gate por su cuenta. No sirve para resolver ejercicios, analizar otros lenguajes ni rebajar el gate.
 
-Requiere acceso al código, SDK y comandos del repo, análisis de SonarQube Cloud y GitHub CLI (`gh`) autenticado. Lee organización, project key y configuración del scanner de los archivos/CI reales del destino; si faltan o se contradicen, pregunta. `SONAR_TOKEN` se configura fuera del chat, con permisos mínimos; nunca se pega ni se muestra.
+Necesita el SDK del repo, acceso a SonarQube Cloud y `gh` autenticado. Obtiene organización y project key de la configuración real. Prepara `SONAR_TOKEN` fuera del chat.
 
 ## Instalación e invocación
 
-Copia el fichero elegido preservando la ruta desde la raíz del destino y la cabecera:
+Copia el [skill](v1.0.0/claude/.claude/skills/fix-quality/SKILL.md) con su cabecera:
 
-| Motor | Fuente del paquete | Ruta destino | Invocación |
-| --- | --- | --- | --- |
-| VS Code Local | [Prompt](v1.0.0/copilot/.github/prompts/fix-quality.prompt.md) | `.github/prompts/fix-quality.prompt.md` | `/fix-quality` |
-| Copilot | [Skill](v1.0.0/copilot/.github/skills/fix-quality/SKILL.md) | `.github/skills/fix-quality/SKILL.md` | `/fix-quality` |
-| Claude Code | [Skill](v1.0.0/claude/.claude/skills/fix-quality/SKILL.md) | `.claude/skills/fix-quality/SKILL.md` | `/fix-quality` |
+| Motores | Ruta destino | Invocación |
+| --- | --- | --- |
+| Claude Code y VS Code Local | `.claude/skills/fix-quality/SKILL.md` | `/fix-quality` |
 
-El prompt es la variante para Local, no para el motor Copilot. No instales a la vez prompt y skill del mismo nombre para Local; comprueba qué fuente carga la herramienta si descubre varios skills. El cuerpo de las tres variantes es equivalente.
+Solo para el motor **Copilot**, añade una copia del mismo fichero en `.github/skills/fix-quality/SKILL.md`. Local lee ambas carpetas: no las dupliques para usar Local. Una copia compartida reduce la deriva entre herramientas.
 
-Instala por PR y compara SHA-256 según [la guía](../../README.md#deriva-y-sha-256); actualiza [el registro](../../REGISTRO.md) tras fusionar la instalación. La fuente está aquí, no en las copias.
+Instala por PR, comprueba [SHA-256](../../README.md#deriva-y-sha-256) y actualiza [el registro](../../REGISTRO.md). Si actualizas una instalación anterior, retira las variantes redundantes como explica [la guía](../../README.md#instalación-manual).
 
 ## Cómo se trabaja
 
-Hay tres paradas obligatorias: **acordar alcance** tras el inventario; **aprobar el plan** por lotes; **revisar cada módulo** antes de continuar. El alcance por defecto es P1–P3, pero el inventario muestra también P4–P5 y lo pendiente. Un issue con varios impactos toma la prioridad más alta, es decir, el menor número P de la matriz incluida en cada variante.
+Las tres paradas son **acordar alcance**, **aprobar el plan** y **revisar cada módulo**. Por defecto corrige P1–P3 y muestra el inventario completo, incluidos P4–P5 pendientes.
 
-Los cambios se hacen en `quality/<scope>`, con la base confirmada según el flujo del repo. Los falsos positivos necesitan evidencia y confirmación individual, no una exclusión masiva. Compilar y pasar tests localmente no acredita el gate del PR: hay que comprobar el análisis y el commit correspondientes.
+El skill detalla la matriz, las ramas `quality/<scope>`, los falsos positivos y las pruebas. El gate se verifica contra el PR y commit correctos, no solo con un build local.
 
-Ejecuta [la batería](v1.0.0/pruebas.md) en un entorno de práctica, empezando por lectura. No ejecutes acciones que cambien SonarQube o publiquen un PR sin autorización. Las mejoras se proponen a esta fuente mediante nueva versión y CHANGELOG.
+Ejecuta [la batería](v1.0.0/pruebas.md) y un caso propio con Claude Code y VS Code Local. Guarda resultados reales. Las mejoras vuelven a esta fuente mediante nueva versión y CHANGELOG.

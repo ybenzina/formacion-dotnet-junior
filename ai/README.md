@@ -1,16 +1,16 @@
 # Referencias de IA del reto
 
-Esta carpeta es la fuente de verdad de los agentes y prompts de `DeemSoft/formacion-dotnet-junior`. Se mantienen aquí y se instalan a mano por Pull Request en `DeemSoft/court-connect`. No hay nada instalado todavía. No se copia configuración de otros proyectos.
+Esta carpeta es la fuente de verdad de las referencias de IA de `DeemSoft/formacion-dotnet-junior`. Se instalan a mano por PR en `DeemSoft/court-connect`. Aún no hay instalaciones registradas.
 
 ## Qué es cada cosa
 
 | Pieza | Qué contiene | Autonomía | Quién la invoca |
 | --- | --- | --- | --- |
-| Agente personalizado (*custom agent*) | Un rol, instrucciones y herramientas en un fichero Markdown | La que permitan sus herramientas y límites; no significa ejecución autónoma | La persona lo selecciona; otro agente puede delegarle si está permitido |
-| Skill | Una carpeta con instrucciones y, si hacen falta, recursos | No añade autonomía por sí solo; puede actuar en la conversación actual o en un contexto separado | La persona o el modelo, según su configuración |
-| Fichero de prompt (*prompt file*) | Instrucciones reutilizables para una tarea concreta | Usa las capacidades del agente que lo ejecuta | La persona, como comando `/nombre` |
+| Agente personalizado (*custom agent*) | Rol, instrucciones y herramientas en Markdown | Depende de sus herramientas y límites | La persona lo selecciona; puede admitir delegación |
+| Skill | Carpeta con instrucciones y recursos | No añade autonomía por sí solo | La persona o el modelo, según la configuración |
+| Fichero de prompt (*prompt file*) | Una tarea reutilizable en Markdown | La del agente que lo ejecuta | La persona, con `/nombre` |
 
-Un fichero no es un modelo ni un programa que esté ejecutándose. La herramienta lo carga y el modelo sigue sus instrucciones. Un subagente trabaja en su propio contexto; no equivale a conversar con un tutor. Las instrucciones guían el comportamiento, pero no son una barrera de seguridad infalible.
+El fichero no es el modelo: la herramienta lo carga como instrucciones. Aquí usamos un agente tutor y skills manuales, sin variantes `.prompt.md`.
 
 ## Referencias disponibles
 
@@ -20,50 +20,50 @@ Un fichero no es un modelo ni un programa que esté ejecutándose. La herramient
 | [Calidad](artefactos/calidad-sonarqube/README.md) | 1.0.0 | `draft` | Corregir issues de SonarQube Cloud desde la Parte III |
 | [Documentación](artefactos/documentacion/README.md) | 1.0.0 | `draft` | Documentar según la configuración del repositorio |
 
-No fijan modelo ni versión de .NET. Leen las convenciones y el SDK del repositorio destino. El reto usa .NET 10 en las partes I y II y migra a .NET 11 al empezar la III.
+No fijan modelo ni SDK. El reto usa .NET 10 en las partes I y II y .NET 11 desde la III.
 
 ## Cuándo merece la pena
 
-- No hay agente sin caso de uso documentado: problema repetido, límites, resultado y pruebas.
-- Empieza por un prompt o por un rol de chat supervisado. No crees un agente para una pregunta puntual o una tarea que aún no sabes explicar.
-- Añade más autonomía solo tras validar el flujo anterior en dos repositorios, con evidencia. Dos herramientas en el mismo repo no son dos repos.
-- Siempre hay intervención humana: la persona decide el alcance, revisa los cambios y autoriza las acciones externas.
+- Documenta primero el problema, los límites y cómo probarás el resultado.
+- Empieza por un prompt o chat supervisado. Una pregunta puntual no necesita un agente.
+- Más autonomía requiere validar el flujo previo en dos repos distintos, con evidencia.
+- Siempre hay intervención humana para decidir alcance y revisar cambios.
 
-El tutor de Copilot es un rol conversacional con lectura, no un trabajador autónomo. Los skills de esta carpeta se invocan manualmente. Ninguna referencia está certificada ni tiene validación acreditada en dos repos.
+El tutor es un rol de lectura, no un trabajador autónomo. Ninguna referencia está certificada todavía.
 
 ## Ciclo de vida
 
 1. **Diseño:** rellena [la plantilla breve](plantillas/diseno-agente.md).
-2. **Prompt:** expresa rol, tarea, contexto, límites y salida esperada.
-3. **Pruebas:** ejecuta los casos fijos y un caso propio en sesiones nuevas. Conserva entrada, salida real, herramienta, modelo, versión y resultado.
-4. **Iteración:** cambia una cosa y repite los casos; una respuesta que «suena mejor» no basta.
-5. **Versión:** crea una carpeta nueva, actualiza metadatos, cabeceras y CHANGELOG. Revisa todos los canales.
-6. **Instalación:** PR al destino, comprobación de carga y pruebas. Registra solo instalaciones efectivas.
-7. **Mantenimiento:** revisa compatibilidad, incidencias y deriva antes de actualizar. Para volver atrás, reinstala una versión anterior mediante PR y actualiza el registro.
+2. **Prompt:** escribe rol, tarea, contexto, límites y salida esperada.
+3. **Pruebas:** casos fijos y uno propio; guarda entrada, salida, herramienta, modelo, versión y resultado.
+4. **Iteración:** cambia una cosa y repite los casos.
+5. **Versión:** nueva carpeta, metadatos, cabeceras y CHANGELOG.
+6. **Instalación:** PR al destino, comprobación de carga y registro de la copia efectiva.
+7. **Mantenimiento:** revisa compatibilidad y deriva; una vuelta atrás también se hace por PR.
 
 ## Convenciones
 
-- **Identificador:** nombre estable del catálogo, como `calidad-sonarqube`.
-- **Nombre de canal:** imperativo corto en inglés, como `fix-quality`. Se conserva entre repos. En prompts y skills se escribe `/fix-quality`; los agentes se eligen en el selector.
-- **Versionado semántico (*SemVer*):** `MAJOR.MINOR.PATCH`. MAJOR cambia contratos, configuración o permisos de forma incompatible; MINOR añade capacidades compatibles; PATCH corrige instrucciones sin cambiar el contrato.
-- Cada versión publicada queda inmóvil en `vX.Y.Z/`. Para una mejora, copia la versión en la fuente y cambia su número; no retoques copias instaladas.
-- `draft`: propuesta pendiente de validar. `refined`: instrucciones concretadas y revisables; no acredita pruebas de instalación. `certified`: pruebas de todos los canales con evidencia y revisión humana aprobada. La versión y el estado son cosas distintas.
-- [El esquema](esquema/metadata.schema.json) valida el catálogo; `validated_repos` contiene solo evidencia real. [La checklist](proceso/checklist.md) acompaña cada PR.
-- Markdown y prompts en español; código e identificadores en inglés. La configuración decide el idioma de la documentación generada.
+- **Identificador:** nombre del catálogo, como `calidad-sonarqube`. **Canal:** imperativo inglés, como `/fix-quality`; los agentes se eligen en el selector.
+- **Versionado semántico (*SemVer*):** `MAJOR.MINOR.PATCH`: cambio incompatible, capacidad compatible o corrección. Una versión publicada en `vX.Y.Z/` no se reescribe.
+- **Estados:** `draft`, propuesta; `refined`, instrucciones concretadas; `certified`, pruebas con evidencia y revisión humana aprobada. El estado no sustituye a las pruebas.
+- [Esquema de metadatos](esquema/metadata.schema.json) y [checklist del PR](proceso/checklist.md). `validated_repos` solo recoge evidencia real.
+- Instrucciones en español; código e identificadores en inglés. El YAML decide el idioma de la documentación generada.
 
 ## Instalación manual
 
-Consulta el README de cada artefacto. Copia el contenido de la variante elegida sobre la raíz del destino, conservando sus rutas ocultas y su cabecera. No copies el contenedor `v1.0.0/copilot/` como una carpeta del proyecto. No sobrescribas un fichero existente sin comparar y acordar el cambio.
+Cada skill se distribuye **una sola vez**, bajo `claude/.claude/skills/`. Copia su carpeta a `.claude/skills/` en el destino: la leen **Claude Code y VS Code Local**. El tutor de Copilot sigue en `.github/agents/`.
 
-VS Code distingue motores de ejecución (*harnesses*): los `.prompt.md` se ejecutan en **Local**; el motor **Copilot** usa skills para esos flujos. Instala solo la variante que corresponda, para no duplicar el mismo comando. Comprueba en el menú qué archivo se ha cargado, especialmente si también hay skills de Claude con el mismo nombre.
+Solo si usas el motor **Copilot**, añade el mismo skill a `.github/skills/`. Local lee ambas ubicaciones: duplicarlas duplica el nombre. Una copia compartida reduce la deriva porque ambas herramientas leen los mismos bytes.
 
-No se instalan las referencias automáticamente en el repo de formación. Los ejemplos de configuración tampoco se activan solos. Todas las copias efectivas, incluso una instalación en formación, se anotan en [REGISTRO.md](REGISTRO.md), con una fila por fichero y canal.
+Conserva la cabecera, revisa archivos existentes e instala por PR. Al actualizar una instalación antigua, retira sus variantes `.prompt.md` y `.github/skills/` equivalentes si vas a usar Local; no borres personalizaciones ajenas.
+
+Comprueba qué fichero carga la herramienta. En [REGISTRO.md](REGISTRO.md), una fila representa un fichero instalado; indica ambos motores si comparten la copia. No se instala nada automáticamente.
 
 ## Deriva y SHA-256
 
-La deriva (*drift*) ocurre cuando una copia ya no coincide con la versión de la fuente que declara. La cabecera identifica esa versión, pero no demuestra que el contenido esté intacto. **SHA-256** es una huella de los bytes de un fichero; no sustituye a una firma ni a la revisión humana.
+La deriva (*drift*) es una diferencia entre la copia y la versión fuente que declara. La cabecera identifica la versión; **SHA-256** comprueba sus bytes.
 
-Desde la raíz de `court-connect`, con ambos repos como carpetas hermanas, este ejemplo comprueba el tutor de Copilot:
+Desde `court-connect`, con ambos repos como carpetas hermanas:
 
 ```powershell
 $source = '../formacion-dotnet-junior/ai/artefactos/tutor/v1.0.0/copilot/.github/agents/guide-learning.agent.md'
@@ -75,25 +75,22 @@ $installedHash
 $sourceHash -eq $installedHash
 ```
 
-Al instalar, verifica que sale `True` y anota los 64 caracteres de `$installedHash` en el registro. En revisiones posteriores, compara **copia, versión fuente indicada en la cabecera y hash registrado**. Si cualquiera difiere, revisa el diff: no actualices el registro para ocultarlo. Una versión antigua intacta está desactualizada, pero no tiene deriva.
+Debe salir `True`. Registra los 64 caracteres de `$installedHash`. Después compara **copia, versión fuente y hash registrado**; si difieren, revisa el diff. Una versión antigua intacta no tiene deriva.
 
-El hash incluye CRLF/LF, codificación y salto final. Conserva los bytes al copiar y comprueba de nuevo tras el checkout del PR fusionado: Git puede convertir los finales de línea. Una diferencia solo de formato también se investiga antes de registrar la copia. No normalices contenido de una versión publicada a escondidas.
+El hash incluye CRLF/LF, codificación y salto final. Compruébalo tras el checkout del PR fusionado, porque Git puede convertir los finales de línea.
 
-Las mejoras van por PR a la fuente con nueva versión y pruebas. Tras fusionarlas, otro PR instala esa versión en el destino; después se actualiza el registro con la fecha, persona y hash reales. No se modifica primero la copia para convertirla en una segunda fuente.
+Las mejoras van por PR a la fuente. Publicar una versión no la instala: el registro conserva la versión realmente copiada hasta que otro PR la actualice.
 
 ## Evolución futura
 
-Cuando haya más artefactos o repos, se podrá mover `ai/` a un repositorio de gobierno de la organización conservando su historial con `git subtree split --prefix=ai`. Se revisarán las rutas y cabeceras y se automatizará la sincronización por PR. Ahora no hay scripts de sincronización ni necesidad de ellos.
+Con más repos, `git subtree split --prefix=ai` permitirá trasladar la carpeta con su historial a un repo de gobierno. La sincronización se automatizará entonces, no ahora.
 
 ## Formatos consultados
 
-Documentación oficial consultada el 30 de octubre de 2026. Comprueba cambios de formato antes de publicar una nueva versión.
+Documentación oficial revisada el 30 de octubre de 2026:
 
 | Fuente | Decisión |
 | --- | --- |
 | [Agentes de VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-agents) y [frontmatter](https://code.visualstudio.com/docs/agents/reference/custom-agent-file-reference) | Tutor en `.github/agents/*.agent.md`, seleccionado por la persona |
-| [Prompts de VS Code](https://code.visualstudio.com/docs/copilot/customization/prompt-files) | `.github/prompts/*.prompt.md` solo para Local; `agent`, no el antiguo `mode` |
-| [Skills de VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills) | `.github/skills/<nombre>/SKILL.md` para Copilot, con invocación manual |
-| [Skills de Claude Code](https://code.claude.com/docs/en/skills) | `.claude/skills/<nombre>/SKILL.md`, sin `context: fork` para mantener el diálogo |
-| [Subagentes de Claude Code](https://code.claude.com/docs/en/sub-agents) | `.claude/agents/*.md`; no se usan para este tutor conversacional |
-| [Estilos de salida de Claude Code](https://code.claude.com/docs/en/output-styles) | `.claude/output-styles/*.md`; no se cambia el estilo de toda la sesión para un flujo concreto |
+| [Skills de VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills) y [Claude Code](https://code.claude.com/docs/en/skills) | `.claude/skills/` compartida con Local; `.github/skills/` adicional solo para el motor Copilot |
+| [Prompts](https://code.visualstudio.com/docs/copilot/customization/prompt-files), [subagentes](https://code.claude.com/docs/en/sub-agents) y [estilos](https://code.claude.com/docs/en/output-styles) | No se distribuyen estas variantes; el tutor mantiene la conversación principal |

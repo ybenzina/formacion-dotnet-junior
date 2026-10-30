@@ -5,12 +5,19 @@
     "owner": "Equipo de formación",
     "version": "1.0.0",
     "status": "refined",
+    "installation_notes": "El agente de Copilot se mantiene en .github/agents/. Una sola copia del skill en .claude/skills/ sirve para Claude Code y VS Code Local y reduce la deriva. .github/skills/ solo se añade si se necesita un skill con el motor Copilot; no hace falta para este agente tutor.",
     "channels": [
         {
             "runtime": "copilot",
             "format": "agent",
             "name": "guide-learning",
             "path": "copilot/.github/agents/guide-learning.agent.md"
+        },
+        {
+            "runtime": "copilot-local",
+            "format": "skill",
+            "name": "guide-learning",
+            "path": "claude/.claude/skills/guide-learning/SKILL.md"
         },
         {
             "runtime": "claude",
