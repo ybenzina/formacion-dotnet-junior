@@ -26,7 +26,7 @@ Es una masterclass de **visión general**: un mapa de lo que hay y de cómo vamo
 ### 1. Historia .NET y visión general
 
 - De **.NET Framework** (2002, solo Windows) a **.NET Core** (2016, multiplataforma), **.NET 5** (2020, plataforma unificada) y **.NET 10** (2025).
-- **Versiones y soporte:** una versión cada noviembre; las pares son **LTS** (3 años) y las impares **STS** (2 años). .NET 8 y .NET 9 terminan soporte el 10/11/2026; .NET 10 lo tiene hasta el 14/11/2028. **.NET 11** se lanza en **.NET Conf 2026 (10–13 de noviembre)**. En proyectos de cliente, LTS.
+- **Versiones y soporte:** una versión cada noviembre; las pares son **LTS** (3 años) y las impares **STS** (2 años). .NET 8 y .NET 9 terminan soporte el 10/11/2026; .NET 10 lo tiene hasta el 14/11/2028. **.NET 11** se lanza en **.NET Conf 2026 (10–13 de noviembre)**. En proyectos de cliente, LTS. El reto usa .NET 10 en las partes I y II y empieza la Parte III migrando a .NET 11.
 - **Ecosistema:**
   - Web y APIs: ASP.NET Core (Minimal APIs, controladores, MVC, Razor Pages) y Blazor (Static SSR, Server, WebAssembly). Legacy: WebForms, jQuery.
   - Comunicaciones: APIs REST y gRPC. Legacy: WCF / SOAP.

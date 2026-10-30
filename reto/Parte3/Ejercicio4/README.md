@@ -22,8 +22,9 @@ Rama `chore/despliegue-azure`, desde `develop`.
 2. **Imágenes:** las de la Parte II, publicadas en un registro (Azure Container Registry o GitHub Container Registry).
 3. **Container Apps:** un entorno con la API y la web. La web, accesible desde internet; la API, solo desde la web si te da tiempo (si no, pública y anótalo como deuda).
 4. **Configuración y secretos:** cadena de conexión y claves como secretos, nunca en la imagen ni en el repositorio.
-5. **Migraciones:** decide cómo se aplican en Azure y explícalo.
-6. **Documentación:** apartado «Despliegue» en el README con los pasos y los recursos creados.
+5. **Sesión y réplicas:** el asistente de inscripción guarda su estado en la sesión, y con `AddDistributedMemoryCache` la sesión vive en la memoria de cada réplica. Decide y explica una opción: una sola réplica para la web, afinidad de sesión (*session affinity*) en Container Apps o una caché distribuida. Piensa también qué pasa al escalar a cero con una inscripción a medias, y con las claves de Data Protection que cifran las cookies.
+6. **Migraciones:** decide cómo se aplican en Azure y explícalo.
+7. **Documentación:** apartado «Despliegue» en el README con los pasos y los recursos creados.
 
 Hazlo primero a mano (portal o `az`) para entender cada pieza. Automatizarlo desde la CI es un extra.
 
@@ -33,6 +34,7 @@ Hazlo primero a mano (portal o `az`) para entender cada pieza. Automatizarlo des
 - [ ] Lo desplegado corresponde a una versión etiquetada de `main`.
 - [ ] Ningún secreto en las imágenes ni en el repositorio.
 - [ ] La base de datos no puede generar costes inesperados.
+- [ ] La decisión sobre la sesión con varias réplicas, explicada en el README.
 - [ ] README con los pasos de despliegue y la lista de recursos.
 
 ## Extra

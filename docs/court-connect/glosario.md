@@ -45,6 +45,8 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 | **SDK / runtime** | El SDK sirve para compilar; el runtime, para ejecutar |
 | **`TargetFramework`** | Versión de .NET para la que se compila un proyecto: `net10.0` |
 | **`global.json`** | Fija qué versión del SDK usa el repo, en local y en la CI |
+| **LTS / STS** (*long-term / standard-term support*) | Tipos de versión de .NET. Sale una cada noviembre: las pares son LTS (3 años de soporte) y las impares STS (ahora 2 años). El reto empieza en .NET 10 (LTS) y migra a .NET 11 (STS) en la Parte III |
+| **Cambio incompatible** (*breaking change*) | Cambio de una versión nueva que obliga a tocar tu código o tu configuración. Se revisan antes de migrar |
 | **Solución** (*solution*, `.slnx`) | Agrupa varios proyectos (`.csproj`) para compilarlos juntos |
 | **Biblioteca de clases** (*class library*) | Proyecto que no se ejecuta solo; otros proyectos lo usan |
 | **Paquete NuGet** | Biblioteca de terceros que se añade al proyecto (`dotnet add package`) |
@@ -75,6 +77,9 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 | **ProblemDetails** | Formato estándar de los errores de una API (RFC 9457) |
 | **OpenAPI** | Descripción estándar de una API, de la que salen documentación y clientes |
 | **Fichero `.http`** | Fichero con peticiones HTTP que se ejecutan desde el editor |
+| **PRG** (*Post/Redirect/Get*) | Patrón de formularios: el servidor procesa el POST y redirige a un GET. Así, recargar la página no reenvía el formulario |
+| **TempData** | Datos que sobreviven a una sola redirección y se borran al leerlos. Ideal para el aviso «Inscripción guardada» después de un PRG |
+| **Estado de sesión** (*session state*) | Datos del usuario guardados en el servidor entre peticiones, asociados a una cookie. Sirve para un asistente de varios pasos. Ojo con varias réplicas: cada una tiene su memoria |
 
 ## Tests
 

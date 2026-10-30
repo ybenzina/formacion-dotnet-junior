@@ -36,7 +36,7 @@ Se rellena al empezar y se actualiza si el plan se desplaza.
 | 13–14 | P2 · Ej3 · Panel del organizador | |
 | 15 | P2 · Ej4 · Docker y Docker Compose | |
 | 16 | P2 · Ej5 · **Demo 2** y preparación del SDD | |
-| 17–18 | P3 · Ej1 · SDD (1/2): especificación | |
+| 17–18 | P3 · Ej1 · .NET 11 y SDD (1/2): especificación | |
 | 19–20 | P3 · Ej2 · SDD (2/2): implementación y revisión | |
 | 21 | P3 · Ej3 · Segunda funcionalidad SDD | |
 | 22 | P3 · Ej4 · Despliegue en Azure | |

@@ -19,12 +19,19 @@ Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`,
    - comprobación del capitán (R8) en todos los caminos;
    - tests que no comprueban nada o que solo inflan la cobertura.
 4. **PR** con una sección **Hallazgos de la revisión**: qué estaba mal o era mejorable, qué corregiste tú y qué pediste corregir a la IA.
-5. **Web:** páginas de torneos e inscripción de equipo (las puede generar la IA, con la misma revisión).
+5. **Web:** páginas de torneos y el **asistente de inscripción del equipo en varios pasos**, en Static SSR (las puede generar la IA, con la misma revisión). El estado entre pasos, con `[SupplyParameterFromSession]`; el mensaje final, con `[SupplyParameterFromTempData]`, siguiendo PRG. Revisa:
+   - ¿qué hay en la sesión y es lo mínimo?;
+   - ¿se borra al terminar o al cancelar?;
+   - ¿qué pasa si vuelves atrás o abres dos pestañas?;
+   - ¿comprueba el servidor en cada paso que quien envía es el capitán (R8)?
+
+   **Antes de .NET 11** esto se resolvía a mano: campos ocultos en cada paso, parámetros en la URL o un borrador guardado en el servidor. Anota en el PR qué te ahorra la novedad y qué riesgos sigue teniendo.
 
 ## Criterios de aceptación
 
 - [ ] Plan y tareas revisados antes de implementar.
 - [ ] Funcionalidad completa según la especificación, con caducidad automática.
+- [ ] Asistente de inscripción en varios pasos, con el estado en sesión, revisado.
 - [ ] PR con «Hallazgos de la revisión».
 - [ ] Quality gate superado por el código generado.
 - [ ] Métricas completas en `docs/sdd/sdd-piloto.md`.
@@ -33,4 +40,5 @@ Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`,
 
 - Enseña el hallazgo más grave que encontraste en el código de la IA. ¿Qué habría pasado en producción?
 - ¿Cómo obtiene el `BackgroundService` acceso a la base de datos y por qué así?
+- ¿Dónde vive el estado del asistente entre pasos? ¿Qué pasaría con dos réplicas de la web?
 - Si mañana te piden cambiar el tiempo de retención, ¿qué tocas?
