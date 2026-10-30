@@ -1,0 +1,23 @@
+{
+	"$schema": "../../esquema/metadata.schema.json",
+	"id": "tutor",
+	"title": "Tutor del reto",
+	"owner": "Equipo de formación",
+	"version": "1.0.0",
+	"status": "refined",
+	"channels": [
+		{
+			"runtime": "copilot",
+			"format": "agent",
+			"name": "guide-learning",
+			"path": "copilot/.github/agents/guide-learning.agent.md"
+		},
+		{
+			"runtime": "claude",
+			"format": "skill",
+			"name": "guide-learning",
+			"path": "claude/.claude/skills/guide-learning/SKILL.md"
+		}
+	],
+	"validated_repos": []
+}
