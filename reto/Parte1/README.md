@@ -36,6 +36,10 @@ Casi todos los ejercicios tienen **dos días** de calendario para una estimació
 
 **Masterclass de arquitectura:** el domingo siguiente al Día 3, antes del ejercicio 3.
 
+## Antes del Día 1
+
+Prepara el entorno siguiendo [`docs/court-connect/entorno.md`](../../docs/court-connect/entorno.md): Git, WSL 2, Docker Desktop, SDK de .NET 10, VS Code y la imagen de SQL Server. Son entre 1 y 2 horas. Si algo falla, avisa en Discord y se resuelve antes de empezar.
+
 ## Dónde se trabaja
 
 - **Código:** repositorio `DeemSoft/court-connect` (lo creas en el ejercicio 1).

@@ -71,7 +71,7 @@ Es una masterclass de **visión general**: un mapa de lo que hay y de cómo vamo
 - **Componentes de la arquitectura (adelanto):** qué hace cada proyecto y qué tests lo cubren.
 - **Dominio:** Court, Game, Player y Registration; reglas R1–R8; torneos, equipos y pago en la Parte III (`docs/court-connect/enunciado-dominio.md`).
 - **Sin MediatR** y con la web hablando solo con la API. A fondo en la masterclass de arquitectura.
-- **Antes del Día 1:** SDK de .NET 10, VS Code con las extensiones recomendadas, Docker Desktop, Git con acceso a DeemSoft y una primera entrada en SonarQube Cloud.
+- **Antes del Día 1:** SDK de .NET 10, VS Code con las extensiones recomendadas, Docker Desktop, Git con acceso a DeemSoft y una primera entrada en SonarQube Cloud. Guía paso a paso: [`docs/court-connect/entorno.md`](../court-connect/entorno.md).
 
 ## 🧪 Demos
 

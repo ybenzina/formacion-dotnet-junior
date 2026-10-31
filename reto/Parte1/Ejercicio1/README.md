@@ -8,6 +8,8 @@ Crear el repositorio `court-connect` como en un proyecto real, documentar el dom
 
 ## Antes de empezar (≈ 20 min)
 
+Tienes que tener el entorno instalado y comprobado ([`entorno.md`](../../../docs/court-connect/entorno.md)). Si no, hazlo primero.
+
 Conceptos nuevos de hoy. Búscalos en el [glosario](../../../docs/court-connect/glosario.md) y, cuando los uses, añádelos a tu glosario con tus palabras:
 
 - **Dominio**, **entidad**, **objeto de valor** y **regla de negocio**: lo que vas a programar hoy.
