@@ -40,6 +40,7 @@ Lectura: módulo de Microsoft Learn [Introducción a GitHub Actions](https://lea
 
 - Cuando el workflow haya pasado una vez, añade su job como **status check obligatorio** en el ruleset de `main`.
 - Comprueba que un PR con un test roto no se puede fusionar.
+- **Sin filtros de rutas (`paths`) en un check obligatorio.** El `build.yml` de este repo los usa porque allí la CI no es obligatoria. Si los copias, un PR que solo cambie documentación no lanzará la CI y se quedará esperando un check que nunca llega, sin poder fusionarse.
 
 ## Criterios de aceptación
 
