@@ -11,6 +11,7 @@ Ficheros para copiar al repo nuevo y pasos para crearlo. Es la primera tarea del
 | `.github/copilot-instructions.md` | Hace que Copilot lea `AGENTS.md` |
 | `.github/pull_request_template.md` | Plantilla de PR con «Uso de IA» |
 | `.github/ISSUE_TEMPLATE/tarea.md` | Plantilla de issue de tarea |
+| `.claude/skills/check-pr/SKILL.md` | Skill `/check-pr`: autorrevisión del PR antes de pedir revisión. Copia de [`autorrevision-pr` v1.0.0](../../../ai/artefactos/autorrevision-pr/README.md) |
 
 Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 
@@ -37,6 +38,7 @@ Además, copia el `.editorconfig` de la raíz de `formacion-dotnet-junior`.
 - [ ] Clonar el repo en una ruta corta (por ejemplo, `E:\git\court-connect`).
 - [ ] Rama `chore/estructura-inicial` desde `main`.
 - [ ] Copiar los ficheros de esta plantilla y el `.editorconfig`.
+- [ ] Copia `.claude/` y regístralo en `ai/REGISTRO.md` con su SHA-256 por PR al repo de formación.
 - [ ] Completar el `README.md`: qué es, cómo se ejecuta (de momento, «pendiente») y enlace a `docs/domain.md`.
 - [ ] Crear `docs/learning/` con un `retro.md` vacío (lo irás completando) y `docs/discovery.md` para las conclusiones de hablar con tu grupo.
 - [ ] Copiar `docs/court-connect/glosario.md` de `formacion-dotnet-junior` a `docs/learning/glosario.md` (tu glosario personal).
@@ -49,6 +51,7 @@ court-connect/
 ├── AGENTS.md  CLAUDE.md  README.md  .editorconfig  .gitignore
 ├── CourtConnect.slnx  Directory.Build.props  global.json
 ├── docker-compose.yml
+├── .claude/  (skills/)
 ├── .github/  (workflows/, ISSUE_TEMPLATE/, copilot-instructions.md, pull_request_template.md)
 ├── docs/     (domain.md, discovery.md, learning/, sdd/)
 ├── specs/    (especificaciones de Spec Kit, Parte III)

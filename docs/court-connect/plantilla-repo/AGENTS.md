@@ -63,6 +63,7 @@ Código estándar y legible para el equipo. Las novedades del lenguaje solo cuan
 - Ramas cortas desde la rama base actualizada: `feature/…`, `fix/…`, `docs/…`, `chore/…`, `test/…`. Nombres en minúsculas con guiones.
 - Commits: `tipo: descripción breve en minúsculas` (`feat:`, `fix:`, `docs:`, `test:`, `chore:`, `refactor:`).
 - PR con **Qué / Por qué / Cómo se ha comprobado / Uso de IA** y `Closes #N`. Revisa y fusiona Yamel: *merge commit* (o *squash* hacia `develop` desde la Parte III).
+- Antes de pedir revisión, pasa `/check-pr` y pega su resumen en el PR.
 
 ## Al terminar una sesión de trabajo
 

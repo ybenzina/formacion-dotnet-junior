@@ -118,11 +118,11 @@ Doce preguntas de la sesión única de la [masterclass](masterclass-ai-agents.md
 - C) Que las herramientas cargaron las instrucciones comparadas durante la sesión.
 - D) Que coinciden los bytes comparados, no que el comportamiento sea correcto.
 
-### 17. ¿Qué versión anota el registro tras instalar v1.0.0 y solo proponer v1.1.0?
+### 17. ¿Qué versión anota el registro tras instalar v1.1.0 y solo proponer v1.2.0?
 
-- A) v1.1.0, porque la propuesta describe el estado esperado al finalizar.
-- B) v1.1.0, pero conservando el hash de la copia que aún está instalada.
-- C) v1.0.0, con fecha y hash comprobados tras fusionar la instalación efectiva.
+- A) v1.2.0, porque la propuesta describe el estado esperado al finalizar.
+- B) v1.2.0, pero conservando el hash de la copia que aún está instalada.
+- C) v1.1.0, con fecha y hash comprobados tras fusionar la instalación efectiva.
 - D) Ambas como instaladas, porque el PR deja disponible la nueva fuente para los consumidores.
 
 ### 18. ¿Qué debe hacer document-repo si no hay configuración?
@@ -132,12 +132,12 @@ Doce preguntas de la sesión única de la [masterclass](masterclass-ai-agents.md
 - C) Generar los tipos conocidos en el idioma mayoritario del repositorio.
 - D) Producir un primer borrador completo y preguntar por su alcance al revisar los resultados.
 
-### 19. ¿Cómo se configura el ejemplo CourtConnect original?
+### 19. ¿Cómo se configura el ejemplo CourtConnect distribuido con el skill?
 
-- A) Funcional y técnica en español; XML y comentarios en inglés.
-- B) Funcional en inglés; técnica, XML y comentarios en español.
-- C) Funcional y XML en español; técnica y comentarios en inglés.
-- D) Funcional en español; técnica, XML y comentarios en inglés.
+- A) Funcional y técnica en español; código en inglés.
+- B) Funcional en inglés; técnica y código en español.
+- C) Funcional y código en español; técnica en inglés.
+- D) Funcional en español; técnica y código en inglés.
 
 ### 20. ¿Qué cambia en la demo de entrega en catalán?
 
@@ -196,7 +196,7 @@ Doce preguntas de la sesión única de la [masterclass](masterclass-ai-agents.md
 | 16 | D | El hash verifica contenido; no demuestra carga, versión más reciente ni comportamiento. |
 | 17 | C | El registro refleja la copia efectiva, no una intención de actualización. |
 | 18 | A | Tipos, idioma, público y alcance necesitan acuerdo, no suposiciones del ejemplo. |
-| 19 | D | Es la configuración real del ejemplo; se puede acordar otra, pero no atribuirla al original. |
+| 19 | D | Es la configuración real del ejemplo: el bloque `code` va en inglés. Se puede acordar otra, pero no atribuirla al original. |
 | 20 | B | Parametrizar no exige duplicar instrucciones ni alterar el comportamiento del programa. |
 | 21 | B | Ausencia significa desactivado, no borrado ni generación con valores por defecto. |
 | 22 | C | La aprobación y las pruebas siguen siendo necesarias después de especificar. |

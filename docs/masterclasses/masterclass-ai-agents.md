@@ -10,7 +10,7 @@ Yamel prepara un fragmento propio ya terminado de CourtConnect y un PR identific
 
 Driss conserva su diseño de la diapositiva 9. En clase no se abre el contenido del tutor de referencia ni se ejecutan los casos exigidos por P2 · Ej5. Se mantiene el orden del ejercicio: investigar, proponer y después comparar. El taller usa otra tarea y no sustituye al diseño del tutor.
 
-Fuentes locales: [catálogo](../../ai/README.md), [registro](../../ai/REGISTRO.md), [plantilla de diseño](../../ai/plantillas/diseno-agente.md), [esquema](../../ai/esquema/metadata.schema.json) y [checklist](../../ai/proceso/checklist.md). Estado leído para preparar esta clase: tutor `refined`; documentación y revisor `draft`; pruebas conversacionales pendientes. No se declaran certificados.
+Fuentes locales: [catálogo](../../ai/README.md), [registro](../../ai/REGISTRO.md), [plantilla de diseño](../../ai/plantillas/diseno-agente.md), [esquema](../../ai/esquema/metadata.schema.json) y [checklist](../../ai/proceso/checklist.md). Estado leído para preparar esta clase: tutor `refined`; calidad, documentación, autorrevisión (`check-pr`) y revisor `draft`; pruebas conversacionales pendientes. No se declaran certificados.
 
 ## Sesión: entender, delimitar y probar
 
@@ -87,8 +87,8 @@ Versión de 60 minutos: omitir los tres bloques marcados «(prescindible)», que
 | --- | --- | --- |
 | Instrucciones | Reglas generales del trabajo | Modo tutor de AGENTS.md |
 | Prompt file | Tarea reutilizable que invoca la persona | Formato disponible, sin variante distribuida aquí |
-| Skill | Instrucciones y recursos de una tarea | Documentar según un YAML |
-| Custom agent | Rol con instrucciones y herramientas configuradas | Tutor de lectura o revisor del mentor |
+| Skill | Instrucciones y recursos de una tarea | `/document-repo` documenta según un YAML; `/check-pr` revisa tu propio PR |
+| Custom agent | Rol con instrucciones y herramientas configuradas | Tutor de lectura (`guide-learning`) o revisor del mentor (`review-challenge`) |
 
 **YAML:** formato de configuración organizado por sangría. **PR (pull request):** propuesta de cambio para revisión; un **commit** identifica una versión del contenido y sus checks son comprobaciones sobre esa versión.
 
@@ -96,7 +96,7 @@ Versión de 60 minutos: omitir los tres bloques marcados «(prescindible)», que
 
 **Qué decir:** «El archivo no es un modelo nuevo. Es una forma de indicarle a la herramienta qué papel debe cumplir y qué información necesita».
 
-**Contexto para Yamel:** Custom agent significa agente personalizado, no necesariamente un proceso autónomo. Estas referencias se invocan manualmente; no generalizar a todos los skills. Solo el agente tutor de Copilot limita herramientas con `tools: [read, search]`. En Claude Code, `allowed-tools` preaprueba herramientas: no impide usar otras conforme a los permisos ordinarios. No presentar el skill como técnicamente incapaz de editar o ejecutar. Para bloquear operaciones, configurar permisos y hooks `PreToolUse`, no solo instrucciones de texto. El revisor dispone de `execute`: su regla de solo lectura tampoco filtra técnicamente subcomandos. Fuentes: [agentes de VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-agents), [skills de VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills), [skills de Claude Code](https://code.claude.com/docs/en/skills) y [memoria y controles](https://code.claude.com/docs/en/memory).
+**Contexto para Yamel:** Custom agent significa agente personalizado, no necesariamente un proceso autónomo. Estas referencias se invocan manualmente; no generalizar a todos los skills. Las cinco referencias son el tutor (`guide-learning`), calidad (`fix-quality`), documentación (`document-repo`), autorrevisión (`check-pr`) y el revisor (`review-challenge`); el tutor y el revisor existen además como agente de Copilot. Dónde está instalada cada una: diapositiva 8. Solo el agente tutor de Copilot limita herramientas con `tools: [read, search]`. En Claude Code, `allowed-tools` preaprueba herramientas: no impide usar otras conforme a los permisos ordinarios. No presentar el skill como técnicamente incapaz de editar o ejecutar. Para bloquear operaciones, configurar permisos y hooks `PreToolUse`, no solo instrucciones de texto. El revisor dispone de `execute`: su regla de solo lectura tampoco filtra técnicamente subcomandos. Fuentes: [agentes de VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-agents), [skills de VS Code](https://code.visualstudio.com/docs/agent-customization/agent-skills), [skills de Claude Code](https://code.claude.com/docs/en/skills) y [memoria y controles](https://code.claude.com/docs/en/memory).
 
 ### Diapositiva 05. Asistente, workflow y agente
 
@@ -150,15 +150,18 @@ Versión de 60 minutos: omitir los tres bloques marcados «(prescindible)», que
 **Puntos clave:**
 
 - Primero investigar y conservar el diseño propio; después consultar la referencia.
-- Instalar la versión pedida por PR y comprobar que la herramienta la carga.
+- Instalar por PR la última versión publicada del tutor (hoy, v1.1.0) y comprobar que la herramienta la carga.
 - Ejecutar los casos del enunciado y guardar resultados reales por herramienta.
-- Proponer la mejora en la fuente; publicar una versión no la instala ni la certifica.
+- Proponer la mejora (v1.2.0) en la fuente; publicar una versión no la instala ni la certifica.
+- Ya instalados en el repo de formación, según [REGISTRO.md](../../ai/REGISTRO.md): tutor, calidad, documentación, `check-pr` y revisor. `check-pr` llega a `court-connect` con la plantilla del repo, desde el Día 1.
 
 **Notas del ponente:**
 
-**Qué decir:** «La clase prepara el recorrido. Ni asistir ni ver mi demo cuenta como haber instalado o probado tu tutor».
+**Qué decir:** «La clase prepara el recorrido. Ni asistir ni ver mi demo cuenta como haber instalado o probado tu tutor. Y desde el primer día tienes `/check-pr`: antes de pedirme revisión, te dice qué le falta a tu PR, pero no cómo arreglarlo».
 
-**Contexto para Yamel:** Cinco minutos sobre el orden de P2 · Ej5, sin mostrar un diseño resuelto ni abrir el tutor fuente. La entrega instala v1.0.0 y propone v1.1.0; no registrar esta última como instalada. El propio enunciado contiene los pasos obligatorios de procedencia, registro y hashes: la ampliación explica su gobierno, no añade requisitos. Driss consultará las referencias después de conservar su propuesta.
+**Contexto para Yamel:** Cinco minutos sobre el orden de P2 · Ej5, sin mostrar un diseño resuelto ni abrir el tutor fuente. La entrega instala la última versión publicada del tutor, v1.1.0, en `court-connect` y propone v1.2.0; no registrar esta última como instalada. El PR a la fuente registra los ficheros de v1.1.0 efectivamente instalados. El propio enunciado contiene los pasos obligatorios de procedencia, registro y hashes: la ampliación explica su gobierno, no añade requisitos. Driss consultará las referencias después de conservar su propuesta.
+
+En el repo de formación están registrados el tutor, calidad, documentación, `check-pr` y el revisor, con su SHA-256 en [REGISTRO.md](../../ai/REGISTRO.md); esas filas quedan efectivas al fusionar el PR que las introduce y las pruebas conversacionales siguen pendientes. `check-pr` viene en la [plantilla del repo](../court-connect/plantilla-repo/README.md): Driss lo tiene desde el Día 1 y lo pasa antes de pedir revisión de cada PR. Comprueba criterios, «Uso de IA» y «Comparación con IA», horas, rama base, CI y Sonar, glosario y retro. Dice qué falta, no cómo hacerlo, y la nota la decide Yamel. `fix-quality` no forma parte de la plantilla: en el reto se usa solo desde la Parte III y, en el curso, en las ramas de integración del repo de formación.
 
 ### Diapositiva 09. Taller: un agente pequeño para CourtConnect (prescindible)
 
@@ -181,7 +184,7 @@ Versión de 60 minutos: omitir los tres bloques marcados «(prescindible)», que
 
 **Puntos clave:**
 
-- Usar una copia preparada sin mostrar las instrucciones de la referencia.
+- Usar una copia preparada (tutor 1.1.0, que sirve para el reto y para el curso) sin mostrar las instrucciones de la referencia.
 - T2: pedir aclaración de dependency injection con un ejemplo ajeno al ejercicio.
 - T6: pedir comparación sin cumplir una de sus condiciones.
 - T10: observar una instrucción maliciosa incrustada en un archivo ficticio.
@@ -191,7 +194,7 @@ Versión de 60 minutos: omitir los tres bloques marcados «(prescindible)», que
 
 **Qué decir:** «Primero le mostraré una duda concreta. Luego le pediré que lo haga por mí. Lo importante no es que responda mucho, sino que me ayude a dar el siguiente paso sin quitármelo».
 
-**Contexto para Yamel:** Diez minutos: carga y alcance 1, T2 3, T6 3 y T10 3, según [pruebas.md](../../ai/artefactos/tutor/v1.0.0/pruebas.md). Usar `guide-learning` en VS Code o `/guide-learning` en Claude Code, previamente instalado y comprobado. No mostrar T1, T3, T4 ni T7, reservados al ejercicio. Tampoco abrir la fuente antes de que Driss investigue y diseñe por su cuenta. Si falta acceso, usar una captura fechada sin declararla nueva prueba. «No edita ni ejecuta» describe la restricción de herramientas del agente Copilot; en Claude es una regla textual salvo controles externos. `allowed-tools` preaprueba, no restringe disponibilidad; permisos o hooks `PreToolUse` pueden bloquear. La demo no sustituye la entrega en ambas herramientas.
+**Contexto para Yamel:** Diez minutos: carga y alcance 1, T2 3, T6 3 y T10 3, según [pruebas.md](../../ai/artefactos/tutor/v1.1.0/pruebas.md). El tutor 1.1.0 amplía el uso (MINOR): además del reto, sirve para los ejercicios del curso; su caso T11 no se muestra. Usar `guide-learning` en VS Code o `/guide-learning` en Claude Code, previamente instalado y comprobado. No mostrar T1, T3, T4 ni T7, reservados al ejercicio. Tampoco abrir la fuente antes de que Driss investigue y diseñe por su cuenta. Si falta acceso, usar una captura fechada sin declararla nueva prueba. «No edita ni ejecuta» describe la restricción de herramientas del agente Copilot; en Claude es una regla textual salvo controles externos. `allowed-tools` preaprueba, no restringe disponibilidad; permisos o hooks `PreToolUse` pueden bloquear. La demo no sustituye la entrega en ambas herramientas.
 
 ### Diapositiva 11. Revisar salidas y proteger el contexto
 
@@ -250,11 +253,21 @@ Sin fecha, fuera de los 90 minutos y sin lectura obligatoria. Se conservan las r
 - Las mejoras van por PR a la fuente, no solo a una copia.
 - El registro cuenta qué está instalado de verdad.
 
+Dónde está instalado cada artefacto:
+
+| Artefacto | Versión | Repo de formación | `court-connect` |
+| --- | --- | --- | --- |
+| Tutor (`guide-learning`) | 1.1.0 | Instalado y registrado | Lo instala Driss en P2 · Ej5 y propone la v1.2.0 |
+| Calidad (`fix-quality`) | 1.1.0 | Instalado y registrado | No viene en la plantilla |
+| Documentación (`document-repo`) | 2.0.0 | Instalado y registrado | No viene en la plantilla |
+| Autorrevisión (`check-pr`) | 1.0.0 | Instalado y registrado | Viene en la plantilla: Driss lo tiene desde el Día 1 |
+| Revisor (`review-challenge`) | 1.1.0 | Instalado y registrado | No: es solo para Yamel |
+
 **Notas del ponente:**
 
 **Qué decir:** «Dos copias con el mismo nombre pueden comportarse distinto. Necesitamos saber de dónde salió cada una y qué versión está usando cada repositorio».
 
-**Contexto para Yamel:** Mostrar la cabecera real de un instalable, sin modificarlo. La mejora compatible v1.1.0 de P2 · Ej5 y la instalación efectiva v1.0.0 son hechos separados. [REGISTRO.md](../../ai/REGISTRO.md) contiene una primera autoinstalación del revisor con efectividad pendiente de fusión y pruebas pendientes; no presentarla como certificación. La futura extracción de `ai/` a un repositorio de gobierno es una evolución documentada, no una migración hecha ni una automatización ya disponible.
+**Contexto para Yamel:** Mostrar la cabecera real de un instalable, sin modificarlo. La mejora compatible v1.2.0 de P2 · Ej5 y la instalación efectiva v1.1.0 son hechos separados. [REGISTRO.md](../../ai/REGISTRO.md) contiene las instalaciones de Yamel en el repo de formación (revisor, tutor, calidad, documentación y `check-pr`) con efectividad pendiente de fusión y pruebas pendientes; no presentarlas como certificación. «Instalado y registrado» significa que la fila y su hash están en la rama, no que la herramienta ya los haya cargado. La futura extracción de `ai/` a un repositorio de gobierno es una evolución documentada, no una migración hecha ni una automatización ya disponible.
 
 ### Diapositiva 14. Versionar, instalar y detectar deriva
 
@@ -264,14 +277,15 @@ Sin fecha, fuera de los 90 minutos y sin lectura obligatoria. Se conservan las r
 - **Drift, deriva:** diferencia entre copia y versión fuente declarada.
 - **SHA-256:** huella de bytes; comparar copia, fuente y registro.
 - **SemVer:** `MAJOR.MINOR.PATCH`, cambio incompatible, capacidad compatible o corrección.
+- Ejemplos reales: documentación pasa de 1.0.0 a 2.0.0 (MAJOR) porque cambia el contrato y los YAML antiguos dejan de valer; tutor, calidad y revisor pasan a 1.1.0 (MINOR) porque amplían su uso sin romper nada.
 - **CHANGELOG:** qué cambió y por qué. Publicar una carpeta nueva no actualiza las copias instaladas.
-- Una versión antigua intacta no tiene deriva, aunque haya otra más reciente.
+- Cada versión publicada queda inmóvil: las carpetas `v1.0.0/` no se tocan al publicar `v1.1.0/` o `v2.0.0/`. Una versión antigua intacta no tiene deriva, aunque haya otra más reciente.
 
 **Notas del ponente:**
 
-**Qué decir:** «La cabecera dice de dónde viene el archivo. El hash comprueba si sus bytes coinciden. Ninguna de las dos cosas demuestra que el agente se comporte bien: eso necesita pruebas».
+**Qué decir:** «La cabecera dice de dónde viene el archivo. El hash comprueba si sus bytes coinciden. Ninguna de las dos cosas demuestra que el agente se comporte bien: eso necesita pruebas. Y si un cambio rompe lo que ya funcionaba, como el YAML de documentación, el primer número sube: de 1.0.0 a 2.0.0».
 
-**Contexto para Yamel:** Conservar versiones publicadas. El [esquema de metadatos](../../ai/esquema/metadata.schema.json) distingue `draft`, `refined` y `certified`; esta última exige pruebas y revisión humana según la [checklist](../../ai/proceso/checklist.md). `validated_repos` registra evidencia real, no destinos previstos. [SemVer](https://semver.org/lang/es/).
+**Contexto para Yamel:** Conservar versiones publicadas. Caso real de MAJOR: `document-repo` 2.0.0 cambia `docs/documentacion.config.yml` a `version: 2` (los bloques `xml` y `comments` se unen en `code`); un fichero `version: 1` ya no sirve tal cual y el skill propone migrarlo, sin migrar sin acuerdo. Casos MINOR: tutor 1.1.0 (sirve también para el curso), calidad 1.1.0 (usable en el curso; en el reto, solo desde la Parte III) y revisor 1.1.0 (remite a `/check-pr` y a `guide-learning` si la cuenta de `gh` no es la del mentor). `check-pr` nace en 1.0.0. Las carpetas `v1.0.0/` siguen en `ai/artefactos/`: publicar la nueva no las reescribe, y una copia que declara v1.0.0 se compara con su `v1.0.0/`, no con la última. El [esquema de metadatos](../../ai/esquema/metadata.schema.json) distingue `draft`, `refined` y `certified`; esta última exige pruebas y revisión humana según la [checklist](../../ai/proceso/checklist.md). `validated_repos` registra evidencia real, no destinos previstos. [SemVer](https://semver.org/lang/es/).
 
 Usar el procedimiento y comandos ya existentes en [la guía de hashes](../../ai/README.md#deriva-y-sha-256). Comprobar tras el checkout fusionado: CRLF/LF, codificación y salto final influyen. Registrar un fichero por fila con fecha, persona y hash real de 64 caracteres; no fabricar valores. El agente de Copilot va en `.github/agents/`; el skill compartido por Claude Code y VS Code Local en `.claude/skills/`. Añadir `.github/skills/` solo si se usa el skill con el motor Copilot; Local lee ambas y puede duplicar nombres. Verificar descubrimiento y compatibilidad en la versión instalada de la herramienta, **por verificar** antes de la demo. Publicar una versión no la instala.
 
@@ -281,38 +295,66 @@ Usar el procedimiento y comandos ya existentes en [la guía de hashes](../../ai/
 
 - [document-repo](../../ai/artefactos/documentacion/README.md) es un skill, aunque coloquialmente lo llamemos agente de documentación.
 - El skill define cómo documentar sin inventar ni cambiar lógica.
-- El YAML del repositorio decide tipos, idiomas, público y salidas.
-- **YAML** es un formato de configuración organizado por sangría; **scope** delimita archivos, proyectos o visibilidad incluidos.
-- Si falta configuración, pregunta y espera antes de generar.
+- El YAML del repositorio, `docs/documentacion.config.yml`, decide tipos, idiomas, público y dónde se escribe.
+- Desde la versión 2.0.0 el contrato es `version: 2` y tiene tres tipos: `functional`, `technical` y `code`. Antes había cuatro: `code` junta los antiguos `xml` y `comments`.
+- **YAML** es un formato de configuración organizado por sangría; **scope** delimita qué proyectos y miembros se tocan.
+- Si falta configuración, pregunta y espera antes de generar. Si encuentra `version: 1`, explica el cambio y propone migrar; no migra sin acuerdo.
+
+| Campo | Qué significa, en claro |
+| --- | --- |
+| `functional`, `technical`, `code` | Los tres tipos: documento para quien usa el sistema, documento para quien lo mantiene y comentarios dentro del código C# |
+| `enabled` | `true` lo activa; `false` lo apaga sin borrar nada de lo ya escrito |
+| `language` y `audience` | Idioma del texto (`es`, `en` o `ca`) y quién lo va a leer; los nombres del código no se traducen |
+| `output` | Carpeta donde se guardan los Markdown. Solo `functional` y `technical`: `code` no lo lleva porque escribe en el propio código |
+| `xml_comments` e `inline_comments` | Dos interruptores de `code`. El primero pone a cada clase y método una cabecera `///` que dice qué hace, qué recibe y qué devuelve. El segundo añade comentarios `//` solo donde explican por qué se decidió algo |
+| `include_projects` y `exclude_projects` | Dentro de `scope`: los proyectos que se tocan y los que se saltan; los excluidos ganan |
+| `visibility` | Dentro de `scope`: qué miembros llevan cabecera XML (`public`, `protected`…). No afecta a los comentarios `//` |
 
 **Notas del ponente:**
 
-**Qué decir:** «No necesitamos copiar el skill y traducir sus reglas para cada entrega. Conservamos el comportamiento y cambiamos la configuración acordada del repositorio».
+**Qué decir:** «No necesitamos copiar el skill y traducir sus reglas para cada entrega. Conservamos el comportamiento y cambiamos la configuración acordada del repositorio. Antes había dos bloques, `xml` y `comments`, y los nombres no se entendían. Ahora hay uno solo, `code`, con dos interruptores que se leen solos: `xml_comments` para las cabeceras `///` y `inline_comments` para los comentarios `//` del porqué».
 
-**Contexto para Yamel:** Abrir el [contrato real](../../ai/artefactos/documentacion/README.md#contrato-de-configuración). Raíz `version: 1`, `types`; bloques opcionales `functional`, `technical`, `xml`, `comments`. Un bloque omitido o `enabled: false` no genera, modifica ni borra ese tipo. Funcional/técnica usan `enabled`, `language`, `output`, `audience`; solo XML/comentarios añaden `scope`. `output: source` significa edición documental del C# existente, no crear una carpeta. Desconocidos, rutas inválidas o proyectos inexistentes requieren aclaración. Los 25 minutos del bloque se reparten: contrato 5, demo CourtConnect 10, variante catalana 10.
+**Contexto para Yamel:** Abrir el [contrato real](../../ai/artefactos/documentacion/README.md#contrato-de-configuración). Raíz `version: 2`, `types`; bloques opcionales `functional`, `technical` y `code`. Un bloque omitido o `enabled: false` no genera, modifica ni borra ese tipo. `functional` y `technical` usan `enabled`, `language`, `output` y `audience`, y nada más. `code` usa `enabled`, `language`, `audience`, `xml_comments`, `inline_comments` y `scope`, sin `output`: siempre escribe en el C# existente, y un `output` en `code` es un campo inválido. Los dos interruptores son independientes: con uno en `false`, ese modo no genera, modifica ni borra. `visibility` solo limita las cabeceras XML y, con `xml_comments: true`, debe incluir `public` y `protected`; los comentarios `//` se aplican a todo el código de los proyectos incluidos. Si el skill encuentra `version: 1`, explica el cambio, muestra la equivalencia ([cómo migrar](../../ai/artefactos/documentacion/README.md#migrar-desde-version-1)): `xml` pasa a `code` con `xml_comments: true`, `comments` pasa a `code` con `inline_comments: true` y `output: source` desaparece. Propone migrar y espera acuerdo. Es el ejemplo de cambio MAJOR de la diapositiva 14. Desconocidos, rutas inválidas o proyectos inexistentes requieren aclaración. Los 25 minutos del bloque se reparten: contrato 5, demo CourtConnect 10, variante catalana 10.
 
 ### Diapositiva 16. Demo: documentación de CourtConnect
 
 **Puntos clave:**
 
-- Usar [court-connect.yml](../../ai/artefactos/documentacion/v1.0.0/ejemplos/court-connect.yml) como ejemplo, no como configuración activa automática.
-- Funcional: español, `docs/`. Técnica: inglés, `docs/technical-doc/`.
-- XML y comentarios: inglés, con proyectos y visibilidad explícitos.
+- Usar [court-connect.yml](../../ai/artefactos/documentacion/v2.0.0/ejemplos/court-connect.yml) como ejemplo, no como configuración activa automática.
+- Funcional: español, `docs/`. Técnica: inglés, `docs/technical/`.
+- Código: inglés, con `xml_comments` e `inline_comments` activos y con proyectos y visibilidad explícitos.
 - **XML de documentación:** comentarios estructurados sobre miembros C#; **diff:** comparación de los cambios respecto al original.
 - Revisar plan, fuentes y diff antes de aceptar.
+
+Fragmento del bloque `code` de ese ejemplo:
+
+```yaml
+version: 2
+types:
+  code:
+    enabled: true
+    language: en
+    audience: "Developers and maintainers"
+    xml_comments: true      # cabeceras /// en tipos y miembros
+    inline_comments: true   # comentarios // con el porqué de una decisión
+    scope:
+      include_projects: ["src/CourtConnect.Domain/CourtConnect.Domain.csproj"]
+      exclude_projects: []
+      visibility: [public, protected]
+```
 
 **Notas del ponente:**
 
 **Qué decir:** «Primero comprobaremos qué existe. Después pediremos documentar una pieza ya terminada. Si el texto dice algo que el código no demuestra, debe marcarlo por confirmar, no convertirlo en un requisito».
 
-**Contexto para Yamel:** Diez minutos sobre el clon de CourtConnect preparado para la demo, no sobre un ejercicio abierto: comprobar configuración y proyecto incluido 2; invocar `/document-repo` sobre una pieza acotada y aprobar plan 3; contrastar salidas con código y diff 5. La configuración destino es `docs/documentacion.config.yml`; si no existe, acordarla previamente con su propietario. El ejemplo incluye Domain: verificar su ruta real antes de usarlo. No generar los cuatro tipos sobre todo el repo durante la clase. Mostrar una salida funcional y una técnica; para XML usar una captura verificada de un símbolo o, si se ejecuta, comparar CS1591/CS1574 e inventario antes/después. Documentar un tipo no autoriza a implementar su comportamiento. Para técnica en español, acordar `types.technical.language: es`; no es el valor del ejemplo original.
+**Contexto para Yamel:** Diez minutos sobre el clon de CourtConnect preparado para la demo, no sobre un ejercicio abierto: comprobar configuración y proyecto incluido 2; invocar `/document-repo` sobre una pieza acotada y aprobar plan 3; contrastar salidas con código y diff 5. La configuración destino es `docs/documentacion.config.yml`; si no existe, acordarla previamente con su propietario. El ejemplo incluye Domain: verificar su ruta real antes de usarlo. No generar los tres tipos sobre todo el repo durante la clase. Mostrar una salida funcional y una técnica; para las cabeceras XML (`xml_comments`) usar una captura verificada de un símbolo o, si se ejecuta, comparar CS1591/CS1574 e inventario antes/después. Si se quiere enseñar que los dos modos de `code` son independientes, el caso D17 de [pruebas.md](../../ai/artefactos/documentacion/v2.0.0/pruebas.md) los prueba por separado. Documentar un tipo no autoriza a implementar su comportamiento. Para técnica en español, acordar `types.technical.language: es`; no es el valor del ejemplo original.
 
 ### Diapositiva 17. Demo: el mismo skill, salida en catalán
 
 **Puntos clave:**
 
-- Comparar [client-delivery.yml](../../ai/artefactos/documentacion/v1.0.0/ejemplos/client-delivery.yml) con la configuración anterior.
-- Los cuatro tipos usan `language: ca`; etiquetas e identificadores no se traducen.
+- Comparar [client-delivery.yml](../../ai/artefactos/documentacion/v2.0.0/ejemplos/client-delivery.yml) con la configuración anterior.
+- Los tres tipos usan `language: ca`; etiquetas e identificadores no se traducen.
 - Adaptar la ruta ficticia de proyecto a una ruta comprobada de CourtConnect.
 - Mantener skill, código de entrada y criterio de revisión iguales.
 
@@ -320,7 +362,7 @@ Usar el procedimiento y comandos ya existentes en [la guía de hashes](../../ai/
 
 **Qué decir:** «Cambia el público y el idioma, no lo que hace el programa. Comprobemos que la versión catalana describe los mismos hechos y conserva los nombres del código».
 
-**Contexto para Yamel:** Diez minutos: comparar YAML 3, revisar la propuesta de salida de la misma pieza 4, comprobar límites 3. El ejemplo trae `src/SampleApp/SampleApp.csproj`: no existe por obligación en CourtConnect. Acordar la adaptación en la copia de configuración de la demo, nunca modificar el skill fuente. Conservar evidencia de ambas configuraciones según D2 de [pruebas.md](../../ai/artefactos/documentacion/v1.0.0/pruebas.md). Mostrar también D3/D13: desactivar u omitir un tipo no borra documentos previos. No exigir `scope` a funcional/técnica. Si se usan capturas por tiempo o acceso, no declararlas una ejecución nueva ni registrar una instalación por haber mostrado el YAML.
+**Contexto para Yamel:** Diez minutos: comparar YAML 3, revisar la propuesta de salida de la misma pieza 4, comprobar límites 3. El ejemplo trae `src/SampleApp/SampleApp.csproj`: no existe por obligación en CourtConnect. Acordar la adaptación en la copia de configuración de la demo, nunca modificar el skill fuente. Conservar evidencia de ambas configuraciones según D2 de [pruebas.md](../../ai/artefactos/documentacion/v2.0.0/pruebas.md). Mostrar también D3/D13: desactivar u omitir un tipo no borra documentos previos. No exigir `scope` a funcional/técnica. Si se usan capturas por tiempo o acceso, no declararlas una ejecución nueva ni registrar una instalación por haber mostrado el YAML.
 
 ### Diapositiva 18. Puente a SDD y Spec Kit
 
@@ -342,6 +384,7 @@ Usar el procedimiento y comandos ya existentes en [la guía de hashes](../../ai/
 **Puntos clave:**
 
 - [review-challenge](../../ai/artefactos/revisor-reto/README.md) ayuda a Yamel desde el repositorio de formación.
+- Antes, Driss pasa `/check-pr`: le dice qué falta en su PR, no cómo arreglarlo. Después revisa Yamel.
 - Lee código y PR de `DeemSoft/court-connect`, con commit identificado.
 - El SHA del commit identifica la revisión de Git; no es el SHA-256 de un instalable.
 - Separa criterios verificados, incumplidos y sin evidencia.
@@ -349,9 +392,9 @@ Usar el procedimiento y comandos ya existentes en [la guía de hashes](../../ai/
 
 **Notas del ponente:**
 
-**Qué decir:** «Contrastaremos un criterio con un PR y sus evidencias. No pediremos una opinión general. La decisión final sigue siendo mía».
+**Qué decir:** «Driss pasa `/check-pr` antes de pedirme revisión. Contrastaremos un criterio con un PR y sus evidencias. No pediremos una opinión general. La decisión final sigue siendo mía».
 
-**Contexto para Yamel:** Demo opcional de 15 minutos: repo, PR y SHA 3; criterio y checks 6; separación de notas y pistas 3; negativa a publicar 3. Para negativas usar [R5/R8/R15](../../ai/artefactos/revisor-reto/v1.0.0/pruebas.md), no escrituras reales. Si no verifica la cuenta del mentor, no genera notas privadas ni niveles; esa comprobación conversacional no es una frontera de acceso. No mostrar notas privadas ni preparación del PR trampa. Consultar checks del mismo SHA, sin ejecutar builds ni tests. Si falta acceso o cambia el commit, dejar la conclusión pendiente.
+**Contexto para Yamel:** Demo opcional de 15 minutos: repo, PR y SHA 2; salida de `/check-pr` sobre ese mismo PR 2; criterio y checks 5; separación de notas y pistas 3; negativa a publicar 3. `check-pr` 1.0.0 comprueba criterios de aceptación, «Uso de IA» y «Comparación con IA» con contenido real, horas en la issue, rama base, CI y Sonar, glosario y retro; es de solo lectura, dice qué falta sin dar soluciones y no da niveles ni nota. Mostrar su salida con una captura o con una ejecución previa del mismo PR y SHA, no sobre el trabajo abierto de Driss. Para negativas usar [R5/R8/R15](../../ai/artefactos/revisor-reto/v1.1.0/pruebas.md), no escrituras reales. Si no verifica la cuenta del mentor, no genera notas privadas ni niveles; la v1.1.0 remite entonces a `/check-pr` para preparar el PR y a `guide-learning` para las dudas. Esa comprobación conversacional no es una frontera de acceso. No mostrar notas privadas ni preparación del PR trampa. Consultar checks del mismo SHA, sin ejecutar builds ni tests. Si falta acceso o cambia el commit, dejar la conclusión pendiente.
 
 ### Diapositiva 20. promptops-common (genérico)
 
@@ -396,11 +439,13 @@ Usar el procedimiento y comandos ya existentes en [la guía de hashes](../../ai/
 | Asistente / workflow / agente | Ayuda dirigida por la persona / recorrido prefijado / recorrido decidido por el modelo | Elegir el control mínimo suficiente |
 | Herramienta / MCP | Función invocable / protocolo de conexión a herramientas y recursos | Consultar una API, con permisos separados |
 | Test case / regression | Caso observable / pérdida de comportamiento anterior | Mantener una negativa tras cambiar el prompt |
-| SemVer / CHANGELOG | Versión semántica / explicación de cambios | Mejora compatible en una nueva carpeta |
+| SemVer / CHANGELOG | Versión semántica / explicación de cambios | Documentación 2.0.0 (cambio incompatible) y tutor 1.1.0 (mejora compatible), cada uno en carpeta nueva |
 | Draft / refined / certified | Propuesto / concretado / probado y aprobado | No confundir instalar con certificar |
 | Frontmatter | Metadatos al comienzo de un archivo | Nombre y herramientas del agente |
 | Drift / SHA-256 | Diferencia de copia / huella de bytes | Comparar fuente, copia y registro |
-| YAML / scope | Formato de configuración / alcance permitido | Proyectos y visibilidad para XML |
+| YAML / scope | Formato de configuración / alcance permitido | Proyectos y visibilidad de las cabeceras XML |
+| Cabecera XML / comentario del porqué | `///` que describe un símbolo C# / `//` que explica una decisión | `xml_comments` e `inline_comments` del bloque `code` |
+| Autorrevisión (`/check-pr`) | Repasar tu propio PR antes de pedir revisión; dice qué falta, no cómo hacerlo | Falta rellenar «Comparación con IA» |
 | SDD / spec | Desarrollo dirigido por especificación / comportamiento acordado | Aprobar reglas antes de generar |
 | Prompt injection | Contenido que intenta imponer instrucciones no autorizadas | Un PR que pide aprobarse a sí mismo |
 | Human review | Revisión de una persona con evidencia | Yamel decide; el revisor propone |

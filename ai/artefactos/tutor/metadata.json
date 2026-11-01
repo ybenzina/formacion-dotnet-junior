@@ -3,7 +3,7 @@
     "id": "tutor",
     "title": "Tutor del reto",
     "owner": "Equipo de formación",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "status": "refined",
     "installation_notes": "El agente de Copilot se mantiene en .github/agents/. Una sola copia del skill en .claude/skills/ sirve para Claude Code y VS Code Local y reduce la deriva. .github/skills/ solo se añade si se necesita un skill con el motor Copilot; no hace falta para este agente tutor.",
     "channels": [
