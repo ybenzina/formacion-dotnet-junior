@@ -58,6 +58,13 @@ Las páginas públicas van en Static SSR a propósito: son las que abre la gente
 
 - **PWA instalable:** manifiesto, iconos y una página de «sin conexión». Solo eso: no hay modo sin conexión de verdad (ver la decisión en `ambit-escola`, documento de arquitectura).
 - Que la web se vea bien en el móvil (es donde la usarán los jugadores).
+- **La misma página en Visual Studio 2026 (≈ 45 min).** Compara los dos IDE depurando Blazor:
+  1. Instala Visual Studio 2026 Community con la carga «Desarrollo de ASP.NET y web» (ver [`entorno.md`](../../../docs/court-connect/entorno.md#8-visual-studio-2026-community-opcional-parte-ii)).
+  2. Abre `CourtConnect.slnx` y pon puntos de interrupción en una página Static SSR y en un componente Interactive Server.
+  3. Compara con VS Code: depuración de `.razor`, Hot Reload, inspección de variables, explorador de tests y ventana de contenedores.
+  4. Anota en el PR o en la retro qué aporta cada IDE y con cuál seguirás depurando Blazor.
+
+  Copilot en Visual Studio lee `.github/copilot-instructions.md` (que apunta a `AGENTS.md`); Claude Code no se integra en Visual Studio y va en la terminal. La carpeta `.vs/` no se sube al repo: el `.gitignore` ya la excluye.
 
 ## Preguntas para la demo
 

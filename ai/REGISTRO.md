@@ -1,11 +1,16 @@
 # Registro de instalaciones
 
-Primera instalación: `revisor-reto`, solicitada por Yamel y copiada en este repo, en `docs/ai-agentes`. Las dos filas siguientes registran los ficheros y hashes de la rama; **quedan efectivas en la rama destino al fusionar este PR**. La carga en las herramientas y las pruebas conversacionales están pendientes.
+Primera instalación: `revisor-reto`, solicitada por Yamel y copiada en este repo, en `docs/ai-agentes`. Las filas del revisor se han sustituido por la v1.1.0, y se han añadido el tutor, calidad, documentación y autorrevisión, todos instalados por Yamel en este repo. Las filas registran los ficheros y hashes de la rama; **quedan efectivas en la rama destino al fusionar el PR que las introduce**. La carga en las herramientas y las pruebas conversacionales están pendientes.
 
 | Artefacto | Versión | Repo destino | Canal | Ruta instalada | Fecha | Quién lo instaló | SHA-256 del fichero instalado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| revisor-reto | 1.0.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/review-challenge.agent.md | 2026-10-30 | Yamel | A28E4CDDA07293FDD19E2AB078A49C9195BC07B0B5076F6892B0B27BBEB851E4 |
-| revisor-reto | 1.0.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/review-challenge/SKILL.md | 2026-10-30 | Yamel | F63EE3F0BF4C6967C711FD2B8C011B34D7BD145CBA51BBD39739B781B447F5FF |
+| revisor-reto | 1.1.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/review-challenge.agent.md | 2026-11-01 | Yamel | B9E6A9AF6E048A92169B343EF6B289BDEFF81209C6D0A44F3E75C19E465E319D |
+| revisor-reto | 1.1.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/review-challenge/SKILL.md | 2026-11-01 | Yamel | 8198B791A723B61DE1852CE0E8E9A5459E79E6DBEEF8E661321A58082F74959E |
+| tutor | 1.1.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/guide-learning.agent.md | 2026-11-01 | Yamel | 5ECF9090CB4D94B0326C617F4D5C629E6417B2E6CCFAD8900F971BEC9966AC86 |
+| tutor | 1.1.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/guide-learning/SKILL.md | 2026-11-01 | Yamel | 9694BB99F40E24F4DEE86171A7E5F46587CE9CD657C8A15785C6E33B1517888F |
+| calidad-sonarqube | 1.1.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/fix-quality/SKILL.md | 2026-11-01 | Yamel | 07535BB061B4D6A6D6A285CBB0D89F45D56876B299802CAD2374F401A43EB01C |
+| documentacion | 2.0.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/document-repo/SKILL.md | 2026-11-01 | Yamel | 1FD77122C53AD05C6A8D00697C71B2669D3506A3FBC4409F6EFA1DA40FAD4F0E |
+| autorrevision-pr | 1.0.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/check-pr/SKILL.md | 2026-11-01 | Yamel | 93E32AF1928F0C0DED26862A0E8D958FE49573E3C4C012AE4A96DF27F9CFAD44 |
 
 <!-- Ejemplo ficticio; sustituir los marcadores por datos comprobados, no descomentar tal cual.
 | tutor | 1.0.0 | DeemSoft/court-connect | Copilot (agente) | .github/agents/guide-learning.agent.md | AAAA-MM-DD | persona instaladora | hash SHA-256 real de 64 caracteres |
@@ -18,6 +23,6 @@ Primera instalación: `revisor-reto`, solicitada por Yamel y copiada en este rep
 3. Añade una fila por fichero instalado. Si el skill se comparte, indica «Claude Code y VS Code Local (skill)» en Canal, sin duplicar la fila. Distingue el agente de Copilot y cualquier copia adicional para su motor. Fecha en formato `AAAA-MM-DD`; identifica a quien instaló, no al modelo.
 4. Al actualizar o revertir una instalación, sustituye su fila por la versión, fecha y hash efectivos. El historial Git conserva el estado anterior. Si se desinstala, retira la fila mediante PR.
 
-En P2 · Ej5, el PR de mejora a la fuente incluye las filas de la **v1.0.0 ya instalada**. Proponer v1.1.0 no significa haberla instalado; el registro solo cambia cuando se reinstala de verdad.
+En P2 · Ej5, el PR de mejora a la fuente incluye las filas de la **v1.1.0 ya instalada**. Proponer v1.2.0 no significa haberla instalado; el registro solo cambia cuando se reinstala de verdad.
 
-Por defecto, una copia aún en una rama de trabajo no se registra como instalada en la rama destino. La primera autoinstalación del revisor es la excepción acordada: se registra en este PR con la nota de efectividad pendiente y se vuelven a comprobar los hashes tras fusionarlo. No inventes fechas ni hashes. Una instalación no acredita por sí sola la validación del flujo.
+Por defecto, una copia aún en una rama de trabajo no se registra como instalada en la rama destino. La primera autoinstalación del revisor es la excepción acordada, y se extiende a las instalaciones de Yamel en este repo: se registran en este PR con la nota de efectividad pendiente y se vuelven a comprobar los hashes tras fusionarlo. No inventes fechas ni hashes. Una instalación no acredita por sí sola la validación del flujo.

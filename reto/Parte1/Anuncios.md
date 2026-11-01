@@ -8,6 +8,7 @@ Retomamos la formación con un reto en **tres partes** (Día 1 → Día 23), una
 Tocar a mano las piezas de una app .NET actual para poder **supervisar** el código que genere la IA, y acabar con un MVP desplegado que puedas enseñar.
 
 🗓️ **Parte I (días 1 → 8): sin prisa**
+
 1. **Días 1–2** – Repo + dominio + xUnit
 2. **Días 3–4** – EF Core + SQL Server en Docker
 3. **Días 5–6** – API con ASP.NET Core
@@ -16,7 +17,7 @@ Tocar a mano las piezas de una app .NET actual para poder **supervisar** el cód
 
 🗣️ **Tarea extra de descubrimiento:** habla 30–45 min con 2 o 3 personas con las que juegas. ¿Qué falla hoy con Instagram? Preguntas en el enunciado del dominio.
 
-👨‍🏫 **Domingo después del Día 3:** masterclass de arquitectura.
+👨‍🏫 **El domingo después del Día 5:** [masterclass de arquitectura](../../docs/masterclasses/masterclass-architecture.md). Estarás a mitad del ejercicio 3: lleva tu servicio de aplicación y tus dudas para terminarlo el Día 6. Fecha y horario en los [anuncios de masterclasses](../../docs/masterclasses/Anuncios.md).
 🔜 **Parte II (días 9 → 16):** web con Blazor, login y roles, panel del organizador, Docker.
 🔜 **Parte III (días 17 → 23):** torneos y pago con Spec-Driven Development, despliegue en Azure.
 
@@ -24,6 +25,7 @@ Tocar a mano las piezas de una app .NET actual para poder **supervisar** el cód
 Primero lo intentas tú, después comparas con la IA (sección «Comparación con IA» en cada PR). El `AGENTS.md` la deja en modo tutor: explica y da pistas, no soluciones.
 
 📚 **Material**
+
 - Enunciados: `formacion-dotnet-junior/reto/Parte1/`
 - Dominio y plantillas: `docs/court-connect/`
 - Flujo de Git: `ambit-escola/docs/methodology/git.md`
@@ -32,6 +34,7 @@ Primero lo intentas tú, después comparas con la IA (sección «Comparación co
 Desde el ejercicio 5, el quality gate de SonarQube Cloud es **obligatorio para fusionar**: cobertura ≥ 80 % y duplicación ≤ 3 %, solo sobre lo que añades o cambias. Detalle en `docs/court-connect/calidad.md`.
 
 📌 **En cada PR**
+
 - [ ] Rama desde `main` actualizado
 - [ ] `dotnet build` y `dotnet test` OK
 - [ ] «Qué / Por qué / Cómo se ha comprobado / Uso de IA»

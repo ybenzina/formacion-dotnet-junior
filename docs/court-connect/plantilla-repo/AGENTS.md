@@ -34,9 +34,9 @@ En los ejercicios del reto **no des la solución**. Tu papel es el de un tutor.
 ## Convenciones
 
 - **.NET 10.** Solución `CourtConnect.slnx`, código en `src/` y tests en `tests/`.
-- **Nomenclatura:** carpetas y `.csproj` como `CourtConnect.<Capa>` (`Domain`, `Application`, `Infrastructure`, `Api`, `Ui.Components`, `Ui.Web`), sin prefijo de organización, para no alargar las rutas. Los namespaces y los ensamblados sí son `DeemSoft.CourtConnect.<Capa>`: lo añade `Directory.Build.props` de la raíz, no hay que repetirlo en cada `.csproj`.
+- **Nomenclatura:** carpetas y `.csproj` como `CourtConnect.<Capa>` (`Domain`, `Application`, `Infrastructure`, `Api`, `Ui.Components`, `Ui.Web` y, desde la Parte III, `Worker`), sin prefijo de organización, para no alargar las rutas. Los namespaces y los ensamblados sí son `DeemSoft.CourtConnect.<Capa>`: lo añade `Directory.Build.props` de la raíz, no hay que repetirlo en cada `.csproj`.
 - **Idioma:** código en inglés (glosario en `docs/domain.md`); documentación, issues y PR en español.
-- **Arquitectura:** `Domain` sin dependencias; la web solo habla con la API. Sin MediatR. El reloj se inyecta con `TimeProvider`. Desde la Parte III, el código nuevo se organiza en *slices* verticales (una carpeta por caso de uso).
+- **Arquitectura:** `Domain` sin dependencias; la web solo habla con la API. Sin MediatR. El reloj se inyecta con `TimeProvider`. Desde la Parte III, el código nuevo se organiza en *slices* verticales (una carpeta por caso de uso). La caducidad se ejecuta en un `BackgroundService` del host propio `CourtConnect.Worker` (plantilla Worker Service), no en la API. El worker referencia Application e Infrastructure, consulta SQL y no tiene HTTP ni ingress. No aplica migraciones: las aplica la API o el paso de despliegue decidido en el ejercicio 4.
 - **Tests:** xUnit. Toda regla de negocio tiene al menos un test. Casos que solo cambian en los datos, con `[Theory]` e `[InlineData]`.
 - **Quality gate bloqueante (SonarQube Cloud, Sonar way, solo código nuevo):** fiabilidad, seguridad y mantenibilidad A; cobertura ≥ 80 %; duplicación ≤ 3 %; security hotspots revisados al 100 %. Solo se excluye del análisis el código generado (`**/Migrations/**`). Son dos checks obligatorios: el job de la CI (compila y pasa tests) y `SonarCloud Code Analysis` (veredicto del gate); el primero en verde no implica que el gate se supere. Al revisar o al generar código (SDD), tenlo en cuenta y avisa si algo lo pondría en riesgo.
 - **Datos:** siempre ficticios. Guarda solo los datos necesarios de los jugadores (la plataforma admite jugadores desde 16 años).
@@ -63,6 +63,7 @@ Código estándar y legible para el equipo. Las novedades del lenguaje solo cuan
 - Ramas cortas desde la rama base actualizada: `feature/…`, `fix/…`, `docs/…`, `chore/…`, `test/…`. Nombres en minúsculas con guiones.
 - Commits: `tipo: descripción breve en minúsculas` (`feat:`, `fix:`, `docs:`, `test:`, `chore:`, `refactor:`).
 - PR con **Qué / Por qué / Cómo se ha comprobado / Uso de IA** y `Closes #N`. Revisa y fusiona Yamel: *merge commit* (o *squash* hacia `develop` desde la Parte III).
+- Antes de pedir revisión, pasa `/check-pr` y pega su resumen en el PR.
 
 ## Al terminar una sesión de trabajo
 

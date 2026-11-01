@@ -57,7 +57,7 @@ La constitución son las reglas que la IA tiene que seguir siempre. Tiene que se
 
 - Especificación de la funcionalidad en `specs/`, con las aclaraciones resueltas. Tiene que responder, entre otras:
   - ¿Cuánto tiempo retiene la plaza una inscripción pendiente, y de dónde sale ese valor?
-  - ¿Quién o qué hace caducar las inscripciones vencidas? (Pista: un **`BackgroundService`** que se ejecuta cada cierto tiempo, con `TimeProvider` para poder probarlo.)
+  - ¿Quién o qué hace caducar las inscripciones vencidas? (Pista: un **`BackgroundService`** que se ejecuta cada cierto tiempo, con `TimeProvider` para poder probarlo; irá en su propio host, `CourtConnect.Worker`.)
   - ¿Qué pasa si el pago se confirma justo cuando la inscripción caduca?
   - ¿Qué significa exactamente que confirmar dos veces el mismo pago «no tenga efectos»?
   - ¿Qué equipos cuentan para el número máximo: los confirmados o también los pendientes?

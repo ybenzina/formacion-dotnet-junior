@@ -1,6 +1,6 @@
 # Referencias de IA del reto
 
-Esta carpeta es la fuente de verdad de las referencias de IA de `DeemSoft/formacion-dotnet-junior`. Se instalan por PR en `DeemSoft/court-connect`, salvo el revisor del mentor, instalado en este repo. Su primera instalación queda efectiva al fusionar el PR, según [el registro](REGISTRO.md).
+Esta carpeta es la fuente de verdad de las referencias de IA de `DeemSoft/formacion-dotnet-junior`. Se instalan por PR en `DeemSoft/court-connect` y también en este repo (tutor, calidad, documentación, autorrevisión y el revisor del mentor). Su primera instalación queda efectiva al fusionar el PR, según [el registro](REGISTRO.md).
 
 ## Qué es cada cosa
 
@@ -16,10 +16,11 @@ El fichero no es el modelo: la herramienta lo carga como instrucciones. Aquí us
 
 | Artefacto | Versión | Estado | Uso |
 | --- | --- | --- | --- |
-| [Tutor](artefactos/tutor/README.md) | 1.0.0 | `refined` | Ayuda gradual en las partes I y II; se instala en P2 · Ej5 |
-| [Calidad](artefactos/calidad-sonarqube/README.md) | 1.0.0 | `draft` | Corregir issues de SonarQube Cloud desde la Parte III |
-| [Documentación](artefactos/documentacion/README.md) | 1.0.0 | `draft` | Documentar según la configuración del repositorio |
-| [Revisor del reto](artefactos/revisor-reto/README.md) | 1.0.0 | `draft` | Para Yamel: PR, demos, seguimiento y borradores de Discord |
+| [Tutor](artefactos/tutor/README.md) | 1.1.0 | `refined` | Ayuda gradual en el curso y en el reto; se instala en P2 · Ej5 y en el repo de formación |
+| [Calidad](artefactos/calidad-sonarqube/README.md) | 1.1.0 | `draft` | Corregir issues de SonarQube Cloud: en el reto, desde la Parte III; en el curso, en las ramas de integración |
+| [Documentación](artefactos/documentacion/README.md) | 2.0.0 | `draft` | Documentar según la configuración del repositorio (contrato `version: 2`) |
+| [Revisor del reto](artefactos/revisor-reto/README.md) | 1.1.0 | `draft` | Para Yamel: PR, demos, seguimiento y borradores de Discord |
+| [Autorrevisión del PR](artefactos/autorrevision-pr/README.md) | 1.0.0 | `draft` | Para Driss: revisar su PR con `/check-pr` antes de pedir la revisión |
 
 No fijan modelo ni SDK. El reto usa .NET 10 en las partes I y II y .NET 11 desde la III.
 
@@ -50,6 +51,8 @@ El tutor es un rol de lectura, no un trabajador autónomo. Ninguna referencia es
 - [Esquema de metadatos](esquema/metadata.schema.json) y [checklist del PR](proceso/checklist.md). `validated_repos` solo recoge evidencia real.
 - Instrucciones en español; código e identificadores en inglés. El YAML decide el idioma de la documentación generada.
 
+Ejemplo de SemVer con la última actualización: el tutor pasa a 1.1.0 (MINOR) porque suma un contexto de uso, el curso, sin romper el del reto. Calidad también pasa a 1.1.0 (MINOR) porque amplía dónde puede usarse. Documentación pasa a 2.0.0 (MAJOR) porque cambia el contrato de configuración: un `docs/documentacion.config.yml` con `version: 1` ya no sirve tal cual y hay que migrarlo.
+
 ## Instalación manual
 
 Cada skill se distribuye **una sola vez**, bajo `claude/.claude/skills/`. Copia su carpeta a `.claude/skills/` en el destino: la leen **Claude Code y VS Code Local**. Los agentes de Copilot van en `.github/agents/`.
@@ -67,7 +70,7 @@ La deriva (*drift*) es una diferencia entre la copia y la versión fuente que de
 Desde `court-connect`, con ambos repos como carpetas hermanas:
 
 ```powershell
-$source = '../formacion-dotnet-junior/ai/artefactos/tutor/v1.0.0/copilot/.github/agents/guide-learning.agent.md'
+$source = '../formacion-dotnet-junior/ai/artefactos/tutor/v1.1.0/copilot/.github/agents/guide-learning.agent.md'
 $installed = '.github/agents/guide-learning.agent.md'
 $sourceHash = (Get-FileHash -LiteralPath $source -Algorithm SHA256).Hash
 $installedHash = (Get-FileHash -LiteralPath $installed -Algorithm SHA256).Hash

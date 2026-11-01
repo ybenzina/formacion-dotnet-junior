@@ -14,7 +14,8 @@ Conceptos nuevos (añádelos al glosario): **autenticación** frente a **autoriz
 
 Lecturas:
 
-- [Uso de Identity para proteger un back-end de API web](https://learn.microsoft.com/es-es/aspnet/core/security/authentication/identity-api-authorization): `AddIdentityApiEndpoints` y `MapIdentityApi`.
+- Empieza por [Seguridad en 15 minutos](../../../docs/court-connect/seguridad-en-15-minutos.md), dentro de esta hora de preparación. La masterclass de seguridad completa queda para antes de empezar con Àmbit.
+- [Uso de Identity para proteger un back-end de API web (.NET 10)](https://learn.microsoft.com/es-es/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-10.0): `AddIdentityApiEndpoints` y `MapIdentityApi`.
 - [Autorización basada en roles](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/roles) y [basada en políticas](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/policies).
 - [OWASP: Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/): el riesgo número 1 de las aplicaciones web, y el que evitan R7 y R8.
 
@@ -81,6 +82,6 @@ Pide a la IA la protección de `POST /registrations/{id}/cancel` y compárala co
 ## Recursos
 
 - [Identity en ASP.NET Core](https://learn.microsoft.com/es-es/aspnet/core/security/authentication/identity)
-- [Identity para API web (`MapIdentityApi`)](https://learn.microsoft.com/es-es/aspnet/core/security/authentication/identity-api-authorization)
+- [Identity para API web (`MapIdentityApi`, .NET 10)](https://learn.microsoft.com/es-es/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-10.0)
 - [Autenticación y autorización en Blazor](https://learn.microsoft.com/es-es/aspnet/core/blazor/security/)
 - [OWASP Top 10](https://owasp.org/Top10/)

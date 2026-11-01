@@ -19,7 +19,7 @@ types:
     # Idioma del texto técnico.
     language: ca
     # Directorio relativo de salida de los Markdown técnicos.
-    output: docs/technical-doc/
+    output: docs/technical/
     # Público previsto para las explicaciones técnicas.
     audience: "Equip de desenvolupament i manteniment"
   # Documentación XML de contratos C#, también en catalán.
