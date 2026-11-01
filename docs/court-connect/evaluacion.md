@@ -7,7 +7,7 @@ La pregunta que responde la evaluación es una sola: **¿puede Driss supervisar 
 Yamel la completa en cada demo, a partir de las preguntas de «explícame esta pieza».
 
 | Nivel | Significa |
-|---|---|
+| --- | --- |
 | 1 | No la reconoce |
 | 2 | La reconoce y sabe para qué sirve |
 | 3 | Explica cómo funciona en su código y detecta errores evidentes |
@@ -16,7 +16,7 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 **Objetivo del reto: nivel 3 o más en todas.**
 
 | Tecnología | Demo 1 (Día 8) | Demo 2 (Día 16) | Demo final (Día 23) | Comentarios |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Git, PR y revisión | | | | |
 | Modelo de dominio y xUnit | | | | |
 | EF Core y migraciones | | | | |
@@ -29,14 +29,14 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 | Identity, autenticación y autorización | — | | | |
 | Docker y Compose | — | | | |
 | SDD con Spec Kit y revisión de código generado | — | — | | |
-| *Slices* verticales y `BackgroundService` | — | — | | |
+| *Slices* verticales y `BackgroundService` en `CourtConnect.Worker` | — | — | | |
 | Azure Container Apps y Azure SQL | — | — | | |
 | Vocabulario profesional (usa los términos del glosario al explicar) | | | | |
 
 ## 2. Comprobaciones objetivas
 
 | Comprobación | Parte I | Parte II | Parte III |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CI en verde en `main` y obligatoria para fusionar | ☐ | ☐ | ☐ |
 | Quality gate superado y bloqueante: job de CI y `SonarCloud Code Analysis` obligatorios (umbrales en `calidad.md`) | ☐ | ☐ | ☐ |
 | Cada regla de negocio con al menos un test | ☐ | ☐ | ☐ |

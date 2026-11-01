@@ -2,6 +2,8 @@
 
 **Día 16 · estimación: 5 h 30 min** · Issue: «P2 · Ej5 · Demo 2 y preparación del SDD»
 
+**Antes de este ejercicio:** [masterclass de IA y agentes](../../../docs/masterclasses/masterclass-ai-agents.md), el domingo después del Día 15 por la tarde. Una sesión de 90 minutos con pausa. La clase no sustituye tu investigación, diseño ni pruebas del tutor.
+
 ## Objetivo
 
 Cerrar la Parte II con una demo desde un clon limpio y dejar preparado el terreno para la Parte III, que se hace con Spec-Driven Development.

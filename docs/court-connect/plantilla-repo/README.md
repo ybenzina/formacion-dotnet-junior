@@ -5,7 +5,7 @@ Ficheros para copiar al repo nuevo y pasos para crearlo. Es la primera tarea del
 ## Ficheros que se copian tal cual
 
 | Fichero | Para qué |
-|---|---|
+| --- | --- |
 | `AGENTS.md` | Instrucciones para cualquier asistente de IA: contexto del reto y **modo tutor** |
 | `CLAUDE.md` | Hace que Claude lea `AGENTS.md` |
 | `.github/copilot-instructions.md` | Hace que Copilot lea `AGENTS.md` |
@@ -57,9 +57,12 @@ court-connect/
 │   ├── CourtConnect.Application
 │   ├── CourtConnect.Infrastructure
 │   ├── CourtConnect.Api
+│   ├── CourtConnect.Worker  (Parte III)
 │   ├── CourtConnect.Ui.Components
 │   └── CourtConnect.Ui.Web
 └── tests/
     ├── CourtConnect.UnitTests
     └── CourtConnect.IntegrationTests
 ```
+
+  `CourtConnect.Worker` se crea en la Parte III con la plantilla Worker Service, no en la estructura inicial. Aloja el `BackgroundService` de caducidades, referencia Application e Infrastructure y no tiene HTTP ni ingress. No aplica migraciones; consulta SQL mediante Infrastructure. No es obligatorio añadirlo a `docker-compose.yml`.

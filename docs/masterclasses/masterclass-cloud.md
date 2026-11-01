@@ -1,17 +1,10 @@
 # Masterclass Contenedores, Aspire y Azure
 
-**El domingo siguiente al Día 13 del reto**, antes de la Parte III. Sustituye a las antiguas masterclasses de Docker y de Cloud.
+Dos presentaciones independientes, de **90 minutos cada una**, con numeración propia:
 
-## Contenido
+- [Sesión 1: Contenedores, Compose y Aspire](masterclass-cloud-local.md), el domingo siguiente al Día 15 por la mañana, después del ejercicio de Docker. Esa tarde se celebra [IA y agentes](masterclass-ai-agents.md), antes de P2 · Ej5.
+- [Sesión 2: Azure, infraestructura como código y costes](masterclass-cloud-azure.md), el domingo siguiente al Día 20, antes del despliegue del Día 22.
+- [Quizzes por sesión, con soluciones razonadas](masterclass-cloud-quiz.md), para el día siguiente, fuera del tiempo de clase.
+- [Hoja de cálculo y solución orientativa para Yamel](masterclass-cloud-costes-yamel.md), con cantidades calculadas y precios por consultar.
 
-- **Modelos de servicio:** IaaS, PaaS y SaaS, y por qué Àmbit va en PaaS sin diseño *serverless*.
-- **Azure Container Apps:** entorno, aplicaciones, réplicas, escalar a cero y concesión gratuita. Por qué Container Apps y no Kubernetes.
-- **Azure SQL:** niveles, oferta gratuita y sus límites (copias y restauración), y qué conviene en producción con datos sensibles.
-- **Secretos y configuración:** secretos de Container Apps, Key Vault e **identidad gestionada** (sin contraseñas en la configuración).
-- **Despliegue desde GitHub Actions** con credenciales federadas (OIDC).
-- **Aspire:** `AppHost` para levantar todo en local, `ServiceDefaults` y **OpenTelemetry** (trazas, métricas y logs) con su panel; en Azure, Application Insights.
-- **Costes:** la calculadora de Azure.
-
-## Ejercicio
-
-Con la calculadora de Azure, estimar el coste mensual de la arquitectura prevista para Àmbit (portal, backoffice, API, *worker*, Azure SQL, almacenamiento y correo), con un escenario normal y uno de pico en mayo.
+Las fechas de convocatoria están en el [calendario](../court-connect/calendario.md). Las dos sesiones sustituyen las antiguas clases separadas de Docker y cloud. No se crean recursos de pago durante las clases.

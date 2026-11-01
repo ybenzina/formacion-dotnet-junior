@@ -6,14 +6,14 @@
 
 - **Migrar** el MVP de .NET 10 a **.NET 11** antes de añadir nada, como se hace en un proyecto real cuando sale una versión nueva.
 - Desarrollar funcionalidades con **Spec-Driven Development** (GitHub Spec Kit): especificar, dejar que la IA planifique e implemente, y **revisar** lo generado como el PR de otra persona.
-- Organizar el código nuevo en ***slices* verticales** (una carpeta por caso de uso) y añadir un proceso en segundo plano (`BackgroundService`).
+- Organizar el código nuevo en ***slices* verticales** (una carpeta por caso de uso) y añadir un proceso en segundo plano (`BackgroundService`) en su propio host, `CourtConnect.Worker`, no en la API.
 - **Desplegar** el MVP en Azure, con una URL que puedas enseñar.
 - Medir cuánto cuesta en tiempo y en consumo de IA: es el piloto de la decisión **PD-11** de Àmbit.
 
 ## Calendario
 
 | Días | Ejercicio | Entregable |
-|---|---|---|
+| --- | --- | --- |
 | 17 – 18 | [Ejercicio 1 — .NET 11 y SDD (1/2): especificar torneos y pago](Ejercicio1/README.md) | `develop` en .NET 11, constitución y especificación aprobadas |
 | 19 – 20 | [Ejercicio 2 — SDD (2/2): implementación y revisión](Ejercicio2/README.md) | PR con hallazgos de la revisión y métricas |
 | 21 | [Ejercicio 3 — Segunda funcionalidad SDD](Ejercicio3/README.md) | Ciclo completo en un día, con métricas |
@@ -21,6 +21,8 @@
 | 23 | [Ejercicio 5 — PR trampa y demo final](Ejercicio5/README.md) | Revisión del PR trampa, retro y demo |
 
 Los viernes, reunión semanal de seguimiento.
+
+**El domingo siguiente al Día 20:** [cloud, sesión 2: Azure, infraestructura como código y costes](../../docs/masterclasses/masterclass-cloud-azure.md). Prepara el despliegue del **Día 22**. La sesión 1 de contenedores, Compose y Aspire habrá sido el domingo siguiente al Día 15, después del ejercicio de Docker.
 
 ## Reglas
 
@@ -34,7 +36,7 @@ Las partes I y II se hacen en **.NET 10** (LTS). La Parte III empieza migrando a
 - Las STS tienen ahora **24 meses** de soporte, así que .NET 11 termina en fechas parecidas a .NET 10.
 - ASP.NET Core 11 trae **TempData y sesión en Static SSR** (`[SupplyParameterFromTempData]` y `[SupplyParameterFromSession]`). Con eso se hace el **asistente de inscripción del equipo en varios pasos** de la funcionalidad de torneos, sin montar a mano lo que antes había que resolver con campos ocultos o borradores en el servidor.
 
-La migración va en el [ejercicio 1](Ejercicio1/README.md#1-migración-a-net-11-1-h-30-min), justo después de etiquetar `v0.1.0` (el MVP en .NET 10).
+La migración va en el [ejercicio 1](Ejercicio1/README.md), justo después de etiquetar `v0.1.0` (el MVP en .NET 10).
 
 ## Flujo de ramas desde la Parte III
 
