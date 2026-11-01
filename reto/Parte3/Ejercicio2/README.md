@@ -10,11 +10,11 @@ Dejar que la IA planifique e implemente la funcionalidad a partir de la especifi
 
 Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`, con *squash merge*.
 
-1. **Plan técnico y tareas** generados con Spec Kit. Revísalos antes de implementar: ¿respetan la constitución (slices, sin mediador, reglas en el dominio)?
+1. **Plan técnico y tareas** generados con Spec Kit. Revísalos antes de implementar: ¿respetan la constitución (slices, sin mediador, reglas en el dominio)? Comprueba que incluyan `CourtConnect.Worker`, creado con la plantilla Worker Service, con referencias a Application e Infrastructure, sin HTTP ni ingress y sin aplicar migraciones. Revisa que la constitución permita ese host propio; si falta, actualízala y valida el cambio antes de implementar.
 2. **Implementación** generada por la IA, tarea a tarea.
 3. **Revisión línea a línea.** Busca, como mínimo:
    - reglas de la especificación que falten o estén mal;
-   - el `BackgroundService`: ¿usa `TimeProvider`?, ¿cómo obtiene el `DbContext`? (un `BackgroundService` vive toda la aplicación y el `DbContext` es *scoped*: ¿qué problema hay?);
+   - el `BackgroundService` de `CourtConnect.Worker`: ¿usa `TimeProvider`?, ¿cómo obtiene el `DbContext`? (un `BackgroundService` vive toda la aplicación y el `DbContext` es *scoped*: ¿qué problema hay?); ¿qué pasaría si dos instancias del worker intentaran caducar la misma inscripción?;
    - idempotencia del pago de verdad, no solo en el nombre;
    - comprobación del capitán (R8) en todos los caminos;
    - tests que no comprueban nada o que solo inflan la cobertura.
@@ -41,7 +41,7 @@ Crea un agente de UI y otro de backend y úsalos para las páginas de torneos y 
 ## Criterios de aceptación
 
 - [ ] Plan y tareas revisados antes de implementar.
-- [ ] Funcionalidad completa según la especificación, con caducidad automática.
+- [ ] Funcionalidad completa según la especificación, con caducidad automática en `CourtConnect.Worker`, no en la API.
 - [ ] Asistente de inscripción en varios pasos, con el estado en sesión, revisado.
 - [ ] PR con «Hallazgos de la revisión».
 - [ ] Quality gate superado por el código generado.

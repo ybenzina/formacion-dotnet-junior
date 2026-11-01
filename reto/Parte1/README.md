@@ -23,7 +23,7 @@ El reto tiene tres partes y termina el Día 23. Si un día no se trabaja, el pla
 - **Parte III · MVP con SDD** (días 17–23): torneos y pago con Spec-Driven Development, una segunda funcionalidad y despliegue en Azure.
 
 | Días | Ejercicio | Entregable |
-|---|---|---|
+| --- | --- | --- |
 | 1 – 2 | [Ejercicio 1 — Repositorio y dominio](Ejercicio1/README.md) | Repo creado, `docs/domain.md`, dominio con tests |
 | 3 – 4 | [Ejercicio 2 — EF Core y SQL Server en Docker](Ejercicio2/README.md) | Migración aplicada y datos de prueba |
 | 5 – 6 | [Ejercicio 3 — API con ASP.NET Core](Ejercicio3/README.md) | Endpoints que se pueden probar con un fichero `.http` |
@@ -34,7 +34,7 @@ Casi todos los ejercicios tienen **dos días** de calendario para una estimació
 
 **Además, durante la Parte I:** habla 30–45 minutos con tu grupo de juego (ver el apartado «Antes de escribir `domain.md`» del [enunciado](../../docs/court-connect/enunciado-dominio.md)). Conclusiones en `docs/discovery.md` antes de la demo 1.
 
-**Masterclass de arquitectura:** el domingo siguiente al Día 3, antes del ejercicio 3.
+**[Masterclass de arquitectura](../../docs/masterclasses/masterclass-architecture.md): el domingo siguiente al Día 5**, a mitad del ejercicio 3. Lleva tu servicio de aplicación aunque esté incompleto. El Día 6 lo terminarás aplicando lo aprendido.
 
 ## Antes del Día 1
 

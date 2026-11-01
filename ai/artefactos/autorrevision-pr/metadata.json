@@ -1,0 +1,24 @@
+{
+	"$schema": "../../esquema/metadata.schema.json",
+	"id": "autorrevision-pr",
+	"title": "Autorrevisión del PR antes de pedir revisión",
+	"owner": "Equipo de formación",
+	"version": "1.0.0",
+	"status": "draft",
+	"installation_notes": "Una sola copia en .claude/skills/ sirve para Claude Code y VS Code Local y reduce la deriva. Solo si se usa el motor Copilot, copiar el mismo skill a .github/skills/ y registrar esa copia adicional; Local descubre ambas ubicaciones. En court-connect llega con la plantilla del repo.",
+	"channels": [
+		{
+			"runtime": "copilot-local",
+			"format": "skill",
+			"name": "check-pr",
+			"path": "claude/.claude/skills/check-pr/SKILL.md"
+		},
+		{
+			"runtime": "claude",
+			"format": "skill",
+			"name": "check-pr",
+			"path": "claude/.claude/skills/check-pr/SKILL.md"
+		}
+	],
+	"validated_repos": []
+}

@@ -5,11 +5,12 @@ Propuesta para el reto. Es deliberadamente simple: el objetivo es entender cada 
 ## Proyectos
 
 | Proyecto | Responsabilidad | Referencia a |
-|---|---|---|
+| --- | --- | --- |
 | `CourtConnect.Domain` | Entidades y reglas de negocio. Sin dependencias externas | — |
 | `CourtConnect.Application` | Casos de uso (servicios), DTOs e interfaces (repositorios, reloj, pasarela de pago) | Domain |
 | `CourtConnect.Infrastructure` | EF Core, `DbContext`, migraciones, repositorios, adaptadores | Domain, Application |
 | `CourtConnect.Api` | API REST con ASP.NET Core y OpenAPI | Application, Infrastructure |
+| `CourtConnect.Worker` | Parte III: host propio de caducidades, creado con la plantilla Worker Service; sin HTTP ni ingress | Application, Infrastructure |
 | `CourtConnect.Ui.Components` | Componentes Razor reutilizables (Razor Class Library) | — |
 | `CourtConnect.Ui.Web` | Blazor Web App (Static SSR en las páginas públicas e Interactive Server en el panel del organizador) que aloja los componentes y llama a la API por HTTP | Ui.Components |
 | `CourtConnect.UnitTests` | Tests unitarios con xUnit | Domain, Application |
@@ -37,7 +38,7 @@ Conviene saber que el ensamblado **no** es solo el nombre del `.dll`: una Razor 
 - **Identidad con ASP.NET Core Identity en la API** (Parte II). La web guarda la sesión en una cookie y un `DelegatingHandler` añade el token a las llamadas a la API. Roles `Organizer` y `Player`; las reglas de autorización R7 y R8 viven en el dominio o en la aplicación, no solo en los endpoints.
 - **SQL Server en Docker** en local, accedido con EF Core; **Azure SQL** al desplegar. Cambiar de proveedor (por ejemplo, a PostgreSQL) afectaría sobre todo a Infrastructure y a las migraciones.
 - **El reloj se inyecta** (`TimeProvider`): las reglas que dependen de fechas (R3, R4, R5, la caducidad) tienen que poder probarse. Lo mismo con el azar, si se hacen los equipos aleatorios.
-- **Proceso en segundo plano** (`BackgroundService`) para caducar las inscripciones pendientes de pago (Parte III).
+- **Proceso en segundo plano** (`BackgroundService`) para caducar las inscripciones pendientes de pago en el host propio `CourtConnect.Worker` (Parte III), no en la API. Accede a SQL mediante Infrastructure y no aplica migraciones: las aplica la API o el paso de despliegue que se acuerde en el ejercicio 4. Así su ejecución no depende del escalado de la API.
 - **Docker y GitHub Actions:** build, tests y SonarCloud en cada PR. Las imágenes se construyen en la CI.
 - **Despliegue en Azure Container Apps** (Parte III), con la concesión gratuita y Azure SQL con la oferta gratuita en pausa al llegar al límite.
 

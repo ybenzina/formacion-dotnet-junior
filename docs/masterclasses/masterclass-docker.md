@@ -1,8 +1,7 @@
 # Masterclass Docker / Contenedores
 
-Integrada en la [masterclass de contenedores, Aspire y Azure](masterclass-cloud.md) (el domingo siguiente al Día 13 del reto). Lo básico de Docker (Dockerfile *multi-stage* y Docker Compose) se practica en el ejercicio 4 de la Parte II.
+La clase de Docker forma parte de [cloud, sesión 1: contenedores, Compose y Aspire](masterclass-cloud-local.md). Será **el domingo siguiente al Día 15**, después del ejercicio 4 de la Parte II. Es un repaso de tu trabajo y una ampliación con Aspire.
 
-Contenido de referencia:
-- Dockerfile básico y *multi-stage*.
-- Docker Compose para API, web y SQL Server.
-- Opciones de despliegue: Azure Container Apps.
+Un **Dockerfile** es una receta para construir una imagen de tu aplicación. **Multi-stage** significa que la receta separa la construcción y la ejecución: como cocinar en una cocina equipada y llevar a la mesa solo el plato terminado. **Compose** describe varios servicios que arrancan juntos, por ejemplo web, API y base de datos. Estos términos se repasan con ejemplos en la sesión 1.
+
+La [sesión 2: Azure, infraestructura como código y costes](masterclass-cloud-azure.md) será **el domingo siguiente al Día 20**, antes del despliegue del Día 22.

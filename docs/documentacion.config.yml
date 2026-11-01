@@ -1,0 +1,50 @@
+# Versión del contrato de este fichero, no del artefacto. Este formato es la versión 2.
+# Configuración del skill document-repo para el repo de formación.
+version: 2
+# Tipos de documentación que se generan. Si omites un tipo, queda desactivado: no se genera, modifica ni borra.
+types:
+  # Documentación funcional: qué hace el material, para quién y con qué reglas. Se escribe en Markdown.
+  functional:
+    # true activa este tipo; false lo desactiva sin tocar los documentos ya escritos.
+    enabled: true
+    # Idioma del texto generado: es, en o ca. No traduce nombres de código.
+    language: es
+    # Carpeta de salida, relativa a la raíz del repositorio, donde se escriben los Markdown.
+    output: docs/
+    # Quién va a leerlo; decide el vocabulario y el nivel de detalle.
+    audience: "Persona en formación y mentor"
+  # Documentación técnica: arquitectura, dependencias y contratos. Desactivada: este repo no tiene arquitectura propia que documentar.
+  technical:
+    # false desactiva este tipo: no se genera, modifica ni borra nada. Los demás campos se conservan por si se activa más adelante.
+    enabled: false
+    # Idioma del texto técnico: es, en o ca.
+    language: en
+    # Carpeta de salida, relativa a la raíz del repositorio, para los Markdown técnicos.
+    output: docs/technical/
+    # Quién va a leerlo; decide el vocabulario y el nivel de detalle.
+    audience: "Developers and maintainers"
+  # Comentarios dentro del código C# de los ejercicios del curso. No crea ficheros: edita los .cs existentes y por eso no lleva «output».
+  code:
+    # true activa este tipo; false lo desactiva sin tocar los comentarios ya escritos.
+    enabled: true
+    # Idioma de los comentarios que se escriben: es, en o ca. Los identificadores no se traducen.
+    language: en
+    # Quién va a leer los comentarios; decide el vocabulario y el nivel de detalle.
+    audience: "Developers in training and their mentor"
+    # true escribe cabeceras XML (///) en tipos y miembros: qué ofrece cada símbolo, sus parámetros y su resultado.
+    xml_comments: true
+    # true añade comentarios // solo donde explican el porqué de una decisión que no se ve leyendo el código.
+    inline_comments: true
+    # Qué código se toca. Lo que queda fuera de estas listas no se modifica.
+    scope:
+      # Proyectos incluidos: rutas de .csproj relativas a la raíz del repositorio, con la forma
+      # curso/SemanaN/EjercicioM/src/<Proyecto>/<Proyecto>.csproj.
+      # Está vacía a propósito: en la rama main no hay ningún .csproj bajo curso/**, porque main guarda solo
+      # enunciados y material, y el código del curso vive en la rama drissbego/integration.
+      # Al trabajar en esa rama, añade aquí los proyectos que existan. Con la lista vacía el skill pregunta antes de tocar código.
+      include_projects: []
+      # Proyectos que se saltan aunque estén incluidos; [] significa ninguno. Las exclusiones ganan.
+      exclude_projects: []
+      # Miembros que llevan cabecera XML. Con xml_comments: true debe incluir public y protected.
+      # No afecta a los comentarios //, que se aplican a todo el código de los proyectos incluidos.
+      visibility: [public, protected]

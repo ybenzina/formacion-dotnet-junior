@@ -14,14 +14,14 @@ Es el mismo reparto que tendrá Àmbit: una parte pública y ligera para los usu
 ## Calendario
 
 | Días | Ejercicio | Entregable |
-|---|---|---|
+| --- | --- | --- |
 | 9 – 10 | [Ejercicio 1 — Web con Blazor](Ejercicio1/README.md) | Listado, ficha y formulario de apuntarse desde la web |
 | 11 – 12 | [Ejercicio 2 — Cuentas, login y roles](Ejercicio2/README.md) | Registro, login, roles y reglas R7 y R8 |
 | 13 – 14 | [Ejercicio 3 — Panel del organizador](Ejercicio3/README.md) | Crear canchas y partidos, abrir, cerrar y ver apuntados |
 | 15 | [Ejercicio 4 — Docker y Docker Compose](Ejercicio4/README.md) | `docker compose up` levanta todo |
 | 16 | [Ejercicio 5 — Demo 2 y preparación del SDD](Ejercicio5/README.md) | Demo, retro y herramienta de IA del piloto elegida |
 
-Los viernes, reunión semanal de seguimiento. **El domingo siguiente al Día 13:** masterclass de contenedores, Aspire y Azure.
+Los viernes, reunión semanal de seguimiento. **El domingo siguiente al Día 15, por la mañana:** [cloud, sesión 1: contenedores, Compose y Aspire](../../docs/masterclasses/masterclass-cloud-local.md). Revisaremos tu Dockerfile y tu Compose después del ejercicio de Docker. **Por la tarde:** [IA y agentes](../../docs/masterclasses/masterclass-ai-agents.md), una sesión de 90 minutos con pausa, antes del ejercicio 5. La [sesión 2: Azure, IaC y costes](../../docs/masterclasses/masterclass-cloud-azure.md) será **el domingo siguiente al Día 20**.
 
 ## Reglas
 

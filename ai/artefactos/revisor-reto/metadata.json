@@ -3,7 +3,7 @@
 	"id": "revisor-reto",
 	"title": "Revisor del reto para el mentor",
 	"owner": "Yamel",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"status": "draft",
 	"installation_notes": "Se instala en DeemSoft/formacion-dotnet-junior para uso de Yamel: agente en .github/agents/ y una sola copia del skill en .claude/skills/, compartida por Claude Code y VS Code Local. .github/skills/ solo haría falta para un skill con el motor Copilot; aquí se usa su agente. Compartir la copia reduce la deriva.",
 	"channels": [

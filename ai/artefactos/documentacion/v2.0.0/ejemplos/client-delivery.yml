@@ -1,0 +1,46 @@
+# Versión del contrato de este fichero, no del artefacto. Este formato es la versión 2.
+# Ejemplo ficticio de una entrega, sin datos de un cliente real: los tres tipos en catalán.
+version: 2
+# Tipos de documentación que se generan. Si omites un tipo, queda desactivado: no se genera, modifica ni borra.
+types:
+  # Documentación funcional: qué hace el sistema, para quién y con qué reglas. Se escribe en Markdown.
+  functional:
+    # true activa este tipo; false lo desactiva sin tocar los documentos ya escritos.
+    enabled: true
+    # Idioma del texto generado: es, en o ca. No traduce nombres de código.
+    language: ca
+    # Carpeta de salida, relativa a la raíz del repositorio, donde se escriben los Markdown.
+    output: docs/
+    # Quién va a leerlo; decide el vocabulario y el nivel de detalle.
+    audience: "Equip funcional i persones usuàries"
+  # Documentación técnica: arquitectura, dependencias, contratos y cómo ejecutar y probar. También en Markdown.
+  technical:
+    # true activa este tipo; false lo desactiva.
+    enabled: true
+    # Idioma del texto técnico: es, en o ca.
+    language: ca
+    # Carpeta de salida, relativa a la raíz del repositorio, para los Markdown técnicos.
+    output: docs/technical/
+    # Quién va a leerlo; decide el vocabulario y el nivel de detalle.
+    audience: "Equip de desenvolupament i manteniment"
+  # Comentarios dentro del código C#. No crea ficheros: edita los .cs existentes y por eso no lleva «output».
+  code:
+    # true activa este tipo; false lo desactiva sin tocar los comentarios ya escritos.
+    enabled: true
+    # Idioma de los comentarios que se escriben: es, en o ca. Los identificadores no se traducen.
+    language: ca
+    # Quién va a leer los comentarios; decide el vocabulario y el nivel de detalle.
+    audience: "Persones consumidores de l'API i equip de manteniment"
+    # true escribe cabeceras XML (///) en tipos y miembros: qué ofrece cada símbolo, sus parámetros y su resultado.
+    xml_comments: true
+    # true añade comentarios // solo donde explican el porqué de una decisión que no se ve leyendo el código.
+    inline_comments: true
+    # Qué código se toca. Lo que queda fuera de estas listas no se modifica.
+    scope:
+      # Proyectos incluidos: rutas de .csproj relativas a la raíz del repositorio. Ruta ficticia: sustitúyela por un proyecto que exista en el destino.
+      include_projects: ["src/SampleApp/SampleApp.csproj"]
+      # Proyectos que se saltan aunque estén incluidos; [] significa ninguno. Las exclusiones ganan.
+      exclude_projects: []
+      # Miembros que llevan cabecera XML. Con xml_comments: true debe incluir public y protected.
+      # No afecta a los comentarios //, que se aplican a todo el código de los proyectos incluidos.
+      visibility: [public, protected]

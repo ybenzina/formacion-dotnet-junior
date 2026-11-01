@@ -6,6 +6,8 @@
 
 Empaquetar la API y la web en imágenes y levantar la aplicación completa con un solo comando. Es la base del despliegue en Azure de la Parte III.
 
+Después de este ejercicio, **el domingo siguiente al Día 15**, tendremos la [sesión 1 de cloud](../../../docs/masterclasses/masterclass-cloud-local.md). Lleva tu Dockerfile y tu `docker-compose.yml` de `court-connect`: revisaremos errores, `.dockerignore`, las etapas de construcción y el usuario no root. Aspire será la ampliación.
+
 ## Antes de empezar (≈ 30 min)
 
 Repaso de [Docker: primeros pasos](https://docs.docker.com/get-started/) (Dockerfile y Docker Compose). Conceptos nuevos (añádelos al glosario): **Dockerfile**, **build multi-stage**, **red de Compose**, **variable de entorno** y **healthcheck**.
@@ -48,4 +50,4 @@ Pide a la IA los Dockerfile y el `docker-compose.yml` y compáralos con los tuyo
 
 - [Imágenes de contenedor para .NET](https://learn.microsoft.com/es-es/dotnet/core/docker/introduction)
 - [Docker Compose](https://docs.docker.com/compose/)
-- `docs/masterclasses/masterclass-docker.md` de este repo.
+- [Masterclass de contenedores, Compose y Aspire](../../../docs/masterclasses/masterclass-cloud-local.md).

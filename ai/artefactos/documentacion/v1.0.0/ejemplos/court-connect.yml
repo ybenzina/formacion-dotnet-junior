@@ -19,7 +19,7 @@ types:
     # Idioma de las explicaciones técnicas.
     language: en
     # Directorio relativo para los Markdown técnicos.
-    output: docs/technical-doc/
+    output: docs/technical/
     # Público previsto para esta documentación.
     audience: "Developers and maintainers"
   # Comentarios XML que documentan contratos C#.

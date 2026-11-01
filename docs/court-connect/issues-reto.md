@@ -19,9 +19,11 @@
 
 | Título | Vence | Descripción |
 | --- | --- | --- |
-| Reto · Parte I | 2026-10-30 | Fundamentos: del dominio a la API con CI |
-| Reto · Parte II | 2026-11-11 | Web, identidad y contenedores |
-| Reto · Parte III | 2026-11-20 | MVP con SDD y despliegue en Azure |
+| Reto · Parte I | Día 8 | Fundamentos: del dominio a la API con CI |
+| Reto · Parte II | Día 16 | Web, identidad y contenedores |
+| Reto · Parte III | Día 23 | MVP con SDD y despliegue en Azure |
+
+Al crear los milestones, tomar las fechas absolutas del [calendario vigente](calendario.md), no de una copia de esta tabla.
 
 ## Issues
 

@@ -10,7 +10,9 @@ Exponer los casos de uso del dominio en una API REST, con validación, errores b
 
 Conceptos nuevos de hoy (en el [glosario](../../../docs/court-connect/glosario.md)): **API REST**, **endpoint**, **Minimal API**, **códigos de estado HTTP**, **ProblemDetails**, **OpenAPI**, **DTO**, **servicio de aplicación**, **repositorio**, **inyección de dependencias** y **constructor principal**.
 
-Lectura: [Tutorial: Creación de una API mínima con ASP.NET Core](https://learn.microsoft.com/es-es/aspnet/core/tutorials/min-web-api), versión .NET 10. Si ya has tenido la masterclass de arquitectura (el domingo siguiente al Día 3), repasa los ciclos de vida de la inyección de dependencias: hoy los usas. Fíjate en `MapGroup`, `TypedResults` y en por qué usa DTOs. No hace falta que lo programes entero.
+Lectura: [Tutorial: Creación de una API mínima con ASP.NET Core](https://learn.microsoft.com/es-es/aspnet/core/tutorials/min-web-api), versión .NET 10. Fíjate en `MapGroup`, `TypedResults` y en por qué usa DTOs. No hace falta que lo programes entero.
+
+La [masterclass de arquitectura](../../../docs/masterclasses/masterclass-architecture.md) será **el domingo siguiente al Día 5**, a mitad de este ejercicio. Lleva el servicio de aplicación que estés haciendo, aunque esté incompleto. Revisaremos responsabilidades, inyección de dependencias y patrones. Lo que aún no exista se trabajará en papel. El **Día 6**, termina el ejercicio aplicando lo aprendido; no hace falta convertir toda la aplicación a slices.
 
 ## Pasos
 
@@ -29,7 +31,7 @@ Rama `feature/api`.
 Usa **Minimal APIs** con grupos de endpoints (`MapGroup`). Si prefieres controladores, justifícalo en el PR.
 
 | Método y ruta | Qué hace | Respuestas |
-|---|---|---|
+| --- | --- | --- |
 | `GET /games` | Partidos abiertos, que no han empezado, con sus plazas libres | 200 |
 | `GET /games/{id}` | Detalle de un partido | 200, 404 |
 | `POST /courts` | Alta de cancha (para pruebas) | 201, 400 |
