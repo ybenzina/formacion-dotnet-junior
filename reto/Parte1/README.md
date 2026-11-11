@@ -34,7 +34,7 @@ Casi todos los ejercicios tienen **dos días** de calendario para una estimació
 
 **Además, durante la Parte I:** habla 30–45 minutos con tu grupo de juego (ver el apartado «Antes de escribir `domain.md`» del [enunciado](../../docs/court-connect/enunciado-dominio.md)). Conclusiones en `docs/discovery.md` antes de la demo 1.
 
-**[Masterclass de arquitectura](../../docs/masterclasses/masterclass-architecture.md): el domingo siguiente al Día 5**, a mitad del ejercicio 3. Lleva tu servicio de aplicación aunque esté incompleto. El Día 6 lo terminarás aplicando lo aprendido.
+**[Masterclass de arquitectura](../../docs/masterclasses/masterclass-architecture.md):** prevista para el domingo siguiente al Día 5, a mitad del ejercicio 3; la fecha real está en el [calendario](../../docs/court-connect/calendario.md). Lleva tu servicio de aplicación tal como lo tengas. Si la sesión llega antes de terminar el ejercicio, lo acabarás aplicando lo aprendido; si llega después, servirá para repasar lo construido antes de la demo 1.
 
 ## Antes del Día 1
 
@@ -75,7 +75,7 @@ Lo que **no** se recorta: reglas de dominio con tests, migración, API de inscri
 Unos 30 minutos, desde un clon limpio del repo:
 
 1. Arrancar SQL Server en Docker, aplicar migraciones y lanzar la API.
-2. Recorrer el flujo: listar partidos, apuntar a un jugador, intentar una inscripción que incumpla una regla, cancelar.
+2. Presentar la API en Swagger UI y recorrer el flujo desde ahí: listar partidos, apuntar a un jugador, intentar una inscripción que incumpla una regla, cancelar.
 3. Contar en 2 minutos qué te dijo tu grupo (`docs/discovery.md`).
 4. Enseñar los tests, la CI y el análisis de SonarCloud.
 5. Responder 3 a 5 preguntas de «explícame esta pieza».

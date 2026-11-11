@@ -1,8 +1,8 @@
 # Masterclass Arquitectura
 
-**El domingo siguiente al Día 5**, a mitad del ejercicio 3 de la Parte I. El Día 6 Driss terminará el ejercicio con lo aprendido. Fechas en el [calendario](../court-connect/calendario.md).
+**Martes 17/11/2026, de 12:30 a 14:20.** Estaba prevista para el domingo siguiente al Día 5, a mitad del ejercicio 3, pero Driss terminó la Parte I antes de poder hacerla. Ahora repasa lo que ha construido y prepara la demo 1. Fechas en el [calendario](../court-connect/calendario.md).
 
-**Duración:** 110 minutos, incluidos 10 de descanso, 25 de patrones y 20 de taller. **Formato:** diapositivas con puntos visibles y notas para Yamel. El [quiz](masterclass-architecture-quiz.md), de 20 preguntas, es tarea del Día 6: 20 minutos, no al final de la sesión.
+**Duración:** 110 minutos, incluidos 10 de descanso, 25 de patrones y 20 de taller. **Formato:** diapositivas con puntos visibles y notas para Yamel. El [quiz](masterclass-architecture-quiz.md), de 20 preguntas, es tarea del día siguiente: 20 minutos, no al final de la sesión.
 
 **Nota sobre los ejemplos:** las referencias a Àmbit son ilustrativas. Sirven para pensar sobre abonos, becas, tarifas, aforo e integraciones; no son requisitos confirmados del cliente. Todos los datos son ficticios.
 
@@ -17,24 +17,26 @@
 
 La **arquitectura** es cómo repartimos el trabajo entre las piezas del programa. Como en un equipo, cada pieza debe saber qué hace y a quién puede pedir ayuda. El reparto de CourtConnect está en su [guía](../court-connect/architecture/README.md).
 
-Driss trae su `RegistrationService`, aunque esté incompleto. Es un **servicio de aplicación**: coordina una tarea, como inscribir a alguien, pidiendo ayuda al dominio y a la base de datos. Repasará las reglas R1 a R6 del [enunciado](../court-connect/enunciado-dominio.md). Lo que aún no exista se dibujará en papel.
+Driss trae el `RegistrationService` que hizo en la Parte I, con sus pruebas. Es un **servicio de aplicación**: coordina una tarea, como inscribir a alguien, pidiendo ayuda al dominio y a la base de datos. Repasará las reglas R1 a R6 del [enunciado](../court-connect/enunciado-dominio.md). Lo que aún no exista se dibujará en papel.
 
 Yamel prepara una pizarra y abre el código y las pruebas de Driss. Los fragmentos de esta guía son ejemplos independientes para leer, no un proyecto ni la solución de los ejercicios. Usan C# habitual y .NET 10. La Parte III prevé pasar a .NET 11; esta sesión no necesita esa versión.
 
 ## Agenda
 
-| Bloque | Minutos | Diapositivas |
-| --- | --- | --- |
-| Problema y límites | 5 | 1 a 2 |
-| Organizar el código y sus reglas | 10 | 3 a 6 |
-| Agrupar tareas y guardar datos | 15 | 7 a 11 |
-| Crear objetos y controlar el reloj | 15 | 12 a 16 |
-| Descanso | 10 | Sin diapositivas |
-| Conceptos que conviene conocer | 5 | 17 |
-| Seis patrones con ejemplos | 25 | 18 a 23 |
-| Taller CourtConnect | 20 | 24 a 25 |
-| Recapitulación y plan para el Día 6 | 5 | 26 |
-| **Total** | **110** | **26** |
+La columna «Guion» usa la numeración de este documento; «pptx», la de la presentación, que además tiene portada, objetivos y agenda (1 a 3) y un glosario al final (32 a 37). Algunas diapositivas del guion ocupan dos en el pptx (la de código va aparte).
+
+| Bloque | Minutos | Guion | pptx |
+| --- | --- | --- | --- |
+| Problema y límites | 5 | 1 a 2 | 4 a 5 |
+| Organizar el código y sus reglas | 10 | 3 a 6 | 6 a 9 |
+| Agrupar tareas y guardar datos | 15 | 7 a 11 | 10 a 14 |
+| Crear objetos y controlar el reloj | 15 | 12 a 16 | 15 a 20 |
+| Descanso | 10 | — | — |
+| Conceptos que conviene conocer | 5 | 17 | 21 |
+| Seis patrones con ejemplos | 25 | 18 a 23 | 22 a 28 |
+| Taller CourtConnect | 20 | 24 a 25 | 29 a 30 |
+| Recapitulación y plan antes de la demo 1 | 5 | 26 | 31 |
+| **Total** | **110** | **26** | **37** |
 
 ## Guion de diapositivas
 
@@ -515,18 +517,18 @@ public sealed class GameListSettings(IOptions<GameListOptions> options)
 
 **Contexto para Yamel:** `IOptions<T>` pertenece a `Microsoft.Extensions.Options`. El enlace de configuración usa las extensiones habituales del arranque de ASP.NET Core. No es una forma de cifrar secretos. `IOptions<T>` no ofrece recarga automática; `IOptionsSnapshot<T>` e `IOptionsMonitor<T>` cubren otros ciclos de actualización y quedan para otra sesión. Tiempo: 4 minutos.
 
-### Diapositiva 24. Taller: tu servicio, aunque esté incompleto
+### Diapositiva 24. Taller: tu servicio de la Parte I
 
 **Puntos clave:**
 
-- Abre el servicio de aplicación que empezaste el Día 5.
+- Abre el servicio de aplicación que hiciste en la Parte I.
 - Sigue una inscripción: entrada, regla, guardado y respuesta.
 - Marca lo que existe y dibuja en papel lo que falta.
-- Elige una mejora pequeña que te ayude a terminar el Día 6.
+- Elige una mejora pequeña que puedas explicar en la demo 1.
 
 **Notas del ponente:**
 
-**Qué decir:** «No necesitamos que esté terminado. Necesitamos entender lo que has hecho».
+**Qué decir:** «No buscamos más código: queremos entender bien lo que has hecho».
 
 **Contexto para Yamel:** Usa los primeros 15 minutos del [taller](#taller-courtconnect). Yamel pregunta y da pistas; Driss propone el cambio y la prueba. No se entrega un servicio resuelto ni se exige usar todos los patrones.
 
@@ -546,31 +548,31 @@ public sealed class GameListSettings(IOptions<GameListOptions> options)
 
 **Contexto para Yamel:** Reserva los últimos 5 minutos del taller. Si falta una regla, se apunta como tarea pendiente y no como fallo causado por el cambio.
 
-### Diapositiva 26. Plan para el Día 6
+### Diapositiva 26. Plan antes de la demo 1
 
 **Puntos clave:**
 
-- Termina el ejercicio 3 el Día 6 con una decisión explicada y pruebas.
+- Aplica la mejora antes de la demo 1, con una decisión explicada y pruebas.
 - Mantén servicios sencillos; dibujar slices no obliga a migrarlo todo.
 - Usa un patrón cuando resuelva un problema concreto.
 - Repasa el quiz y explica cada error con un ejemplo propio.
 
 **Notas del ponente:**
 
-**Qué decir:** «¿Qué vas a cambiar mañana y qué vas a dejar como está?».
+**Qué decir:** «¿Qué vas a cambiar antes de la demo 1 y qué vas a dejar como está?».
 
 **Contexto para Yamel:** Recupera las preguntas iniciales de tarifa y proveedor. Cierra con una acción concreta y una duda para revisar, no con una lista de tecnologías que instalar.
 
 ## Taller CourtConnect
 
-**Tiempo:** 20 minutos incluidos. **Entrega:** un mapa del servicio actual, una mejora propuesta y un plan para acabar el ejercicio 3 el Día 6. Se trabaja sobre el servicio de Driss; las partes que falten se dibujan en papel.
+**Tiempo:** 20 minutos incluidos. **Entrega:** un mapa del servicio actual, una mejora propuesta y un plan para aplicarla antes de la demo 1. Se trabaja sobre el servicio de Driss; las partes que falten se dibujan en papel.
 
 ### Enunciado
 
 1. **Leer, 4 minutos:** Driss explica una operación de su servicio. Marca las reglas R1 a R6 que ya ha implementado y las que faltan.
 2. **Separar, 5 minutos:** señala entrada, coordinación, reglas y guardado. Dibuja cómo se separarían `Register` y `Cancel` si crecieran; no hace falta crear las carpetas.
 3. **Mejorar, 6 minutos:** propone un cambio pequeño. Puede ser aclarar una dependencia, corregir su lifetime o extraer una responsabilidad. Si cabe, modifica solo código ya escrito y ejecuta sus pruebas; si no, diseña el cambio y la prueba en papel.
-4. **Revisar, 5 minutos:** explica el beneficio y el coste. Anota qué terminarás el Día 6 y una pregunta para Yamel.
+4. **Revisar, 5 minutos:** explica el beneficio y el coste. Anota qué aplicarás antes de la demo 1 y una pregunta para Yamel.
 
 ### Pistas
 
@@ -589,12 +591,12 @@ public sealed class GameListSettings(IOptions<GameListOptions> options)
 - [ ] Hay una prueba de éxito, una de rechazo y una pregunta sobre dos peticiones simultáneas.
 - [ ] Se justifica la duración de las dependencias; ningún singleton retiene un `DbContext`.
 - [ ] Se elige o descarta un patrón por su utilidad, no por aparecer en la clase.
-- [ ] El plan del Día 6 permite terminar el ejercicio sin imponer otra arquitectura ni añadir funcionalidades.
+- [ ] El plan permite aplicar la mejora antes de la demo 1 sin imponer otra arquitectura ni añadir funcionalidades.
 
 ## Actividades posteriores
 
-- El Día 6, completar el [quiz de arquitectura](masterclass-architecture-quiz.md): 20 minutos de tarea, no al terminar la sesión.
-- Terminar el ejercicio 3 el Día 6 y explicar en el PR qué se aplicó; incluir la sección «Uso de IA».
+- Al día siguiente, completar el [quiz de arquitectura](masterclass-architecture-quiz.md): 20 minutos de tarea, no al terminar la sesión.
+- Aplicar la mejora en un PR antes de la demo 1 y explicar en él qué se aplicó; incluir la sección «Uso de IA».
 - Añadir al glosario cinco conceptos y un ejemplo propio de cada uno.
 - Conservar dos preguntas para Yamel: una sobre una frontera del diseño y otra sobre una prueba que falta.
 

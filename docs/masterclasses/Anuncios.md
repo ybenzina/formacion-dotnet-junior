@@ -1,6 +1,6 @@
 # Anuncios de Discord · Masterclasses
 
-Cada bloque es un mensaje independiente, listo para copiar y pegar. Fija el primero en el canal. Los enlaces apuntan a `main`: las guías nuevas o actualizadas deben publicarse allí antes de enviar los anuncios. Los horarios concretos siguen pendientes.
+Cada bloque es un mensaje independiente, listo para copiar y pegar. Fija el primero en el canal. Los enlaces apuntan a `main`: las guías nuevas o actualizadas deben publicarse allí antes de enviar los anuncios. Todas las sesiones tienen fecha y hora salvo la de contenedores, que solo tiene fecha.
 
 ## Mensaje fijado · Calendario
 
@@ -9,13 +9,13 @@ Cada bloque es un mensaje independiente, listo para copiar y pegar. Fija el prim
 
 Estas sesiones acompañan al reto CourtConnect: trabajaremos sobre lo que ya hayas hecho y prepararemos el siguiente paso.
 
-- **D 08/11/2026 · Arquitectura:** 110 min, con 10 de descanso. Después del Día 5, a mitad del ejercicio de API.
-- **D 22/11/2026 · Mañana · Contenedores, Compose y Aspire:** 90 min. Después del Día 15 y del ejercicio de Docker.
-- **D 22/11/2026 · Tarde · IA y agentes:** 90 min, con una pausa de 10. Antes de P2 · Ej5.
-- **D 29/11/2026 · Azure, infraestructura como código y costes:** 90 min. Después del Día 20 y antes del despliegue del Día 22.
+- **M 17/11/2026 · 12:30 · Arquitectura:** 110 min, con 10 de descanso. Repaso de la Parte I antes de la demo 1.
+- **M 24/11/2026 · 12:30 · IA y agentes:** 90 min, con una pausa de 10. Antes de trabajar P2 · Ej5.
+- **D 29/11/2026 · Mañana · Contenedores, Compose y Aspire:** 90 min. Repaso del ejercicio de Docker, antes del despliegue.
+- **M 01/12/2026 · 12:30 · Azure, infraestructura como código y costes:** 90 min. Después del Día 20 y antes del despliegue del Día 22.
 - **Próximamente · Seguridad e integraciones:** antes de empezar Àmbit, sin fecha. Seguridad: dos sesiones de 90 min; integraciones: una de 90 min.
 
-**Hora por confirmar en todas las sesiones.** Los quizzes se hacen al día siguiente, fuera del tiempo de clase. Las masterclasses de los domingos no cuentan como días de trabajo del reto.
+**Hora por confirmar en la sesión de contenedores.** Los quizzes se hacen al día siguiente, fuera del tiempo de clase. Las masterclasses no cuentan como días de trabajo del reto.
 
 📚 [Calendario del reto](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/calendario.md) · [Guías y anuncios](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/masterclasses/Anuncios.md)
 ```
@@ -25,21 +25,21 @@ Estas sesiones acompañan al reto CourtConnect: trabajaremos sobre lo que ya hay
 ```markdown
 📢 **Masterclass · Arquitectura: entender las piezas de tu aplicación**
 
-**Fecha:** domingo 08/11/2026, después del Día 5.
-**Hora:** hora por confirmar.
+**Fecha:** martes 17/11/2026, de 12:30 a 14:20 (sustituye al seguimiento de ese día).
 **Duración:** 110 minutos, incluidos 10 de descanso y un taller de 20.
 
+Ya tienes la Parte I hecha: ahora toca entender bien lo que has construido.
 Seguiremos una petición desde la web hasta la base de datos.
-Separaremos reglas de negocio, casos de uso y detalles de infraestructura.
+Veremos qué hace de verdad EF Core (el `DbContext` como unidad de trabajo) y cómo funciona la inyección de dependencias: Transient, Scoped, Singleton y por qué un Singleton no puede usar el `DbContext`.
 Reconoceremos seis patrones y cuándo ayudan de verdad.
-Trabajaremos sobre tu servicio de aplicación para elegir una mejora pequeña y comprobable.
+Trabajaremos sobre tu `RegistrationService` para elegir una mejora pequeña y comprobable.
 
 **Antes de venir, Driss:**
-- P1 · Ej1 y Ej2 terminados; [P1 · Ej3](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte1/Ejercicio3/README.md) iniciado. **No hace falta terminar la API antes de clase:** la continuarás el Día 6.
+- Pasa `/check-pr` por tus PR de la Parte I y crea o cierra las issues con tus horas reales.
 - Repasa las reglas R1–R6 del [dominio](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/enunciado-dominio.md) y la [guía de arquitectura](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/architecture/README.md).
-- Trae tu `RegistrationService`, aunque esté incompleto, sus pruebas y tus dudas.
+- Trae tu `RegistrationService`, sus pruebas y tus dudas sobre lo que te generó la IA (constructores primarios, inyección de dependencias, EF).
 
-🎯 **Te llevarás:** un mapa de responsabilidades y una mejora que puedas explicar y comprobar al terminar el ejercicio. El quiz queda para el Día 6: 20 minutos fuera de clase.
+🎯 **Te llevarás:** un mapa de responsabilidades de tu código y una mejora que puedas explicar en la demo 1. El quiz, al día siguiente: 20 minutos fuera de clase.
 
 📚 [Markdown de la masterclass](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/masterclasses/masterclass-architecture.md)
 ```
@@ -49,7 +49,7 @@ Trabajaremos sobre tu servicio de aplicación para elegir una mejora pequeña y 
 ```markdown
 📢 **Masterclass · Contenedores, Compose y Aspire**
 
-**Fecha:** domingo 22/11/2026, por la mañana, después del Día 15.
+**Fecha:** domingo 29/11/2026, por la mañana, después del Día 15.
 **Hora:** hora por confirmar.
 **Duración:** 90 minutos, incluido un taller de 25.
 
@@ -72,8 +72,7 @@ Buscaremos un fallo de conexión o arranque y comprobaremos una mejora.
 ```markdown
 📢 **Masterclass · IA y agentes para desarrollar con criterio**
 
-**Fecha:** domingo 22/11/2026, por la tarde, antes de P2 · Ej5.
-**Hora:** hora por confirmar.
+**Fecha:** martes 24/11/2026, de 12:30 a 14:00 (sustituye al seguimiento de ese día), antes de trabajar P2 · Ej5.
 **Duración:** 90 minutos, incluida una pausa de 10.
 
 Distinguiremos modelo, asistente, workflow y agente, sin atribuirles capacidades que no hemos comprobado.
@@ -96,8 +95,7 @@ Prepararemos el siguiente ejercicio sin resolver su tutor ni adelantar sus casos
 ```markdown
 📢 **Masterclass · Azure, infraestructura como código y costes**
 
-**Fecha:** domingo 29/11/2026, después del Día 20.
-**Hora:** hora por confirmar.
+**Fecha:** martes 01/12/2026, de 12:30 a 14:00 (sustituye al seguimiento de ese día), después del Día 20.
 **Duración:** 90 minutos, incluido un taller de costes de 30.
 
 Relacionaremos la web, la API, el worker y los datos de CourtConnect con servicios de Azure.

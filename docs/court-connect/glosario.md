@@ -76,6 +76,7 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 | **Código de estado HTTP** (*status code*) | 200 OK, 201 creado, 204 sin contenido, 400 petición incorrecta, 404 no encontrado, 409 conflicto con el estado actual |
 | **ProblemDetails** | Formato estándar de los errores de una API (RFC 9457) |
 | **OpenAPI** | Descripción estándar de una API, de la que salen documentación y clientes |
+| **Swagger UI / Scalar** | Interfaces web que leen el documento OpenAPI para explorar y probar la API desde el navegador. Swagger era el nombre antiguo de OpenAPI |
 | **Fichero `.http`** | Fichero con peticiones HTTP que se ejecutan desde el editor |
 | **PRG** (*Post/Redirect/Get*) | Patrón de formularios: el servidor procesa el POST y redirige a un GET. Así, recargar la página no reenvía el formulario |
 | **TempData** | Datos que sobreviven a una sola redirección y se borran al leerlos. Ideal para el aviso «Inscripción guardada» después de un PRG |

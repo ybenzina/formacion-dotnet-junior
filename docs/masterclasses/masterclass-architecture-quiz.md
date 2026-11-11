@@ -2,7 +2,7 @@
 
 ## Instrucciones
 
-- Responde **al día siguiente** de la [masterclass](masterclass-architecture.md), el Día 6, sin mirar las soluciones.
+- Responde **al día siguiente** de la [masterclass](masterclass-architecture.md), sin mirar las soluciones.
 - Tiempo orientativo: **20 minutos**, fuera de los 110 minutos de la sesión.
 - Hay **20 preguntas**, con una única respuesta correcta y un punto por acierto.
 - Referencia de autoevaluación: **15/20**. Revisa cada error con un ejemplo propio, aunque superes esa cifra.
@@ -147,10 +147,10 @@
 - C) Para recibir el tamaño de página configurado mediante propiedades tipadas.
 - D) Para recargar automáticamente el tamaño cada vez que cambie el archivo.
 
-### 20. Es domingo, después del Día 5. Tu servicio del ejercicio 3 está incompleto. ¿Qué resultado del taller te ayuda a acabar el Día 6?
+### 20. Tu servicio de la Parte I ya funciona y se acerca la demo 1. ¿Qué resultado del taller te ayuda más?
 
 - A) Reorganizar las carpetas antes de comprobar qué comportamiento falta.
-- B) Elegir una mejora verificable y dejar sus pasos y una prueba para continuar el Día 6.
+- B) Elegir una mejora verificable y dejar sus pasos y una prueba para aplicarla antes de la demo 1.
 - C) Añadir los seis patrones antes de volver a ejecutar las pruebas existentes.
 - D) Sustituir el servicio por slices antes de terminar sus reglas pendientes.
 
