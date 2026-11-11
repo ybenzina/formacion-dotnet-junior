@@ -6,7 +6,7 @@ El plan original, después del curso, tenía ocho semanas más (7 a 14). Se ha s
 | --- | --- | --- |
 | Inyección de dependencias y ciclos de vida; patrón Singleton | — | Parte I (ejercicio 3 y demo 1) y masterclass de arquitectura |
 | Repositorio y unidad de trabajo, y qué hace ya EF Core | — | Parte I (ejercicio 3) y masterclass de arquitectura |
-| Arquitectura: SOLID, Clean Architecture, *Vertical Slice* | Semana 11 | [Masterclass de arquitectura](masterclasses/masterclass-architecture.md), el domingo siguiente al Día 5 y a mitad del ejercicio 3; Parte III para funcionalidades SDD en *slices* |
+| Arquitectura: SOLID, Clean Architecture, *Vertical Slice* | Semana 11 | [Masterclass de arquitectura](masterclasses/masterclass-architecture.md), prevista para el domingo siguiente al Día 5, a mitad del ejercicio 3 (fecha real en el calendario); Parte III para funcionalidades SDD en *slices* |
 | Patrones: Singleton, Factory, Strategy, Adapter, Decorator y Options | — | Masterclass de arquitectura, con ejemplos cortos y revisión del servicio propio |
 | Docker, Compose y Aspire local | — | Parte II, ejercicio 4; [cloud, sesión 1](masterclasses/masterclass-cloud-local.md), el domingo siguiente al Día 15 por la mañana, como repaso y ampliación |
 | Componentes Blazor y modos de render | Semana 9 | Parte II (ejercicios 1 y 3) |
