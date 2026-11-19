@@ -5,7 +5,7 @@
 🛠️ **Plan**
 
 1. **Días 17–18** – Migración a .NET 11 🆕 y SDD (1/2): especificar torneos y pago con Spec Kit
-2. **Días 19–20** – SDD (2/2): la IA implementa, tú revisas 🔍
+2. **Días 19–20** – El puerto de pago a mano 🔌 y SDD (2/2): la IA implementa, tú revisas 🔍
 3. **Día 21** – Segunda funcionalidad SDD (lista de espera o equipos aleatorios)
 4. **Día 22** – Despliegue en Azure ☁️
 5. **Día 23** – PR trampa + **demo final** 🎤

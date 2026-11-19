@@ -30,6 +30,7 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 | Docker y Compose | — | | | |
 | SDD con Spec Kit y revisión de código generado | — | — | | |
 | *Slices* verticales y `BackgroundService` en `CourtConnect.Worker` | — | — | | |
+| Puertos y adaptadores (pasarela de pago) | — | — | | |
 | Azure Container Apps y Azure SQL | — | — | | |
 | Vocabulario profesional (usa los términos del glosario al explicar) | | | | |
 

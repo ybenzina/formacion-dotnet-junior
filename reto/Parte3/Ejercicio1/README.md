@@ -8,7 +8,7 @@ Pasar el MVP a **.NET 11** y especificar con GitHub Spec Kit la funcionalidad **
 
 ## Antes de empezar (≈ 45 min)
 
-Conceptos nuevos (añádelos al glosario): **constitución**, **especificación**, **plan técnico**, **slice vertical**, **`BackgroundService`** e **idempotencia**. Repasa lo que viste en la masterclass de arquitectura sobre *slices*.
+Conceptos nuevos (añádelos al glosario): **constitución**, **especificación**, **plan técnico**, **slice vertical**, **`BackgroundService`**, **idempotencia**, **puerto** y **adaptador** (*ports and adapters*). Repasa lo que viste en la masterclass de arquitectura sobre *slices* y lee [puertos y adaptadores en los bordes](../../../docs/court-connect/architecture/README.md#puertos-y-adaptadores-en-los-bordes).
 
 Para la migración: **STS y LTS**, **cambio incompatible** (*breaking change*), **TempData**, **estado de sesión** y **PRG** (*Post/Redirect/Get*). Lectura: de [Novedades de ASP.NET Core en .NET 11](https://learn.microsoft.com/es-es/aspnet/core/release-notes/aspnetcore-11), los apartados de SSR estático sobre TempData y sesión.
 
@@ -47,6 +47,7 @@ Rama `feature/sdd-torneos`, **creada desde `develop`** cuando la migración est�
 La constitución son las reglas que la IA tiene que seguir siempre. Tiene que ser coherente con `AGENTS.md` y con [`calidad.md`](../../../docs/court-connect/calidad.md). Como mínimo:
 
 - El código nuevo se organiza en **slices verticales**: una carpeta por caso de uso (por ejemplo, `Features/Tournaments/RegisterTeam/`) con su petición, su *handler*, su validación y sus tests. Los *handlers* son clases normales que se inyectan: **sin MediatR** ni otro mediador.
+- Los **sistemas externos** (de momento, la pasarela de pago) se usan a través de un **puerto**: una interfaz de Application pensada desde lo que necesita el caso de uso, con sus propios tipos. Los **adaptadores** van en Infrastructure y se eligen por configuración. La base de datos **no** va detrás de un puerto nuevo: es parte de la aplicación, no un sistema externo. Añade la misma regla a tu `AGENTS.md`.
 - Las reglas de negocio van en el dominio, con tests.
 - Tests suficientes para el quality gate (cobertura ≥ 80 % del código nuevo).
 - Seguridad: las reglas R7 y R8 aplican también a torneos (solo el capitán inscribe y paga por su equipo).
@@ -60,6 +61,7 @@ La constitución son las reglas que la IA tiene que seguir siempre. Tiene que se
   - ¿Quién o qué hace caducar las inscripciones vencidas? (Pista: un **`BackgroundService`** que se ejecuta cada cierto tiempo, con `TimeProvider` para poder probarlo; irá en su propio host, `CourtConnect.Worker`.)
   - ¿Qué pasa si el pago se confirma justo cuando la inscripción caduca?
   - ¿Qué significa exactamente que confirmar dos veces el mismo pago «no tenga efectos»?
+  - Con una pasarela real, el resultado del pago **llega a tu sistema por otro camino** (un aviso de la pasarela), no cuando el capitán vuelve a la web. ¿Qué pasa si ese aviso llega dos veces, tarde o nunca? ¿Qué datos del pago guardas? (Pista: nunca los de la tarjeta.)
   - ¿Qué equipos cuentan para el número máximo: los confirmados o también los pendientes?
   - El capitán inscribe al equipo en varios pasos (datos del equipo → jugadores → pago). ¿Qué se guarda entre pasos y cuándo se borra? ¿La plaza se retiene al enviar el último paso o antes? ¿Qué pasa si abandona a mitad?
 - **Yamel revisa y aprueba la especificación antes de pasar al plan.**
@@ -84,3 +86,4 @@ La constitución son las reglas que la IA tiene que seguir siempre. Tiene que se
 - ¿Qué diferencia hay entre la constitución y la especificación?
 - ¿Qué pregunta de la especificación te hizo cambiar de idea al responderla?
 - ¿Por qué la caducidad necesita un proceso en segundo plano? ¿Había otra forma?
+- ¿Qué es un puerto? ¿Por qué la pasarela de pago va detrás de uno y la base de datos no?

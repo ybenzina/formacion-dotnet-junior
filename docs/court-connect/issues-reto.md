@@ -40,7 +40,7 @@ Al crear los milestones, tomar las fechas absolutas del [calendario vigente](cal
 | 9 | `[Tarea] P2 · Ej4 · Docker y Docker Compose` | reto, parte-2 | Parte II | 4 h | `reto/Parte2/Ejercicio4` |
 | 10 | `[Tarea] P2 · Ej5 · Demo 2 y preparación del SDD` | reto, parte-2 | Parte II | 5 h 30 min | `reto/Parte2/Ejercicio5` |
 | 11 | `[Tarea] P3 · Ej1 · .NET 11 y SDD (1/2): especificación` | reto, parte-3, sdd | Parte III | 8 h | `reto/Parte3/Ejercicio1` |
-| 12 | `[Tarea] P3 · Ej2 · SDD (2/2): implementación y revisión` | reto, parte-3, sdd | Parte III | 7 h | `reto/Parte3/Ejercicio2` |
+| 12 | `[Tarea] P3 · Ej2 · SDD (2/2): implementación y revisión` | reto, parte-3, sdd | Parte III | 8 h 30 min | `reto/Parte3/Ejercicio2` |
 | 13 | `[Tarea] P3 · Ej3 · Segunda funcionalidad SDD` | reto, parte-3, sdd | Parte III | 4 h | `reto/Parte3/Ejercicio3` |
 | 14 | `[Tarea] P3 · Ej4 · Despliegue en Azure` | reto, parte-3 | Parte III | 5 h | `reto/Parte3/Ejercicio4` |
 | 15 | `[Tarea] P3 · Ej5 · PR trampa y demo final` | reto, parte-3 | Parte III | 4 h | `reto/Parte3/Ejercicio5` |
