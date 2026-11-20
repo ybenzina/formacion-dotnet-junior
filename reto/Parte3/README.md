@@ -7,6 +7,7 @@
 - **Migrar** el MVP de .NET 10 a **.NET 11** antes de añadir nada, como se hace en un proyecto real cuando sale una versión nueva.
 - Desarrollar funcionalidades con **Spec-Driven Development** (GitHub Spec Kit): especificar, dejar que la IA planifique e implemente, y **revisar** lo generado como el PR de otra persona.
 - Organizar el código nuevo en ***slices* verticales** (una carpeta por caso de uso) y añadir un proceso en segundo plano (`BackgroundService`) en su propio host, `CourtConnect.Worker`, no en la API.
+- Aislar los **sistemas externos** detrás de **puertos** con sus **adaptadores** (estilo hexagonal en los bordes, con los *slices* dentro). El primero es la pasarela de pago: un adaptador simulado y, como extra, el entorno de pruebas de Redsys. Es la misma combinación que se usará en el proyecto real.
 - **Desplegar** el MVP en Azure, con una URL que puedas enseñar.
 - Medir cuánto cuesta en tiempo y en consumo de IA: es el piloto de la decisión **PD-11** de Àmbit.
 
@@ -15,7 +16,7 @@
 | Días | Ejercicio | Entregable |
 | --- | --- | --- |
 | 17 – 18 | [Ejercicio 1 — .NET 11 y SDD (1/2): especificar torneos y pago](Ejercicio1/README.md) | `develop` en .NET 11, constitución y especificación aprobadas |
-| 19 – 20 | [Ejercicio 2 — SDD (2/2): implementación y revisión](Ejercicio2/README.md) | PR con hallazgos de la revisión y métricas |
+| 19 – 20 | [Ejercicio 2 — SDD (2/2): implementación y revisión](Ejercicio2/README.md) | Puerto de pago a mano; PR con hallazgos de la revisión y métricas |
 | 21 | [Ejercicio 3 — Segunda funcionalidad SDD](Ejercicio3/README.md) | Ciclo completo en un día, con métricas |
 | 22 | [Ejercicio 4 — Despliegue en Azure](Ejercicio4/README.md) | El MVP funcionando en una URL pública |
 | 23 | [Ejercicio 5 — PR trampa y demo final](Ejercicio5/README.md) | Revisión del PR trampa, retro y demo |
