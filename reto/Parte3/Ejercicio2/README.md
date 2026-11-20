@@ -1,6 +1,6 @@
 # Ejercicio 2 — SDD (2/2): implementación y revisión
 
-**Días 19 y 20 · estimación: 7 h** · Issue: «P3 · Ej2 · SDD (2/2): implementación y revisión»
+**Días 19 y 20 · estimación: 8 h 30 min** · Issue: «P3 · Ej2 · SDD (2/2): implementación y revisión»
 
 ## Objetivo
 
@@ -8,14 +8,29 @@ Dejar que la IA planifique e implemente la funcionalidad a partir de la especifi
 
 ## Pasos
 
+### Antes del plan: el puerto de pago, a mano (≈ 1 h 30 min)
+
+Rama `feature/payment-port`, desde `develop`. PR hacia `develop` con *squash merge*, fusionado **antes** de generar el plan. Aquí no hay SDD: lo escribes tú. Puedes usar el tutor (el modo tutor de `AGENTS.md` o el tutor instalable `guide-learning`) para entender los conceptos, pedir pistas y que revise lo que has escrito; no te escribirá el puerto, el adaptador ni los tests. Lee antes [puertos y adaptadores en los bordes](../../../docs/court-connect/architecture/README.md#puertos-y-adaptadores-en-los-bordes).
+
+- La **interfaz del puerto** en Application, con tipos propios y ninguno de una pasarela concreta. Piensa en lo que necesita el caso de uso: empezar un pago y saber, más tarde, si se ha aceptado. ¿Basta con un método que cobra y devuelve «sí» o «no»? (Pista: con una pasarela real, el capitán sale de tu web para pagar y el resultado llega después, por otro camino.)
+- Un **adaptador simulado** en Infrastructure, que acepta o rechaza según algo que puedas controlar desde los tests.
+- Un **test de contrato**: los tests que cualquier adaptador del puerto tiene que pasar. Hoy los pasa el simulado; si haces el extra de Redsys, también el real.
+- El registro en el contenedor de dependencias, con el adaptador elegido por configuración.
+- Una nota corta en `docs/architecture/` de tu repo (o un ADR): qué es el puerto, qué adaptadores hay y por qué la base de datos no va detrás de uno.
+
+Después, actualiza `feature/sdd-torneos` con `develop`. Desde aquí, el plan generado tiene que **usar tu puerto**, no inventarse otro.
+
+### Funcionalidad con SDD
+
 Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`, con *squash merge*.
 
-1. **Plan técnico y tareas** generados con Spec Kit. Revísalos antes de implementar: ¿respetan la constitución (slices, sin mediador, reglas en el dominio)? Comprueba que incluyan `CourtConnect.Worker`, creado con la plantilla Worker Service, con referencias a Application e Infrastructure, sin HTTP ni ingress y sin aplicar migraciones. Revisa que la constitución permita ese host propio; si falta, actualízala y valida el cambio antes de implementar.
+1. **Plan técnico y tareas** generados con Spec Kit. Revísalos antes de implementar: ¿respetan la constitución (slices, sin mediador, reglas en el dominio, la pasarela detrás de tu puerto)? Comprueba que incluyan `CourtConnect.Worker`, creado con la plantilla Worker Service, con referencias a Application e Infrastructure, sin HTTP ni ingress y sin aplicar migraciones. Revisa que la constitución permita ese host propio; si falta, actualízala y valida el cambio antes de implementar.
 2. **Implementación** generada por la IA, tarea a tarea.
 3. **Revisión línea a línea.** Busca, como mínimo:
    - reglas de la especificación que falten o estén mal;
    - el `BackgroundService` de `CourtConnect.Worker`: ¿usa `TimeProvider`?, ¿cómo obtiene el `DbContext`? (un `BackgroundService` vive toda la aplicación y el `DbContext` es *scoped*: ¿qué problema hay?); ¿qué pasaría si dos instancias del worker intentaran caducar la misma inscripción?;
    - idempotencia del pago de verdad, no solo en el nombre;
+   - el puerto: ¿el código generado usa tu interfaz o llama al adaptador directamente? ¿Se ha colado algún tipo de la pasarela en Application o en el dominio? ¿Quién puede llamar al endpoint que confirma el pago, y cómo sabe tu API que la confirmación es auténtica?;
    - comprobación del capitán (R8) en todos los caminos;
    - tests que no comprueban nada o que solo inflan la cobertura.
 4. **PR** con una sección **Hallazgos de la revisión**: qué estaba mal o era mejorable, qué corregiste tú y qué pediste corregir a la IA.
@@ -29,6 +44,22 @@ Rama `feature/sdd-torneos` (la misma del ejercicio 1). El PR va hacia `develop`,
 
 Si el código generado no supera el quality gate, puedes usar [la referencia de calidad](../../../ai/artefactos/calidad-sonarqube/README.md). Respeta sus paradas de alcance, plan y revisión por módulo; la ayuda no sustituye tu revisión ni la comprobación del gate del PR.
 
+### Extra: adaptador del entorno de pruebas de Redsys
+
+Redsys es la pasarela de pago con tarjeta que usan muchos bancos en España. Tiene un **entorno de pruebas** con un comercio y tarjetas de prueba publicados en su documentación para desarrolladores. Nunca uses datos reales.
+
+Rama `feature/redsys-adapter`, desde `develop`, cuando la funcionalidad esté fusionada. **No es SDD:** lo haces tú. El tutor te puede ayudar a leer la documentación de Redsys, entender la redirección y la firma, darte pistas y revisar tu código, pero no escribe el adaptador ni el cálculo de la firma. Cuando abras el PR, pídele la «Comparación con IA»: aquí es donde más vas a aprender de las diferencias.
+
+- Un segundo adaptador del mismo puerto, en Infrastructure, que **pasa el mismo test de contrato** que el simulado. Application, el dominio y los *slices* no deberían cambiar: si tienes que tocarlos, el puerto no estaba bien pensado. Anótalo en el PR, que también es un aprendizaje.
+- Integración por **redirección**: la web envía al capitán al TPV de pruebas con un formulario firmado, y la pasarela avisa a tu API con una **notificación firmada**.
+- La **firma** (HMAC-SHA256, con una clave derivada para cada pedido según la documentación de Redsys): calcúlala y compruébala tú, a partir de la documentación oficial, no de un paquete de terceros sin revisar.
+- **Que el capitán vuelva a la web no prueba nada:** solo la notificación firmada confirma el pago. Y puede llegar dos veces o cuando la inscripción ya ha caducado.
+- La clave del comercio de pruebas va en secretos (`dotnet user-secrets` en local), nunca en el repo, aunque sea de pruebas.
+- La notificación necesita una URL pública: en local, un túnel (por ejemplo, *dev tunnels*); desplegado, la URL de Container Apps del [ejercicio 4](../Ejercicio4/README.md).
+- El adaptador se elige por configuración: el simulado en los tests y en la CI; Redsys solo donde haya clave.
+
+En el orden de recorte es un **Extra**: se recorta antes que el ejercicio 3.
+
 ### Extra: agentes de UI y backend
 
 Crea un agente de UI y otro de backend y úsalos para las páginas de torneos y el asistente de inscripción del equipo. Diséñalos primero con [la plantilla de UI](../../../ai/plantillas/esqueleto-agente-ui.md) y [el contrato de coordinación](../../../ai/plantillas/contrato-coordinacion.md), con la especificación aprobada como límite.
@@ -40,7 +71,8 @@ Crea un agente de UI y otro de backend y úsalos para las páginas de torneos y 
 
 ## Criterios de aceptación
 
-- [ ] Plan y tareas revisados antes de implementar.
+- [ ] Puerto de pago escrito a mano, con adaptador simulado y test de contrato, fusionado en `develop` antes del plan.
+- [ ] Plan y tareas revisados antes de implementar; el código generado usa el puerto.
 - [ ] Funcionalidad completa según la especificación, con caducidad automática en `CourtConnect.Worker`, no en la API.
 - [ ] Asistente de inscripción en varios pasos, con el estado en sesión, revisado.
 - [ ] PR con «Hallazgos de la revisión».
@@ -53,3 +85,4 @@ Crea un agente de UI y otro de backend y úsalos para las páginas de torneos y 
 - ¿Cómo obtiene el `BackgroundService` acceso a la base de datos y por qué así?
 - ¿Dónde vive el estado del asistente entre pasos? ¿Qué pasaría con dos réplicas de la web?
 - Si mañana te piden cambiar el tiempo de retención, ¿qué tocas?
+- Si mañana cambias de pasarela de pago, ¿qué ficheros tocas? ¿Y si cambias SQL Server por PostgreSQL? ¿Por qué las respuestas son distintas?

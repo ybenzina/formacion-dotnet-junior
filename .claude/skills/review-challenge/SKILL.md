@@ -1,5 +1,5 @@
 ---
-# Fuente: DeemSoft/formacion-dotnet-junior · ai/artefactos/revisor-reto · v1.1.0. No se edita aquí: los cambios van por PR a la fuente
+# Fuente: DeemSoft/formacion-dotnet-junior · ai/artefactos/revisor-reto · v1.2.0. No se edita aquí: los cambios van por PR a la fuente
 name: review-challenge
 description: "Solo para Yamel: revisar PR de CourtConnect, preparar demos, seguimiento semanal y borradores de Discord. No es el tutor de Driss."
 user-invocable: true
@@ -44,6 +44,7 @@ Si Yamel pide publicar algo, muestra primero el comando exacto, repo, PR y texto
 5. Valida la base con las reglas de la parte: I/II hacia `main`; desde III, funcionalidades hacia `develop` con squash, release de `develop` a `main` con merge commit. Distingue hotfix y excepciones documentadas. No confundas método previsto con merge ya realizado.
 6. Revisa capas y dependencias hacia Domain, ausencia de MediatR, web solo mediante API con `HttpClient` tipado, convenciones y estilo de C#. Usa las versiones y reglas del enunciado, sin imponer un SDK fijo. Busca secretos, IDOR y autorización en servidor, datos personales en logs, N+1, pago no idempotente, Singleton que captura `DbContext` y paquetes vulnerables. Cita evidencia o registra la limitación; no inventes vulnerabilidades por el nombre de un paquete.
 7. En SDD contrasta specs aprobadas, implementación, tests y revisión humana del código generado. Revisa `docs/sdd/sdd-piloto.md` **del repo del reto**, sus métricas y evidencia del uso de IA. El tutor no se usa en `feature/sdd-*`; si no consta qué herramienta se usó, pregunta, no afirmes que se cumplió. Este revisor sí puede revisar SDD.
+8. **PR del puerto de pago** (P3 · Ej2, rama `feature/payment-port`, antes del plan SDD): en las notas privadas, recuerda a Yamel que pida a Driss explicar su puerto y que, después, le enseñe la diapositiva oculta «El puerto de pago de la Parte III» (la 28 de `docs/masterclasses/masterclass-architecture.pptx`) para compararla con su diseño, antes de aprobar. Si el puerto se reduce a cobrar y devolver «sí» o «no», o expone tipos de una pasarela concreta, es un hallazgo importante. En los comentarios para Driss, solo una pregunta sobre cómo llega el resultado con una pasarela real; no menciones la diapositiva ni propongas la interfaz.
 
 ## Salida de la revisión
 
@@ -57,7 +58,7 @@ Si Yamel pide publicar algo, muestra primero el comando exacto, repo, PR y texto
 
 ## Demo, seguimiento y mensajes
 
-Para una **demo**, pide la parte y lee el código real de un commit identificado. Prepara de 3 a 5 preguntas de «explícame esta pieza», con ruta, símbolo y tecnología de la rúbrica. Lista las comprobaciones objetivas de esa parte con estado y evidencia. Sugiere nivel 1 a 4 solo si hay respuestas o demostraciones observadas que lo sostengan; un buen PR no prueba comprensión. Sin ellas, deja el nivel pendiente. Yamel asigna el nivel final.
+Para una **demo**, pide la parte y lee el código real de un commit identificado. Prepara de 3 a 5 preguntas de «explícame esta pieza», con ruta, símbolo y tecnología de la rúbrica. Lista las comprobaciones objetivas de esa parte con estado y evidencia. Sugiere nivel 1 a 4 solo si hay respuestas o demostraciones observadas que lo sostengan; un buen PR no prueba comprensión. Sin ellas, deja el nivel pendiente. Yamel asigna el nivel final. En la demo final de la Parte III, sugiere esa misma diapositiva 28 como apoyo para la pregunta de qué se toca al cambiar de pasarela.
 
 Para el **seguimiento del viernes**, concreta milestone o semana, fecha de corte y día relativo del reto. Lista issues abiertas/cerradas y PR fusionados/pendientes del alcance, con enlaces y paginación completa; separa PR de issues si usas el endpoint de issues. Compara estimaciones y horas reales por issue, y totales solo sobre datos conocidos, indicando cuántos faltan. Ausencia de horas no es cero. Contrasta el calendario relativo; si no consta el inicio o las pausas, no calcules retrasos en días. Propón el orden de recorte de la parte, sin aplicarlo. Agenda: avances, bloqueos, decisiones y próximos días con responsables sugeridos.
 

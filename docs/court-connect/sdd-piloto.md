@@ -42,6 +42,7 @@ Los nombres de los comandos pueden variar según la versión de Spec Kit: apunta
 | Defectos que se habrían evitado con una spec mejor | |
 | Porcentaje aproximado del código que tuviste que cambiar | |
 | ¿Cumple la especificación? | |
+| ¿Usa el código generado tu puerto de pago, o se inventó otro? | |
 
 ## Defectos encontrados en la revisión
 

@@ -21,6 +21,10 @@ No confundir con el glosario del **dominio** (`Game` = partido, `Registration` =
 | **Servicio de aplicación** (*application service*) | Clase que implementa un caso de uso: coordina el dominio, los repositorios y el resto |
 | **Repositorio** (*repository*) | Clase que oculta cómo se guardan y leen las entidades. El servicio pide «dame el partido 5» sin saber si hay SQL Server detrás |
 | **Interfaz** (*interface*) | Contrato sin implementación (`IGameRepository`). Permite cambiar la implementación, por ejemplo por un doble en los tests |
+| **Puerto** (*port*) | Interfaz que define lo que la aplicación necesita de un sistema externo (una pasarela de pago, un servicio de correo), con tipos propios. Vive en Application |
+| **Adaptador** (*adapter*) | Implementación de un puerto contra algo concreto: una pasarela simulada para los tests o la de un banco. Vive en Infrastructure |
+| **Arquitectura hexagonal** (*hexagonal architecture*, *ports and adapters*) | Estilo en el que la aplicación solo conoce puertos y el exterior se conecta mediante adaptadores. En el reto se aplica solo en los bordes, junto con las capas y los *slices* |
+| **Test de contrato** (*contract test*) | Tests que cualquier adaptador de un puerto tiene que pasar. Garantizan que cambiar el simulado por el real no cambia el comportamiento |
 | **Inyección de dependencias** (*dependency injection*, DI) | En vez de que una clase cree lo que necesita (`new SqlGameRepository()`), lo recibe en el constructor. ASP.NET Core trae un **contenedor** que hace esas entregas |
 | **DTO** (*data transfer object*) | Objeto solo con datos para entrar o salir por la API. Evita exponer las entidades del dominio tal cual |
 

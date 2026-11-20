@@ -19,13 +19,13 @@ Fuentes locales: [catálogo](../../ai/README.md), [registro](../../ai/REGISTRO.m
 | Bloque | Minutos | Diapositivas |
 | --- | --- | --- |
 | Modelo y evidencia | 5 | 1 |
-| Contexto (prescindible) | 5 | 2 |
+| Contexto y consumo (prescindible) | 11 | 2, 2b y 2c |
 | Reglas, formatos y autonomía | 15 | 3 a 5 |
 | Diseño y pruebas | 10 | 6 a 7 |
 | Preparar la instalación del ejercicio | 5 | 8 |
 | Pausa | 10 | |
-| Taller con la plantilla real (prescindible) | 15 | 9 |
-| Demo T2, T6 y T10 (prescindible) | 10 | 10 |
+| Taller con la plantilla real (prescindible) | 12 | 9 |
+| Demo T2, T6 y T10 (prescindible) | 7 | 10 |
 | Riesgos y permisos efectivos | 5 | 11 |
 | Recapitulación y dudas del ejercicio | 10 | 12 |
 | **Total** | **90** | |
@@ -61,6 +61,52 @@ Versión de 60 minutos: omitir los tres bloques marcados «(prescindible)», que
 **Qué decir:** «No le pegues todo el proyecto esperando que adivine qué importa. Empieza por el error, dónde aparece y qué esperabas. Pregunta qué ha podido comprobar».
 
 **Contexto para Yamel:** El historial puede resumirse o quedar fuera del contexto activo; no confiar en memoria perfecta. Separar hechos observados, hipótesis y preguntas. Tampoco una respuesta con enlaces es automáticamente correcta: abrir la fuente y comprobar que respalda la afirmación. Usar fragmentos ficticios y sanitizados, nunca secretos ni datos personales de jugadores.
+
+### Diapositiva 02b. Consumo: tokens, créditos y esfuerzo (prescindible)
+
+**Puntos clave:**
+
+- Todo se mide en tokens: lo que escribes, lo que el modelo lee (archivos, resultados de herramientas) y lo que genera.
+- **Crédito:** unidad con la que algunas herramientas cuentan ese consumo. Cada proveedor define la suya: no se convierte de memoria a tokens.
+- **Esfuerzo (effort):** cuánto razona el modelo antes de responder. Más esfuerzo o más profundidad significa, por lo general, más tokens y más tiempo.
+- Elegir el mínimo suficiente: modelo, esfuerzo y volumen proporcionados a la tarea.
+- Ejercicio de 2 minutos: ordena cinco tareas de más a menos créditos en [dt-credit-ranking.vercel.app](https://dt-credit-ranking.vercel.app/) y fíjate en qué pesa más.
+
+| Qué cambia | Efecto habitual en el consumo | Ejemplo del ejercicio |
+| --- | --- | --- |
+| Modelo | Cada modelo gasta distinto por la misma tarea | GPT-6.1 Terra, GPT-6 Astra, GPT-6.1 Sol |
+| Esfuerzo | Más razonamiento antes de responder: más tokens y más tiempo | Medium effort, High effort |
+| Velocidad y profundidad | Modo rápido: poco razonamiento. Modo profundo: busca, lee y razona más | Instant, Deep research |
+| Volumen | Más mensajes, archivos o repeticiones, más consumo | Más de 300 mensajes; un resumen diario durante 3 meses |
+
+**Notas del ponente:**
+
+**Qué decir:** «Cada vez que pides algo, se gasta algo. Se gasta más si el modelo razona más, si le pides profundidad o si repites la tarea muchas veces. Lo comprobamos con un juego de dos minutos: ordenad cinco tareas de más a menos consumo y decidme por qué las habéis puesto así».
+
+**Contexto para Yamel:** Once minutos para las diapositivas 2, 2b y 2c: contexto 2, consumo 1, ejercicio 2 y demo 6 (la 2c). Para compensar, el taller de la diapositiva 9 pasa de 15 a 12 minutos y la demo de la 10 de 10 a 7: el total sigue en 90 y todo el bloque se omite en la versión de 60 minutos. El token es la unidad técnica del modelo; el crédito es la unidad de un producto concreto, con su propia equivalencia: no dar cifras ni convertir. Los nombres de los ajustes (esfuerzo, velocidad, profundidad, modos «Instant» o «Deep research») cambian entre herramientas y versiones, y el efecto de la tabla es una tendencia general: **por verificar** en la herramienta y la fecha de uso. En muchas APIs los tokens de razonamiento también cuentan como consumo: **por verificar** en la documentación del proveedor. La página [dt-credit-ranking](https://dt-credit-ranking.vercel.app/) es un quiz para ordenar cinco tareas de más a menos créditos (arrastrar o usar flechas, botón «Done»), con modelos de ChatGPT en modos Work y Chat. Sirve como ejemplo: otros proveedores miden el consumo de otra manera. Antes de clase, hacerlo uno mismo y abrir su «Credit guide», que viene plegada: el orden correcto y la definición de crédito los da la página, **por verificar**, igual que quién la ha publicado y la fecha de sus datos. No presentarlo como precios de Claude o Copilot. Para ver y reducir el consumo en cada herramienta: diapositiva 2c. Si no carga, usar una captura fechada. No se evalúa ni sustituye al quiz.
+
+### Diapositiva 02c. Demo: ver y reducir el consumo en Copilot y Claude (prescindible)
+
+**Puntos clave:**
+
+- Medir antes de optimizar: mira cuánto llevas gastado antes y después de cada tarea.
+- **AI Credits:** unidad con la que GitHub Copilot cuenta el consumo de cada modelo; el panel de uso muestra los créditos gastados y su reparto por modelo.
+- **Auto y Fusion:** modos de Copilot que eligen el modelo por ti; Fusion también decide cuánto razonar (Standard, High o Max).
+- En Claude, el plan marca un límite por ventana de 5 horas y otro semanal; `/usage` muestra cuánto llevas.
+- Tres hábitos: modelo y esfuerzo justos para la tarea, una conversación por tarea y contexto pequeño.
+
+| | Copilot | Claude Code |
+| --- | --- | --- |
+| Ver el consumo | Icono de Copilot en la barra de estado de VS Code; en github.com, Copilot settings → Usage o Billing → AI usage (créditos por modelo) | `/usage`: tokens de la sesión y barras del plan (5 h y semanal) |
+| Ver qué ocupa el contexto | `/context` en Copilot CLI | `/context` |
+| Gastar menos | Auto o Fusion Standard; nuevo chat al cambiar de tema; `/compact` en la CLI | `/model` y `/effort`; `/clear` entre tareas; `/compact` |
+| Ver tus malos hábitos | `/chronicle cost-tips` en la CLI | Recomendaciones de `/usage`; `/insights` |
+
+**Notas del ponente:**
+
+**Qué decir:** «Lo que no se mide no se mejora. Miramos cuánto llevamos gastado, hacemos la misma tarea con un ajuste bajo y con otro alto, y volvemos a mirar. La pregunta no es cuál gasta menos, sino si el barato también pasa la prueba».
+
+**Contexto para Yamel:** Seis minutos dentro del bloque prescindible: abrir el panel de uso de cada herramienta y anotar el estado inicial 1; la misma tarea pequeña, sobre una pieza ya terminada de CourtConnect y no sobre un ejercicio abierto, con ajuste bajo y con alto 3; volver a mirar y comparar resultado y consumo 1; cerrar con los tres hábitos 1. Dejar abiertas antes de clase las dos sesiones nuevas, una por configuración, y si falta tiempo hacerla con una sola herramienta o enseñar el resultado de una ejecución previa. Una sesión nueva por configuración: cambiar de modelo, de esfuerzo o de herramientas a mitad de sesión invalida la caché y falsea la comparación. GitHub no desglosa los créditos por petición ni por sesión, y el panel puede tardar en actualizarse: no prometer una cifra exacta por prompt; en Copilot CLI y en la barra de estado del IDE se ve el uso más de cerca. En Claude Code, el coste de `/usage` se calcula en local a precio de lista y es una estimación; con un plan de suscripción importan las barras de uso, que cuentan lo de esta máquina. Fusion High y Max pueden usar varios modelos y gastar más que Standard: ahorrar no es elegir siempre el modo más potente. Descuentos que citan los docs de GitHub en planes de pago: 10 % con Auto y 30 % con Fusion hasta el 30/11/2026, **por verificar** en la fecha de la clase. Los comandos, nombres de modos y pantallas cambian con las versiones: **por verificar** en tu cuenta y plan antes de la demo. Documentación consultada el 19/11/2026: [costes en Claude Code](https://code.claude.com/docs/en/costs), [monitorizar el uso de AI Credits](https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/monitor-ai-usage), [optimizar el uso de Copilot](https://docs.github.com/en/copilot/tutorials/optimize-ai-usage), [Copilot Fusion](https://docs.github.com/en/copilot/concepts/models/copilot-fusion) y [Auto](https://docs.github.com/en/copilot/concepts/models/auto-model-selection).
 
 ### Diapositiva 03. Las reglas del repositorio
 
@@ -176,7 +222,7 @@ En el repo de formación están registrados el tutor, calidad, documentación, `
 
 **Qué decir:** «Tu entrega debe permitir que otra persona distinga una respuesta correcta de una que se sale del papel. Yo haré una petición fuera de alcance y tú explicarás cómo debería responder».
 
-**Contexto para Yamel:** Taller de 15 minutos: entradas 3, límites y salida 4, tres casos 5 y defensa 3. Casos: normal, petición prohibida y contexto incompleto, con entrada y resultado esperado. No completar por Driss los huecos. P2 · Ej5 sigue pidiendo investigación y diseño propios del tutor antes de ver su referencia. El revisor de tests sigue siendo Extra, no nuevo requisito.
+**Contexto para Yamel:** Taller de 12 minutos: entradas 2, límites y salida 3, tres casos 4 y defensa 3. Casos: normal, petición prohibida y contexto incompleto, con entrada y resultado esperado. No completar por Driss los huecos. P2 · Ej5 sigue pidiendo investigación y diseño propios del tutor antes de ver su referencia. El revisor de tests sigue siendo Extra, no nuevo requisito.
 
 **Aceptación:** la tarea cabe en una frase; no entrega soluciones abiertas, no edita ni publica sin autorización; declara qué hace ante falta de datos; tres pruebas discriminan incumplimientos concretos; identifica responsable, fuente y revisión humana. No marcar ninguna prueba como ejecutada durante el diseño.
 
@@ -194,7 +240,7 @@ En el repo de formación están registrados el tutor, calidad, documentación, `
 
 **Qué decir:** «Primero le mostraré una duda concreta. Luego le pediré que lo haga por mí. Lo importante no es que responda mucho, sino que me ayude a dar el siguiente paso sin quitármelo».
 
-**Contexto para Yamel:** Diez minutos: carga y alcance 1, T2 3, T6 3 y T10 3, según [pruebas.md](../../ai/artefactos/tutor/v1.1.0/pruebas.md). El tutor 1.1.0 amplía el uso (MINOR): además del reto, sirve para los ejercicios del curso; su caso T11 no se muestra. Usar `guide-learning` en VS Code o `/guide-learning` en Claude Code, previamente instalado y comprobado. No mostrar T1, T3, T4 ni T7, reservados al ejercicio. Tampoco abrir la fuente antes de que Driss investigue y diseñe por su cuenta. Si falta acceso, usar una captura fechada sin declararla nueva prueba. «No edita ni ejecuta» describe la restricción de herramientas del agente Copilot; en Claude es una regla textual salvo controles externos. `allowed-tools` preaprueba, no restringe disponibilidad; permisos o hooks `PreToolUse` pueden bloquear. La demo no sustituye la entrega en ambas herramientas.
+**Contexto para Yamel:** Siete minutos: carga y alcance 1, T2 2, T6 2 y T10 2, según [pruebas.md](../../ai/artefactos/tutor/v1.1.0/pruebas.md). El tutor 1.1.0 amplía el uso (MINOR): además del reto, sirve para los ejercicios del curso; su caso T11 no se muestra. Usar `guide-learning` en VS Code o `/guide-learning` en Claude Code, previamente instalado y comprobado. No mostrar T1, T3, T4 ni T7, reservados al ejercicio. Tampoco abrir la fuente antes de que Driss investigue y diseñe por su cuenta. Si falta acceso, usar una captura fechada sin declararla nueva prueba. «No edita ni ejecuta» describe la restricción de herramientas del agente Copilot; en Claude es una regla textual salvo controles externos. `allowed-tools` preaprueba, no restringe disponibilidad; permisos o hooks `PreToolUse` pueden bloquear. La demo no sustituye la entrega en ambas herramientas.
 
 ### Diapositiva 11. Revisar salidas y proteger el contexto
 
@@ -432,6 +478,8 @@ types:
 | --- | --- | --- |
 | LLM / token | Modelo de lenguaje / unidad que procesa | Explicar un diagnóstico a partir del fragmento |
 | Prompt / context window | Petición y contexto / límite de información considerada | Aportar el error y el archivo relevante |
+| Crédito / esfuerzo | Unidad con la que una herramienta cuenta el consumo / cuánto razona el modelo antes de responder | Más esfuerzo, más consumo |
+| Auto / Fusion | Modos de Copilot que eligen el modelo por ti (Fusion también cuánto razonar) | Fusion Standard para el día a día |
 | Hallucination | Respuesta plausible sin fundamento suficiente | Inventar una API |
 | Custom instructions | Reglas de trabajo del repositorio | No resolver ejercicios |
 | Prompt file / skill | Tarea invocable / instrucciones y recursos reutilizables | Pedir documentación configurada |

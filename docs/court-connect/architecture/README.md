@@ -42,6 +42,30 @@ Conviene saber que el ensamblado **no** es solo el nombre del `.dll`: una Razor 
 - **Docker y GitHub Actions:** build, tests y SonarCloud en cada PR. Las imágenes se construyen en la CI.
 - **Despliegue en Azure Container Apps** (Parte III), con la concesión gratuita y Azure SQL con la oferta gratuita en pausa al llegar al límite.
 
+## Puertos y adaptadores en los bordes
+
+La arquitectura del reto mezcla tres ideas, cada una en su sitio:
+
+| Idea | Dónde | Para qué |
+| --- | --- | --- |
+| **Capas** | Los proyectos: Domain, Application, Infrastructure, Api… | Que las dependencias vayan hacia el dominio |
+| ***Slices* verticales** | Dentro de Application, desde la Parte III | Que cada caso de uso esté junto: petición, *handler*, validación y tests |
+| **Puertos y adaptadores** (estilo hexagonal) | En los bordes, donde la aplicación habla con sistemas externos | Poder cambiar o simular esos sistemas sin tocar los casos de uso |
+
+- Un **puerto** es una interfaz de Application que describe lo que **necesita el caso de uso**, con tipos propios, no la API de un proveedor.
+- Un **adaptador** lo implementa contra algo concreto, en Infrastructure. Puede haber varios: uno simulado para los tests y otro real.
+- Un **test de contrato** comprueba que cualquier adaptador cumple lo que promete el puerto.
+
+| Puerto | Adaptadores | Cuándo |
+| --- | --- | --- |
+| `TimeProvider` (de .NET) | El reloj del sistema; `FakeTimeProvider` en los tests | Desde la Parte I |
+| Pasarela de pago | Simulado; como extra, el entorno de pruebas de Redsys | Parte III, ejercicio 2 |
+| Aviso al jugador (si eliges la lista de espera) | Simulado | Parte III, ejercicio 3 |
+
+**La base de datos no es un borde:** es parte de la aplicación y no se esconde detrás de un puerto nuevo. Los repositorios de las partes I y II se quedan como están. En los *slices*, decide en el plan si el *handler* usa el `DbContext` (que ya es una unidad de trabajo) o un repositorio, y justifícalo.
+
+No es hexagonal «pura»: aplicarla a todo, también a la base de datos, multiplica las interfaces sin beneficio en una aplicación de este tamaño.
+
 ## Fuera del reto
 
 Redis, MAUI, modo sin conexión, estadísticas, microservicios y mensajería. Aspire y OpenTelemetry son un extra de la Parte III y se trabajan en la iteración 0 de Àmbit. Ver `docs/fase2-pendiente.md`.

@@ -1,11 +1,11 @@
 # Registro de instalaciones
 
-Primera instalación: `revisor-reto`, solicitada por Yamel y copiada en este repo, en `docs/ai-agentes`. Las filas del revisor se han sustituido por la v1.1.0, y se han añadido el tutor, calidad, documentación y autorrevisión, todos instalados por Yamel en este repo. Las filas registran los ficheros y hashes de la rama; **quedan efectivas en la rama destino al fusionar el PR que las introduce**. La carga en las herramientas y las pruebas conversacionales están pendientes.
+Primera instalación: `revisor-reto`, solicitada por Yamel y copiada en este repo, en `docs/ai-agentes`. Las filas del revisor se han sustituido por la v1.1.0 y, el 20/11, por la v1.2.0, y se han añadido el tutor, calidad, documentación y autorrevisión, todos instalados por Yamel en este repo. Las filas registran los ficheros y hashes de la rama; **quedan efectivas en la rama destino al fusionar el PR que las introduce**. La carga en las herramientas y las pruebas conversacionales están pendientes.
 
 | Artefacto | Versión | Repo destino | Canal | Ruta instalada | Fecha | Quién lo instaló | SHA-256 del fichero instalado |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| revisor-reto | 1.1.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/review-challenge.agent.md | 2026-11-01 | Yamel | B9E6A9AF6E048A92169B343EF6B289BDEFF81209C6D0A44F3E75C19E465E319D |
-| revisor-reto | 1.1.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/review-challenge/SKILL.md | 2026-11-01 | Yamel | 8198B791A723B61DE1852CE0E8E9A5459E79E6DBEEF8E661321A58082F74959E |
+| revisor-reto | 1.2.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/review-challenge.agent.md | 2026-11-20 | Yamel | D536A9132FA6B0863A61677EFA4F380A0E29FC60A372E95737BB76947DA2758A |
+| revisor-reto | 1.2.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/review-challenge/SKILL.md | 2026-11-20 | Yamel | 2ACDFF3908F49E8A3DDB371FB45855BAA45A979EBC4596BB5B0921C74D546B49 |
 | tutor | 1.1.0 | DeemSoft/formacion-dotnet-junior | Copilot (agente) | .github/agents/guide-learning.agent.md | 2026-11-01 | Yamel | 5ECF9090CB4D94B0326C617F4D5C629E6417B2E6CCFAD8900F971BEC9966AC86 |
 | tutor | 1.1.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/guide-learning/SKILL.md | 2026-11-01 | Yamel | 9694BB99F40E24F4DEE86171A7E5F46587CE9CD657C8A15785C6E33B1517888F |
 | calidad-sonarqube | 1.1.0 | DeemSoft/formacion-dotnet-junior | Claude Code y VS Code Local (skill) | .claude/skills/fix-quality/SKILL.md | 2026-11-01 | Yamel | 07535BB061B4D6A6D6A285CBB0D89F45D56876B299802CAD2374F401A43EB01C |

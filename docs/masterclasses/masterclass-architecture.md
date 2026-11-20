@@ -2,7 +2,7 @@
 
 **Martes 17/11/2026, de 12:30 a 14:20.** Estaba prevista para el domingo siguiente al Día 5, a mitad del ejercicio 3, pero Driss terminó la Parte I antes de poder hacerla. Ahora repasa lo que ha construido y prepara la demo 1. Fechas en el [calendario](../court-connect/calendario.md).
 
-**Duración:** 110 minutos, incluidos 10 de descanso, 25 de patrones y 20 de taller. **Formato:** diapositivas con puntos visibles y notas para Yamel. El [quiz](masterclass-architecture-quiz.md), de 20 preguntas, es tarea del día siguiente: 20 minutos, no al final de la sesión.
+**Duración:** 113 minutos, incluidos 10 de descanso, 28 de patrones y arquitectura del reto, y 20 de taller. **Formato:** diapositivas con puntos visibles y notas para Yamel. El [quiz](masterclass-architecture-quiz.md), de 20 preguntas, es tarea del día siguiente: 20 minutos, no al final de la sesión.
 
 **Nota sobre los ejemplos:** las referencias a Àmbit son ilustrativas. Sirven para pensar sobre abonos, becas, tarifas, aforo e integraciones; no son requisitos confirmados del cliente. Todos los datos son ficticios.
 
@@ -23,7 +23,7 @@ Yamel prepara una pizarra y abre el código y las pruebas de Driss. Los fragment
 
 ## Agenda
 
-La columna «Guion» usa la numeración de este documento; «pptx», la de la presentación, que además tiene portada, objetivos y agenda (1 a 3) y un glosario al final (32 a 37). Algunas diapositivas del guion ocupan dos en el pptx (la de código va aparte).
+La columna «Guion» usa la numeración de este documento; «pptx», la de la presentación, que además tiene portada, objetivos y agenda (1 a 3) y un glosario al final (34 a 40). Algunas diapositivas del guion ocupan dos en el pptx (la de código va aparte). La 23 del guion (28 del pptx) está **oculta**: se enseña en la Parte III, no en esta sesión, y no cuenta en el tiempo.
 
 | Bloque | Minutos | Guion | pptx |
 | --- | --- | --- | --- |
@@ -33,10 +33,10 @@ La columna «Guion» usa la numeración de este documento; «pptx», la de la pr
 | Crear objetos y controlar el reloj | 15 | 12 a 16 | 15 a 20 |
 | Descanso | 10 | — | — |
 | Conceptos que conviene conocer | 5 | 17 | 21 |
-| Seis patrones con ejemplos | 25 | 18 a 23 | 22 a 28 |
-| Taller CourtConnect | 20 | 24 a 25 | 29 a 30 |
-| Recapitulación y plan antes de la demo 1 | 5 | 26 | 31 |
-| **Total** | **110** | **26** | **37** |
+| Seis patrones con ejemplos | 28 | 18 a 25 | 22 a 30 |
+| Taller CourtConnect | 20 | 26 a 27 | 31 a 32 |
+| Recapitulación y plan antes de la demo 1 | 5 | 28 | 33 |
+| **Total** | **113** | **28** | **40** |
 
 ## Guion de diapositivas
 
@@ -433,7 +433,7 @@ public sealed class GamePriceReader(IPricingStrategy strategy)
 - **En .NET:** una clase de Infrastructure puede implementar nuestro puerto usando `HttpClient`, el cliente HTTP de .NET.
 - **Cuándo no:** para envolver otra clase sin cambiar nada ni proteger un límite útil.
 
-El puerto `IGameBilling` declara `Task SendAsync(Guid gameId)`. Servicio ficticio, no la API de Holded; `PostAsJsonAsync` envía texto estructurado, definido como JSON en el glosario:
+El puerto `IGameBilling` declara `Task SendAsync(Guid gameId)`. Servicio ficticio; `PostAsJsonAsync` envía texto estructurado, definido como JSON en el glosario:
 
 ```csharp
 services.AddHttpClient<IGameBilling, GameBillingAdapter>(client =>
@@ -453,9 +453,47 @@ public sealed class GameBillingAdapter(HttpClient client) : IGameBilling
 
 **Qué decir:** «Application conoce `IGameBilling`; Infrastructure conoce HTTP».
 
-**Contexto para Yamel:** Puertos y adaptadores se explican aquí una sola vez. La interfaz permite sustituir el proveedor en pruebas, no elimina fallos de red. `AddHttpClient` registra el cliente tipado y su dirección base; la extensión JSON requiere `System.Net.Http.Json`. El dominio `.invalid` no representa un servicio real. El fragmento omite autenticación, cancelación y tratamiento completo de errores. Holded es facturación: crear un documento no confirma un cobro. Reintentar requiere idempotencia. Tiempo: 4 minutos.
+**Contexto para Yamel:** Puertos y adaptadores se explican aquí una sola vez. La interfaz permite sustituir el proveedor en pruebas, no elimina fallos de red. `AddHttpClient` registra el cliente tipado y su dirección base; la extensión JSON requiere `System.Net.Http.Json`. El dominio `.invalid` no representa un servicio real. El fragmento omite autenticación, cancelación y tratamiento completo de errores. Un servicio de facturación no es un cobro: crear un documento no confirma que se haya pagado. Reintentar requiere idempotencia. Tiempo: 4 minutos.
 
-### Diapositiva 22. Decorator: añadir comportamiento alrededor
+### Diapositiva 22. Capas, slices y puertos: cada idea en su sitio
+
+**Puntos clave:**
+
+- **Capas:** deciden hacia dónde van las dependencias, siempre hacia Domain.
+- **Slices verticales:** dentro de Application, una carpeta por tarea con su handler y sus tests.
+- **Puertos y adaptadores:** solo en los bordes, donde la aplicación habla con sistemas externos (pago, avisos, reloj).
+- **La base de datos no es un borde:** los handlers usan el `DbContext`; no se esconde detrás de otro puerto.
+- **Para qué:** cambiar o simular un proveedor sin tocar los casos de uso.
+- **Cuándo no:** hexagonal «pura» en todo multiplica interfaces sin beneficio en una aplicación pequeña.
+
+Esquema: un hexágono con `Application · Features/Tournaments/` (handlers `RegisterTeam` y `ConfirmPayment`) y `Domain`; en el borde, los conectores Pago, Aviso y Reloj, con sus adaptadores fuera (Simulado y Redsys de pruebas; Simulado; `TimeProvider` y `FakeTimeProvider`); debajo, SQL Server con EF Core, unido a los handlers sin puerto.
+
+**Notas del ponente:**
+
+**Qué decir:** «No elegimos un estilo: usamos tres, cada uno donde resuelve algo. Las capas ordenan dependencias, los slices agrupan lo que cambia junto y los puertos protegen los bordes».
+
+**Contexto para Yamel:** Es la arquitectura de la Parte III y la que usaremos en el proyecto real. Lo de la diapositiva anterior, aplicado a un caso concreto. Pregunta para Driss: «Si cambiamos de pasarela, ¿qué carpeta tocas? ¿Y si cambiamos SQL Server por PostgreSQL?». La primera respuesta es un adaptador; la segunda, Infrastructure y las migraciones, pero no un puerto. Detalle en [puertos y adaptadores en los bordes](../court-connect/architecture/README.md#puertos-y-adaptadores-en-los-bordes). Tiempo: 3 minutos.
+
+### Diapositiva 23. El puerto de pago de la Parte III (oculta)
+
+**Puntos clave:**
+
+- **Empezar:** el handler pide un pago al puerto, sin saber qué pasarela hay detrás.
+- **Dos adaptadores:** el simulado responde enseguida; el de Redsys envía al capitán a pagar con un formulario firmado.
+- **El resultado llega después:** la pasarela avisa a la API con una notificación firmada.
+- **Que el capitán vuelva a la web no prueba nada:** solo cuenta la notificación auténtica.
+- **Confirmar es idempotente:** un aviso repetido o tardío no cambia nada ni revive una inscripción caducada.
+- **Un test de contrato:** los dos adaptadores pasan los mismos tests.
+
+Esquema: Web → Pasarela (pruebas) → API · notificación → Handler `ConfirmPayment`, y una flecha discontinua de la pasarela a la web: «vuelta del capitán (no prueba nada)». Sin código.
+
+**Notas del ponente:**
+
+**Qué decir:** «El pago con tarjeta no es una llamada que devuelve sí o no: empieza en tu web y termina con un aviso de la pasarela».
+
+**Contexto para Yamel:** Oculta a propósito: enséñala después de que Driss haya escrito su puerto en el [ejercicio 2 de la Parte III](../../reto/Parte3/Ejercicio2/README.md), porque responde a la pregunta que ese ejercicio le pide pensar. Sirve también para la revisión del PR y para la demo final. Une con el PR trampa (pago no idempotente). Tiempo: 3 minutos, fuera de esta sesión.
+
+### Diapositiva 24. Decorator: añadir comportamiento alrededor
 
 **Puntos clave:**
 
@@ -486,7 +524,7 @@ public sealed class LoggedGameSummary(IGameSummary inner,
 
 **Contexto para Yamel:** Registrar primero `GameSummary` como scoped y después `IGameSummary` con una factory que construya `LoggedGameSummary` recibiendo el concreto y su logger. Resolver el concreto evita pedir la misma interfaz y crear una dependencia circular. La caché puede ser otro decorador, con política explícita de invalidación. No registrar datos personales en logs. Tiempo: 4 minutos.
 
-### Diapositiva 23. Options: configuración con nombres y tipos
+### Diapositiva 25. Options: configuración con nombres y tipos
 
 **Puntos clave:**
 
@@ -517,7 +555,7 @@ public sealed class GameListSettings(IOptions<GameListOptions> options)
 
 **Contexto para Yamel:** `IOptions<T>` pertenece a `Microsoft.Extensions.Options`. El enlace de configuración usa las extensiones habituales del arranque de ASP.NET Core. No es una forma de cifrar secretos. `IOptions<T>` no ofrece recarga automática; `IOptionsSnapshot<T>` e `IOptionsMonitor<T>` cubren otros ciclos de actualización y quedan para otra sesión. Tiempo: 4 minutos.
 
-### Diapositiva 24. Taller: tu servicio de la Parte I
+### Diapositiva 26. Taller: tu servicio de la Parte I
 
 **Puntos clave:**
 
@@ -532,7 +570,7 @@ public sealed class GameListSettings(IOptions<GameListOptions> options)
 
 **Contexto para Yamel:** Usa los primeros 15 minutos del [taller](#taller-courtconnect). Yamel pregunta y da pistas; Driss propone el cambio y la prueba. No se entrega un servicio resuelto ni se exige usar todos los patrones.
 
-### Diapositiva 25. Explicar la decisión antes de seguir
+### Diapositiva 27. Explicar la decisión antes de seguir
 
 **Puntos clave:**
 
@@ -548,7 +586,7 @@ public sealed class GameListSettings(IOptions<GameListOptions> options)
 
 **Contexto para Yamel:** Reserva los últimos 5 minutos del taller. Si falta una regla, se apunta como tarea pendiente y no como fallo causado por el cambio.
 
-### Diapositiva 26. Plan antes de la demo 1
+### Diapositiva 28. Plan antes de la demo 1
 
 **Puntos clave:**
 
@@ -666,3 +704,7 @@ Revisar versiones y condiciones antes de impartir la sesión; los artículos ava
 | Logging / log / caché | Registrar hechos, cada mensaje y guardar resultados reutilizables | Mensaje de lectura de un partido |
 | Options / IOptions | Configuración agrupada en clases y acceso mediante DI | Tamaño de página del listado |
 | Prueba de regresión | Comprobación de algo que ya funcionaba | La cancelación sigue liberando plaza |
+| Adaptador (adapter) | Implementación de un puerto contra algo concreto, simulado o real. Vive en Infrastructure | Simulado · Redsys (pruebas) |
+| Idempotencia (idempotency) | Repetir una operación no cambia el resultado de hacerla una vez | Un aviso repetido no cambia nada |
+| Puerto (port) | Interfaz que define lo que la aplicación necesita de un sistema externo, con tipos propios. Vive en Application | Pago, Aviso y Reloj |
+| Test de contrato (contract test) | Tests que cualquier adaptador de un puerto tiene que pasar | Los dos adaptadores pasan los mismos tests |

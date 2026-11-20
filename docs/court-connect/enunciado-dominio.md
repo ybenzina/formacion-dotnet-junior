@@ -90,10 +90,10 @@ Se especifica con Spec Kit. Idea de partida, que tendrás que concretar en la es
 - Un **equipo** tiene nombre, un **capitán** (un jugador) y un número mínimo y máximo de jugadores. El capitán inscribe al equipo.
 - En la web, el capitán inscribe al equipo **en varios pasos**: datos del equipo, jugadores y pago.
 - La inscripción del equipo queda **pendiente de pago** y **retiene la plaza** durante un tiempo configurable.
-- El pago se hace contra una **pasarela simulada** que acepta o rechaza.
+- El pago pasa por un **puerto** de pago. El adaptador obligatorio es una **pasarela simulada** que acepta o rechaza; como extra, el entorno de pruebas de una pasarela real (Redsys).
 - Si se acepta, la inscripción pasa a **confirmada**. Confirmar dos veces el mismo pago no debe tener efectos (idempotencia).
 - Si vence el plazo sin pago, la inscripción **caduca** y la plaza queda libre.
-- Fuera de alcance: reembolsos, pasarelas reales y el cuadro de partidos del torneo.
+- Fuera de alcance: reembolsos, cobros reales (solo entornos de pruebas) y el cuadro de partidos del torneo.
 
 ### Funcionalidad SDD 2: elige una
 

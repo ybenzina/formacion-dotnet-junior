@@ -19,7 +19,7 @@ El fichero no es el modelo: la herramienta lo carga como instrucciones. Aquí us
 | [Tutor](artefactos/tutor/README.md) | 1.1.0 | `refined` | Ayuda gradual en el curso y en el reto; se instala en P2 · Ej5 y en el repo de formación |
 | [Calidad](artefactos/calidad-sonarqube/README.md) | 1.1.0 | `draft` | Corregir issues de SonarQube Cloud: en el reto, desde la Parte III; en el curso, en las ramas de integración |
 | [Documentación](artefactos/documentacion/README.md) | 2.0.0 | `draft` | Documentar según la configuración del repositorio (contrato `version: 2`) |
-| [Revisor del reto](artefactos/revisor-reto/README.md) | 1.1.0 | `draft` | Para Yamel: PR, demos, seguimiento y borradores de Discord |
+| [Revisor del reto](artefactos/revisor-reto/README.md) | 1.2.0 | `draft` | Para Yamel: PR, demos, seguimiento y borradores de Discord |
 | [Autorrevisión del PR](artefactos/autorrevision-pr/README.md) | 1.0.0 | `draft` | Para Driss: revisar su PR con `/check-pr` antes de pedir la revisión |
 
 No fijan modelo ni SDK. El reto usa .NET 10 en las partes I y II y .NET 11 desde la III.
