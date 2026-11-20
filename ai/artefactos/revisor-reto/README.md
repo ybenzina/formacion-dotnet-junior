@@ -1,6 +1,6 @@
 # Revisor del reto · review-challenge
 
-**v1.1.0 · draft.** Para Yamel: revisión de PR de CourtConnect, demos, seguimiento de viernes y borradores de Discord. No es el tutor de Driss ni asigna niveles por su cuenta. Las pruebas conversacionales siguen pendientes.
+**v1.2.0 · draft.** Para Yamel: revisión de PR de CourtConnect, demos, seguimiento de viernes y borradores de Discord. No es el tutor de Driss ni asigna niveles por su cuenta. Las pruebas conversacionales siguen pendientes.
 
 ## Instalación y uso
 
@@ -8,8 +8,8 @@ Se instala en **`DeemSoft/formacion-dotnet-junior`**, donde están los enunciado
 
 | Herramienta | Fuente | Ruta instalada | Invocación |
 | --- | --- | --- | --- |
-| Copilot en VS Code | [Agente](v1.1.0/copilot/.github/agents/review-challenge.agent.md) | `.github/agents/review-challenge.agent.md` | Seleccionar `review-challenge` |
-| Claude Code y VS Code Local | [Skill](v1.1.0/claude/.claude/skills/review-challenge/SKILL.md) | `.claude/skills/review-challenge/SKILL.md` | `/review-challenge` |
+| Copilot en VS Code | [Agente](v1.2.0/copilot/.github/agents/review-challenge.agent.md) | `.github/agents/review-challenge.agent.md` | Seleccionar `review-challenge` |
+| Claude Code y VS Code Local | [Skill](v1.2.0/claude/.claude/skills/review-challenge/SKILL.md) | `.claude/skills/review-challenge/SKILL.md` | `/review-challenge` |
 
 Conserva las cabeceras y compara [SHA-256](../../README.md#deriva-y-sha-256) con [el registro](../../REGISTRO.md). Una única copia del skill sirve para Claude y Local y reduce la deriva. `.github/skills/` solo se añadiría para usar un skill con el motor Copilot; aquí ya está su agente. No hay variante `.prompt.md`.
 
@@ -32,6 +32,6 @@ Si pides publicar, muestra comando y texto y espera confirmación; la ejecución
 
 ## Pruebas y mantenimiento
 
-Ejecuta [los casos fijos](v1.1.0/pruebas.md) y uno propio en el agente de Copilot y el skill de Claude Code; comprueba también la carga en Local. Guarda salidas y herramienta/modelo reales. Instalar no equivale a certificar.
+Ejecuta [los casos fijos](v1.2.0/pruebas.md) y uno propio en el agente de Copilot y el skill de Claude Code; comprueba también la carga en Local. Guarda salidas y herramienta/modelo reales. Instalar no equivale a certificar.
 
 Las mejoras se proponen en esta fuente, con versión y CHANGELOG, antes de actualizar las copias. Formatos contrastados el 30 de octubre de 2026: [agentes y herramientas de VS Code](https://code.visualstudio.com/docs/agents/reference/custom-agent-file-reference), [skills en Local](https://code.visualstudio.com/docs/agent-customization/agent-skills) y [skills de Claude Code](https://code.claude.com/docs/en/skills).
