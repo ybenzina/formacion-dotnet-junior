@@ -1,6 +1,6 @@
 # Masterclass IA y agentes para desarrollar con criterio
 
-**Cuándo:** domingo después del Día 15, por la tarde, antes de [Parte II · Ejercicio 5](../../reto/Parte2/Ejercicio5/README.md). **Una sesión de 90 minutos, incluida una pausa de 10.** Fechas en el [calendario](../court-connect/calendario.md). [Quiz](masterclass-ai-agents-quiz.md): 12 preguntas, 15 minutos al día siguiente, fuera de clase; ampliación opcional aparte.
+**Cuándo:** martes 24/11/2026, de 15:00 a 16:30 (Día 16), antes de [Parte II · Ejercicio 5](../../reto/Parte2/Ejercicio5/README.md). **Una sesión de 90 minutos, incluida una pausa de 10.** Fechas en el [calendario](../court-connect/calendario.md). [Quiz](masterclass-ai-agents-quiz.md): 12 preguntas, 15 minutos al día siguiente, fuera de clase; ampliación opcional aparte.
 
 **Nota sobre los ejemplos:** las prácticas usan exclusivamente CourtConnect y datos ficticios.
 

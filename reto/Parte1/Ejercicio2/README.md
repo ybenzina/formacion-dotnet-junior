@@ -141,4 +141,4 @@ Con el PR abierto, pide a la IA la configuración de EF Core de tus entidades y 
 - [Inicialización de datos (seeding)](https://learn.microsoft.com/es-es/ef/core/modeling/data-seeding)
 - [SQL Server en contenedores Linux con Docker](https://learn.microsoft.com/es-es/sql/linux/quickstart-install-connect-docker)
 - [Secretos de usuario en desarrollo](https://learn.microsoft.com/es-es/aspnet/core/security/app-secrets)
-- [Referencia de contenedores](../../../docs/masterclasses/masterclass-docker.md) para consultar durante el ejercicio. La sesión de repaso será el domingo después del Día 15, por la mañana.
+- [Referencia de contenedores](../../../docs/masterclasses/masterclass-docker.md) para consultar durante el ejercicio. El avance de contenedores es el domingo 22/11, antes del ejercicio de Docker (Día 15); tus archivos se revisan en la demo 2 del 27/11.

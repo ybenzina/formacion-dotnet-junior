@@ -9,7 +9,7 @@
 
 ## Sesión 1: Contenedores, Compose y Aspire
 
-**Tras la sesión del domingo siguiente al Día 15. Preguntas 1–12.** Repasa tus archivos de Docker si una respuesta te genera dudas.
+**Tras el ejercicio de Docker (Día 15) y el avance de contenedores del 22/11. Preguntas 1–12.** Repasa tus archivos de Docker si una respuesta te genera dudas.
 
 ### 1. ¿Qué diferencia una imagen de un contenedor?
 
@@ -97,7 +97,7 @@
 
 ## Sesión 2: Azure, infraestructura como código y costes
 
-**Tras la sesión del domingo siguiente al Día 20. Preguntas 13–24.** Se corrigen por separado de la sesión 1.
+**Tras la sesión del domingo 29/11. Preguntas 13–24.** Se corrigen por separado de la sesión 1.
 
 ### 13. La base normal con worker continuo consume 702.000 vCPU-s y 1.404.000 GiB-s. Hay 180.000 y 360.000 de franquicia disponibles, respectivamente. ¿Qué queda?
 

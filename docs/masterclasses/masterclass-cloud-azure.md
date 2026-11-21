@@ -1,6 +1,6 @@
 # Masterclass Azure, infraestructura como código y costes
 
-**Sesión 2, 90 minutos, el domingo siguiente al Día 20**, antes del despliegue del Día 22. Requiere la [sesión local](masterclass-cloud-local.md), del domingo siguiente al Día 15.
+**Sesión 2, 90 minutos, el domingo 29/11/2026 a las 17:00**, a mitad de P3 · Ej2 (el Día 19 ya hecho y el Día 20, el lunes 30/11) y antes del despliegue del Día 22 (X 02/12). Conviene haber hecho P2 · Ej4 y visto el avance de [contenedores](masterclass-cloud-local.md) del 22/11; no hay un repaso aparte de contenedores en esta sesión.
 
 **Cloud**, o nube, significa usar recursos de un proveedor a través de internet, como alquilar un servidor en vez de comprarlo. La primera sesión trabaja en nuestro ordenador; la segunda estudia el paso a Azure.
 
@@ -22,7 +22,7 @@ Formato: 20 diapositivas con notas para Yamel, taller de 30 minutos y [quiz de 1
 
 ## Sesión 2: Azure, infraestructura como código y costes
 
-**El domingo siguiente al Día 20, 90 minutos.** Antes del despliegue del Día 22. Hoy pasamos del ordenador local a los servicios del proveedor y practicamos cuánto podrían costar.
+**El domingo 29/11, 90 minutos.** Antes del despliegue del Día 22. Hoy pasamos del ordenador local a los servicios del proveedor y practicamos cuánto podrían costar.
 
 ### Agenda de la sesión 2
 

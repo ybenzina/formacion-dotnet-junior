@@ -8,7 +8,7 @@ Que el MVP funcione en Azure con una URL que puedas enseñar. Es lo mismo que se
 
 ## Antes de empezar (≈ 30 min)
 
-Repasa la [sesión 2 de cloud: Azure, infraestructura como código y costes](../../../docs/masterclasses/masterclass-cloud-azure.md), del **domingo siguiente al Día 20**, antes de este despliegue del **Día 22**. La [sesión 1](../../../docs/masterclasses/masterclass-cloud-local.md), del domingo siguiente al Día 15, revisó tus contenedores. Conceptos para el glosario: **Azure Container Apps**, **Azure SQL**, **registro de contenedores**, **secreto de Container Apps** o **Key Vault**, **identidad gestionada** y **escalar a cero**.
+Repasa la [sesión 2 de cloud: Azure, infraestructura como código y costes](../../../docs/masterclasses/masterclass-cloud-azure.md), del **domingo 29/11**, antes de este despliegue del **Día 22**. El [avance de contenedores](../../../docs/masterclasses/masterclass-cloud-local.md) del 22/11 y la revisión de tus archivos en la demo 2 (27/11) cubren los contenedores. Conceptos para el glosario: **Azure Container Apps**, **Azure SQL**, **registro de contenedores**, **secreto de Container Apps** o **Key Vault**, **identidad gestionada** y **escalar a cero**.
 
 **Coste:** se usa la suscripción que indique Yamel. Container Apps tiene una concesión gratuita mensual y Azure SQL una oferta gratuita para desarrollo. Antes de crear nada, mira en la calculadora de Azure qué costaría si se superan, y **borra o para los recursos** cuando acabe el reto.
 

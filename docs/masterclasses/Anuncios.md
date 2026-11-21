@@ -1,6 +1,6 @@
 # Anuncios de Discord · Masterclasses
 
-Cada bloque es un mensaje independiente, listo para copiar y pegar. Fija el primero en el canal. Los enlaces apuntan a `main`: las guías nuevas o actualizadas deben publicarse allí antes de enviar los anuncios. Todas las sesiones tienen fecha y hora salvo la de contenedores, que solo tiene fecha.
+Cada bloque es un mensaje independiente, listo para copiar y pegar. Fija el primero en el canal. Los enlaces apuntan a `main`: las guías nuevas o actualizadas deben publicarse allí antes de enviar los anuncios. Todas las sesiones tienen fecha y hora.
 
 ## Mensaje fijado · Calendario
 
@@ -9,13 +9,14 @@ Cada bloque es un mensaje independiente, listo para copiar y pegar. Fija el prim
 
 Estas sesiones acompañan al reto CourtConnect: trabajaremos sobre lo que ya hayas hecho y prepararemos el siguiente paso.
 
-- **M 17/11/2026 · 12:30 · Arquitectura:** 110 min, con 10 de descanso. Repaso de la Parte I antes de la demo 1.
-- **M 24/11/2026 · 12:30 · IA y agentes:** 90 min, con una pausa de 10. Antes de trabajar P2 · Ej5.
-- **D 29/11/2026 · Mañana · Contenedores, Compose y Aspire:** 90 min. Repaso del ejercicio de Docker, antes del despliegue.
-- **M 01/12/2026 · 12:30 · Azure, infraestructura como código y costes:** 90 min. Después del Día 20 y antes del despliegue del Día 22.
+- **D 22/11/2026 · 17:00 · Arquitectura (versión condensada):** 75 min, con 5 de descanso. Antes de la Parte III; el 20/11 ya vimos la inyección de dependencias.
+- **D 22/11/2026 · a continuación (hacia las 18:25) · Contenedores, avance:** unos 35 min, sin taller. Antes de P2 · Ej4; ya no es una sesión aparte.
+- **M 24/11/2026 · 15:00 · IA y agentes:** 90 min, con una pausa de 10. Antes de trabajar P2 · Ej5.
+- **V 27/11/2026 · 16:00 · Demo 2:** 90 min, solo Docker y Ej5.
+- **D 29/11/2026 · 17:00 · Azure, infraestructura como código y costes:** 90 min. Antes del despliegue del Día 22 (X 02/12).
 - **Próximamente · Seguridad e integraciones:** antes de empezar Àmbit, sin fecha. Seguridad: dos sesiones de 90 min; integraciones: una de 90 min.
 
-**Hora por confirmar en la sesión de contenedores.** Los quizzes se hacen al día siguiente, fuera del tiempo de clase. Las masterclasses no cuentan como días de trabajo del reto.
+Los quizzes se hacen al día siguiente, fuera del tiempo de clase. Las masterclasses no cuentan como días de trabajo del reto.
 
 📚 [Calendario del reto](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/calendario.md) · [Guías y anuncios](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/masterclasses/Anuncios.md)
 ```
@@ -25,21 +26,21 @@ Estas sesiones acompañan al reto CourtConnect: trabajaremos sobre lo que ya hay
 ```markdown
 📢 **Masterclass · Arquitectura: entender las piezas de tu aplicación**
 
-**Fecha:** martes 17/11/2026, de 12:30 a 14:20 (sustituye al seguimiento de ese día).
-**Duración:** 110 minutos, incluidos 10 de descanso y un taller de 20.
+**Fecha:** domingo 22/11/2026, a las 17:00, antes de la Parte III (empieza el miércoles 25/11).
+**Duración:** 75 minutos, en versión condensada, con un descanso de 5 y un taller de 15.
 
-Ya tienes la Parte I hecha: ahora toca entender bien lo que has construido.
-Seguiremos una petición desde la web hasta la base de datos.
-Veremos qué hace de verdad EF Core (el `DbContext` como unidad de trabajo) y cómo funciona la inyección de dependencias: Transient, Scoped, Singleton y por qué un Singleton no puede usar el `DbContext`.
-Reconoceremos seis patrones y cuándo ayudan de verdad.
-Trabajaremos sobre tu `RegistrationService` para elegir una mejora pequeña y comprobable.
+Ya tienes hecha la Parte I y el 20/11 repasamos contigo la inyección de dependencias, las referencias entre proyectos y el recorrido de una petición hasta la base de datos. Hoy no lo repetimos: vamos a lo que necesitas para la Parte III.
+Veremos *slices*, *handlers* y qué hace de verdad EF Core como unidad de trabajo.
+Hablaremos de ciclos de vida (Transient, Scoped, Singleton) y de la dependencia cautiva.
+Reconoceremos Adapter, Hexagonal, Strategy y Options, y cuándo ayudan de verdad.
+Trabajaremos sobre tu servicio de la Parte I para elegir una mejora pequeña y comprobable.
 
 **Antes de venir, Driss:**
-- Pasa `/check-pr` por tus PR de la Parte I y crea o cierra las issues con tus horas reales.
+- Cierra las tres tareas pendientes de la Parte I: `retro.md`, los issues de SonarCloud y el glosario de los ejercicios hechos.
 - Repasa las reglas R1–R6 del [dominio](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/enunciado-dominio.md) y la [guía de arquitectura](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/architecture/README.md).
-- Trae tu `RegistrationService`, sus pruebas y tus dudas sobre lo que te generó la IA (constructores primarios, inyección de dependencias, EF).
+- Trae tu `RegistrationService`, sus pruebas y tus dudas sobre lo que te generó la IA.
 
-🎯 **Te llevarás:** un mapa de responsabilidades de tu código y una mejora que puedas explicar en la demo 1. El quiz, al día siguiente: 20 minutos fuera de clase.
+🎯 **Te llevarás:** un mapa de responsabilidades de tu código y una mejora que puedas explicar. El quiz queda como tarea posterior.
 
 📚 [Markdown de la masterclass](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/masterclasses/masterclass-architecture.md)
 ```
@@ -47,22 +48,20 @@ Trabajaremos sobre tu `RegistrationService` para elegir una mejora pequeña y co
 ## Contenedores, Compose y Aspire
 
 ```markdown
-📢 **Masterclass · Contenedores, Compose y Aspire**
+📢 **Masterclass · Contenedores: un avance antes de tu Dockerfile**
 
-**Fecha:** domingo 29/11/2026, por la mañana, después del Día 15.
-**Hora:** hora por confirmar.
-**Duración:** 90 minutos, incluido un taller de 25.
+**Fecha:** domingo 22/11/2026, a continuación de Arquitectura (hacia las 18:25), antes de empezar P2 · Ej4 el lunes.
+**Duración:** unos 35 minutos, sin taller. Ya no es una sesión aparte de 90 minutos.
 
-Revisaremos cómo tus Dockerfile convierten el código en imágenes ejecutables.
-Seguiremos la red, los datos y el arranque de web, API y SQL con Compose.
-Veremos qué aporta Aspire para ejecutar y observar las piezas en desarrollo.
-Buscaremos un fallo de conexión o arranque y comprobaremos una mejora.
+Veremos qué son una imagen, un contenedor y un registry, y por qué un Dockerfile separa construir de ejecutar (*multi-stage*).
+Veremos cómo Compose describe web, API y SQL, y la diferencia entre «arrancado» y «preparado».
+Aspire queda como extra.
 
 **Antes de venir, Driss:**
-- Tener trabajado [P2 · Ej4: Docker y Docker Compose](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte2/Ejercicio4/README.md). Es un repaso y ampliación, no la introducción para empezar ese ejercicio.
-- Trae tus Dockerfile y `docker-compose.yml`, y repasa el recorrido web → API → base de datos. Si algo falla, trae el error sin credenciales.
+- Nada que preparar: es un avance para que te suene lo que vas a hacer, o estás haciendo si ya empezaste, en [P2 · Ej4: Docker y Docker Compose](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte2/Ejercicio4/README.md). **No empieces el ejercicio antes.**
+- El viernes 27/11, en la demo 2, revisaremos tu Dockerfile y tu `docker-compose.yml`.
 
-🎯 **Te llevarás:** una explicación de cómo arranca tu aplicación, una mejora contrastada y criterios para distinguir Compose de Aspire. No necesitas instalar Aspire de antemano ni crear recursos de pago.
+🎯 **Te llevarás:** el vocabulario y el esquema mental para enfrentarte al ejercicio con menos sorpresas. No necesitas instalar Aspire ni crear recursos de pago.
 
 📚 [Markdown de la masterclass](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/masterclasses/masterclass-cloud-local.md)
 ```
@@ -72,7 +71,7 @@ Buscaremos un fallo de conexión o arranque y comprobaremos una mejora.
 ```markdown
 📢 **Masterclass · IA y agentes para desarrollar con criterio**
 
-**Fecha:** martes 24/11/2026, de 12:30 a 14:00 (sustituye al seguimiento de ese día), antes de trabajar P2 · Ej5.
+**Fecha:** martes 24/11/2026, de 15:00 a 16:30, antes de trabajar P2 · Ej5.
 **Duración:** 90 minutos, incluida una pausa de 10.
 
 Distinguiremos modelo, asistente, workflow y agente, sin atribuirles capacidades que no hemos comprobado.
@@ -90,12 +89,29 @@ Prepararemos el siguiente ejercicio sin resolver su tutor ni adelantar sus casos
 📚 [Markdown de la masterclass](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/masterclasses/masterclass-ai-agents.md)
 ```
 
+## Demo 2
+
+```markdown
+📢 **Demo 2 · Docker y ejercicio 5**
+
+**Fecha:** viernes 27/11/2026, de 16:00 a 17:30 (sustituye al seguimiento de ese día).
+**Duración:** 90 minutos.
+
+Es una demo corta: solo Docker y el ejercicio 5, porque el resto ya lo vimos en la sesión del 20/11.
+Revisaremos tu Dockerfile y tu `docker-compose.yml`, y la herramienta de IA que elijas para el piloto.
+
+**Antes de venir, Driss:**
+- Tener hechos [P2 · Ej4: Docker y Docker Compose](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte2/Ejercicio4/README.md) y [P2 · Ej5: Demo 2 y preparación del SDD](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte2/Ejercicio5/README.md).
+
+📚 [Calendario del reto](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/docs/court-connect/calendario.md)
+```
+
 ## Azure, infraestructura como código y costes
 
 ```markdown
 📢 **Masterclass · Azure, infraestructura como código y costes**
 
-**Fecha:** martes 01/12/2026, de 12:30 a 14:00 (sustituye al seguimiento de ese día), después del Día 20.
+**Fecha:** domingo 29/11/2026, a las 17:00, antes del despliegue del Día 22 (miércoles 02/12). El martes 01/12 queda libre.
 **Duración:** 90 minutos, incluido un taller de costes de 30.
 
 Relacionaremos la web, la API, el worker y los datos de CourtConnect con servicios de Azure.
@@ -104,7 +120,7 @@ Estimaremos un mes normal y un pequeño pico de uso, dejando claros los supuesto
 Prepararemos las decisiones del despliegue del Día 22, sin desplegar durante la clase.
 
 **Antes de venir, Driss:**
-- Haber trabajado la sesión de Contenedores, Compose y Aspire y [P3 · Ej2: implementación y revisión](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte3/Ejercicio2/README.md), hasta el Día 20.
+- Haber hecho [P2 · Ej4: Docker y Docker Compose](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte2/Ejercicio4/README.md) y llevar [P3 · Ej2: implementación y revisión](https://github.com/ybenzina/formacion-dotnet-junior/blob/main/reto/Parte3/Ejercicio2/README.md) hasta donde llegues el Día 19. No hace falta haberlo terminado.
 - Repasa el recorrido web → API → base de datos y el trabajo de caducidad en segundo plano. Trae dudas sobre qué necesita seguir ejecutándose.
 - Ten un navegador disponible para la calculadora. **No necesitas haber hecho el despliegue del Día 22**, crear recursos de pago ni compartir credenciales.
 

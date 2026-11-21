@@ -2,7 +2,7 @@
 
 **Día 16 · estimación: 5 h 30 min** · Issue: «P2 · Ej5 · Demo 2 y preparación del SDD»
 
-**Antes de este ejercicio:** [masterclass de IA y agentes](../../../docs/masterclasses/masterclass-ai-agents.md), el domingo después del Día 15 por la tarde. Una sesión de 90 minutos con pausa. La clase no sustituye tu investigación, diseño ni pruebas del tutor.
+**Antes de este ejercicio:** [masterclass de IA y agentes](../../../docs/masterclasses/masterclass-ai-agents.md), el martes 24/11, de 15:00 a 16:30. Una sesión de 90 minutos con pausa. La clase no sustituye tu investigación, diseño ni pruebas del tutor.
 
 ## Objetivo
 

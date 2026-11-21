@@ -6,7 +6,7 @@
 
 Empaquetar la API y la web en imágenes y levantar la aplicación completa con un solo comando. Es la base del despliegue en Azure de la Parte III.
 
-Después de este ejercicio, **el domingo siguiente al Día 15**, tendremos la [sesión 1 de cloud](../../../docs/masterclasses/masterclass-cloud-local.md). Lleva tu Dockerfile y tu `docker-compose.yml` de `court-connect`: revisaremos errores, `.dockerignore`, las etapas de construcción y el usuario no root. Aspire será la ampliación.
+Antes de este ejercicio, **el domingo 22/11**, tendrás un [avance de contenedores](../../../docs/masterclasses/masterclass-cloud-local.md) de unos 35 minutos (imagen, *multi-stage*, Compose y readiness), sin taller. Al terminarlo, **el viernes 27/11**, en la demo 2, revisaremos tu Dockerfile y tu `docker-compose.yml` de `court-connect`: errores, `.dockerignore`, las etapas de construcción y el usuario no root. Aspire es un extra.
 
 ## Antes de empezar (≈ 30 min)
 

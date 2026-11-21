@@ -1,6 +1,17 @@
 # Masterclass Contenedores, Compose y Aspire
 
-**Sesión 1, 90 minutos, el domingo siguiente al Día 15 por la mañana**, después del ejercicio de Docker. Por la tarde se celebra [IA y agentes](masterclass-ai-agents.md). La [sesión 2](masterclass-cloud-azure.md) aborda Azure el domingo siguiente al Día 20.
+**Avance de unos 35 minutos el domingo 22/11/2026, a continuación de [Arquitectura](masterclass-architecture.md) (hacia las 18:25), antes de P2 · Ej4.** Ya no es una sesión aparte de 90 minutos. El avance usa solo las diapositivas 2, 3, 5 y 6, sin taller y sin Aspire. Los archivos de Driss se revisan en la demo 2 del viernes 27/11. Aspire es un extra. El resto de esta guía (taller y Aspire) describe la sesión completa de repaso, que ya no se convoca: sirve como material. La [guía de Azure](masterclass-cloud-azure.md) se da el domingo 29/11 a las 17:00.
+
+### Avance del 22/11 (35 minutos)
+
+| Bloque | Minutos | Diapositivas |
+| --- | --- | --- |
+| Imagen, contenedor y registry | 7 | 2 |
+| Dockerfile multi-stage: construir no es ejecutar | 12 | 3 |
+| Compose: describir un conjunto local | 8 | 5 |
+| Arrancado no significa preparado | 6 | 6 |
+| Cierre y dudas | 2 | — |
+| **Total** | **35** | |
 
 **Cloud**, o nube, significa usar recursos de un proveedor a través de internet, como alquilar un servidor en vez de comprarlo. La primera sesión trabaja en nuestro ordenador; la segunda estudia el paso a Azure.
 
@@ -22,7 +33,7 @@ Formato: 12 diapositivas con notas para Yamel, taller de 25 minutos y [quiz de 1
 
 ## Sesión 1: Contenedores, Compose y Aspire
 
-**El domingo siguiente al Día 15, 90 minutos.** Repaso y ampliación después del ejercicio de Docker, no preparación para empezarlo. **Compose** describe servicios que arrancan juntos, como web, API y SQL. **Aspire** ayuda a ejecutar y observar las piezas de una aplicación durante el desarrollo, como un panel de control local.
+**Sesión completa de 90 minutos (ya no se convoca aparte).** Repaso y ampliación después del ejercicio de Docker, no preparación para empezarlo. **Compose** describe servicios que arrancan juntos, como web, API y SQL. **Aspire** ayuda a ejecutar y observar las piezas de una aplicación durante el desarrollo, como un panel de control local.
 
 ### Agenda de la sesión 1
 

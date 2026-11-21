@@ -21,7 +21,7 @@ Es el mismo reparto que tendrá Àmbit: una parte pública y ligera para los usu
 | 15 | [Ejercicio 4 — Docker y Docker Compose](Ejercicio4/README.md) | `docker compose up` levanta todo |
 | 16 | [Ejercicio 5 — Demo 2 y preparación del SDD](Ejercicio5/README.md) | Demo, retro y herramienta de IA del piloto elegida |
 
-Los viernes, reunión semanal de seguimiento. **El domingo siguiente al Día 15, por la mañana:** [cloud, sesión 1: contenedores, Compose y Aspire](../../docs/masterclasses/masterclass-cloud-local.md). Revisaremos tu Dockerfile y tu Compose después del ejercicio de Docker. **Por la tarde:** [IA y agentes](../../docs/masterclasses/masterclass-ai-agents.md), una sesión de 90 minutos con pausa, antes del ejercicio 5. La [sesión 2: Azure, IaC y costes](../../docs/masterclasses/masterclass-cloud-azure.md) será **el domingo siguiente al Día 20**.
+Los viernes, reunión semanal de seguimiento. **El domingo 22/11, a las 17:00:** [arquitectura](../../docs/masterclasses/masterclass-architecture.md), en versión condensada de 75 minutos, y a continuación un [avance de contenedores](../../docs/masterclasses/masterclass-cloud-local.md) de unos 35 minutos, sin taller, antes del ejercicio de Docker. **El martes 24/11, de 15:00 a 16:30:** [IA y agentes](../../docs/masterclasses/masterclass-ai-agents.md), una sesión de 90 minutos con pausa, antes del ejercicio 5; la demo 2 es corta (solo Docker y el ejercicio 5) y será el viernes 27/11, de 16:00 a 17:30. La [masterclass de Azure, IaC y costes](../../docs/masterclasses/masterclass-cloud-azure.md) será **el domingo 29/11, a las 17:00**.
 
 ## Reglas
 
