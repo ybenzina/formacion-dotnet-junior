@@ -10,7 +10,7 @@
 4. **Día 22** – Despliegue en Azure ☁️
 5. **Día 23** – PR trampa + **demo final** 🎤
 
-**El domingo después del Día 20:** [cloud, sesión 2: Azure, infraestructura como código y costes](../../docs/masterclasses/masterclass-cloud-azure.md). La usaremos para preparar el despliegue del Día 22. La sesión 1 de contenedores fue el domingo después del Día 15. Fechas y horarios en los [anuncios de masterclasses](../../docs/masterclasses/Anuncios.md).
+**El domingo 29/11, a las 17:00:** [cloud: Azure, infraestructura como código y costes](../../docs/masterclasses/masterclass-cloud-azure.md). La usaremos para preparar el despliegue del Día 22. No hay una sesión aparte de contenedores: el avance fue el domingo 22/11. Fechas y horarios en los [anuncios de masterclasses](../../docs/masterclasses/Anuncios.md).
 
 🤖 **Regla de IA:** en las funcionalidades SDD la IA escribe el código; tú especificas, revisas y corriges. Si no entiendes una línea, no se fusiona. Apunta el consumo en `docs/sdd/sdd-piloto.md`.
 

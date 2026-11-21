@@ -1,8 +1,8 @@
 # Masterclass Arquitectura
 
-**Martes 17/11/2026, de 12:30 a 14:20.** Estaba prevista para el domingo siguiente al Día 5, a mitad del ejercicio 3, pero Driss terminó la Parte I antes de poder hacerla. Ahora repasa lo que ha construido y prepara la demo 1. Fechas en el [calendario](../court-connect/calendario.md).
+**Domingo 22/11/2026, a las 17:00, en versión condensada de 75 minutos.** Estaba prevista para el domingo siguiente al Día 5 y luego para el martes 17/11, pero no se dio ese día. Se da después de la sesión de revisión del 20/11, que ya cubrió la inyección de dependencias, las referencias entre proyectos, la depuración desde la web hasta la base de datos, SonarQube Cloud y GitHub Actions, y antes de la Parte III (X 25/11). La [agenda completa](#agenda), de 113 minutos, se mantiene como referencia; la que se da es la [versión condensada](#versión-condensada-2211). Fechas en el [calendario](../court-connect/calendario.md).
 
-**Duración:** 113 minutos, incluidos 10 de descanso, 28 de patrones y arquitectura del reto, y 20 de taller. **Formato:** diapositivas con puntos visibles y notas para Yamel. El [quiz](masterclass-architecture-quiz.md), de 20 preguntas, es tarea del día siguiente: 20 minutos, no al final de la sesión.
+**Duración de la agenda completa:** 113 minutos, incluidos 10 de descanso, 28 de patrones y arquitectura del reto, y 20 de taller. **Formato:** diapositivas con puntos visibles y notas para Yamel. El [quiz](masterclass-architecture-quiz.md), de 20 preguntas, es tarea del día siguiente: 20 minutos, no al final de la sesión.
 
 **Nota sobre los ejemplos:** las referencias a Àmbit son ilustrativas. Sirven para pensar sobre abonos, becas, tarifas, aforo e integraciones; no son requisitos confirmados del cliente. Todos los datos son ficticios.
 
@@ -37,6 +37,22 @@ La columna «Guion» usa la numeración de este documento; «pptx», la de la pr
 | Taller CourtConnect | 20 | 26 a 27 | 31 a 32 |
 | Recapitulación y plan antes de la demo 1 | 5 | 28 | 33 |
 | **Total** | **113** | **28** | **40** |
+
+## Versión condensada (22/11)
+
+La sesión del domingo 22/11 dura **75 minutos**, con un descanso de 5. La sesión de revisión del 20/11 ya cubrió la inyección de dependencias, así que las diapositivas 15 y 16 se saltan. La agenda completa de arriba no cambia. Esta tabla usa la numeración del pptx.
+
+| Bloque | Minutos | pptx | Contenido |
+| --- | --- | --- | --- |
+| Problema y límites, SOLID y DDD, rápido | 10 | 4 a 9 | Qué puede cambiar, criterio de éxito, monolito modular, responsabilidades, SOLID como preguntas de revisión y DDD táctico. |
+| *Slices*, *handler*, unidad de trabajo, repositorios y la última plaza | 15 | 10 a 14 | Capas frente a *slices*, handler normal, EF Core como unidad de trabajo, repositorios y las dos peticiones para la última plaza. |
+| Ciclos de vida, dependencia cautiva, `BackgroundService` y `TimeProvider` | 15 | 17 a 20 | Transient, Scoped y Singleton; un Singleton no es una clase estática; dependencia cautiva. La 15 y la 16 se saltan. |
+| Descanso | 5 | — | — |
+| Patrones | 15 | 25 a 27, más 24 y 30 | Adapter, Clean y Hexagonal (25 a 27) y un repaso rápido de Strategy (24) y Options (30). **La 28 sigue oculta**: se enseña al revisar el PR de `feature/payment-port`. |
+| Taller con su servicio de la Parte I | 15 | 31 a 32 | Elegir una mejora pequeña y explicar la decisión antes de seguir. |
+| **Total** | **75** | | |
+
+Quedan fuera de la sesión y como material de consulta las diapositivas 21 a 23 (conceptos, Singleton y Factory), la 29 (Decorator), la 33 (plan antes de la demo 1) y el glosario (34 a 40). El quiz queda como tarea posterior.
 
 ## Guion de diapositivas
 

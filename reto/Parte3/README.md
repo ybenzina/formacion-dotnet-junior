@@ -23,7 +23,7 @@
 
 Los viernes, reunión semanal de seguimiento.
 
-**El domingo siguiente al Día 20:** [cloud, sesión 2: Azure, infraestructura como código y costes](../../docs/masterclasses/masterclass-cloud-azure.md). Prepara el despliegue del **Día 22**. La sesión 1 de contenedores, Compose y Aspire habrá sido el domingo siguiente al Día 15, después del ejercicio de Docker.
+**El domingo 29/11, a las 17:00:** [cloud: Azure, infraestructura como código y costes](../../docs/masterclasses/masterclass-cloud-azure.md). Prepara el despliegue del **Día 22**. No hay una sesión aparte de contenedores: el avance fue el domingo 22/11, antes del ejercicio de Docker.
 
 ## Reglas
 

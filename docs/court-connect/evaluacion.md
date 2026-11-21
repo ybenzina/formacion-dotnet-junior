@@ -15,6 +15,8 @@ Yamel la completa en cada demo, a partir de las preguntas de «explícame esta p
 
 **Objetivo del reto: nivel 3 o más en todas.**
 
+**Nota sobre la demo 2:** el 27/11 (de 16:00 a 17:30) es una demo corta, solo de Docker y del ejercicio 5. El resto de lo que cubre ya se vio en la sesión de revisión del 20/11.
+
 | Tecnología | Demo 1 (Día 8) | Demo 2 (Día 16) | Demo final (Día 23) | Comentarios |
 | --- | --- | --- | --- | --- |
 | Git, PR y revisión | | | | |
